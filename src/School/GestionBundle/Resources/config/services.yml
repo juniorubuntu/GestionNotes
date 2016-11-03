@@ -1,0 +1,7 @@
+parameters:
+#    school_gestion.example.class: School\GestionBundle\Example
+
+services:
+#    school_gestion.example:
+#        class: %school_gestion.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

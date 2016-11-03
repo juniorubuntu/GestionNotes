@@ -1,0 +1,61 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+    <div class="col-md-6 col-md-offset-3">
+        <h2><marquee BEHAVIOR="alternate">Authentifiez-vous avant de continuer!</marquee></h2>
+                {% if error %}
+            <div style="color: red">{{ error|trans({}, 'FOSUserBundle') }}</div>
+        {% endif %}
+
+        <table class="table">
+            <tr>
+                <td>
+                    <a href="{{path('fos_user_registration_register')}}">
+                        <button class="btn btn-primary col-md-5 active"><span class="glyphicon glyphicon-log-in"></span> J'ai pas encore de compte!</button>
+                    </a>
+                </td>
+            </tr>
+        </table>
+
+        <form action="{{ path("fos_user_security_check") }}" class="form-inline" method="post">
+            <table class="table table-hover">
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                <tr>
+                    <td>
+                        <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+                    </td>
+                    <td>
+                        <input type="text" id="username" class="form-control" name="_username" value="{{ last_username }}" required="required" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+                    </td>
+                    <td>
+                        <input type="password" class="form-control" id="password" name="_password" required="required" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+
+                        <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+                    </td>
+                    <td>
+                        <b><i>Votre mode passe sera enregistré.</i></b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" id="_submit" class="btn btn-orange" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+                    </td>
+                    <td>
+                        <input type="reset" class="btn btn-blue" value="Annuler"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+    </div>
+{% endblock fos_user_content %}

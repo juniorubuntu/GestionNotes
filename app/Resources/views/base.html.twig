@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>
+            {% block title %}
+                Bienvenue!
+            {% endblock %}
+        </title>
+        {% block stylesheets %}
+            <script src="{{asset('js/jquery.min.js')}}"></script>
+            <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+            <link rel="stylesheet" href="{{asset('css/icomoon-social.css')}}">
+            <link rel="stylesheet" href="{{asset('css/leaflet.css')}}" />
+            <link rel="stylesheet" href="{{asset('css/main.css')}}">
+            <script src="{{asset('js/modernizr-2.6.2-respond-1.1.0.min.js')}}"></script>
+            <script type="text/javascript" src="{{ asset('DataTables/media/js/jquery.dataTables.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('DataTables/media/js/dataTables.bootstrap.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('DataTables/extensions/Buttons/js/dataTables.buttons.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('DataTables/extensions/Buttons/js/buttons.bootstrap.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('DataTables/extensions/Buttons/js/buttons.flash.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('DataTables/extensions/Buttons/js/buttons.html5.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('DataTables/extensions/Buttons/js/buttons.print.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('DataTables/extensions/Buttons/js/buttons.colVis.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('DataTables/jszip.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('DataTables/pdfmake.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('DataTables/vfs_fonts.js') }}"></script>
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}" />
+    </head>
+    <body>
+        {% block body %}
+
+        {% endblock %}
+        {% block javascripts %}
+            <script>window.jQuery || document.write('<script src="{{asset('js/jquery-1.9.1.min.js')}}"><\/script>')</script>
+            <script src="{{asset('js/bootstrap.min.js')}}"></script>
+            <script src="{{asset('js/jquery.fitvids.js')}}"></script>
+            <script src="{{asset('js/jquery.sequence-min.js')}}"></script>
+            <script src="{{asset('js/jquery.bxslider.js')}}"></script>
+            <script src="{{asset('js/main-menu.js')}}"></script>
+            <script src="{{asset('js/template.js')}}"></script>
+        {% endblock %}
+    </body>
+</html>

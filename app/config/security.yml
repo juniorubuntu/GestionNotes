@@ -1,0 +1,43 @@
+security:
+    encoders:
+        FOS\UserBundle\Model\UserInterface: sha512
+    
+    role_hierarchy:
+        ROLE_CLIENT:       ROLE_USER
+        ROLE_SALLER:       ROLE_USER
+        ROLE_ADMIN:        [ROLE_CLIENT, ROLE_SALLER]
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH] 
+
+    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+    providers:
+        main:
+            id: fos_user.user_provider.username
+#        in_memory:
+#            memory: ~
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            pattern:        ^/
+            anonymous:      true
+            provider:       main
+            form_login:
+                login_path: fos_user_security_login
+                check_path: fos_user_security_check
+                always_use_default_target_path : true
+                default_target_path: /Gestion/
+                use_referer : true
+            logout:
+                path:       fos_user_security_logout
+                target:     /login
+            remember_me:
+                key:     %secret%
+    
+    access_control:
+        #-{ path: ^/gestion, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/Gestion/admin, roles: ROLE_SUPER_ADMIN }
+        #- { path: ^/register, role: ROLE_ADMIN }
