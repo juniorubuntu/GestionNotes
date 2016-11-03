@@ -18,6 +18,11 @@ class AppKernel extends Kernel {
             new FOS\UserBundle\FOSUserBundle(),
             new School\UserBundle\SchoolUserBundle(),
             new School\GestionBundle\SchoolGestionBundle(),
+            new School\StudentBundle\SchoolStudentBundle(),
+            new School\TeacherBundle\SchoolTeacherBundle(),
+            new School\MatiereBundle\SchoolMatiereBundle(),
+            new School\ConfigBundle\SchoolConfigBundle(),
+            new School\NoteBundle\SchoolNoteBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

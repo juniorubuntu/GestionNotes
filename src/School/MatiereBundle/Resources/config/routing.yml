@@ -1,0 +1,3 @@
+school_matiere_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: SchoolMatiereBundle:Default:index }

@@ -1,0 +1,3 @@
+school_student_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: SchoolStudentBundle:Default:index }

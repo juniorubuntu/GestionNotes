@@ -1,3 +1,23 @@
+school_note:
+    resource: "@SchoolNoteBundle/Resources/config/routing.yml"
+    prefix:   /
+
+school_config:
+    resource: "@SchoolConfigBundle/Resources/config/routing.yml"
+    prefix:   /
+
+school_matiere:
+    resource: "@SchoolMatiereBundle/Resources/config/routing.yml"
+    prefix:   /
+
+school_teacher:
+    resource: "@SchoolTeacherBundle/Resources/config/routing.yml"
+    prefix:   /
+
+school_student:
+    resource: "@SchoolStudentBundle/Resources/config/routing.yml"
+    prefix:   /
+
 school_gestion:
     resource: "@SchoolGestionBundle/Resources/config/routing.yml"
     prefix:   /Gestion

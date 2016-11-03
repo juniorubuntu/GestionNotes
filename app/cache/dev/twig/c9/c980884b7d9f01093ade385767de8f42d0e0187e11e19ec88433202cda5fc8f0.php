@@ -37,12 +37,14 @@ class __TwigTemplate_cffa5f45dad579bbdf0552605e119a7cd7dbfab08667e0a32bd042233e8
     public function block_body($context, array $blocks = array())
     {
         // line 6
-        echo "    <h2>Je suis la page d'accueil. Je me trouve dans: <b><i>School/GestionBundle/Resources/views/Default</i></b></h2>
+        echo "    <h2>Je suis la page d'accueil. Je me trouve dans</h2>
+    <h3><b><i>School/GestionBundle/Resources/views/Default</i></b></h3>
+    <h3>je suis en outre le Bundle de base de l'application</h3>
     <p>
         Pour un début faisons des pages simples utilisant les couleurs par défaut.
     </p>
     <p><a href=\"#\">";
-        // line 10
+        // line 12
         echo twig_escape_filter($this->env, (isset($context["webmaster"]) ? $context["webmaster"] : $this->getContext($context, "webmaster")), "html", null, true);
         echo "</a></p>
 ";
@@ -60,7 +62,7 @@ class __TwigTemplate_cffa5f45dad579bbdf0552605e119a7cd7dbfab08667e0a32bd042233e8
 
     public function getDebugInfo()
     {
-        return array (  46 => 10,  40 => 6,  37 => 5,  32 => 3,  29 => 2,  11 => 1,);
+        return array (  48 => 12,  40 => 6,  37 => 5,  32 => 3,  29 => 2,  11 => 1,);
     }
 }
 /* {% extends "::base.html.twig" %}*/
@@ -68,7 +70,9 @@ class __TwigTemplate_cffa5f45dad579bbdf0552605e119a7cd7dbfab08667e0a32bd042233e8
 /*     Accueil*/
 /* {% endblock %}*/
 /* {% block body %}*/
-/*     <h2>Je suis la page d'accueil. Je me trouve dans: <b><i>School/GestionBundle/Resources/views/Default</i></b></h2>*/
+/*     <h2>Je suis la page d'accueil. Je me trouve dans</h2>*/
+/*     <h3><b><i>School/GestionBundle/Resources/views/Default</i></b></h3>*/
+/*     <h3>je suis en outre le Bundle de base de l'application</h3>*/
 /*     <p>*/
 /*         Pour un début faisons des pages simples utilisant les couleurs par défaut.*/
 /*     </p>*/

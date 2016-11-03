@@ -120,6 +120,34 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/hello')) {
+            // school_note_homepage
+            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'school_note_homepage')), array (  '_controller' => 'School\\NoteBundle\\Controller\\DefaultController::indexAction',));
+            }
+
+            // school_config_homepage
+            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'school_config_homepage')), array (  '_controller' => 'School\\ConfigBundle\\Controller\\DefaultController::indexAction',));
+            }
+
+            // school_matiere_homepage
+            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'school_matiere_homepage')), array (  '_controller' => 'School\\MatiereBundle\\Controller\\DefaultController::indexAction',));
+            }
+
+            // school_teacher_homepage
+            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'school_teacher_homepage')), array (  '_controller' => 'School\\TeacherBundle\\Controller\\DefaultController::indexAction',));
+            }
+
+            // school_student_homepage
+            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'school_student_homepage')), array (  '_controller' => 'School\\StudentBundle\\Controller\\DefaultController::indexAction',));
+            }
+
+        }
+
         // school_gestion_homepage
         if (rtrim($pathinfo, '/') === '/Gestion') {
             if (substr($pathinfo, -1) !== '/') {

@@ -19,6 +19,11 @@
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
       <parameter key="SchoolUserBundle">School\UserBundle\SchoolUserBundle</parameter>
       <parameter key="SchoolGestionBundle">School\GestionBundle\SchoolGestionBundle</parameter>
+      <parameter key="SchoolStudentBundle">School\StudentBundle\SchoolStudentBundle</parameter>
+      <parameter key="SchoolTeacherBundle">School\TeacherBundle\SchoolTeacherBundle</parameter>
+      <parameter key="SchoolMatiereBundle">School\MatiereBundle\SchoolMatiereBundle</parameter>
+      <parameter key="SchoolConfigBundle">School\ConfigBundle\SchoolConfigBundle</parameter>
+      <parameter key="SchoolNoteBundle">School\NoteBundle\SchoolNoteBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
       <parameter key="SensioGeneratorBundle">Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle</parameter>
@@ -2005,6 +2010,36 @@
         <argument>fr</argument>
         <argument>messages</argument>
       </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/GestionNotes/src/School/StudentBundle/Resources/translations/messages.fr.xlf</argument>
+        <argument>fr</argument>
+        <argument>messages</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/GestionNotes/src/School/TeacherBundle/Resources/translations/messages.fr.xlf</argument>
+        <argument>fr</argument>
+        <argument>messages</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/GestionNotes/src/School/MatiereBundle/Resources/translations/messages.fr.xlf</argument>
+        <argument>fr</argument>
+        <argument>messages</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/GestionNotes/src/School/ConfigBundle/Resources/translations/messages.fr.xlf</argument>
+        <argument>fr</argument>
+        <argument>messages</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/GestionNotes/src/School/NoteBundle/Resources/translations/messages.fr.xlf</argument>
+        <argument>fr</argument>
+        <argument>messages</argument>
+      </call>
     </service>
     <service id="translation.loader.php" class="Symfony\Component\Translation\Loader\PhpFileLoader">
       <tag name="translation.loader" alias="php"/>
@@ -2767,7 +2802,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>581b1faa9ce51</argument>
+            <argument>581b2ebbd0548</argument>
           </service>
         </argument>
       </argument>
@@ -3085,7 +3120,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>581b1faa9ce51</argument>
+            <argument>581b2ebbd0548</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>
@@ -4032,6 +4067,26 @@
       <call method="addPath">
         <argument>/var/www/html/GestionNotes/src/School/GestionBundle/Resources/views</argument>
         <argument>SchoolGestion</argument>
+      </call>
+      <call method="addPath">
+        <argument>/var/www/html/GestionNotes/src/School/StudentBundle/Resources/views</argument>
+        <argument>SchoolStudent</argument>
+      </call>
+      <call method="addPath">
+        <argument>/var/www/html/GestionNotes/src/School/TeacherBundle/Resources/views</argument>
+        <argument>SchoolTeacher</argument>
+      </call>
+      <call method="addPath">
+        <argument>/var/www/html/GestionNotes/src/School/MatiereBundle/Resources/views</argument>
+        <argument>SchoolMatiere</argument>
+      </call>
+      <call method="addPath">
+        <argument>/var/www/html/GestionNotes/src/School/ConfigBundle/Resources/views</argument>
+        <argument>SchoolConfig</argument>
+      </call>
+      <call method="addPath">
+        <argument>/var/www/html/GestionNotes/src/School/NoteBundle/Resources/views</argument>
+        <argument>SchoolNote</argument>
       </call>
       <call method="addPath">
         <argument>/var/www/html/GestionNotes/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views</argument>
