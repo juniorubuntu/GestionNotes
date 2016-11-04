@@ -4,6 +4,8 @@ namespace School\MatiereBundle\Entity;
 
 namespace School\TeacherBundle\Entity;
 
+namespace School\StudentBundle\Entity;
+
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -13,7 +15,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table()
  * @ORM\Entity
  */
-class Categorie {
+class EstDispense {
 
     /**
      * @var integer
@@ -25,19 +27,19 @@ class Categorie {
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Matiere")
+     * @ORM\ManyToOne(targetEntity="School\MatiereBundle\Entity\Matiere")
      * @Assert\NotBlank()
      */
     private $matiere;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Enseignant")
+     * @ORM\ManyToOne(targetEntity="School\TeacherBundle\Entity\Enseignant")
      * @Assert\NotBlank()
      */
     private $enseignant;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Classe")
+     * @ORM\ManyToOne(targetEntity="School\StudentBundle\Entity\Classe")
      * @Assert\NotBlank()
      */
     private $classe;
@@ -54,5 +56,12 @@ class Categorie {
      * @ORM\Column(type="string", length=255)
      */
     private $annee;
+
+    /**
+     * @var integer
+     * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
+     */
+    private $nombreHeuresAnnuel;
 
 }

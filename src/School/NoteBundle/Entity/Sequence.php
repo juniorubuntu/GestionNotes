@@ -30,4 +30,20 @@ class Sequence {
      */
     private $nom;
 
+    /**
+     * @var string
+     * 
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     */
+    private $debut;
+
+    /**
+     * @var string
+     * 
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     */
+    private $fin;
+
 }
