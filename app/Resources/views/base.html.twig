@@ -15,6 +15,10 @@
             <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
             <link rel="stylesheet" href="{{asset('css/icomoon-social.css')}}">
             <link rel="stylesheet" href="{{asset('css/leaflet.css')}}" />
+        <!-- le fichier main ci dessus surcharge les bouton personnalisés de bootstrap -->
+            <link rel="stylesheet" href="{{asset('css/main.css')}}">
+            <link rel="stylesheet" href="{{asset('css/styleProjet.css')}}">
+            <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker.min.css')}}">
             <link rel="stylesheet" href="{{asset('css/main.css')}}">
             <script src="{{asset('js/modernizr-2.6.2-respond-1.1.0.min.js')}}"></script>
             <script type="text/javascript" src="{{ asset('DataTables/media/js/jquery.dataTables.min.js') }}"></script>
@@ -38,6 +42,7 @@
         {% block javascripts %}
             <script>window.jQuery || document.write('<script src="{{asset('js/jquery-1.9.1.min.js')}}"><\/script>')</script>
             <script src="{{asset('js/bootstrap.min.js')}}"></script>
+            <script src="{{asset('js/bootstrap-datepicker.min.js')}}"></script>
             <script src="{{asset('js/jquery.fitvids.js')}}"></script>
             <script src="{{asset('js/jquery.sequence-min.js')}}"></script>
             <script src="{{asset('js/jquery.bxslider.js')}}"></script>

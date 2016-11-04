@@ -10,4 +10,19 @@
         Pour un début faisons des pages simples utilisant les couleurs par défaut.
     </p>
     <p><a href="#">{{webmaster}}</a></p>
+
+    <h3>Test d'implémentton du module StudentBundle</h3>
+    <a href="{{ path('school_student_add')}}" class="btn btn-primary">
+			Add a new student
+		</a>
+		<a href="{{ path('school_student_list')}}" class="btn btn-primary">
+			List of students
+			<i class="glyphicon glyphicon-chevron-right"></i>
+		</a><br><br>
+        <a href="{{ path('school_class_add')}}" class="btn btn-primary">
+            Add a new class
+        </a>
+        <a href="{{ path('school_class_list')}}" class="btn btn-primary">
+            List of classes
+        </a>
 {% endblock %}
