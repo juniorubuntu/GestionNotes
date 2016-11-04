@@ -2,10 +2,6 @@
 
 namespace School\MatiereBundle\Entity;
 
-namespace School\TeacherBundle\Entity;
-
-namespace School\StudentBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -64,4 +60,152 @@ class EstDispense {
      */
     private $nombreHeuresAnnuel;
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set coefficient
+     *
+     * @param integer $coefficient
+     * @return EstDispense
+     */
+    public function setCoefficient($coefficient)
+    {
+        $this->coefficient = $coefficient;
+    
+        return $this;
+    }
+
+    /**
+     * Get coefficient
+     *
+     * @return integer 
+     */
+    public function getCoefficient()
+    {
+        return $this->coefficient;
+    }
+
+    /**
+     * Set annee
+     *
+     * @param string $annee
+     * @return EstDispense
+     */
+    public function setAnnee($annee)
+    {
+        $this->annee = $annee;
+    
+        return $this;
+    }
+
+    /**
+     * Get annee
+     *
+     * @return string 
+     */
+    public function getAnnee()
+    {
+        return $this->annee;
+    }
+
+    /**
+     * Set nombreHeuresAnnuel
+     *
+     * @param integer $nombreHeuresAnnuel
+     * @return EstDispense
+     */
+    public function setNombreHeuresAnnuel($nombreHeuresAnnuel)
+    {
+        $this->nombreHeuresAnnuel = $nombreHeuresAnnuel;
+    
+        return $this;
+    }
+
+    /**
+     * Get nombreHeuresAnnuel
+     *
+     * @return integer 
+     */
+    public function getNombreHeuresAnnuel()
+    {
+        return $this->nombreHeuresAnnuel;
+    }
+
+    /**
+     * Set matiere
+     *
+     * @param \School\MatiereBundle\Entity\Matiere $matiere
+     * @return EstDispense
+     */
+    public function setMatiere(\School\MatiereBundle\Entity\Matiere $matiere = null)
+    {
+        $this->matiere = $matiere;
+    
+        return $this;
+    }
+
+    /**
+     * Get matiere
+     *
+     * @return \School\MatiereBundle\Entity\Matiere 
+     */
+    public function getMatiere()
+    {
+        return $this->matiere;
+    }
+
+    /**
+     * Set enseignant
+     *
+     * @param \School\TeacherBundle\Entity\Enseignant $enseignant
+     * @return EstDispense
+     */
+    public function setEnseignant(\School\TeacherBundle\Entity\Enseignant $enseignant = null)
+    {
+        $this->enseignant = $enseignant;
+    
+        return $this;
+    }
+
+    /**
+     * Get enseignant
+     *
+     * @return \School\TeacherBundle\Entity\Enseignant 
+     */
+    public function getEnseignant()
+    {
+        return $this->enseignant;
+    }
+
+    /**
+     * Set classe
+     *
+     * @param \School\StudentBundle\Entity\Classe $classe
+     * @return EstDispense
+     */
+    public function setClasse(\School\StudentBundle\Entity\Classe $classe = null)
+    {
+        $this->classe = $classe;
+    
+        return $this;
+    }
+
+    /**
+     * Get classe
+     *
+     * @return \School\StudentBundle\Entity\Classe 
+     */
+    public function getClasse()
+    {
+        return $this->classe;
+    }
 }

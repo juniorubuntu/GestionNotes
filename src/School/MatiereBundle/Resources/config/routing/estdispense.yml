@@ -1,0 +1,30 @@
+estdispense:
+    path:     /
+    defaults: { _controller: "SchoolMatiereBundle:EstDispense:index" }
+
+estdispense_show:
+    path:     /{id}/show
+    defaults: { _controller: "SchoolMatiereBundle:EstDispense:show" }
+
+estdispense_new:
+    path:     /new
+    defaults: { _controller: "SchoolMatiereBundle:EstDispense:new" }
+
+estdispense_create:
+    path:     /create
+    defaults: { _controller: "SchoolMatiereBundle:EstDispense:create" }
+    requirements: { _method: post }
+
+estdispense_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SchoolMatiereBundle:EstDispense:edit" }
+
+estdispense_update:
+    path:     /{id}/update
+    defaults: { _controller: "SchoolMatiereBundle:EstDispense:update" }
+    requirements: { _method: post|put }
+
+estdispense_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SchoolMatiereBundle:EstDispense:delete" }
+    requirements: { _method: post|delete }

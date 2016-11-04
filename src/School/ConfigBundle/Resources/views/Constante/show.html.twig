@@ -1,0 +1,52 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Constante</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Paysfrancais</th>
+                <td>{{ entity.paysFrancais }}</td>
+            </tr>
+            <tr>
+                <th>Paysanglais</th>
+                <td>{{ entity.paysAnglais }}</td>
+            </tr>
+            <tr>
+                <th>Ministerefrancais</th>
+                <td>{{ entity.ministereFrancais }}</td>
+            </tr>
+            <tr>
+                <th>Ministereanglais</th>
+                <td>{{ entity.ministereAnglais }}</td>
+            </tr>
+            <tr>
+                <th>Devisefrancais</th>
+                <td>{{ entity.deviseFrancais }}</td>
+            </tr>
+            <tr>
+                <th>Deviseanglais</th>
+                <td>{{ entity.deviseAnglais }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('constante') }}">
+            Retourner à la liste
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('constante_edit', { 'id': entity.id }) }}">
+            Modifier
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

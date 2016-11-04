@@ -13,6 +13,10 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Matiere {
 
+    public function __toString() {
+        return $this->getNom();
+    }
+
     /**
      * @var integer
      *

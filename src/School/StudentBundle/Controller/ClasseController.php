@@ -1,96 +1,224 @@
 <?php
 
-namespace School\StudentBundle\Controller;;
+namespace School\StudentBundle\Controller;
+
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use School\StudentBundle\Entity\Classe;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
+use School\StudentBundle\Form\ClasseType;
 
+/**
+ * Classe controller.
+ *
+ */
+class ClasseController extends Controller
+{
 
-class ClasseController extends Controller{
-
-    public function listAction(){
-        $classes = $this->getDoctrine()
-        ->getRepository('SchoolStudentBundle:Classe')
-        ->findAll();
-        return $this->render('SchoolStudentBundle:Classe:listClasses.html.twig', array(
-            'classes' => $classes));
-    }
-
-    public function addAction(Request $request){
-        $classe = new Classe;
-        /*Autre méthode de personnalisation du formulaire. Dans le cas de Student on a utilisé StudentType à cause du nombre de champs considérable.
-        */
-        $form = $this->createFormBuilder($classe)
-                    ->add('nom', 'text')
-                    ->add('abreviation', 'text')
-                    ->add('save', 'submit', array('label' => 'Enregistrer','attr' => array('class' => 'btn btn-primary col-md-offset-5 col-sm-offset-5 col-xs-offset-5 col-md-2 col-sm-5 col-xs-5')))
-                    ->getForm();
-
-                    $form->handleRequest($request);
-                    if ($form->isSubmitted() && $form->isValid()) {
-                        $nom = $form['nom']->getData();
-
-
-                        $classe->setNom($nom);
-
-                        $em = $this->getDoctrine()->getManager();
-                        $em->persist($classe);
-                        $em->flush();
-
-                        return $this->redirect($this->generateUrl('school_class_show', array(
-                'id'=> $classe->getId())));
-                    }
-
-        //Si on n'est pas en POST, on affiche  le forrmulaire
-        return $this->render('SchoolStudentBundle:Classe:addClass.html.twig', array(
-            'form' => $form->createView()));
-    }
-
-
-    public function editAction(Request $request, $id){
-
-        $classe = $this->getDoctrine()->getRepository('SchoolStudentBundle:Classe')
-                    ->find($id);
-        $classe->setNom($classe->getNom());
-
-        $form = $this->createFormBuilder($classe)
-                    ->add('nom', 'text')
-                    ->add('save', 'submit', array('label' => 'Edit Class','attr' => array('class' => 'btn btn-primary', 'style' => 'margin-bottom:15px')))
-                    ->getForm();
-
-                    $form->handleRequest($request);
-                    if ($form->isSubmitted() && $form->isValid()) {
-                        $nom = $form['nom']->getData();
-
-                        $em = $this->getDoctrine()->getManager();
-                        $classe = $em->getRepository('SchoolStudentBundle:Classe')->find($id);
-                        $classe->setNom($nom);
-                        $em->flush();
-
-                        return $this->redirect($this->generateUrl('school_class_show', array(
-                'id'=> $classe->getId())));
-                    }
-        return $this->render('SchoolStudentBundle:Classe:addClass.html.twig', array(
-            'classe' => $classe,
-            'form' => $form->createView()
-            ));
-    }
-
-
-    public function showAction($id){
-        $classe = $this->getDoctrine()->getRepository('SchoolStudentBundle:Classe')
-                    ->find($id);
-        return $this->render('SchoolStudentBundle:Classe:showClass.html.twig', array(
-            'classe' => $classe));
-    }
-
-    public function deleteAction($id){
-        $classe = $this->getDoctrine()->getRepository('SchoolStudentBundle:Classe')
-                       ->find($id);
+    /**
+     * Lists all Classe entities.
+     *
+     */
+    public function indexAction()
+    {
         $em = $this->getDoctrine()->getManager();
-        $em->remove($classe);
-        $em->flush();
-        return $this->redirect($this->generateUrl('school_class_list'));
+
+        $entities = $em->getRepository('SchoolStudentBundle:Classe')->findAll();
+
+        return $this->render('SchoolStudentBundle:Classe:index.html.twig', array(
+            'entities' => $entities,
+        ));
+    }
+    /**
+     * Creates a new Classe entity.
+     *
+     */
+    public function createAction(Request $request)
+    {
+        $entity = new Classe();
+        $form = $this->createCreateForm($entity);
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($entity);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('classe_show', array('id' => $entity->getId())));
+        }
+
+        return $this->render('SchoolStudentBundle:Classe:new.html.twig', array(
+            'entity' => $entity,
+            'form'   => $form->createView(),
+        ));
+    }
+
+    /**
+     * Creates a form to create a Classe entity.
+     *
+     * @param Classe $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createCreateForm(Classe $entity)
+    {
+        $form = $this->createForm(new ClasseType(), $entity, array(
+            'action' => $this->generateUrl('classe_create'),
+            'method' => 'POST',
+        ));
+
+        $form->add('submit', 'submit', array('label' => 'Create'));
+
+        return $form;
+    }
+
+    /**
+     * Displays a form to create a new Classe entity.
+     *
+     */
+    public function newAction()
+    {
+        $entity = new Classe();
+        $form   = $this->createCreateForm($entity);
+
+        return $this->render('SchoolStudentBundle:Classe:new.html.twig', array(
+            'entity' => $entity,
+            'form'   => $form->createView(),
+        ));
+    }
+
+    /**
+     * Finds and displays a Classe entity.
+     *
+     */
+    public function showAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('SchoolStudentBundle:Classe')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Classe entity.');
+        }
+
+        $deleteForm = $this->createDeleteForm($id);
+
+        return $this->render('SchoolStudentBundle:Classe:show.html.twig', array(
+            'entity'      => $entity,
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+    /**
+     * Displays a form to edit an existing Classe entity.
+     *
+     */
+    public function editAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('SchoolStudentBundle:Classe')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Classe entity.');
+        }
+
+        $editForm = $this->createEditForm($entity);
+        $deleteForm = $this->createDeleteForm($id);
+
+        return $this->render('SchoolStudentBundle:Classe:edit.html.twig', array(
+            'entity'      => $entity,
+            'edit_form'   => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+    /**
+    * Creates a form to edit a Classe entity.
+    *
+    * @param Classe $entity The entity
+    *
+    * @return \Symfony\Component\Form\Form The form
+    */
+    private function createEditForm(Classe $entity)
+    {
+        $form = $this->createForm(new ClasseType(), $entity, array(
+            'action' => $this->generateUrl('classe_update', array('id' => $entity->getId())),
+            'method' => 'PUT',
+        ));
+
+        $form->add('submit', 'submit', array('label' => 'Update'));
+
+        return $form;
+    }
+    /**
+     * Edits an existing Classe entity.
+     *
+     */
+    public function updateAction(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('SchoolStudentBundle:Classe')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Classe entity.');
+        }
+
+        $deleteForm = $this->createDeleteForm($id);
+        $editForm = $this->createEditForm($entity);
+        $editForm->handleRequest($request);
+
+        if ($editForm->isValid()) {
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('classe_edit', array('id' => $id)));
+        }
+
+        return $this->render('SchoolStudentBundle:Classe:edit.html.twig', array(
+            'entity'      => $entity,
+            'edit_form'   => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+    /**
+     * Deletes a Classe entity.
+     *
+     */
+    public function deleteAction(Request $request, $id)
+    {
+        $form = $this->createDeleteForm($id);
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $entity = $em->getRepository('SchoolStudentBundle:Classe')->find($id);
+
+            if (!$entity) {
+                throw $this->createNotFoundException('Unable to find Classe entity.');
+            }
+
+            $em->remove($entity);
+            $em->flush();
+        }
+
+        return $this->redirect($this->generateUrl('classe'));
+    }
+
+    /**
+     * Creates a form to delete a Classe entity by id.
+     *
+     * @param mixed $id The entity id
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createDeleteForm($id)
+    {
+        return $this->createFormBuilder()
+            ->setAction($this->generateUrl('classe_delete', array('id' => $id)))
+            ->setMethod('DELETE')
+            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->getForm()
+        ;
     }
 }

@@ -1,0 +1,58 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>EstDispense list</h1>
+
+    <table class="records_list table table-striped" id="estDispense">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Enseignant</th>
+                <th>Matière</th>
+                <th>Classe</th>
+                <th>Coefficient</th>
+                <th>Annee</th>
+                <th>Nombre d'heures annuel</th>
+                <th>Détails</th>
+                <th>Modifier</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('estdispense_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>{{ entity.enseignant }}</td>
+                    <td>{{ entity.matiere }}</td>
+                    <td>{{ entity.classe }}</td>
+                    <td>{{ entity.coefficient }}</td>
+                    <td>{{ entity.annee }}</td>
+                    <td>{{ entity.nombreHeuresAnnuel }}</td>
+                    <td>
+                        <a href="{{ path('estdispense_show', { 'id': entity.id }) }}">Voir</a>
+                    </td>
+                    <td>
+                        <a href="{{ path('estdispense_edit', { 'id': entity.id }) }}">Modifier</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('estdispense_new') }}">
+                Insérer une entrée
+            </a>
+        </li>
+    </ul>
+    <script>
+        $('#estDispense').DataTable({
+            "pagingType": "full_numbers",
+            "lengthMenu": [[10, 20], [10, 20]],
+            "language": {
+                "url": "{{ asset('DataTables/French.json') }}"
+            }
+
+        });
+    </script>
+{% endblock %}

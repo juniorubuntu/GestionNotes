@@ -83,20 +83,16 @@ class __TwigTemplate_7134139476f5a4c9ea0d441ed8b3fadd4d458b00517171f8c3c9e8b458a
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "telephone", array()), "html", null, true);
             echo "</td>
                     <td>
-                        <ul>
-                            <li>
-                                <a href=\"";
-            // line 33
+                        <a href=\"";
+            // line 31
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("enseignant_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">Voir</a>
-                            </li>
-                            <li>
-                                <a href=\"";
-            // line 36
+                    </td>
+                    <td>
+                        <a href=\"";
+            // line 34
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("enseignant_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">Modifier</a>
-                            </li>
-                        </ul>
                     </td>
                 </tr>
             ";
@@ -104,14 +100,14 @@ class __TwigTemplate_7134139476f5a4c9ea0d441ed8b3fadd4d458b00517171f8c3c9e8b458a
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 42
+        // line 38
         echo "        </tbody>
     </table>
 
     <ul>
         <li>
             <a href=\"";
-        // line 47
+        // line 43
         echo $this->env->getExtension('routing')->getPath("enseignant_new");
         echo "\">
                 Ajouter un enseignant
@@ -124,7 +120,7 @@ class __TwigTemplate_7134139476f5a4c9ea0d441ed8b3fadd4d458b00517171f8c3c9e8b458a
             \"lengthMenu\": [[10, 20], [10, 20]],
             \"language\": {
                 \"url\": \"";
-        // line 57
+        // line 53
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("DataTables/French.json"), "html", null, true);
         echo "\"
             }
@@ -146,7 +142,7 @@ class __TwigTemplate_7134139476f5a4c9ea0d441ed8b3fadd4d458b00517171f8c3c9e8b458a
 
     public function getDebugInfo()
     {
-        return array (  128 => 57,  115 => 47,  108 => 42,  96 => 36,  90 => 33,  83 => 29,  79 => 28,  75 => 27,  71 => 26,  67 => 25,  63 => 24,  57 => 23,  54 => 22,  50 => 21,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  124 => 53,  111 => 43,  104 => 38,  94 => 34,  88 => 31,  83 => 29,  79 => 28,  75 => 27,  71 => 26,  67 => 25,  63 => 24,  57 => 23,  54 => 22,  50 => 21,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
@@ -179,14 +175,10 @@ class __TwigTemplate_7134139476f5a4c9ea0d441ed8b3fadd4d458b00517171f8c3c9e8b458a
 /*                     <td>{{ entity.diplomes }}</td>*/
 /*                     <td>{{ entity.telephone }}</td>*/
 /*                     <td>*/
-/*                         <ul>*/
-/*                             <li>*/
-/*                                 <a href="{{ path('enseignant_show', { 'id': entity.id }) }}">Voir</a>*/
-/*                             </li>*/
-/*                             <li>*/
-/*                                 <a href="{{ path('enseignant_edit', { 'id': entity.id }) }}">Modifier</a>*/
-/*                             </li>*/
-/*                         </ul>*/
+/*                         <a href="{{ path('enseignant_show', { 'id': entity.id }) }}">Voir</a>*/
+/*                     </td>*/
+/*                     <td>*/
+/*                         <a href="{{ path('enseignant_edit', { 'id': entity.id }) }}">Modifier</a>*/
 /*                     </td>*/
 /*                 </tr>*/
 /*             {% endfor %}*/

@@ -27,29 +27,8 @@ school_student_delete:
     defaults: { _controller: SchoolStudentBundle:Student:delete}
     requirements:
       id: \d+
-
-school_class_add:
-    path:       /Gestion/class/add
-    defaults: { _controller: SchoolStudentBundle:Classe:add}
-
-school_class_edit:
-    path:       /Gestion/class/edit/{id}
-    defaults: { _controller: SchoolStudentBundle:Classe:edit}
-    requirements:
-      id: \d+
-
-school_class_show:
-    path:       /Gestion/class/{id}
-    defaults: { _controller: SchoolStudentBundle:Classe:show}
-    requirements:
-      id: \d+
-
-school_class_list:
-    path:       /Gestion/listClasses
-    defaults: { _controller: SchoolStudentBundle:Classe:list}
-
-school_class_delete:
-    path:       /Gestion/class/{id}/delete
-    defaults: { _controller: SchoolStudentBundle:Classe:delete}
-    requirements:
-      id: \d+
+      
+      
+SchoolStudentBundle_classe:
+    resource: "@SchoolStudentBundle/Resources/config/routing/classe.yml"
+    prefix:   /classe

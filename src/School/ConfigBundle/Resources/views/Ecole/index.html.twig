@@ -1,0 +1,48 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Ecole list</h1>
+
+    <table class="records_list table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom en francais</th>
+                <th>Nom en anglais</th>
+                <th>Devise en francais</th>
+                <th>Devise en anglais</th>
+                <th>Boite postal</th>
+                <th>Détails</th>
+                <th>Modifier</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('config_ecole_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>{{ entity.nomFrancais }}</td>
+                    <td>{{ entity.nomAnglais }}</td>
+                    <td>{{ entity.deviseFrancais }}</td>
+                    <td>{{ entity.deviseAnglais }}</td>
+                    <td>{{ entity.boitePostal }}</td>
+                    <td>
+                        <a href="{{ path('config_ecole_show', { 'id': entity.id }) }}">Voir</a>
+                    </td>
+                    <td>
+                        <a href="{{ path('config_ecole_edit', { 'id': entity.id }) }}">Modifier</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {#
+        <ul>
+        <li>
+            <a href="{{ path('config_ecole_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    #}
+{% endblock %}

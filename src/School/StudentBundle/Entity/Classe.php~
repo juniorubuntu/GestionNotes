@@ -10,8 +10,12 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="School\StudentBundle\Entity\ClasseRepository")
  */
-class Classe
-{
+class Classe {
+
+    public function __toString() {
+        return $this->getNom();
+    }
+
     /**
      * @var integer
      *
@@ -35,14 +39,17 @@ class Classe
      */
     private $abreviation;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Classe")
+     */
+    private $classePere;
 
     /**
      * Get id
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -52,8 +59,7 @@ class Classe
      * @param string $nom
      * @return Classe
      */
-    public function setNom($nom)
-    {
+    public function setNom($nom) {
         $this->nom = $nom;
 
         return $this;
@@ -64,8 +70,52 @@ class Classe
      *
      * @return string 
      */
-    public function getNom()
-    {
+    public function getNom() {
         return $this->nom;
+    }
+
+    /**
+     * Set abreviation
+     *
+     * @param string $abreviation
+     * @return Classe
+     */
+    public function setAbreviation($abreviation) {
+        $this->abreviation = $abreviation;
+
+        return $this;
+    }
+
+    /**
+     * Get abreviation
+     *
+     * @return string 
+     */
+    public function getAbreviation() {
+        return $this->abreviation;
+    }
+
+
+    /**
+     * Set classePere
+     *
+     * @param \School\StudentBundle\Entity\Classe $classePere
+     * @return Classe
+     */
+    public function setClassePere(\School\StudentBundle\Entity\Classe $classePere = null)
+    {
+        $this->classePere = $classePere;
+    
+        return $this;
+    }
+
+    /**
+     * Get classePere
+     *
+     * @return \School\StudentBundle\Entity\Classe 
+     */
+    public function getClassePere()
+    {
+        return $this->classePere;
     }
 }

@@ -1,0 +1,53 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Classe list</h1>
+
+    <table class="records_list table table-striped panel-primary" id="classe">
+        <thead class="panel-heading">
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Classe Père</th>
+                <th>Abreviation</th>
+                <th>Détails</th>
+                <th>Modifier</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('classe_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>{{ entity.nom }}</td>
+                    <td>{{ entity.classePere }}</td>
+                    <td>{{ entity.abreviation }}</td>
+                    <td>
+                        <a href="{{ path('classe_show', { 'id': entity.id }) }}">Voir</a>
+                    </td>
+                    <td>
+                        <a href="{{ path('classe_edit', { 'id': entity.id }) }}">Modifier</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('classe_new') }}">
+                Insérer une classe
+            </a>
+        </li>
+    </ul>
+
+    <script>
+        $('#classe').DataTable({
+            "pagingType": "full_numbers",
+            "lengthMenu": [[10, 20], [10, 20]],
+            "language": {
+                "url": "{{ asset('DataTables/French.json') }}"
+            }
+
+        });
+    </script>
+{% endblock %}

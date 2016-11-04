@@ -1,0 +1,30 @@
+constante:
+    path:     /
+    defaults: { _controller: "SchoolConfigBundle:Constante:index" }
+
+constante_show:
+    path:     /{id}/show
+    defaults: { _controller: "SchoolConfigBundle:Constante:show" }
+
+constante_new:
+    path:     /new
+    defaults: { _controller: "SchoolConfigBundle:Constante:new" }
+
+constante_create:
+    path:     /create
+    defaults: { _controller: "SchoolConfigBundle:Constante:create" }
+    requirements: { _method: post }
+
+constante_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SchoolConfigBundle:Constante:edit" }
+
+constante_update:
+    path:     /{id}/update
+    defaults: { _controller: "SchoolConfigBundle:Constante:update" }
+    requirements: { _method: post|put }
+
+constante_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SchoolConfigBundle:Constante:delete" }
+    requirements: { _method: post|delete }

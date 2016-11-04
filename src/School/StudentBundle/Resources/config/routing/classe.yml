@@ -1,0 +1,30 @@
+classe:
+    path:     /
+    defaults: { _controller: "SchoolStudentBundle:Classe:index" }
+
+classe_show:
+    path:     /{id}/show
+    defaults: { _controller: "SchoolStudentBundle:Classe:show" }
+
+classe_new:
+    path:     /new
+    defaults: { _controller: "SchoolStudentBundle:Classe:new" }
+
+classe_create:
+    path:     /create
+    defaults: { _controller: "SchoolStudentBundle:Classe:create" }
+    requirements: { _method: post }
+
+classe_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SchoolStudentBundle:Classe:edit" }
+
+classe_update:
+    path:     /{id}/update
+    defaults: { _controller: "SchoolStudentBundle:Classe:update" }
+    requirements: { _method: post|put }
+
+classe_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SchoolStudentBundle:Classe:delete" }
+    requirements: { _method: post|delete }

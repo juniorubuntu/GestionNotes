@@ -28,14 +28,10 @@
                     <td>{{ entity.diplomes }}</td>
                     <td>{{ entity.telephone }}</td>
                     <td>
-                        <ul>
-                            <li>
-                                <a href="{{ path('enseignant_show', { 'id': entity.id }) }}">Voir</a>
-                            </li>
-                            <li>
-                                <a href="{{ path('enseignant_edit', { 'id': entity.id }) }}">Modifier</a>
-                            </li>
-                        </ul>
+                        <a href="{{ path('enseignant_show', { 'id': entity.id }) }}">Voir</a>
+                    </td>
+                    <td>
+                        <a href="{{ path('enseignant_edit', { 'id': entity.id }) }}">Modifier</a>
                     </td>
                 </tr>
             {% endfor %}

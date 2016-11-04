@@ -36,19 +36,19 @@ class __TwigTemplate_e62eca47e5b722a6e3871e06353b25706bd5eafa8dd9eaba27c01d58eed
         ";
         // line 13
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 32
+        // line 36
         echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.png"), "html", null, true);
         echo "\" />
     </head>
     <body>
         ";
-        // line 35
+        // line 39
         $this->displayBlock('body', $context, $blocks);
-        // line 38
+        // line 42
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 47
+        // line 52
         echo "    </body>
 </html>
 ";
@@ -81,98 +81,115 @@ class __TwigTemplate_e62eca47e5b722a6e3871e06353b25706bd5eafa8dd9eaba27c01d58eed
         // line 17
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/leaflet.css"), "html", null, true);
         echo "\" />
+        <!-- le fichier main ci dessus surcharge les bouton personnalisés de bootstrap -->
             <link rel=\"stylesheet\" href=\"";
-        // line 18
+        // line 19
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/main.css"), "html", null, true);
+        echo "\">
+            <link rel=\"stylesheet\" href=\"";
+        // line 20
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/styleProjet.css"), "html", null, true);
+        echo "\">
+            <link rel=\"stylesheet\" href=\"";
+        // line 21
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/bootstrap-datepicker.min.css"), "html", null, true);
+        echo "\">
+            <link rel=\"stylesheet\" href=\"";
+        // line 22
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/main.css"), "html", null, true);
         echo "\">
             <script src=\"";
-        // line 19
+        // line 23
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/modernizr-2.6.2-respond-1.1.0.min.js"), "html", null, true);
         echo "\"></script>
             <script type=\"text/javascript\" src=\"";
-        // line 20
+        // line 24
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("DataTables/media/js/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script>
             <script type=\"text/javascript\" src=\"";
-        // line 21
+        // line 25
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("DataTables/media/js/dataTables.bootstrap.min.js"), "html", null, true);
         echo "\"></script>
             <script type=\"text/javascript\" src=\"";
-        // line 22
+        // line 26
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("DataTables/extensions/Buttons/js/dataTables.buttons.min.js"), "html", null, true);
         echo "\"></script>
             <script type=\"text/javascript\" src=\"";
-        // line 23
+        // line 27
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("DataTables/extensions/Buttons/js/buttons.bootstrap.min.js"), "html", null, true);
         echo "\"></script>
             <script type=\"text/javascript\" src=\"";
-        // line 24
+        // line 28
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("DataTables/extensions/Buttons/js/buttons.flash.min.js"), "html", null, true);
         echo "\"></script>
             <script type=\"text/javascript\" src=\"";
-        // line 25
+        // line 29
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("DataTables/extensions/Buttons/js/buttons.html5.min.js"), "html", null, true);
         echo "\"></script>
             <script type=\"text/javascript\" src=\"";
-        // line 26
+        // line 30
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("DataTables/extensions/Buttons/js/buttons.print.min.js"), "html", null, true);
         echo "\"></script>
             <script type=\"text/javascript\" src=\"";
-        // line 27
+        // line 31
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("DataTables/extensions/Buttons/js/buttons.colVis.min.js"), "html", null, true);
         echo "\"></script>
             <script type=\"text/javascript\" src=\"";
-        // line 28
+        // line 32
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("DataTables/jszip.min.js"), "html", null, true);
         echo "\"></script>
             <script type=\"text/javascript\" src=\"";
-        // line 29
+        // line 33
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("DataTables/pdfmake.min.js"), "html", null, true);
         echo "\"></script>
             <script type=\"text/javascript\" src=\"";
-        // line 30
+        // line 34
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("DataTables/vfs_fonts.js"), "html", null, true);
         echo "\"></script>
         ";
     }
 
-    // line 35
+    // line 39
     public function block_body($context, array $blocks = array())
     {
-        // line 36
+        // line 40
         echo "
         ";
     }
 
-    // line 38
+    // line 42
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 39
+        // line 43
         echo "            <script>window.jQuery || document.write('<script src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/jquery-1.9.1.min.js"), "html", null, true);
         echo "\"><\\/script>')</script>
             <script src=\"";
-        // line 40
+        // line 44
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 41
+        // line 45
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/bootstrap-datepicker.min.js"), "html", null, true);
+        echo "\"></script>
+            <script src=\"";
+        // line 46
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/jquery.fitvids.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 42
+        // line 47
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/jquery.sequence-min.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 43
+        // line 48
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/jquery.bxslider.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 44
+        // line 49
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/main-menu.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 45
+        // line 50
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/template.js"), "html", null, true);
         echo "\"></script>
         ";
@@ -190,7 +207,7 @@ class __TwigTemplate_e62eca47e5b722a6e3871e06353b25706bd5eafa8dd9eaba27c01d58eed
 
     public function getDebugInfo()
     {
-        return array (  176 => 45,  172 => 44,  168 => 43,  164 => 42,  160 => 41,  156 => 40,  151 => 39,  148 => 38,  143 => 36,  140 => 35,  134 => 30,  130 => 29,  126 => 28,  122 => 27,  118 => 26,  114 => 25,  110 => 24,  106 => 23,  102 => 22,  98 => 21,  94 => 20,  90 => 19,  86 => 18,  82 => 17,  78 => 16,  74 => 15,  69 => 14,  66 => 13,  61 => 10,  58 => 9,  52 => 47,  49 => 38,  47 => 35,  40 => 32,  38 => 13,  35 => 12,  33 => 9,  23 => 1,);
+        return array (  193 => 50,  189 => 49,  185 => 48,  181 => 47,  177 => 46,  173 => 45,  169 => 44,  164 => 43,  161 => 42,  156 => 40,  153 => 39,  147 => 34,  143 => 33,  139 => 32,  135 => 31,  131 => 30,  127 => 29,  123 => 28,  119 => 27,  115 => 26,  111 => 25,  107 => 24,  103 => 23,  99 => 22,  95 => 21,  91 => 20,  87 => 19,  82 => 17,  78 => 16,  74 => 15,  69 => 14,  66 => 13,  61 => 10,  58 => 9,  52 => 52,  49 => 42,  47 => 39,  40 => 36,  38 => 13,  35 => 12,  33 => 9,  23 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -210,6 +227,10 @@ class __TwigTemplate_e62eca47e5b722a6e3871e06353b25706bd5eafa8dd9eaba27c01d58eed
 /*             <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">*/
 /*             <link rel="stylesheet" href="{{asset('css/icomoon-social.css')}}">*/
 /*             <link rel="stylesheet" href="{{asset('css/leaflet.css')}}" />*/
+/*         <!-- le fichier main ci dessus surcharge les bouton personnalisés de bootstrap -->*/
+/*             <link rel="stylesheet" href="{{asset('css/main.css')}}">*/
+/*             <link rel="stylesheet" href="{{asset('css/styleProjet.css')}}">*/
+/*             <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker.min.css')}}">*/
 /*             <link rel="stylesheet" href="{{asset('css/main.css')}}">*/
 /*             <script src="{{asset('js/modernizr-2.6.2-respond-1.1.0.min.js')}}"></script>*/
 /*             <script type="text/javascript" src="{{ asset('DataTables/media/js/jquery.dataTables.min.js') }}"></script>*/
@@ -233,6 +254,7 @@ class __TwigTemplate_e62eca47e5b722a6e3871e06353b25706bd5eafa8dd9eaba27c01d58eed
 /*         {% block javascripts %}*/
 /*             <script>window.jQuery || document.write('<script src="{{asset('js/jquery-1.9.1.min.js')}}"><\/script>')</script>*/
 /*             <script src="{{asset('js/bootstrap.min.js')}}"></script>*/
+/*             <script src="{{asset('js/bootstrap-datepicker.min.js')}}"></script>*/
 /*             <script src="{{asset('js/jquery.fitvids.js')}}"></script>*/
 /*             <script src="{{asset('js/jquery.sequence-min.js')}}"></script>*/
 /*             <script src="{{asset('js/jquery.bxslider.js')}}"></script>*/

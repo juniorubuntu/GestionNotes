@@ -1,0 +1,48 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Ecole</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Nomfrancais</th>
+                <td>{{ entity.nomFrancais }}</td>
+            </tr>
+            <tr>
+                <th>Nomanglais</th>
+                <td>{{ entity.nomAnglais }}</td>
+            </tr>
+            <tr>
+                <th>Devisefrancais</th>
+                <td>{{ entity.deviseFrancais }}</td>
+            </tr>
+            <tr>
+                <th>Deviseanglais</th>
+                <td>{{ entity.deviseAnglais }}</td>
+            </tr>
+            <tr>
+                <th>Boitepostal</th>
+                <td>{{ entity.boitePostal }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('config_ecole') }}">
+                Retourner à la liste
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('config_ecole_edit', { 'id': entity.id }) }}">
+                Modifier
+            </a>
+        </li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
+{% endblock %}

@@ -3,5 +3,9 @@ SchoolMatiereBundle_categorie:
     prefix:   /categorie
     
 SchoolMatiereBundle_matiere:
-        resource: "@SchoolMatiereBundle/Resources/config/routing/matiere.yml"
-        prefix:   /matiere
+    resource: "@SchoolMatiereBundle/Resources/config/routing/matiere.yml"
+    prefix:   /matiere
+        
+SchoolMatiereBundle_estdispense:
+    resource: "@SchoolMatiereBundle/Resources/config/routing/estdispense.yml"
+    prefix:   /estdispense

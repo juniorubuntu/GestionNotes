@@ -2,7 +2,6 @@
 
 namespace School\MatiereBundle\Entity;
 
-use School\TeacherBundle\Entity\Matiere;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 

@@ -1,3 +1,11 @@
 school_config_homepage:
     path:     /hello/{name}
     defaults: { _controller: SchoolConfigBundle:Default:index }
+
+SchoolConfigBundle_constante:
+    resource: "@SchoolConfigBundle/Resources/config/routing/constante.yml"
+    prefix:   config/constante
+
+SchoolConfigBundle_config_ecole:
+    resource: "@SchoolConfigBundle/Resources/config/routing/ecole.yml"
+    prefix:   /config/ecole

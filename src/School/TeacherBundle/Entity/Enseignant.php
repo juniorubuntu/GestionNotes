@@ -13,6 +13,10 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Enseignant {
 
+    public function __toString() {
+        return $this->getNom();
+    }
+
     /**
      * @var integer
      *
@@ -71,17 +75,15 @@ class Enseignant {
         return $this->id;
     }
 
-
     /**
      * Set nom
      *
      * @param string $nom
      * @return Enseignant
      */
-    public function setNom($nom)
-    {
+    public function setNom($nom) {
         $this->nom = $nom;
-    
+
         return $this;
     }
 
@@ -90,8 +92,7 @@ class Enseignant {
      *
      * @return string 
      */
-    public function getNom()
-    {
+    public function getNom() {
         return $this->nom;
     }
 
@@ -101,10 +102,9 @@ class Enseignant {
      * @param integer $anciennete
      * @return Enseignant
      */
-    public function setAnciennete($anciennete)
-    {
+    public function setAnciennete($anciennete) {
         $this->anciennete = $anciennete;
-    
+
         return $this;
     }
 
@@ -113,8 +113,7 @@ class Enseignant {
      *
      * @return integer 
      */
-    public function getAnciennete()
-    {
+    public function getAnciennete() {
         return $this->anciennete;
     }
 
@@ -124,10 +123,9 @@ class Enseignant {
      * @param string $matricule
      * @return Enseignant
      */
-    public function setMatricule($matricule)
-    {
+    public function setMatricule($matricule) {
         $this->matricule = $matricule;
-    
+
         return $this;
     }
 
@@ -136,8 +134,7 @@ class Enseignant {
      *
      * @return string 
      */
-    public function getMatricule()
-    {
+    public function getMatricule() {
         return $this->matricule;
     }
 
@@ -147,10 +144,9 @@ class Enseignant {
      * @param string $grade
      * @return Enseignant
      */
-    public function setGrade($grade)
-    {
+    public function setGrade($grade) {
         $this->grade = $grade;
-    
+
         return $this;
     }
 
@@ -159,8 +155,7 @@ class Enseignant {
      *
      * @return string 
      */
-    public function getGrade()
-    {
+    public function getGrade() {
         return $this->grade;
     }
 
@@ -170,10 +165,9 @@ class Enseignant {
      * @param string $diplomes
      * @return Enseignant
      */
-    public function setDiplomes($diplomes)
-    {
+    public function setDiplomes($diplomes) {
         $this->diplomes = $diplomes;
-    
+
         return $this;
     }
 
@@ -182,8 +176,7 @@ class Enseignant {
      *
      * @return string 
      */
-    public function getDiplomes()
-    {
+    public function getDiplomes() {
         return $this->diplomes;
     }
 
@@ -193,10 +186,9 @@ class Enseignant {
      * @param string $telephone
      * @return Enseignant
      */
-    public function setTelephone($telephone)
-    {
+    public function setTelephone($telephone) {
         $this->telephone = $telephone;
-    
+
         return $this;
     }
 
@@ -205,8 +197,8 @@ class Enseignant {
      *
      * @return string 
      */
-    public function getTelephone()
-    {
+    public function getTelephone() {
         return $this->telephone;
     }
+
 }

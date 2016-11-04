@@ -1,0 +1,52 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Constante list</h1>
+
+    <table class="records_list table table-striped">
+        <thead class="alert-info">
+            <tr>
+                <th>Id</th>
+                <th>Pays en francais</th>
+                <th>Pays en anglais</th>
+                <th>Ministère en francais</th>
+                <th>Ministère en anglais</th>
+                <th>Devise en francais</th>
+                <th>Devise en anglais</th>
+                <th>Détails</th>
+                <th>Modifier</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('constante_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>{{ entity.paysFrancais }}</td>
+                    <td>{{ entity.paysAnglais }}</td>
+                    <td>{{ entity.ministereFrancais }}</td>
+                    <td>{{ entity.ministereAnglais }}</td>
+                    <td>{{ entity.deviseFrancais }}</td>
+                    <td>{{ entity.deviseAnglais }}</td>
+                    <td>
+                        <a href="{{ path('constante_show', { 'id': entity.id }) }}">Voir</a>
+                    </td>
+                    <td>
+                        <a href="{{ path('constante_edit', { 'id': entity.id }) }}">Modifier</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        {#
+        <li>
+            
+            <a href="{{ path('constante_new') }}">
+                
+            </a>
+            
+        </li>
+        #}
+    </ul>
+{% endblock %}

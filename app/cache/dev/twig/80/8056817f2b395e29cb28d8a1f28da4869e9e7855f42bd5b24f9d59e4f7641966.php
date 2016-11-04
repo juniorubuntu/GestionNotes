@@ -1,6 +1,6 @@
 <?php
 
-/* WebProfilerBundle:Collector:events.html.twig */
+/* @WebProfiler/Collector/events.html.twig */
 class __TwigTemplate_377c87322068151365eef01785abee0e843ebcb3a71142fd6f4ed1219c08f0ee extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,7 +8,7 @@ class __TwigTemplate_377c87322068151365eef01785abee0e843ebcb3a71142fd6f4ed1219c0
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("@WebProfiler/Profiler/layout.html.twig", "WebProfilerBundle:Collector:events.html.twig", 1);
+        $this->parent = $this->loadTemplate("@WebProfiler/Profiler/layout.html.twig", "@WebProfiler/Collector/events.html.twig", 1);
         $this->blocks = array(
             'menu' => array($this, 'block_menu'),
             'panel' => array($this, 'block_panel'),
@@ -24,7 +24,7 @@ class __TwigTemplate_377c87322068151365eef01785abee0e843ebcb3a71142fd6f4ed1219c0
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 3
-        $context["__internal_cfe0416f43b2a196ef39f2c843a658c826295e29b674fea2f9b116674facc0bc"] = $this;
+        $context["__internal_c775a5331e8e5b721100734b1505310f5fdc24625b6c4f8e25765a5b40379bc6"] = $this;
         // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
@@ -85,7 +85,7 @@ class __TwigTemplate_377c87322068151365eef01785abee0e843ebcb3a71142fd6f4ed1219c0
             echo "</code></td>
                 <td><code>";
             // line 34
-            echo $context["__internal_cfe0416f43b2a196ef39f2c843a658c826295e29b674fea2f9b116674facc0bc"]->getdisplay_listener($context["listener"]);
+            echo $context["__internal_c775a5331e8e5b721100734b1505310f5fdc24625b6c4f8e25765a5b40379bc6"]->getdisplay_listener($context["listener"]);
             echo "</code></td>
             </tr>
         ";
@@ -123,7 +123,7 @@ class __TwigTemplate_377c87322068151365eef01785abee0e843ebcb3a71142fd6f4ed1219c0
                 echo "</code></td>
                     <td><code>";
                 // line 51
-                echo $context["__internal_cfe0416f43b2a196ef39f2c843a658c826295e29b674fea2f9b116674facc0bc"]->getdisplay_listener($this->getAttribute((isset($context["listeners"]) ? $context["listeners"] : $this->getContext($context, "listeners")), $context["listener"], array(), "array"));
+                echo $context["__internal_c775a5331e8e5b721100734b1505310f5fdc24625b6c4f8e25765a5b40379bc6"]->getdisplay_listener($this->getAttribute((isset($context["listeners"]) ? $context["listeners"] : $this->getContext($context, "listeners")), $context["listener"], array(), "array"));
                 echo "</code></td>
                 </tr>
             ";
@@ -221,7 +221,7 @@ class __TwigTemplate_377c87322068151365eef01785abee0e843ebcb3a71142fd6f4ed1219c0
 
     public function getTemplateName()
     {
-        return "WebProfilerBundle:Collector:events.html.twig";
+        return "@WebProfiler/Collector/events.html.twig";
     }
 
     public function isTraitable()

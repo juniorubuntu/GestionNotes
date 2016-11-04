@@ -1,0 +1,30 @@
+config_ecole:
+    path:     /
+    defaults: { _controller: "SchoolConfigBundle:Ecole:index" }
+
+config_ecole_show:
+    path:     /{id}/show
+    defaults: { _controller: "SchoolConfigBundle:Ecole:show" }
+
+config_ecole_new:
+    path:     /new
+    defaults: { _controller: "SchoolConfigBundle:Ecole:new" }
+
+config_ecole_create:
+    path:     /create
+    defaults: { _controller: "SchoolConfigBundle:Ecole:create" }
+    requirements: { _method: post }
+
+config_ecole_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SchoolConfigBundle:Ecole:edit" }
+
+config_ecole_update:
+    path:     /{id}/update
+    defaults: { _controller: "SchoolConfigBundle:Ecole:update" }
+    requirements: { _method: post|put }
+
+config_ecole_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SchoolConfigBundle:Ecole:delete" }
+    requirements: { _method: post|delete }
