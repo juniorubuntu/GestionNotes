@@ -1,0 +1,30 @@
+categorie:
+    path:     /
+    defaults: { _controller: "SchoolMatiereBundle:Categorie:index" }
+
+categorie_show:
+    path:     /{id}/show
+    defaults: { _controller: "SchoolMatiereBundle:Categorie:show" }
+
+categorie_new:
+    path:     /new
+    defaults: { _controller: "SchoolMatiereBundle:Categorie:new" }
+
+categorie_create:
+    path:     /create
+    defaults: { _controller: "SchoolMatiereBundle:Categorie:create" }
+    requirements: { _method: post }
+
+categorie_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SchoolMatiereBundle:Categorie:edit" }
+
+categorie_update:
+    path:     /{id}/update
+    defaults: { _controller: "SchoolMatiereBundle:Categorie:update" }
+    requirements: { _method: post|put }
+
+categorie_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SchoolMatiereBundle:Categorie:delete" }
+    requirements: { _method: post|delete }

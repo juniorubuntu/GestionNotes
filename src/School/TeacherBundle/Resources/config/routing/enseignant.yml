@@ -1,0 +1,30 @@
+enseignant:
+    path:     /
+    defaults: { _controller: "SchoolTeacherBundle:Enseignant:index" }
+
+enseignant_show:
+    path:     /{id}/show
+    defaults: { _controller: "SchoolTeacherBundle:Enseignant:show" }
+
+enseignant_new:
+    path:     /new
+    defaults: { _controller: "SchoolTeacherBundle:Enseignant:new" }
+
+enseignant_create:
+    path:     /create
+    defaults: { _controller: "SchoolTeacherBundle:Enseignant:create" }
+    requirements: { _method: post }
+
+enseignant_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SchoolTeacherBundle:Enseignant:edit" }
+
+enseignant_update:
+    path:     /{id}/update
+    defaults: { _controller: "SchoolTeacherBundle:Enseignant:update" }
+    requirements: { _method: post|put }
+
+enseignant_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SchoolTeacherBundle:Enseignant:delete" }
+    requirements: { _method: post|delete }

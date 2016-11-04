@@ -2802,7 +2802,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>581b3e054ba17</argument>
+            <argument>581c35404b115</argument>
           </service>
         </argument>
       </argument>
@@ -3120,7 +3120,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>581b3e054ba17</argument>
+            <argument>581c35404b115</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>
@@ -3535,6 +3535,8 @@
               <argument key="FOSUserBundle">FOS\UserBundle\Entity</argument>
               <argument key="SchoolUserBundle">School\UserBundle\Entity</argument>
               <argument key="SchoolTeacherBundle">School\TeacherBundle\Entity</argument>
+              <argument key="SchoolMatiereBundle">School\MatiereBundle\Entity</argument>
+              <argument key="SchoolNoteBundle">School\NoteBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -3586,6 +3588,8 @@
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
                         <argument>/var/www/html/GestionNotes/src/School/UserBundle/Entity</argument>
+                        <argument>/var/www/html/GestionNotes/src/School/TeacherBundle/Entity</argument>
+                        <argument>/var/www/html/GestionNotes/src/School/MatiereBundle/Entity</argument>
                       </argument>
                     </service>
                   </argument>
@@ -3593,16 +3597,42 @@
                 </call>
                 <call method="addDriver">
                   <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>/var/www/html/GestionNotes/src/School/UserBundle/Entity</argument>
+                        <argument>/var/www/html/GestionNotes/src/School/TeacherBundle/Entity</argument>
+                        <argument>/var/www/html/GestionNotes/src/School/MatiereBundle/Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>School\TeacherBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>/var/www/html/GestionNotes/src/School/UserBundle/Entity</argument>
+                        <argument>/var/www/html/GestionNotes/src/School/TeacherBundle/Entity</argument>
+                        <argument>/var/www/html/GestionNotes/src/School/MatiereBundle/Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>School\MatiereBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
                     <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
                       <argument type="collection">
-                        <argument key="/var/www/html/GestionNotes/src/School/TeacherBundle/Resources/config/doctrine">School\TeacherBundle\Entity</argument>
+                        <argument key="/var/www/html/GestionNotes/src/School/NoteBundle/Resources/config/doctrine">School\NoteBundle\Entity</argument>
                       </argument>
                       <call method="setGlobalBasename">
                         <argument>mapping</argument>
                       </call>
                     </service>
                   </argument>
-                  <argument>School\TeacherBundle\Entity</argument>
+                  <argument>School\NoteBundle\Entity</argument>
                 </call>
               </service>
             </argument>

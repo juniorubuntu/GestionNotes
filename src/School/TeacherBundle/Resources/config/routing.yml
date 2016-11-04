@@ -1,3 +1,3 @@
-school_teacher_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: SchoolTeacherBundle:Default:index }
+SchoolTeacherBundle_enseignant:
+    resource: "@SchoolTeacherBundle/Resources/config/routing/enseignant.yml"
+    prefix:   /enseignant

@@ -1,0 +1,52 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Détail des informations sur enseignant</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ entity.nom }}</td>
+            </tr>
+            <tr>
+                <th>Anciennete</th>
+                <td>{{ entity.anciennete }}</td>
+            </tr>
+            <tr>
+                <th>Matricule</th>
+                <td>{{ entity.matricule }}</td>
+            </tr>
+            <tr>
+                <th>Grade</th>
+                <td>{{ entity.grade }}</td>
+            </tr>
+            <tr>
+                <th>Diplomes</th>
+                <td>{{ entity.diplomes }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ entity.telephone }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('enseignant') }}">
+                Retourner à la liste
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('enseignant_edit', { 'id': entity.id }) }}">
+                Modifier
+            </a>
+        </li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
+{% endblock %}

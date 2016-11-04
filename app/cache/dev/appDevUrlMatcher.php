@@ -131,21 +131,191 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'school_config_homepage')), array (  '_controller' => 'School\\ConfigBundle\\Controller\\DefaultController::indexAction',));
             }
 
-            // school_matiere_homepage
-            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'school_matiere_homepage')), array (  '_controller' => 'School\\MatiereBundle\\Controller\\DefaultController::indexAction',));
+        }
+
+        if (0 === strpos($pathinfo, '/categorie')) {
+            // categorie
+            if (rtrim($pathinfo, '/') === '/categorie') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'categorie');
+                }
+
+                return array (  '_controller' => 'School\\MatiereBundle\\Controller\\CategorieController::indexAction',  '_route' => 'categorie',);
             }
 
-            // school_teacher_homepage
-            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'school_teacher_homepage')), array (  '_controller' => 'School\\TeacherBundle\\Controller\\DefaultController::indexAction',));
+            // categorie_show
+            if (preg_match('#^/categorie/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'categorie_show')), array (  '_controller' => 'School\\MatiereBundle\\Controller\\CategorieController::showAction',));
             }
 
-            // school_student_homepage
-            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'school_student_homepage')), array (  '_controller' => 'School\\StudentBundle\\Controller\\DefaultController::indexAction',));
+            // categorie_new
+            if ($pathinfo === '/categorie/new') {
+                return array (  '_controller' => 'School\\MatiereBundle\\Controller\\CategorieController::newAction',  '_route' => 'categorie_new',);
             }
 
+            // categorie_create
+            if ($pathinfo === '/categorie/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_categorie_create;
+                }
+
+                return array (  '_controller' => 'School\\MatiereBundle\\Controller\\CategorieController::createAction',  '_route' => 'categorie_create',);
+            }
+            not_categorie_create:
+
+            // categorie_edit
+            if (preg_match('#^/categorie/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'categorie_edit')), array (  '_controller' => 'School\\MatiereBundle\\Controller\\CategorieController::editAction',));
+            }
+
+            // categorie_update
+            if (preg_match('#^/categorie/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_categorie_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'categorie_update')), array (  '_controller' => 'School\\MatiereBundle\\Controller\\CategorieController::updateAction',));
+            }
+            not_categorie_update:
+
+            // categorie_delete
+            if (preg_match('#^/categorie/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_categorie_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'categorie_delete')), array (  '_controller' => 'School\\MatiereBundle\\Controller\\CategorieController::deleteAction',));
+            }
+            not_categorie_delete:
+
+        }
+
+        if (0 === strpos($pathinfo, '/matiere')) {
+            // matiere
+            if (rtrim($pathinfo, '/') === '/matiere') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'matiere');
+                }
+
+                return array (  '_controller' => 'School\\MatiereBundle\\Controller\\MatiereController::indexAction',  '_route' => 'matiere',);
+            }
+
+            // matiere_show
+            if (preg_match('#^/matiere/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'matiere_show')), array (  '_controller' => 'School\\MatiereBundle\\Controller\\MatiereController::showAction',));
+            }
+
+            // matiere_new
+            if ($pathinfo === '/matiere/new') {
+                return array (  '_controller' => 'School\\MatiereBundle\\Controller\\MatiereController::newAction',  '_route' => 'matiere_new',);
+            }
+
+            // matiere_create
+            if ($pathinfo === '/matiere/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_matiere_create;
+                }
+
+                return array (  '_controller' => 'School\\MatiereBundle\\Controller\\MatiereController::createAction',  '_route' => 'matiere_create',);
+            }
+            not_matiere_create:
+
+            // matiere_edit
+            if (preg_match('#^/matiere/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'matiere_edit')), array (  '_controller' => 'School\\MatiereBundle\\Controller\\MatiereController::editAction',));
+            }
+
+            // matiere_update
+            if (preg_match('#^/matiere/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_matiere_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'matiere_update')), array (  '_controller' => 'School\\MatiereBundle\\Controller\\MatiereController::updateAction',));
+            }
+            not_matiere_update:
+
+            // matiere_delete
+            if (preg_match('#^/matiere/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_matiere_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'matiere_delete')), array (  '_controller' => 'School\\MatiereBundle\\Controller\\MatiereController::deleteAction',));
+            }
+            not_matiere_delete:
+
+        }
+
+        if (0 === strpos($pathinfo, '/enseignant')) {
+            // enseignant
+            if (rtrim($pathinfo, '/') === '/enseignant') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'enseignant');
+                }
+
+                return array (  '_controller' => 'School\\TeacherBundle\\Controller\\EnseignantController::indexAction',  '_route' => 'enseignant',);
+            }
+
+            // enseignant_show
+            if (preg_match('#^/enseignant/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'enseignant_show')), array (  '_controller' => 'School\\TeacherBundle\\Controller\\EnseignantController::showAction',));
+            }
+
+            // enseignant_new
+            if ($pathinfo === '/enseignant/new') {
+                return array (  '_controller' => 'School\\TeacherBundle\\Controller\\EnseignantController::newAction',  '_route' => 'enseignant_new',);
+            }
+
+            // enseignant_create
+            if ($pathinfo === '/enseignant/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_enseignant_create;
+                }
+
+                return array (  '_controller' => 'School\\TeacherBundle\\Controller\\EnseignantController::createAction',  '_route' => 'enseignant_create',);
+            }
+            not_enseignant_create:
+
+            // enseignant_edit
+            if (preg_match('#^/enseignant/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'enseignant_edit')), array (  '_controller' => 'School\\TeacherBundle\\Controller\\EnseignantController::editAction',));
+            }
+
+            // enseignant_update
+            if (preg_match('#^/enseignant/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_enseignant_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'enseignant_update')), array (  '_controller' => 'School\\TeacherBundle\\Controller\\EnseignantController::updateAction',));
+            }
+            not_enseignant_update:
+
+            // enseignant_delete
+            if (preg_match('#^/enseignant/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_enseignant_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'enseignant_delete')), array (  '_controller' => 'School\\TeacherBundle\\Controller\\EnseignantController::deleteAction',));
+            }
+            not_enseignant_delete:
+
+        }
+
+        // school_student_homepage
+        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'school_student_homepage')), array (  '_controller' => 'School\\StudentBundle\\Controller\\DefaultController::indexAction',));
         }
 
         // school_gestion_homepage

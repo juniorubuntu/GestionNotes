@@ -1,3 +1,7 @@
-school_matiere_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: SchoolMatiereBundle:Default:index }
+SchoolMatiereBundle_categorie:
+    resource: "@SchoolMatiereBundle/Resources/config/routing/categorie.yml"
+    prefix:   /categorie
+    
+SchoolMatiereBundle_matiere:
+        resource: "@SchoolMatiereBundle/Resources/config/routing/matiere.yml"
+        prefix:   /matiere
