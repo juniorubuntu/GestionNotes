@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h2 class="page-header">{{ student.nom}}</h2>
+	<div class="row">
+	{% if student.photo is not null %}
+		<img class="col-md-3" src="{{ asset( student.photo.webPath) }}" alt="{{ student.photo.alt }}"/>
+	{% endif %}
+</div><br>
+	<ul class="list-group">
+		<li class="list-group-item">Category: {{ student.matricule }}</li>
+		<li class="list-group-item">Priority: {{ student.nomPere }}</li>
+		<li class="list-group-item"><strong>Due Date: {{ student.dateNaissance|date() }}</strong></li>
+		<li class="list-group-item">Lieu de Naissance: {{ student.lieuNaissance }}</li>
+	</ul>
+	<p>
+		{{ student.personneAcontacter }}
+	</p>
+	<a href="{{ path('school_gestion_homepage')}}" class="btn btn-primary">
+			<i class="glyphicon glyphicon-chevron-left"></i>
+			Retour
+		</a>
+{% endblock %}

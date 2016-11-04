@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h2 class="page-header">List of the Classes</h2>
+<table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+      	{% for classe in classes %}
+        <tr>
+          <th scope="row">{{ classe.id}}</th>
+          <td>{{ classe.nom }}</td>
+          <td>
+          	<a href="{{ path('school_class_show', {'id':classe.id})}}" class="btn btn-default">
+      Details
+    </a>
+			<a href="{{ path('school_class_edit' , {'id':classe.id})}}" class="btn btn-default">
+      Edit
+    </a>
+			<a href="{{ path('school_class_delete' , {'id':classe.id})}}" class="btn btn-danger">
+      Delete
+    </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+{% endblock %}
