@@ -43,37 +43,10 @@ class __TwigTemplate_cffa5f45dad579bbdf0552605e119a7cd7dbfab08667e0a32bd042233e8
     <p>
         Pour un début faisons des pages simples utilisant les couleurs par défaut.
     </p>
-    <p><a href=\"#\">";
+    <div class=\"footer footer-copyright\" style=\"bottom: 0; position: fixed; width: 100%\"><a href=\"#\">";
         // line 12
         echo twig_escape_filter($this->env, (isset($context["webmaster"]) ? $context["webmaster"] : $this->getContext($context, "webmaster")), "html", null, true);
-        echo "</a></p>
-
-    <h3>Test d'implémentton du module StudentBundle</h3>
-    <a href=\"";
-        // line 15
-        echo $this->env->getExtension('routing')->getPath("school_student_add");
-        echo "\" class=\"btn btn-primary\">
-\t\t\tAdd a new student
-\t\t</a>
-\t\t<a href=\"";
-        // line 18
-        echo $this->env->getExtension('routing')->getPath("school_student_list");
-        echo "\" class=\"btn btn-primary\">
-\t\t\tList of students
-\t\t\t<i class=\"glyphicon glyphicon-chevron-right\"></i>
-\t\t</a><br><br>
-        <a href=\"";
-        // line 22
-        echo $this->env->getExtension('routing')->getPath("school_class_add");
-        echo "\" class=\"btn btn-primary\">
-            Add a new class
-        </a>
-        <a href=\"";
-        // line 25
-        echo $this->env->getExtension('routing')->getPath("school_class_list");
-        echo "\" class=\"btn btn-primary\">
-            List of classes
-        </a>
+        echo "</a></div>
 ";
     }
 
@@ -89,7 +62,7 @@ class __TwigTemplate_cffa5f45dad579bbdf0552605e119a7cd7dbfab08667e0a32bd042233e8
 
     public function getDebugInfo()
     {
-        return array (  73 => 25,  67 => 22,  60 => 18,  54 => 15,  48 => 12,  40 => 6,  37 => 5,  32 => 3,  29 => 2,  11 => 1,);
+        return array (  48 => 12,  40 => 6,  37 => 5,  32 => 3,  29 => 2,  11 => 1,);
     }
 }
 /* {% extends "::base.html.twig" %}*/
@@ -103,20 +76,5 @@ class __TwigTemplate_cffa5f45dad579bbdf0552605e119a7cd7dbfab08667e0a32bd042233e8
 /*     <p>*/
 /*         Pour un début faisons des pages simples utilisant les couleurs par défaut.*/
 /*     </p>*/
-/*     <p><a href="#">{{webmaster}}</a></p>*/
-/* */
-/*     <h3>Test d'implémentton du module StudentBundle</h3>*/
-/*     <a href="{{ path('school_student_add')}}" class="btn btn-primary">*/
-/* 			Add a new student*/
-/* 		</a>*/
-/* 		<a href="{{ path('school_student_list')}}" class="btn btn-primary">*/
-/* 			List of students*/
-/* 			<i class="glyphicon glyphicon-chevron-right"></i>*/
-/* 		</a><br><br>*/
-/*         <a href="{{ path('school_class_add')}}" class="btn btn-primary">*/
-/*             Add a new class*/
-/*         </a>*/
-/*         <a href="{{ path('school_class_list')}}" class="btn btn-primary">*/
-/*             List of classes*/
-/*         </a>*/
+/*     <div class="footer footer-copyright" style="bottom: 0; position: fixed; width: 100%"><a href="#">{{webmaster}}</a></div>*/
 /* {% endblock %}*/
