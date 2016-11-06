@@ -1,7 +1,7 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Constante list</h1>
+    <h2>Informations régionnale</h2>
 
     <table class="records_list table table-striped">
         <thead class="alert-info">
@@ -49,4 +49,5 @@
         </li>
         #}
     </ul>
+    <a href="{{ path('config_ecole_new')}}" class="btn green">Suivant</a>
 {% endblock %}

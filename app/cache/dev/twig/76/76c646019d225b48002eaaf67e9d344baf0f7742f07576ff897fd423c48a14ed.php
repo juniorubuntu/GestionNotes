@@ -16,138 +16,120 @@ class __TwigTemplate_52aba0c6df4236845eccf6d2cbc47362e8f0ca239a3a21807ea090ff75a
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<h2><marquee BEHAVIOR=\"alternate\">Créer gratuitement votre compte pour profiter de divers avantages</marquee></h2>
-<div class=\"col-md-7\">
-    <div class=\"\">
-        <div class=\"\">
-            <div class=\"\">
-                <div class=\"\">
-                    <ol style=\"\">
-                        <li>Discussions en ligne avec des boutiques et responsables des super marchés</li>
-                        <li>Réductions sur vos achats</li>
-                        <li>Etre informé des nouveautés</li>
-                        <li>Participer aux forums et ventes au en chers en ligne</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class=\"col-md-7 social-login\">
-        <p>Vous pouvez utiliser facebook ou twitter pour vous enregistrer !</p>
-        <div class=\"social-login-buttons\">
-            <a href=\"#\" class=\"btn-facebook-login\">Avec Facebook</a>
-            <a href=\"#\" class=\"btn-twitter-login\">Avec Twitter</a>
-        </div>
-    </div>
-</div>
-<a href=\"";
-        // line 25
-        echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
-        echo "\">
-    <button class=\"btn btn-primary col-md-2 active\"><span class=\"glyphicon glyphicon-log-in\"></span> J'ai déjà un compte</button>
-</a>
-<form action=\"";
-        // line 28
+        echo "<div class=\"col-md-12\">
+    <h2>Créer votre compte</h2>
+    <form action=\"";
+        // line 3
         echo $this->env->getExtension('routing')->getPath("fos_user_registration_register");
         echo "\" ";
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
         echo " method=\"POST\" class=\"col-md-5\">
 
-    ";
-        // line 30
+        ";
+        // line 5
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("method" => "POST", "attr" => array("class" => "register")));
         echo "
 
-    <table class=\"table table-hover\">
-        <tr>
-            <td>
-                ";
-        // line 35
+        <table class=\"table table-hover\">
+            <tr>
+                <td>
+                    <a href=\"";
+        // line 10
+        echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
+        echo "\" class=\"btn active\">
+                        <span class=\"glyphicon glyphicon-log-in\"></span> J'ai déjà un compte
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    ";
+        // line 17
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "username", array()), 'label');
         echo "
-            </td>
-            <td>
-                ";
-        // line 38
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "username", array()), 'widget');
+                </td>
+                <td>
+                    ";
+        // line 20
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "username", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "Ex: junior")));
         echo "
-                ";
-        // line 39
+                    ";
+        // line 21
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "username", array()), 'errors');
         echo "
-            </td>
-        </tr>
-        <tr>
-            <td>
-                ";
-        // line 44
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    ";
+        // line 26
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email", array()), 'label');
         echo "
-            </td>
-            <td>
-                ";
-        // line 47
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email", array()), 'widget');
+                </td>
+                <td>
+                    ";
+        // line 29
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "Ex: juniorubuntu@gmail.com")));
         echo "
-                ";
-        // line 48
+                    ";
+        // line 30
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email", array()), 'errors');
         echo "
 
-            </td>
-        </tr>
-        <tr>
-            <td>
-                ";
-        // line 54
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    ";
+        // line 36
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "first", array()), 'label');
         echo "
-            </td>
-            <td>
-                ";
-        // line 57
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "first", array()), 'widget');
+                </td>
+                <td>
+                    ";
+        // line 39
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "first", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "Ex: junior")));
         echo "
-                ";
-        // line 58
+                    ";
+        // line 40
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "first", array()), 'errors');
         echo "
-            </td>
-        </tr>
-        <tr>
-            <td>
-                ";
-        // line 63
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    ";
+        // line 45
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "second", array()), 'label');
         echo "
-            </td>
-            <td>
-                ";
-        // line 66
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "second", array()), 'widget');
+                </td>
+                <td>
+                    ";
+        // line 48
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "second", array()), 'widget', array("attr" => array("class" => "form-control")));
         echo "
-                ";
-        // line 67
+                    ";
+        // line 49
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "second", array()), 'errors');
         echo "
-            </td>
-        </tr>
-        <tr>
-            <td colspan=\"2\">
-        <center>                    
-            <input type=\"submit\" class=\"btn btn-orange\" value=\"";
-        // line 73
+                </td>
+            </tr>
+            <tr>
+                <td colspan=\"2\">
+            <center>                    
+                <input type=\"submit\" class=\"btn btn-orange\" value=\"";
+        // line 55
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("registration.submit", array(), "FOSUserBundle"), "html", null, true);
         echo "\" />
-        </center>
-        </td>
-        </tr>
-    </table>
-    ";
-        // line 78
+            </center>
+            </td>
+            </tr>
+        </table>
+        ";
+        // line 60
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
-</form>
+    </form>
 </div>";
     }
 
@@ -163,86 +145,68 @@ class __TwigTemplate_52aba0c6df4236845eccf6d2cbc47362e8f0ca239a3a21807ea090ff75a
 
     public function getDebugInfo()
     {
-        return array (  148 => 78,  140 => 73,  131 => 67,  127 => 66,  121 => 63,  113 => 58,  109 => 57,  103 => 54,  94 => 48,  90 => 47,  84 => 44,  76 => 39,  72 => 38,  66 => 35,  58 => 30,  51 => 28,  45 => 25,  19 => 1,);
+        return array (  130 => 60,  122 => 55,  113 => 49,  109 => 48,  103 => 45,  95 => 40,  91 => 39,  85 => 36,  76 => 30,  72 => 29,  66 => 26,  58 => 21,  54 => 20,  48 => 17,  38 => 10,  30 => 5,  23 => 3,  19 => 1,);
     }
 }
-/* <h2><marquee BEHAVIOR="alternate">Créer gratuitement votre compte pour profiter de divers avantages</marquee></h2>*/
-/* <div class="col-md-7">*/
-/*     <div class="">*/
-/*         <div class="">*/
-/*             <div class="">*/
-/*                 <div class="">*/
-/*                     <ol style="">*/
-/*                         <li>Discussions en ligne avec des boutiques et responsables des super marchés</li>*/
-/*                         <li>Réductions sur vos achats</li>*/
-/*                         <li>Etre informé des nouveautés</li>*/
-/*                         <li>Participer aux forums et ventes au en chers en ligne</li>*/
-/*                     </ol>*/
-/*                 </div>*/
-/*             </div>*/
-/*         </div>*/
-/*     </div>*/
-/*     <div class="col-md-7 social-login">*/
-/*         <p>Vous pouvez utiliser facebook ou twitter pour vous enregistrer !</p>*/
-/*         <div class="social-login-buttons">*/
-/*             <a href="#" class="btn-facebook-login">Avec Facebook</a>*/
-/*             <a href="#" class="btn-twitter-login">Avec Twitter</a>*/
-/*         </div>*/
-/*     </div>*/
-/* </div>*/
-/* <a href="{{path('fos_user_security_login')}}">*/
-/*     <button class="btn btn-primary col-md-2 active"><span class="glyphicon glyphicon-log-in"></span> J'ai déjà un compte</button>*/
-/* </a>*/
-/* <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="col-md-5">*/
+/* <div class="col-md-12">*/
+/*     <h2>Créer votre compte</h2>*/
+/*     <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="col-md-5">*/
 /* */
-/*     {{form_start(form, {'method': 'POST', 'attr':{'class': 'register'}})}}*/
+/*         {{form_start(form, {'method': 'POST', 'attr':{'class': 'register'}})}}*/
 /* */
-/*     <table class="table table-hover">*/
-/*         <tr>*/
-/*             <td>*/
-/*                 {{ form_label(form.username) }}*/
-/*             </td>*/
-/*             <td>*/
-/*                 {{ form_widget(form.username) }}*/
-/*                 {{ form_errors(form.username) }}*/
-/*             </td>*/
-/*         </tr>*/
-/*         <tr>*/
-/*             <td>*/
-/*                 {{ form_label(form.email) }}*/
-/*             </td>*/
-/*             <td>*/
-/*                 {{ form_widget(form.email) }}*/
-/*                 {{ form_errors(form.email) }}*/
+/*         <table class="table table-hover">*/
+/*             <tr>*/
+/*                 <td>*/
+/*                     <a href="{{path('fos_user_security_login')}}" class="btn active">*/
+/*                         <span class="glyphicon glyphicon-log-in"></span> J'ai déjà un compte*/
+/*                     </a>*/
+/*                 </td>*/
+/*             </tr>*/
+/*             <tr>*/
+/*                 <td>*/
+/*                     {{ form_label(form.username) }}*/
+/*                 </td>*/
+/*                 <td>*/
+/*                     {{ form_widget(form.username, {'attr':{'class': 'form-control', 'placeholder': 'Ex: junior'}}) }}*/
+/*                     {{ form_errors(form.username) }}*/
+/*                 </td>*/
+/*             </tr>*/
+/*             <tr>*/
+/*                 <td>*/
+/*                     {{ form_label(form.email) }}*/
+/*                 </td>*/
+/*                 <td>*/
+/*                     {{ form_widget(form.email, {'attr':{'class': 'form-control', 'placeholder': 'Ex: juniorubuntu@gmail.com'}}) }}*/
+/*                     {{ form_errors(form.email) }}*/
 /* */
+/*                 </td>*/
+/*             </tr>*/
+/*             <tr>*/
+/*                 <td>*/
+/*                     {{ form_label(form.plainPassword.first) }}*/
+/*                 </td>*/
+/*                 <td>*/
+/*                     {{ form_widget(form.plainPassword.first, {'attr':{'class': 'form-control', 'placeholder': 'Ex: junior'}}) }}*/
+/*                     {{ form_errors(form.plainPassword.first) }}*/
+/*                 </td>*/
+/*             </tr>*/
+/*             <tr>*/
+/*                 <td>*/
+/*                     {{ form_label(form.plainPassword.second) }}*/
+/*                 </td>*/
+/*                 <td>*/
+/*                     {{ form_widget(form.plainPassword.second, {'attr':{'class': 'form-control'}}) }}*/
+/*                     {{ form_errors(form.plainPassword.second) }}*/
+/*                 </td>*/
+/*             </tr>*/
+/*             <tr>*/
+/*                 <td colspan="2">*/
+/*             <center>                    */
+/*                 <input type="submit" class="btn btn-orange" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" />*/
+/*             </center>*/
 /*             </td>*/
-/*         </tr>*/
-/*         <tr>*/
-/*             <td>*/
-/*                 {{ form_label(form.plainPassword.first) }}*/
-/*             </td>*/
-/*             <td>*/
-/*                 {{ form_widget(form.plainPassword.first) }}*/
-/*                 {{ form_errors(form.plainPassword.first) }}*/
-/*             </td>*/
-/*         </tr>*/
-/*         <tr>*/
-/*             <td>*/
-/*                 {{ form_label(form.plainPassword.second) }}*/
-/*             </td>*/
-/*             <td>*/
-/*                 {{ form_widget(form.plainPassword.second) }}*/
-/*                 {{ form_errors(form.plainPassword.second) }}*/
-/*             </td>*/
-/*         </tr>*/
-/*         <tr>*/
-/*             <td colspan="2">*/
-/*         <center>                    */
-/*             <input type="submit" class="btn btn-orange" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" />*/
-/*         </center>*/
-/*         </td>*/
-/*         </tr>*/
-/*     </table>*/
-/*     {{ form_end(form) }}*/
-/* </form>*/
+/*             </tr>*/
+/*         </table>*/
+/*         {{ form_end(form) }}*/
+/*     </form>*/
 /* </div>*/

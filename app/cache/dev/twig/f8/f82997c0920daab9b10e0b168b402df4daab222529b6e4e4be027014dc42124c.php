@@ -28,9 +28,9 @@ class __TwigTemplate_e67857f53f034c672fbf8d40acf6dd9194035db9a394427439b1bf2c902
     public function block_body($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>Ecole</h1>
+        echo "<h1>Informations sur l'établissement</h1>
 
-    <table class=\"record_properties\">
+    <table class=\"record_properties table table-striped\">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -83,7 +83,7 @@ class __TwigTemplate_e67857f53f034c672fbf8d40acf6dd9194035db9a394427439b1bf2c902
         // line 37
         echo $this->env->getExtension('routing')->getPath("config_ecole");
         echo "\">
-                Retourner à la liste
+                Retourner à la page
             </a>
         </li>
         <li>
@@ -99,6 +99,10 @@ class __TwigTemplate_e67857f53f034c672fbf8d40acf6dd9194035db9a394427439b1bf2c902
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form');
         echo "</li>
     </ul>
+    <a href=\"";
+        // line 48
+        echo $this->env->getExtension('routing')->getPath("school_gestion_homepage");
+        echo "\" class=\"btn green\">Terminé</a>
 ";
     }
 
@@ -114,15 +118,15 @@ class __TwigTemplate_e67857f53f034c672fbf8d40acf6dd9194035db9a394427439b1bf2c902
 
     public function getDebugInfo()
     {
-        return array (  99 => 46,  92 => 42,  84 => 37,  74 => 30,  67 => 26,  60 => 22,  53 => 18,  46 => 14,  39 => 10,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  104 => 48,  99 => 46,  92 => 42,  84 => 37,  74 => 30,  67 => 26,  60 => 22,  53 => 18,  46 => 14,  39 => 10,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
 /* */
 /* {% block body -%}*/
-/*     <h1>Ecole</h1>*/
+/*     <h1>Informations sur l'établissement</h1>*/
 /* */
-/*     <table class="record_properties">*/
+/*     <table class="record_properties table table-striped">*/
 /*         <tbody>*/
 /*             <tr>*/
 /*                 <th>Id</th>*/
@@ -154,7 +158,7 @@ class __TwigTemplate_e67857f53f034c672fbf8d40acf6dd9194035db9a394427439b1bf2c902
 /*     <ul class="record_actions">*/
 /*         <li>*/
 /*             <a href="{{ path('config_ecole') }}">*/
-/*                 Retourner à la liste*/
+/*                 Retourner à la page*/
 /*             </a>*/
 /*         </li>*/
 /*         <li>*/
@@ -164,5 +168,6 @@ class __TwigTemplate_e67857f53f034c672fbf8d40acf6dd9194035db9a394427439b1bf2c902
 /*         </li>*/
 /*         <li>{{ form(delete_form) }}</li>*/
 /*     </ul>*/
+/*     <a href="{{ path('school_gestion_homepage')}}" class="btn green">Terminé</a>*/
 /* {% endblock %}*/
 /* */

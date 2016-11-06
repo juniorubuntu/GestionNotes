@@ -28,7 +28,7 @@ class __TwigTemplate_8d1bea36b855c7d1763aaba83bb373a7c450cf6679046abe9fb9e21ea90
     public function block_body($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>Constante list</h1>
+        echo "<h2>Informations régionnale</h2>
 
     <table class=\"records_list table table-striped\">
         <thead class=\"alert-info\">
@@ -108,6 +108,10 @@ class __TwigTemplate_8d1bea36b855c7d1763aaba83bb373a7c450cf6679046abe9fb9e21ea90
         ";
         // line 51
         echo "    </ul>
+    <a href=\"";
+        // line 52
+        echo $this->env->getExtension('routing')->getPath("config_ecole_new");
+        echo "\" class=\"btn green\">Suivant</a>
 ";
     }
 
@@ -123,13 +127,13 @@ class __TwigTemplate_8d1bea36b855c7d1763aaba83bb373a7c450cf6679046abe9fb9e21ea90
 
     public function getDebugInfo()
     {
-        return array (  110 => 51,  104 => 38,  94 => 34,  88 => 31,  83 => 29,  79 => 28,  75 => 27,  71 => 26,  67 => 25,  63 => 24,  57 => 23,  54 => 22,  50 => 21,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  113 => 52,  110 => 51,  104 => 38,  94 => 34,  88 => 31,  83 => 29,  79 => 28,  75 => 27,  71 => 26,  67 => 25,  63 => 24,  57 => 23,  54 => 22,  50 => 21,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
 /* */
 /* {% block body -%}*/
-/*     <h1>Constante list</h1>*/
+/*     <h2>Informations régionnale</h2>*/
 /* */
 /*     <table class="records_list table table-striped">*/
 /*         <thead class="alert-info">*/
@@ -177,5 +181,6 @@ class __TwigTemplate_8d1bea36b855c7d1763aaba83bb373a7c450cf6679046abe9fb9e21ea90
 /*         </li>*/
 /*         #}*/
 /*     </ul>*/
+/*     <a href="{{ path('config_ecole_new')}}" class="btn green">Suivant</a>*/
 /* {% endblock %}*/
 /* */

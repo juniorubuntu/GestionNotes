@@ -3,11 +3,21 @@
     Accueil
 {% endblock %}
 {% block body %}
-    <h2>Je suis la page d'accueil. Je me trouve dans</h2>
-    <h3><b><i>School/GestionBundle/Resources/views/Default</i></b></h3>
-    <h3>je suis en outre le Bundle de base de l'application</h3>
-    <p>
-        Pour un début faisons des pages simples utilisant les couleurs par défaut.
-    </p>
-    <div class="footer footer-copyright" style="bottom: 0; position: fixed; width: 100%"><a href="#">{{webmaster}}</a></div>
+    {% block description %}
+        <div class="pull-right">
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                Utilisateur: <b style="color: blue">
+                    {{ app.user.username }}
+                </b> |
+                <a style="color: brown" href="{{ path('fos_user_security_logout') }}">
+                    <u>{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</u>
+                </a>
+            {% else %}
+                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            {% endif %} 
+        </div>
+        <h2>Bienvenue, vous êtes à la page d'accueil.</h2>
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
 {% endblock %}

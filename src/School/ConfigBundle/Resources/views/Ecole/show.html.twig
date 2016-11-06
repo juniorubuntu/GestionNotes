@@ -1,9 +1,9 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Ecole</h1>
+    <h1>Informations sur l'établissement</h1>
 
-    <table class="record_properties">
+    <table class="record_properties table table-striped">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -35,7 +35,7 @@
     <ul class="record_actions">
         <li>
             <a href="{{ path('config_ecole') }}">
-                Retourner à la liste
+                Retourner à la page
             </a>
         </li>
         <li>
@@ -45,4 +45,5 @@
         </li>
         <li>{{ form(delete_form) }}</li>
     </ul>
+    <a href="{{ path('school_gestion_homepage')}}" class="btn green">Terminé</a>
 {% endblock %}

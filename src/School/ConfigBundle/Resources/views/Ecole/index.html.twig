@@ -1,7 +1,7 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Ecole list</h1>
+    <h2>Informations sur l'établissement</h2>
 
     <table class="records_list table table-striped">
         <thead>
@@ -45,4 +45,7 @@
         </li>
     </ul>
     #}
+
+    <a href="{{ path('constante')}}" class="btn green">Retour</a>
+    <a href="{{ path('school_gestion_homepage')}}" class="btn green">Terminé</a>
 {% endblock %}

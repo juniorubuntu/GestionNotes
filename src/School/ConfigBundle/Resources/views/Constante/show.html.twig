@@ -1,9 +1,9 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Constante</h1>
+    <h1>Paramètres régionaux</h1>
 
-    <table class="record_properties">
+    <table class="record_properties table table-striped">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -36,17 +36,18 @@
         </tbody>
     </table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('constante') }}">
-            Retourner à la liste
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('constante_edit', { 'id': entity.id }) }}">
-            Modifier
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('constante') }}">
+                Retourner à la page
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('constante_edit', { 'id': entity.id }) }}">
+                Modifier
+            </a>
+        </li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
+    <a href="{{ path('config_ecole_new')}}" class="btn green">Suivant</a>
 {% endblock %}

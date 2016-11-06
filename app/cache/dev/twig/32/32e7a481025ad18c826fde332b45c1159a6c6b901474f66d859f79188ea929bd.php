@@ -28,9 +28,9 @@ class __TwigTemplate_676663057e910d86b03e48feecf47116d11cf33372adc7944115ae764a2
     public function block_body($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>Constante</h1>
+        echo "<h1>Paramètres régionaux</h1>
 
-    <table class=\"record_properties\">
+    <table class=\"record_properties table table-striped\">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -84,28 +84,32 @@ class __TwigTemplate_676663057e910d86b03e48feecf47116d11cf33372adc7944115ae764a2
         </tbody>
     </table>
 
-        <ul class=\"record_actions\">
-    <li>
-        <a href=\"";
+    <ul class=\"record_actions\">
+        <li>
+            <a href=\"";
         // line 41
         echo $this->env->getExtension('routing')->getPath("constante");
         echo "\">
-            Retourner à la liste
-        </a>
-    </li>
-    <li>
-        <a href=\"";
+                Retourner à la page
+            </a>
+        </li>
+        <li>
+            <a href=\"";
         // line 46
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("constante_edit", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()))), "html", null, true);
         echo "\">
-            Modifier
-        </a>
-    </li>
-    <li>";
+                Modifier
+            </a>
+        </li>
+        <li>";
         // line 50
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form');
         echo "</li>
-</ul>
+    </ul>
+    <a href=\"";
+        // line 52
+        echo $this->env->getExtension('routing')->getPath("config_ecole_new");
+        echo "\" class=\"btn green\">Suivant</a>
 ";
     }
 
@@ -121,15 +125,15 @@ class __TwigTemplate_676663057e910d86b03e48feecf47116d11cf33372adc7944115ae764a2
 
     public function getDebugInfo()
     {
-        return array (  106 => 50,  99 => 46,  91 => 41,  81 => 34,  74 => 30,  67 => 26,  60 => 22,  53 => 18,  46 => 14,  39 => 10,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  111 => 52,  106 => 50,  99 => 46,  91 => 41,  81 => 34,  74 => 30,  67 => 26,  60 => 22,  53 => 18,  46 => 14,  39 => 10,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
 /* */
 /* {% block body -%}*/
-/*     <h1>Constante</h1>*/
+/*     <h1>Paramètres régionaux</h1>*/
 /* */
-/*     <table class="record_properties">*/
+/*     <table class="record_properties table table-striped">*/
 /*         <tbody>*/
 /*             <tr>*/
 /*                 <th>Id</th>*/
@@ -162,18 +166,19 @@ class __TwigTemplate_676663057e910d86b03e48feecf47116d11cf33372adc7944115ae764a2
 /*         </tbody>*/
 /*     </table>*/
 /* */
-/*         <ul class="record_actions">*/
-/*     <li>*/
-/*         <a href="{{ path('constante') }}">*/
-/*             Retourner à la liste*/
-/*         </a>*/
-/*     </li>*/
-/*     <li>*/
-/*         <a href="{{ path('constante_edit', { 'id': entity.id }) }}">*/
-/*             Modifier*/
-/*         </a>*/
-/*     </li>*/
-/*     <li>{{ form(delete_form) }}</li>*/
-/* </ul>*/
+/*     <ul class="record_actions">*/
+/*         <li>*/
+/*             <a href="{{ path('constante') }}">*/
+/*                 Retourner à la page*/
+/*             </a>*/
+/*         </li>*/
+/*         <li>*/
+/*             <a href="{{ path('constante_edit', { 'id': entity.id }) }}">*/
+/*                 Modifier*/
+/*             </a>*/
+/*         </li>*/
+/*         <li>{{ form(delete_form) }}</li>*/
+/*     </ul>*/
+/*     <a href="{{ path('config_ecole_new')}}" class="btn green">Suivant</a>*/
 /* {% endblock %}*/
 /* */

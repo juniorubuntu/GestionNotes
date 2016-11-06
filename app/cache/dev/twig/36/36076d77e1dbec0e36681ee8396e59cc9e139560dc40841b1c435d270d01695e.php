@@ -28,7 +28,7 @@ class __TwigTemplate_51f931f56965e00426b0db06d242558890743327fef7960c0db272c16f7
     public function block_body($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>Constante edit</h1>
+        echo "<h1>Modification des informations régionales</h1>
 
     ";
         // line 6
@@ -41,7 +41,7 @@ class __TwigTemplate_51f931f56965e00426b0db06d242558890743327fef7960c0db272c16f7
         // line 10
         echo $this->env->getExtension('routing')->getPath("constante");
         echo "\">
-            Retourner à la liste
+            Retourner à la page
         </a>
     </li>
     <li>";
@@ -70,14 +70,14 @@ class __TwigTemplate_51f931f56965e00426b0db06d242558890743327fef7960c0db272c16f7
 /* {% extends '::base.html.twig' %}*/
 /* */
 /* {% block body -%}*/
-/*     <h1>Constante edit</h1>*/
+/*     <h1>Modification des informations régionales</h1>*/
 /* */
 /*     {{ form(edit_form) }}*/
 /* */
 /*         <ul class="record_actions">*/
 /*     <li>*/
 /*         <a href="{{ path('constante') }}">*/
-/*             Retourner à la liste*/
+/*             Retourner à la page*/
 /*         </a>*/
 /*     </li>*/
 /*     <li>{{ form(delete_form) }}</li>*/

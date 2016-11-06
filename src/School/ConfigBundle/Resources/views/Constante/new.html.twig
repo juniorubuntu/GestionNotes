@@ -1,15 +1,17 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Constante creation</h1>
+    <h1>Régionalisation de l'application</h1>
 
     {{ form(form) }}
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('constante') }}">
-            Retourner à la liste
-        </a>
-    </li>
-</ul>
+    {#
+      <ul class="record_actions">
+         <li>
+             <a href="{{ path('constante') }}">
+                 Retourner à la liste
+             </a>
+         </li>
+     </ul>
+    #}
 {% endblock %}

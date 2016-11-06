@@ -28,7 +28,7 @@ class __TwigTemplate_921613a79dcf26dccbe68e905a03cb38d360c30450679f4a7ce3102f74f
     public function block_body($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>Ecole list</h1>
+        echo "<h2>Informations sur l'établissement</h2>
 
     <table class=\"records_list table table-striped\">
         <thead>
@@ -100,6 +100,17 @@ class __TwigTemplate_921613a79dcf26dccbe68e905a03cb38d360c30450679f4a7ce3102f74f
     </table>
 
     ";
+        // line 48
+        echo "
+    <a href=\"";
+        // line 49
+        echo $this->env->getExtension('routing')->getPath("constante");
+        echo "\" class=\"btn green\">Retour</a>
+    <a href=\"";
+        // line 50
+        echo $this->env->getExtension('routing')->getPath("school_gestion_homepage");
+        echo "\" class=\"btn green\">Terminé</a>
+";
     }
 
     public function getTemplateName()
@@ -114,13 +125,13 @@ class __TwigTemplate_921613a79dcf26dccbe68e905a03cb38d360c30450679f4a7ce3102f74f
 
     public function getDebugInfo()
     {
-        return array (  99 => 36,  89 => 32,  83 => 29,  78 => 27,  74 => 26,  70 => 25,  66 => 24,  62 => 23,  56 => 22,  53 => 21,  49 => 20,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  111 => 50,  107 => 49,  104 => 48,  99 => 36,  89 => 32,  83 => 29,  78 => 27,  74 => 26,  70 => 25,  66 => 24,  62 => 23,  56 => 22,  53 => 21,  49 => 20,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
 /* */
 /* {% block body -%}*/
-/*     <h1>Ecole list</h1>*/
+/*     <h2>Informations sur l'établissement</h2>*/
 /* */
 /*     <table class="records_list table table-striped">*/
 /*         <thead>*/
@@ -164,5 +175,8 @@ class __TwigTemplate_921613a79dcf26dccbe68e905a03cb38d360c30450679f4a7ce3102f74f
 /*         </li>*/
 /*     </ul>*/
 /*     #}*/
+/* */
+/*     <a href="{{ path('constante')}}" class="btn green">Retour</a>*/
+/*     <a href="{{ path('school_gestion_homepage')}}" class="btn green">Terminé</a>*/
 /* {% endblock %}*/
 /* */

@@ -28,7 +28,7 @@ class __TwigTemplate_b24ae9a9434be0a0a876b3432b2ec33e2e4787c67e496a3009f7c39c1c1
     public function block_body($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>Ecole edit</h1>
+        echo "<h1>Modification des données de l'établissement</h1>
 
     ";
         // line 6
@@ -41,7 +41,7 @@ class __TwigTemplate_b24ae9a9434be0a0a876b3432b2ec33e2e4787c67e496a3009f7c39c1c1
         // line 10
         echo $this->env->getExtension('routing')->getPath("config_ecole");
         echo "\">
-            Retourner à la liste
+            Retourner à la page
         </a>
     </li>
     <li>";
@@ -70,14 +70,14 @@ class __TwigTemplate_b24ae9a9434be0a0a876b3432b2ec33e2e4787c67e496a3009f7c39c1c1
 /* {% extends '::base.html.twig' %}*/
 /* */
 /* {% block body -%}*/
-/*     <h1>Ecole edit</h1>*/
+/*     <h1>Modification des données de l'établissement</h1>*/
 /* */
 /*     {{ form(edit_form) }}*/
 /* */
 /*         <ul class="record_actions">*/
 /*     <li>*/
 /*         <a href="{{ path('config_ecole') }}">*/
-/*             Retourner à la liste*/
+/*             Retourner à la page*/
 /*         </a>*/
 /*     </li>*/
 /*     <li>{{ form(delete_form) }}</li>*/

@@ -1,80 +1,62 @@
-<h2><marquee BEHAVIOR="alternate">Créer gratuitement votre compte pour profiter de divers avantages</marquee></h2>
-<div class="col-md-7">
-    <div class="">
-        <div class="">
-            <div class="">
-                <div class="">
-                    <ol style="">
-                        <li>Discussions en ligne avec des boutiques et responsables des super marchés</li>
-                        <li>Réductions sur vos achats</li>
-                        <li>Etre informé des nouveautés</li>
-                        <li>Participer aux forums et ventes au en chers en ligne</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-7 social-login">
-        <p>Vous pouvez utiliser facebook ou twitter pour vous enregistrer !</p>
-        <div class="social-login-buttons">
-            <a href="#" class="btn-facebook-login">Avec Facebook</a>
-            <a href="#" class="btn-twitter-login">Avec Twitter</a>
-        </div>
-    </div>
-</div>
-<a href="{{path('fos_user_security_login')}}">
-    <button class="btn btn-primary col-md-2 active"><span class="glyphicon glyphicon-log-in"></span> J'ai déjà un compte</button>
-</a>
-<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="col-md-5">
+<div class="col-md-12">
+    <h2>Créer votre compte</h2>
+    <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="col-md-5">
 
-    {{form_start(form, {'method': 'POST', 'attr':{'class': 'register'}})}}
+        {{form_start(form, {'method': 'POST', 'attr':{'class': 'register'}})}}
 
-    <table class="table table-hover">
-        <tr>
-            <td>
-                {{ form_label(form.username) }}
-            </td>
-            <td>
-                {{ form_widget(form.username) }}
-                {{ form_errors(form.username) }}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                {{ form_label(form.email) }}
-            </td>
-            <td>
-                {{ form_widget(form.email) }}
-                {{ form_errors(form.email) }}
+        <table class="table table-hover">
+            <tr>
+                <td>
+                    <a href="{{path('fos_user_security_login')}}" class="btn active">
+                        <span class="glyphicon glyphicon-log-in"></span> J'ai déjà un compte
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ form_label(form.username) }}
+                </td>
+                <td>
+                    {{ form_widget(form.username, {'attr':{'class': 'form-control', 'placeholder': 'Ex: junior'}}) }}
+                    {{ form_errors(form.username) }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ form_label(form.email) }}
+                </td>
+                <td>
+                    {{ form_widget(form.email, {'attr':{'class': 'form-control', 'placeholder': 'Ex: juniorubuntu@gmail.com'}}) }}
+                    {{ form_errors(form.email) }}
 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ form_label(form.plainPassword.first) }}
+                </td>
+                <td>
+                    {{ form_widget(form.plainPassword.first, {'attr':{'class': 'form-control', 'placeholder': 'Ex: junior'}}) }}
+                    {{ form_errors(form.plainPassword.first) }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ form_label(form.plainPassword.second) }}
+                </td>
+                <td>
+                    {{ form_widget(form.plainPassword.second, {'attr':{'class': 'form-control'}}) }}
+                    {{ form_errors(form.plainPassword.second) }}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+            <center>                    
+                <input type="submit" class="btn btn-orange" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" />
+            </center>
             </td>
-        </tr>
-        <tr>
-            <td>
-                {{ form_label(form.plainPassword.first) }}
-            </td>
-            <td>
-                {{ form_widget(form.plainPassword.first) }}
-                {{ form_errors(form.plainPassword.first) }}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                {{ form_label(form.plainPassword.second) }}
-            </td>
-            <td>
-                {{ form_widget(form.plainPassword.second) }}
-                {{ form_errors(form.plainPassword.second) }}
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-        <center>                    
-            <input type="submit" class="btn btn-orange" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" />
-        </center>
-        </td>
-        </tr>
-    </table>
-    {{ form_end(form) }}
-</form>
+            </tr>
+        </table>
+        {{ form_end(form) }}
+    </form>
 </div>

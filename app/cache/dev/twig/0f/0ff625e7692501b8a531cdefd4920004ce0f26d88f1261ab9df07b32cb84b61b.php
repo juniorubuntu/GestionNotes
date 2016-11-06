@@ -28,24 +28,14 @@ class __TwigTemplate_44c8cf5c62bff241e80fe72978988aa82dc1fce06532e3104567cfb8171
     public function block_body($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>Constante creation</h1>
+        echo "<h1>Régionalisation de l'application</h1>
 
     ";
         // line 6
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form');
         echo "
 
-        <ul class=\"record_actions\">
-    <li>
-        <a href=\"";
-        // line 10
-        echo $this->env->getExtension('routing')->getPath("constante");
-        echo "\">
-            Retourner à la liste
-        </a>
-    </li>
-</ul>
-";
+    ";
     }
 
     public function getTemplateName()
@@ -60,22 +50,24 @@ class __TwigTemplate_44c8cf5c62bff241e80fe72978988aa82dc1fce06532e3104567cfb8171
 
     public function getDebugInfo()
     {
-        return array (  42 => 10,  35 => 6,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  35 => 6,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
 /* */
 /* {% block body -%}*/
-/*     <h1>Constante creation</h1>*/
+/*     <h1>Régionalisation de l'application</h1>*/
 /* */
 /*     {{ form(form) }}*/
 /* */
-/*         <ul class="record_actions">*/
-/*     <li>*/
-/*         <a href="{{ path('constante') }}">*/
-/*             Retourner à la liste*/
-/*         </a>*/
-/*     </li>*/
-/* </ul>*/
+/*     {#*/
+/*       <ul class="record_actions">*/
+/*          <li>*/
+/*              <a href="{{ path('constante') }}">*/
+/*                  Retourner à la liste*/
+/*              </a>*/
+/*          </li>*/
+/*      </ul>*/
+/*     #}*/
 /* {% endblock %}*/
 /* */

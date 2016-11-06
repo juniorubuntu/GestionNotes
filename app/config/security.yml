@@ -3,8 +3,7 @@ security:
         FOS\UserBundle\Model\UserInterface: sha512
     
     role_hierarchy:
-        ROLE_CLIENT:       ROLE_USER
-        ROLE_SALLER:       ROLE_USER
+        ROLE_TEACHER:       ROLE_USER
         ROLE_ADMIN:        [ROLE_CLIENT, ROLE_SALLER]
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH] 
 
@@ -39,5 +38,6 @@ security:
     
     access_control:
         #-{ path: ^/gestion, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/Gestion, roles: ROLE_USER}
         - { path: ^/Gestion/admin, roles: ROLE_SUPER_ADMIN }
         #- { path: ^/register, role: ROLE_ADMIN }
