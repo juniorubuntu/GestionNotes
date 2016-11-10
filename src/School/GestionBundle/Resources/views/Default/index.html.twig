@@ -9,7 +9,6 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
                 </button>
             </div>
-
             <div class="collapse navbar-collapse navbar-menubuilder">
                 <ul class="nav navbar-nav">
 
@@ -20,7 +19,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-tags"></i> Elèves <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> Elèves <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ path('school_student_list')}}">Liste de élèves</a></li>
                             <li><a href="{{ path('inscription_new')}}">Inscription</a></li>
@@ -28,13 +27,13 @@
                     </li>
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> Classes <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-folder-open"></i> Classes <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ path('classe')}}"><i class="glyphicon glyphicon-user"></i> Liste des classes</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-gift"></i> Matières <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-hdd"></i> Matières <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ path('matiere')}}"><i class="glyphicon glyphicon-user"></i> Liste des matières</a></li>
                         </ul>
@@ -56,6 +55,32 @@
 
         </nav>
     {% endblock %}
-    {% block content %}
+    <div class="col-md-3">
+        {% block aside %}
+            <h2>Je suis le "aside"</h2>
+        {% endblock %}
+    </div>
+    <div class="col-md-9">
+        {% block content %}
+            <h2>Mes salles de classe</h2>
+            {% for dispense in listeDispense %}
+                <div class="col-md-3 col-sm-6">
+                    <div class="shop-item panel-primary">
+                        <div class="panel btn-blue">
+                            <b style="text-align: left">{{dispense.classe}}</b>
+                        </div>
+                        <ol class="">
+                            <li><a href="">Remplir les notes</a></li>
+                            <li><a href="">Modifier une note</a></li>
+                            <li><a href="">Exporter les notes en PDF</a></li>
+                            <li><a href="">Générer les statistiques</a></li>
+                        </ol>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endblock %}
+    </div>
+    {% block pied %}
+        <div class="footer" style="bottom: 0; width: 100%; position: fixed"><center>&copy; 2016 GreenSoft-Team. All rights reserved.</center></div>
     {% endblock %}
 {% endblock %}

@@ -8,15 +8,15 @@ class __TwigTemplate_819475a8e4af40e2d19dd2df9db44f3d94ba766a8b959e4551d0311321e
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("::base.html.twig", "SchoolStudentBundle:Classe:index.html.twig", 1);
+        $this->parent = $this->loadTemplate("SchoolGestionBundle:Default:index.html.twig", "SchoolStudentBundle:Classe:index.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "::base.html.twig";
+        return "SchoolGestionBundle:Default:index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,12 +25,11 @@ class __TwigTemplate_819475a8e4af40e2d19dd2df9db44f3d94ba766a8b959e4551d0311321e
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>Classe list</h1>
-
-    <table class=\"records_list table table-striped panel-primary\" id=\"classe\">
+        echo "<h2>Liste des salles de classes</h2>
+    <table class=\"records_list table cell-border row-border table-hover panel-primary\" id=\"classe\">
         <thead class=\"panel-heading\">
             <tr>
                 <th>Id</th>
@@ -43,39 +42,39 @@ class __TwigTemplate_819475a8e4af40e2d19dd2df9db44f3d94ba766a8b959e4551d0311321e
         </thead>
         <tbody>
             ";
-        // line 18
+        // line 17
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 19
+            // line 18
             echo "                <tr>
                     <td><a href=\"";
-            // line 20
+            // line 19
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("classe_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "id", array()), "html", null, true);
             echo "</a></td>
                     <td>";
-            // line 21
+            // line 20
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "nom", array()), "html", null, true);
             echo "</td>
                     <td>";
-            // line 22
+            // line 21
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "classePere", array()), "html", null, true);
             echo "</td>
                     <td>";
-            // line 23
+            // line 22
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "abreviation", array()), "html", null, true);
             echo "</td>
                     <td>
                         <a href=\"";
-            // line 25
+            // line 24
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("classe_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">Voir</a>
                     </td>
                     <td>
                         <a href=\"";
-            // line 28
+            // line 27
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("classe_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">Modifier</a>
                     </td>
@@ -85,14 +84,14 @@ class __TwigTemplate_819475a8e4af40e2d19dd2df9db44f3d94ba766a8b959e4551d0311321e
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 32
+        // line 31
         echo "        </tbody>
     </table>
 
     <ul>
         <li>
             <a href=\"";
-        // line 37
+        // line 36
         echo $this->env->getExtension('routing')->getPath("classe_new");
         echo "\">
                 Insérer une classe
@@ -106,7 +105,7 @@ class __TwigTemplate_819475a8e4af40e2d19dd2df9db44f3d94ba766a8b959e4551d0311321e
             \"lengthMenu\": [[10, 20], [10, 20]],
             \"language\": {
                 \"url\": \"";
-        // line 48
+        // line 47
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("DataTables/French.json"), "html", null, true);
         echo "\"
             }
@@ -128,15 +127,14 @@ class __TwigTemplate_819475a8e4af40e2d19dd2df9db44f3d94ba766a8b959e4551d0311321e
 
     public function getDebugInfo()
     {
-        return array (  110 => 48,  96 => 37,  89 => 32,  79 => 28,  73 => 25,  68 => 23,  64 => 22,  60 => 21,  54 => 20,  51 => 19,  47 => 18,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  109 => 47,  95 => 36,  88 => 31,  78 => 27,  72 => 24,  67 => 22,  63 => 21,  59 => 20,  53 => 19,  50 => 18,  46 => 17,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
-/* {% extends '::base.html.twig' %}*/
+/* {% extends 'SchoolGestionBundle:Default:index.html.twig' %}*/
 /* */
-/* {% block body -%}*/
-/*     <h1>Classe list</h1>*/
-/* */
-/*     <table class="records_list table table-striped panel-primary" id="classe">*/
+/* {% block content -%}*/
+/*     <h2>Liste des salles de classes</h2>*/
+/*     <table class="records_list table cell-border row-border table-hover panel-primary" id="classe">*/
 /*         <thead class="panel-heading">*/
 /*             <tr>*/
 /*                 <th>Id</th>*/
