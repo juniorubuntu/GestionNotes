@@ -7,6 +7,7 @@ use School\UserBundle\Entity\User;
 use School\ConfigBundle\Entity\Constante;
 use School\ConfigBundle\Entity\Ecole;
 use School\MatiereBundle\Entity\EstDispense;
+use School\NoteBundle\Entity\Sequence;
 
 class DefaultController extends Controller {
 
@@ -15,6 +16,9 @@ class DefaultController extends Controller {
 
 
         $listUser = $this->getDoctrine()->getRepository('SchoolUserBundle:User')->findAll();
+
+        $listSequence = $this->getDoctrine()->getRepository('SchoolNoteBundle:Sequence')->findAll();
+
         $ecole = $this->getDoctrine()->getRepository('SchoolConfigBundle:Ecole')->findAll();
         $constante = $this->getDoctrine()->getRepository('SchoolConfigBundle:Constante')->findAll();
         if ((count($listUser) == 1) && (count($ecole) == 0) && (count($constante) == 0)) {
@@ -31,7 +35,9 @@ class DefaultController extends Controller {
                 'annee' => '2016/2017'
             ));
             return $this->render('SchoolGestionBundle:Default:index.html.twig', array(
-                        'listeDispense' => $listDispense));
+                        'listeDispense' => $listDispense,
+                        'listSequence' => $listSequence
+            ));
         } else {
             return $this->render('SchoolGestionBundle:Error:error.html.twig');
         }

@@ -54,10 +54,10 @@ class __TwigTemplate_cffa5f45dad579bbdf0552605e119a7cd7dbfab08667e0a32bd042233e8
         ";
         // line 64
         $this->displayBlock('content', $context, $blocks);
-        // line 85
+        // line 107
         echo "    </div>
     ";
-        // line 86
+        // line 108
         $this->displayBlock('pied', $context, $blocks);
     }
 
@@ -185,14 +185,58 @@ class __TwigTemplate_cffa5f45dad579bbdf0552605e119a7cd7dbfab08667e0a32bd042233e8
             echo "</b>
                         </div>
                         <ol class=\"\">
-                            <li><a href=\"\">Remplir les notes</a></li>
+                            <li><a class=\"btn-link\" data-toggle=\"modal\" data-target=\"#sequence_";
+            // line 73
+            echo twig_escape_filter($this->env, $this->getAttribute($context["dispense"], "id", array()), "html", null, true);
+            echo "\">Remplir les notes</a>
+                                <div id=\"sequence_";
+            // line 74
+            echo twig_escape_filter($this->env, $this->getAttribute($context["dispense"], "id", array()), "html", null, true);
+            echo "\" class=\"modal fade\">
+                                    <div class=\"modal-dialog modal-sm\">
+                                        <div class=\"modal-content\">
+                                            <div class=\"modal-header\">
+                                                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
+                                                <center><b>Choisir la séquence</b></center>
+                                            </div>
+                                            <div class=\"col-md-12 modal-body\">
+                                                ";
+            // line 82
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["listSequence"]) ? $context["listSequence"] : $this->getContext($context, "listSequence")));
+            foreach ($context['_seq'] as $context["_key"] => $context["sequence"]) {
+                // line 83
+                echo "                                                    <center>
+                                                        <a href=\"";
+                // line 84
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("note_add", array("id" => $this->getAttribute($this->getAttribute($context["dispense"], "classe", array()), "id", array()), "idSeq" => $this->getAttribute($context["sequence"], "id", array()), "idMat" => $this->getAttribute($this->getAttribute($context["dispense"], "matiere", array()), "id", array()))), "html", null, true);
+                echo "\" class=\"btn btn-green\">
+                                                            <b>";
+                // line 85
+                echo twig_escape_filter($this->env, $context["sequence"], "html", null, true);
+                echo "</b>
+                                                        </a> 
+                                                    </center>
+                                                ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['sequence'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 89
+            echo "                                                <hr>
+                                                <button type=\"button\" class=\"btn btn-red pull-right\" data-dismiss=\"modal\"><span class=\"glyphicon glyphicon-remove-sign\"></span>Annuler</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
                             <li><a href=\"\">Modifier une note</a></li>
                             <li><a href=\"\">Exporter les notes en PDF</a></li>
                             <li><a href=\"\">Générer les statistiques</a></li>
                         </ol>
                         <div class=\"pull-right\">
                             Matière: <i style=\"color: forestgreen\">";
-            // line 79
+            // line 101
             echo twig_escape_filter($this->env, $this->getAttribute($context["dispense"], "matiere", array()), "html", null, true);
             echo "</i>
                         </div>
@@ -203,14 +247,14 @@ class __TwigTemplate_cffa5f45dad579bbdf0552605e119a7cd7dbfab08667e0a32bd042233e8
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['dispense'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 84
+        // line 106
         echo "        ";
     }
 
-    // line 86
+    // line 108
     public function block_pied($context, array $blocks = array())
     {
-        // line 87
+        // line 109
         echo "        <div class=\"footer\" style=\"bottom: 0; width: 100%; position: fixed\"><center>&copy; 2016 GreenSoft-Team. All rights reserved.</center></div>
     ";
     }
@@ -227,7 +271,7 @@ class __TwigTemplate_cffa5f45dad579bbdf0552605e119a7cd7dbfab08667e0a32bd042233e8
 
     public function getDebugInfo()
     {
-        return array (  214 => 87,  211 => 86,  207 => 84,  196 => 79,  184 => 70,  179 => 67,  175 => 66,  172 => 65,  169 => 64,  164 => 60,  161 => 59,  152 => 52,  144 => 51,  138 => 48,  134 => 47,  129 => 45,  126 => 44,  124 => 43,  116 => 38,  107 => 32,  97 => 25,  93 => 24,  84 => 18,  71 => 8,  68 => 7,  65 => 6,  61 => 86,  58 => 85,  56 => 64,  52 => 62,  50 => 59,  47 => 58,  44 => 6,  41 => 5,  36 => 3,  33 => 2,  11 => 1,);
+        return array (  258 => 109,  255 => 108,  251 => 106,  240 => 101,  226 => 89,  216 => 85,  212 => 84,  209 => 83,  205 => 82,  194 => 74,  190 => 73,  184 => 70,  179 => 67,  175 => 66,  172 => 65,  169 => 64,  164 => 60,  161 => 59,  152 => 52,  144 => 51,  138 => 48,  134 => 47,  129 => 45,  126 => 44,  124 => 43,  116 => 38,  107 => 32,  97 => 25,  93 => 24,  84 => 18,  71 => 8,  68 => 7,  65 => 6,  61 => 108,  58 => 107,  56 => 64,  52 => 62,  50 => 59,  47 => 58,  44 => 6,  41 => 5,  36 => 3,  33 => 2,  11 => 1,);
     }
 }
 /* {% extends "::base.html.twig" %}*/
@@ -302,7 +346,29 @@ class __TwigTemplate_cffa5f45dad579bbdf0552605e119a7cd7dbfab08667e0a32bd042233e8
 /*                             <b style="text-align: left">{{dispense.classe}}</b>*/
 /*                         </div>*/
 /*                         <ol class="">*/
-/*                             <li><a href="">Remplir les notes</a></li>*/
+/*                             <li><a class="btn-link" data-toggle="modal" data-target="#sequence_{{dispense.id}}">Remplir les notes</a>*/
+/*                                 <div id="sequence_{{dispense.id}}" class="modal fade">*/
+/*                                     <div class="modal-dialog modal-sm">*/
+/*                                         <div class="modal-content">*/
+/*                                             <div class="modal-header">*/
+/*                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>*/
+/*                                                 <center><b>Choisir la séquence</b></center>*/
+/*                                             </div>*/
+/*                                             <div class="col-md-12 modal-body">*/
+/*                                                 {% for sequence in listSequence %}*/
+/*                                                     <center>*/
+/*                                                         <a href="{{path('note_add', {'id':dispense.classe.id , 'idSeq': sequence.id, 'idMat':dispense.matiere.id })}}" class="btn btn-green">*/
+/*                                                             <b>{{sequence}}</b>*/
+/*                                                         </a> */
+/*                                                     </center>*/
+/*                                                 {% endfor %}*/
+/*                                                 <hr>*/
+/*                                                 <button type="button" class="btn btn-red pull-right" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign"></span>Annuler</button>*/
+/*                                             </div>*/
+/*                                         </div>*/
+/*                                     </div>*/
+/*                                 </div>*/
+/*                             </li>*/
 /*                             <li><a href="">Modifier une note</a></li>*/
 /*                             <li><a href="">Exporter les notes en PDF</a></li>*/
 /*                             <li><a href="">Générer les statistiques</a></li>*/

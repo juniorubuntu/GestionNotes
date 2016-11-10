@@ -70,7 +70,29 @@
                             <b style="text-align: left">{{dispense.classe}}</b>
                         </div>
                         <ol class="">
-                            <li><a href="">Remplir les notes</a></li>
+                            <li><a class="btn-link" data-toggle="modal" data-target="#sequence_{{dispense.id}}">Remplir les notes</a>
+                                <div id="sequence_{{dispense.id}}" class="modal fade">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <center><b>Choisir la séquence</b></center>
+                                            </div>
+                                            <div class="col-md-12 modal-body">
+                                                {% for sequence in listSequence %}
+                                                    <center>
+                                                        <a href="{{path('note_add', {'id':dispense.classe.id , 'idSeq': sequence.id, 'idMat':dispense.matiere.id })}}" class="btn btn-green">
+                                                            <b>{{sequence}}</b>
+                                                        </a> 
+                                                    </center>
+                                                {% endfor %}
+                                                <hr>
+                                                <button type="button" class="btn btn-red pull-right" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign"></span>Annuler</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
                             <li><a href="">Modifier une note</a></li>
                             <li><a href="">Exporter les notes en PDF</a></li>
                             <li><a href="">Générer les statistiques</a></li>
