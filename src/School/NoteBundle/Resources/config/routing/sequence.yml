@@ -1,0 +1,30 @@
+sequence:
+    path:     /
+    defaults: { _controller: "SchoolNoteBundle:Sequence:index" }
+
+sequence_show:
+    path:     /{id}/show
+    defaults: { _controller: "SchoolNoteBundle:Sequence:show" }
+
+sequence_new:
+    path:     /new
+    defaults: { _controller: "SchoolNoteBundle:Sequence:new" }
+
+sequence_create:
+    path:     /create
+    defaults: { _controller: "SchoolNoteBundle:Sequence:create" }
+    requirements: { _method: post }
+
+sequence_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SchoolNoteBundle:Sequence:edit" }
+
+sequence_update:
+    path:     /{id}/update
+    defaults: { _controller: "SchoolNoteBundle:Sequence:update" }
+    requirements: { _method: post|put }
+
+sequence_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SchoolNoteBundle:Sequence:delete" }
+    requirements: { _method: post|delete }

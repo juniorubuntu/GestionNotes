@@ -1,0 +1,128 @@
+label[for="school_studentbundle_student_photo_file"]{
+	display: none;
+}
+
+body{
+    background: rgb(216, 225, 232);
+}
+
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+
+
+/*######################################
+        Style pour la barre de menu
+#############################################*/
+/* CSS used here will be applied after bootstrap.css */
+/*
+ * fixed navbar and row navbar (add to your bootstrap)
+ */
+#page-wrapper1 {
+    margin-top: 50px;
+    min-height: 1000px;
+}
+
+@media (max-width: 768px) {
+    .navbar-form {
+        margin: 0;
+        padding: 15px 0 5px 0;
+        border: 0;
+        border-bottom: 0;
+        box-shadow: inset 0px 0px 0px 0px;
+        -webkit-box-shadow: inset 0px 0px 0px 0px;
+    }
+}
+/*
+ * Darkblue navbar style
+ */
+#navbar-darkblue.navbar-default { /* #003399 - #0033cc */
+    font-size: 14px;
+    background-color: rgba(217, 237, 247, 1);
+    background: -webkit-linear-gradient(top, rgba(217, 237, 247, 1) 0%, rgba(217, 237, 247, 1) 100%);
+    background: linear-gradient(to bottom, rgba(217, 237, 247, 1) 0%, rgba(217, 237, 247, 1) 100%);
+    border: 0px;
+    border-radius: 0;
+}
+#navbar-darkblue.navbar-default .navbar-header>a:hover,
+#navbar-darkblue.navbar-default .navbar-nav>li>a:hover,
+#navbar-darkblue.navbar-default .navbar-nav>li>a:focus,
+#navbar-darkblue.navbar-default .navbar-nav>li>ul>li>a:hover,
+#navbar-darkblue.navbar-default .navbar-nav>li>ul>li>a:focus,
+#navbar-darkblue.navbar-default .navbar-nav>.active>a,
+#navbar-darkblue.navbar-default .navbar-nav>.active>a:hover,
+#navbar-darkblue.navbar-default .navbar-nav>.active>a:focus {
+    color: rgba(0, 0, 0, 1);
+    background-color: rgba(248, 245, 249, 1);
+    background: -webkit-linear-gradient(top, rgba(248, 245, 249, 1) 0%, rgba(248, 245, 249, 1) 100%);
+    background: linear-gradient(to bottom, rgba(248, 245, 249, 1) 0%, rgba(248, 245, 249, 1) 100%);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.55);
+}
+#sidebar-darkblue, #column-darkblue {
+background-color: #333399;
+}
+#navbar-darkblue.navbar-default .navbar-toggle {
+border-color: #333399;
+}
+#navbar-darkblue.navbar-default .navbar-toggle:hover,
+#navbar-darkblue.navbar-default .navbar-toggle:focus {
+background-color: #3333cc;
+}
+#navbar-darkblue.navbar-default .navbar-nav>li>a,
+#navbar-darkblue.navbar-default .navbar-nav>li>ul>li>a,
+#navbar-darkblue.navbar-default .navbar-brand {
+color: #31708F;
+}
+#navbar-darkblue.navbar-default .navbar-toggle .icon-bar,
+#navbar-darkblue.navbar-default .navbar-toggle:hover .icon-bar,
+#navbar-darkblue.navbar-default .navbar-toggle:focus .icon-bar {
+background-color: #ffffff;
+}

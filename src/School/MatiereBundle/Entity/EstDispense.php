@@ -29,7 +29,7 @@ class EstDispense {
     private $matiere;
 
     /**
-     * @ORM\ManyToOne(targetEntity="School\TeacherBundle\Entity\Enseignant")
+     * @ORM\ManyToOne(targetEntity="School\UserBundle\Entity\User")
      * @Assert\NotBlank()
      */
     private $enseignant;
@@ -60,14 +60,12 @@ class EstDispense {
      */
     private $nombreHeuresAnnuel;
 
-
     /**
      * Get id
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -77,10 +75,9 @@ class EstDispense {
      * @param integer $coefficient
      * @return EstDispense
      */
-    public function setCoefficient($coefficient)
-    {
+    public function setCoefficient($coefficient) {
         $this->coefficient = $coefficient;
-    
+
         return $this;
     }
 
@@ -89,8 +86,7 @@ class EstDispense {
      *
      * @return integer 
      */
-    public function getCoefficient()
-    {
+    public function getCoefficient() {
         return $this->coefficient;
     }
 
@@ -100,10 +96,9 @@ class EstDispense {
      * @param string $annee
      * @return EstDispense
      */
-    public function setAnnee($annee)
-    {
+    public function setAnnee($annee) {
         $this->annee = $annee;
-    
+
         return $this;
     }
 
@@ -112,8 +107,7 @@ class EstDispense {
      *
      * @return string 
      */
-    public function getAnnee()
-    {
+    public function getAnnee() {
         return $this->annee;
     }
 
@@ -123,10 +117,9 @@ class EstDispense {
      * @param integer $nombreHeuresAnnuel
      * @return EstDispense
      */
-    public function setNombreHeuresAnnuel($nombreHeuresAnnuel)
-    {
+    public function setNombreHeuresAnnuel($nombreHeuresAnnuel) {
         $this->nombreHeuresAnnuel = $nombreHeuresAnnuel;
-    
+
         return $this;
     }
 
@@ -135,8 +128,7 @@ class EstDispense {
      *
      * @return integer 
      */
-    public function getNombreHeuresAnnuel()
-    {
+    public function getNombreHeuresAnnuel() {
         return $this->nombreHeuresAnnuel;
     }
 
@@ -146,10 +138,9 @@ class EstDispense {
      * @param \School\MatiereBundle\Entity\Matiere $matiere
      * @return EstDispense
      */
-    public function setMatiere(\School\MatiereBundle\Entity\Matiere $matiere = null)
-    {
+    public function setMatiere(\School\MatiereBundle\Entity\Matiere $matiere = null) {
         $this->matiere = $matiere;
-    
+
         return $this;
     }
 
@@ -158,18 +149,39 @@ class EstDispense {
      *
      * @return \School\MatiereBundle\Entity\Matiere 
      */
-    public function getMatiere()
-    {
+    public function getMatiere() {
         return $this->matiere;
     }
 
     /**
-     * Set enseignant
+     * Set classe
      *
-     * @param \School\TeacherBundle\Entity\Enseignant $enseignant
+     * @param \School\StudentBundle\Entity\Classe $classe
      * @return EstDispense
      */
-    public function setEnseignant(\School\TeacherBundle\Entity\Enseignant $enseignant = null)
+    public function setClasse(\School\StudentBundle\Entity\Classe $classe = null) {
+        $this->classe = $classe;
+
+        return $this;
+    }
+
+    /**
+     * Get classe
+     *
+     * @return \School\StudentBundle\Entity\Classe 
+     */
+    public function getClasse() {
+        return $this->classe;
+    }
+
+
+    /**
+     * Set enseignant
+     *
+     * @param \School\UserBundle\Entity\User $enseignant
+     * @return EstDispense
+     */
+    public function setEnseignant(\School\UserBundle\Entity\User $enseignant = null)
     {
         $this->enseignant = $enseignant;
     
@@ -179,33 +191,10 @@ class EstDispense {
     /**
      * Get enseignant
      *
-     * @return \School\TeacherBundle\Entity\Enseignant 
+     * @return \School\UserBundle\Entity\User 
      */
     public function getEnseignant()
     {
         return $this->enseignant;
-    }
-
-    /**
-     * Set classe
-     *
-     * @param \School\StudentBundle\Entity\Classe $classe
-     * @return EstDispense
-     */
-    public function setClasse(\School\StudentBundle\Entity\Classe $classe = null)
-    {
-        $this->classe = $classe;
-    
-        return $this;
-    }
-
-    /**
-     * Get classe
-     *
-     * @return \School\StudentBundle\Entity\Classe 
-     */
-    public function getClasse()
-    {
-        return $this->classe;
     }
 }

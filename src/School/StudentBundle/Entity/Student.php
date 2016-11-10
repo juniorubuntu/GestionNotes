@@ -9,11 +9,14 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Student
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="School\StudentBundle\Entity\StudentRepository")
- * @ORM\HasLifecycleCallbacks()
+ * @ORM\Entity()
  */
-class Student
-{
+class Student {
+
+    public function __toString() {
+        return $this->getNom();
+    }
+
     /**
      * @var integer
      *
@@ -38,6 +41,12 @@ class Student
     private $nom;
 
     /**
+     * @ORM\ManyToOne(targetEntity="School\StudentBundle\Entity\Sexe")
+     * @Assert\NotBlank()
+     */
+    private $sexe;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateNaissance", type="datetime")
@@ -54,66 +63,64 @@ class Student
     /**
      * @var string
      *
-     * @ORM\Column(name="nomPere", type="string", length=255)
+     * @ORM\Column(name="nomPere", type="string", length=255, nullable=true)
      */
     private $nomPere;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nomMere", type="string", length=255)
+     * @ORM\Column(name="nomMere", type="string", length=255, nullable=true)
      */
     private $nomMere;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="adressePere", type="string", length=255)
+     * @ORM\Column(name="adressePere", type="string", length=255, nullable=true)
      */
     private $adressePere;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="adresseMere", type="string", length=255)
+     * @ORM\Column(name="adresseMere", type="string", length=255, nullable=true)
      */
     private $adresseMere;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="personneAcontacter", type="string", length=255)
+     * @ORM\Column(name="personneAcontacter", type="string", length=255, nullable=true)
      */
     private $personneAcontacter;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="dernierEtablissementFreq", type="string", length=255)
+     * @ORM\Column(name="dernierEtablissementFreq", type="string", length=255, nullable=true)
      */
     private $dernierEtablissementFreq;
 
     /**
      * @ORM\OneToOne(targetEntity="School\StudentBundle\Entity\Image",cascade={"persist", "remove"})
-     * @Assert\Valid()
+     * @ORM\JoinColumn(name="photo_id", referencedColumnName="id", nullable=true)
+     *  @Assert\Valid()
      */
     private $photo;
 
     /**
-     * @var boolean
-     *
-     * @ORM\Column(name="status", type="boolean")
+     * @ORM\ManyToOne(targetEntity="Classe")
+     * @Assert\NotBlank()
      */
-    private $status;
-
+    private $classe;
 
     /**
      * Get id
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -123,8 +130,7 @@ class Student
      * @param string $matricule
      * @return Student
      */
-    public function setMatricule($matricule)
-    {
+    public function setMatricule($matricule) {
         $this->matricule = $matricule;
 
         return $this;
@@ -135,8 +141,7 @@ class Student
      *
      * @return string 
      */
-    public function getMatricule()
-    {
+    public function getMatricule() {
         return $this->matricule;
     }
 
@@ -146,8 +151,7 @@ class Student
      * @param string $nom
      * @return Student
      */
-    public function setNom($nom)
-    {
+    public function setNom($nom) {
         $this->nom = $nom;
 
         return $this;
@@ -158,8 +162,7 @@ class Student
      *
      * @return string 
      */
-    public function getNom()
-    {
+    public function getNom() {
         return $this->nom;
     }
 
@@ -169,8 +172,7 @@ class Student
      * @param \DateTime $dateNaissance
      * @return Student
      */
-    public function setDateNaissance($dateNaissance)
-    {
+    public function setDateNaissance($dateNaissance) {
         $this->dateNaissance = $dateNaissance;
 
         return $this;
@@ -181,8 +183,7 @@ class Student
      *
      * @return \DateTime 
      */
-    public function getDateNaissance()
-    {
+    public function getDateNaissance() {
         return $this->dateNaissance;
     }
 
@@ -192,8 +193,7 @@ class Student
      * @param string $lieuNaissance
      * @return Student
      */
-    public function setLieuNaissance($lieuNaissance)
-    {
+    public function setLieuNaissance($lieuNaissance) {
         $this->lieuNaissance = $lieuNaissance;
 
         return $this;
@@ -204,8 +204,7 @@ class Student
      *
      * @return string 
      */
-    public function getLieuNaissance()
-    {
+    public function getLieuNaissance() {
         return $this->lieuNaissance;
     }
 
@@ -215,8 +214,7 @@ class Student
      * @param string $nomPere
      * @return Student
      */
-    public function setNomPere($nomPere)
-    {
+    public function setNomPere($nomPere) {
         $this->nomPere = $nomPere;
 
         return $this;
@@ -227,8 +225,7 @@ class Student
      *
      * @return string 
      */
-    public function getNomPere()
-    {
+    public function getNomPere() {
         return $this->nomPere;
     }
 
@@ -238,8 +235,7 @@ class Student
      * @param string $nomMere
      * @return Student
      */
-    public function setNomMere($nomMere)
-    {
+    public function setNomMere($nomMere) {
         $this->nomMere = $nomMere;
 
         return $this;
@@ -250,8 +246,7 @@ class Student
      *
      * @return string 
      */
-    public function getNomMere()
-    {
+    public function getNomMere() {
         return $this->nomMere;
     }
 
@@ -261,8 +256,7 @@ class Student
      * @param string $adressePere
      * @return Student
      */
-    public function setAdressePere($adressePere)
-    {
+    public function setAdressePere($adressePere) {
         $this->adressePere = $adressePere;
 
         return $this;
@@ -273,8 +267,7 @@ class Student
      *
      * @return string 
      */
-    public function getAdressePere()
-    {
+    public function getAdressePere() {
         return $this->adressePere;
     }
 
@@ -284,8 +277,7 @@ class Student
      * @param string $adresseMere
      * @return Student
      */
-    public function setAdresseMere($adresseMere)
-    {
+    public function setAdresseMere($adresseMere) {
         $this->adresseMere = $adresseMere;
 
         return $this;
@@ -296,8 +288,7 @@ class Student
      *
      * @return string 
      */
-    public function getAdresseMere()
-    {
+    public function getAdresseMere() {
         return $this->adresseMere;
     }
 
@@ -307,8 +298,7 @@ class Student
      * @param string $personneAcontacter
      * @return Student
      */
-    public function setPersonneAcontacter($personneAcontacter)
-    {
+    public function setPersonneAcontacter($personneAcontacter) {
         $this->personneAcontacter = $personneAcontacter;
 
         return $this;
@@ -319,8 +309,7 @@ class Student
      *
      * @return string 
      */
-    public function getPersonneAcontacter()
-    {
+    public function getPersonneAcontacter() {
         return $this->personneAcontacter;
     }
 
@@ -330,8 +319,7 @@ class Student
      * @param string $dernierEtablissementFreq
      * @return Student
      */
-    public function setDernierEtablissementFreq($dernierEtablissementFreq)
-    {
+    public function setDernierEtablissementFreq($dernierEtablissementFreq) {
         $this->dernierEtablissementFreq = $dernierEtablissementFreq;
 
         return $this;
@@ -342,20 +330,39 @@ class Student
      *
      * @return string 
      */
-    public function getDernierEtablissementFreq()
-    {
+    public function getDernierEtablissementFreq() {
         return $this->dernierEtablissementFreq;
+    }
+
+    /**
+     * Set sexe
+     *
+     * @param \School\StudentBundle\Entity\Sexe $sexe
+     * @return Student
+     */
+    public function setSexe(\School\StudentBundle\Entity\Sexe $sexe = null) {
+        $this->sexe = $sexe;
+
+        return $this;
+    }
+
+    /**
+     * Get sexe
+     *
+     * @return \School\StudentBundle\Entity\Sexe 
+     */
+    public function getSexe() {
+        return $this->sexe;
     }
 
     /**
      * Set photo
      *
-     * @param \School\StudentBundle\Entity\Image $image
+     * @param \School\StudentBundle\Entity\Image $photo
      * @return Student
      */
-    public function setPhoto(\School\StudentBundle\Entity\Image $image = null)
-    {
-        $this->photo = $image;
+    public function setPhoto(\School\StudentBundle\Entity\Image $photo = null) {
+        $this->photo = $photo;
 
         return $this;
     }
@@ -365,31 +372,29 @@ class Student
      *
      * @return \School\StudentBundle\Entity\Image 
      */
-    public function getPhoto()
-    {
+    public function getPhoto() {
         return $this->photo;
     }
 
     /**
-     * Set status
+     * Set classe
      *
-     * @param boolean $status
+     * @param \School\StudentBundle\Entity\Classe $classe
      * @return Student
      */
-    public function setStatus($status)
-    {
-        $this->status = $status;
+    public function setClasse(\School\StudentBundle\Entity\Classe $classe = null) {
+        $this->classe = $classe;
 
         return $this;
     }
 
     /**
-     * Get status
+     * Get classe
      *
-     * @return boolean 
+     * @return \School\StudentBundle\Entity\Classe 
      */
-    public function getStatus()
-    {
-        return $this->status;
+    public function getClasse() {
+        return $this->classe;
     }
+
 }

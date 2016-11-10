@@ -1,22 +1,22 @@
 school_note:
     resource: "@SchoolNoteBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /Gestion
 
 school_config:
     resource: "@SchoolConfigBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /Gestion
 
 school_matiere:
     resource: "@SchoolMatiereBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /Gestion
 
-school_teacher:
-    resource: "@SchoolTeacherBundle/Resources/config/routing.yml"
-    prefix:   /
+#school_teacher:
+#    resource: "@SchoolTeacherBundle/Resources/config/routing.yml"
+#    prefix:   /Gestion
 
 school_student:
     resource: "@SchoolStudentBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /Gestion
 
 school_gestion:
     resource: "@SchoolGestionBundle/Resources/config/routing.yml"
@@ -24,7 +24,7 @@ school_gestion:
 
 rep_user:
     resource: "@SchoolUserBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /Gestion
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"

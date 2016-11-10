@@ -1,3 +1,11 @@
 school_note_homepage:
     path:     /hello/{name}
     defaults: { _controller: SchoolNoteBundle:Default:index }
+
+SchoolNoteBundle_sequence:
+    resource: "@SchoolNoteBundle/Resources/config/routing/sequence.yml"
+    prefix:   /sequence
+
+SchoolNoteBundle_evaluation:
+    resource: "@SchoolNoteBundle/Resources/config/routing/evaluation.yml"
+    prefix:   /evaluation

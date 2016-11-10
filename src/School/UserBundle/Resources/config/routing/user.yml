@@ -1,0 +1,30 @@
+user:
+    path:     /
+    defaults: { _controller: "SchoolUserBundle:User:index" }
+
+user_show:
+    path:     /09092886UFGKGZDYBZHYYUGYGFZ{id}1325375DHKJVKHFYUugluvgyu475437/show
+    defaults: { _controller: "SchoolUserBundle:User:show" }
+
+user_new:
+    path:     /new
+    defaults: { _controller: "SchoolUserBundle:User:new" }
+
+user_create:
+    path:     /create
+    defaults: { _controller: "SchoolUserBundle:User:create" }
+    requirements: { _method: post }
+
+user_edit:
+    path:     /jblbdsqvjblsdvhujsbvmljb0861456135643563754{id}887067656545534332jblbcvqvugluvgyu475437/edit
+    defaults: { _controller: "SchoolUserBundle:User:edit" }
+
+user_update:
+    path:     /jblbdVHVZYVvhujsbvmljb0861456135643563754{id}60067656545534332jblbcvqvugluvgyu475437/update
+    defaults: { _controller: "SchoolUserBundle:User:update" }
+    requirements: { _method: post|put }
+
+user_delete:
+    path:     /HJGKGYZvmljb0861456135643563754{id}0024245067656545534332jblbcvqvugluvgyu475437/delete
+    defaults: { _controller: "SchoolUserBundle:User:delete" }
+    requirements: { _method: post|delete }

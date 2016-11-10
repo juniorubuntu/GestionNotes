@@ -1,0 +1,60 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Inscription list</h1>
+
+    <table class="records_list table table-striped panel-primary" id="inscription">
+        <thead class="panel-heading">
+            <tr>
+                <th>Id</th>
+                <th>Elève</th>
+                <th>Avance</th>
+                <th>Dernière avance</th>
+                <th>Status</th>
+                <th>Année</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('inscription_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>{{ entity.student }}</td>
+                    <td>{{ entity.avance }}</td>
+                    <td>{{ entity.dateDerniereAvance | date('D d, M, Y') }}</td>
+                    <td>{% if entity.status == 1 %}<b style="color: green">Complet</b>{% else %}<b style="color: red">Incomplet</b>{% endif %}</td>
+                    <td>{{ entity.annee }}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('inscription_show', { 'id': entity.id }) }}">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('inscription_edit', { 'id': entity.id }) }}">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('inscription_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+
+    <script>
+        $('#inscription').DataTable({
+            "pagingType": "full_numbers",
+            "lengthMenu": [[10, 20], [10, 20]],
+            "language": {
+                "url": "{{ asset('DataTables/French.json') }}"
+            }
+
+        });
+    </script>
+{% endblock %}

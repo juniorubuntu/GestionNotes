@@ -29,8 +29,8 @@ class __TwigTemplate_fb99a78591357dc9494ff91e4bb5eacec43cfc03d76c29f0b074b84efba
     {
         // line 4
         echo "\t<h2 class=\"page-header\">List of the students</h2>
-<table class=\"table table-striped\">
-      <thead>
+<table class=\"records_list table table-striped panel-primary\" id=\"student\">
+      <thead class=\"panel-header\">
         <tr>
           <th>#</th>
           <th>Name</th>
@@ -86,6 +86,19 @@ class __TwigTemplate_fb99a78591357dc9494ff91e4bb5eacec43cfc03d76c29f0b074b84efba
         // line 32
         echo "      </tbody>
     </table>
+     <script>
+        \$('#student').DataTable({
+            \"pagingType\": \"full_numbers\",
+            \"lengthMenu\": [[10, 20], [10, 20]],
+            \"language\": {
+                \"url\": \"";
+        // line 39
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("DataTables/French.json"), "html", null, true);
+        echo "\"
+            }
+
+        });
+    </script>
 ";
     }
 
@@ -101,15 +114,15 @@ class __TwigTemplate_fb99a78591357dc9494ff91e4bb5eacec43cfc03d76c29f0b074b84efba
 
     public function getDebugInfo()
     {
-        return array (  87 => 32,  75 => 26,  69 => 23,  63 => 20,  58 => 18,  54 => 17,  50 => 16,  47 => 15,  43 => 14,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  96 => 39,  87 => 32,  75 => 26,  69 => 23,  63 => 20,  58 => 18,  54 => 17,  50 => 16,  47 => 15,  43 => 14,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
 /* */
 /* {% block body %}*/
 /* 	<h2 class="page-header">List of the students</h2>*/
-/* <table class="table table-striped">*/
-/*       <thead>*/
+/* <table class="records_list table table-striped panel-primary" id="student">*/
+/*       <thead class="panel-header">*/
 /*         <tr>*/
 /*           <th>#</th>*/
 /*           <th>Name</th>*/
@@ -137,4 +150,14 @@ class __TwigTemplate_fb99a78591357dc9494ff91e4bb5eacec43cfc03d76c29f0b074b84efba
 /*         {% endfor %}*/
 /*       </tbody>*/
 /*     </table>*/
+/*      <script>*/
+/*         $('#student').DataTable({*/
+/*             "pagingType": "full_numbers",*/
+/*             "lengthMenu": [[10, 20], [10, 20]],*/
+/*             "language": {*/
+/*                 "url": "{{ asset('DataTables/French.json') }}"*/
+/*             }*/
+/* */
+/*         });*/
+/*     </script>*/
 /* {% endblock %}*/

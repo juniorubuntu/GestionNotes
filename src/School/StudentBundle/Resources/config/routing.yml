@@ -3,27 +3,27 @@ school_student_homepage:
     defaults: { _controller: SchoolStudentBundle:Default:index }
 
 school_student_show:
-    path:       /Gestion/student/{id}
+    path:       /student/{id}
     defaults: { _controller: SchoolStudentBundle:Student:show}
     requirements:
       id: \d+
 
 school_student_add:
-    path:       /Gestion/student/add
+    path:       /student/add
     defaults: { _controller: SchoolStudentBundle:Student:add}
 
 school_student_list:
-    path:       /Gestion/listeEleves
+    path:       /listeEleves
     defaults: { _controller: SchoolStudentBundle:Student:list}
 
 school_student_edit:
-    path:       /Gestion/student/edit/{id}
+    path:       /student/edit/{id}
     defaults: { _controller: SchoolStudentBundle:Student:edit}
     requirements:
       id: \d+
 
 school_student_delete:
-    path:       /Gestion/student/{id}/delete
+    path:       /student/{id}/delete
     defaults: { _controller: SchoolStudentBundle:Student:delete}
     requirements:
       id: \d+
@@ -32,3 +32,7 @@ school_student_delete:
 SchoolStudentBundle_classe:
     resource: "@SchoolStudentBundle/Resources/config/routing/classe.yml"
     prefix:   /classe
+
+SchoolStudentBundle_inscription:
+        resource: "@SchoolStudentBundle/Resources/config/routing/inscription.yml"
+        prefix:   /inscription

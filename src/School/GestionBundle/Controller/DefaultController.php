@@ -20,10 +20,10 @@ class DefaultController extends Controller {
             return $this->redirect($this->generateUrl('constante_new'));
         } else if ((count($constante) == 1) && (count($ecole) == 0)) {
             return $this->redirect($this->generateUrl('ecole_new'));
-        } else if ((count($listUser) == 1) && (count($ecole) == 1) && (count($constante) == 1)) {
+        } else if ((count($listUser) >= 1) && (count($ecole) == 1) && (count($constante) == 1)) {
             return $this->render('SchoolGestionBundle:Default:index.html.twig');
         } else {
-            return $this->render('SchoolGestionBundle:Default:error.html.twig');
+            return $this->render('SchoolGestionBundle:Error:error.html.twig');
         }
     }
 

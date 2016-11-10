@@ -7,11 +7,15 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Sequence
- * 
+ *
  * @ORM\Table()
  * @ORM\Entity
  */
 class Sequence {
+
+    public function __toString() {
+        return $this->getNom();
+    }
 
     /**
      * @var integer
@@ -24,36 +28,39 @@ class Sequence {
 
     /**
      * @var string
-     * 
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank()
+     *
+     * @ORM\Column(name="nom", type="string", length=255)
      */
     private $nom;
-
-    /**
-     * @var string
-     * 
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank()
-     */
-    private $debut;
-
-    /**
-     * @var string
-     * 
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank()
-     */
-    private $fin;
-
 
     /**
      * Get id
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     * @return Sequence
+     */
+    public function setNom($nom) {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string 
+     */
+    public function getNom() {
+        return $this->nom;
+    }
+
 }

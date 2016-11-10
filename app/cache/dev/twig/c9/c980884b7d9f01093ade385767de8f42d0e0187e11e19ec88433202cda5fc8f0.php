@@ -12,7 +12,7 @@ class __TwigTemplate_cffa5f45dad579bbdf0552605e119a7cd7dbfab08667e0a32bd042233e8
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'body' => array($this, 'block_body'),
-            'description' => array($this, 'block_description'),
+            'menu' => array($this, 'block_menu'),
             'content' => array($this, 'block_content'),
         );
     }
@@ -40,57 +40,113 @@ class __TwigTemplate_cffa5f45dad579bbdf0552605e119a7cd7dbfab08667e0a32bd042233e8
     {
         // line 6
         echo "    ";
-        $this->displayBlock('description', $context, $blocks);
-        // line 21
+        $this->displayBlock('menu', $context, $blocks);
+        // line 59
         echo "    ";
         $this->displayBlock('content', $context, $blocks);
     }
 
     // line 6
-    public function block_description($context, array $blocks = array())
+    public function block_menu($context, array $blocks = array())
     {
         // line 7
-        echo "        <div class=\"pull-right\">
-            ";
+        echo "        <nav id=\"navbar-darkblue\" class=\"navbar navbar-default\" role=\"navigation\">
+            <div class=\"navbar-header\"><a class=\"navbar-brand\" href=\"";
         // line 8
-        if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
-            // line 9
-            echo "                Utilisateur: <b style=\"color: blue\">
+        echo $this->env->getExtension('routing')->getPath("school_gestion_homepage");
+        echo "\"><i class=\"glyphicon glyphicon-home\"></i> Accueil</a>
+                <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-menubuilder\"><span class=\"sr-only\">Toggle navigation</span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span>
+                </button>
+            </div>
+
+            <div class=\"collapse navbar-collapse navbar-menubuilder\">
+                <ul class=\"nav navbar-nav\">
+
+                    <li class=\"dropdown\">
+                        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"><i class=\"glyphicon glyphicon-th-list\"></i> Enseigants <b class=\"caret\"></b></a>
+                        <ul class=\"dropdown-menu\">
+                            <li><a href=\"";
+        // line 19
+        echo $this->env->getExtension('routing')->getPath("user");
+        echo "\">Liste des enseignants</a></li>
+                        </ul>
+                    </li>
+                    <li class=\"dropdown\">
+                        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"><i class=\"glyphicon glyphicon-tags\"></i> Elèves <b class=\"caret\"></b></a>
+                        <ul class=\"dropdown-menu\">
+                            <li><a href=\"";
+        // line 25
+        echo $this->env->getExtension('routing')->getPath("school_student_list");
+        echo "\">Liste de élèves</a></li>
+                            <li><a href=\"";
+        // line 26
+        echo $this->env->getExtension('routing')->getPath("inscription_new");
+        echo "\">Inscription</a></li>
+                        </ul>
+                    </li>
+
+                    <li class=\"dropdown\">
+                        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"><i class=\"glyphicon glyphicon-user\"></i> Classes <b class=\"caret\"></b></a>
+                        <ul class=\"dropdown-menu\">
+                            <li><a href=\"";
+        // line 33
+        echo $this->env->getExtension('routing')->getPath("classe");
+        echo "\"><i class=\"glyphicon glyphicon-user\"></i> Liste des classes</a></li>
+                        </ul>
+                    </li>
+                    <li class=\"dropdown\">
+                        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"><i class=\"glyphicon glyphicon-gift\"></i> Matières <b class=\"caret\"></b></a>
+                        <ul class=\"dropdown-menu\">
+                            <li><a href=\"";
+        // line 39
+        echo $this->env->getExtension('routing')->getPath("matiere");
+        echo "\"><i class=\"glyphicon glyphicon-user\"></i> Liste des matières</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class=\"pull-right\">
                     ";
-            // line 10
+        // line 44
+        if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            // line 45
+            echo "                        Utilisateur: <b style=\"color: blue\">
+                            ";
+            // line 46
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
             echo "
-                </b> |
-                <a style=\"color: brown\" href=\"";
-            // line 12
+                        </b> |
+                        <a style=\"color: brown\" href=\"";
+            // line 48
             echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
-            echo "\">
-                    <u>";
-            // line 13
+            echo "\"><span class=\"glyphicon glyphicon-off\"></span>
+                            <u>";
+            // line 49
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("layout.logout", array(), "FOSUserBundle"), "html", null, true);
             echo "</u>
-                </a>
-            ";
+                        </a>
+                    ";
         } else {
-            // line 16
-            echo "                <a href=\"";
+            // line 52
+            echo "                        <a href=\"";
             echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
-            echo "\">";
+            echo "\"><span class=\"glyphicon glyphicon-log-in\"></span>";
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("layout.login", array(), "FOSUserBundle"), "html", null, true);
             echo "</a>
-            ";
+                        ";
         }
-        // line 17
+        // line 53
         echo " 
-        </div>
-        <h2>Bienvenue, vous êtes à la page d'accueil.</h2>
+                </div>
+            </div>
+
+        </nav>
     ";
     }
 
-    // line 21
+    // line 59
     public function block_content($context, array $blocks = array())
     {
-        // line 22
+        // line 60
         echo "    ";
     }
 
@@ -106,7 +162,7 @@ class __TwigTemplate_cffa5f45dad579bbdf0552605e119a7cd7dbfab08667e0a32bd042233e8
 
     public function getDebugInfo()
     {
-        return array (  94 => 22,  91 => 21,  84 => 17,  76 => 16,  70 => 13,  66 => 12,  61 => 10,  58 => 9,  56 => 8,  53 => 7,  50 => 6,  45 => 21,  42 => 6,  39 => 5,  34 => 3,  31 => 2,  11 => 1,);
+        return array (  150 => 60,  147 => 59,  138 => 53,  130 => 52,  124 => 49,  120 => 48,  115 => 46,  112 => 45,  110 => 44,  102 => 39,  93 => 33,  83 => 26,  79 => 25,  70 => 19,  56 => 8,  53 => 7,  50 => 6,  45 => 59,  42 => 6,  39 => 5,  34 => 3,  31 => 2,  11 => 1,);
     }
 }
 /* {% extends "::base.html.twig" %}*/
@@ -114,20 +170,58 @@ class __TwigTemplate_cffa5f45dad579bbdf0552605e119a7cd7dbfab08667e0a32bd042233e8
 /*     Accueil*/
 /* {% endblock %}*/
 /* {% block body %}*/
-/*     {% block description %}*/
-/*         <div class="pull-right">*/
-/*             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}*/
-/*                 Utilisateur: <b style="color: blue">*/
-/*                     {{ app.user.username }}*/
-/*                 </b> |*/
-/*                 <a style="color: brown" href="{{ path('fos_user_security_logout') }}">*/
-/*                     <u>{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</u>*/
-/*                 </a>*/
-/*             {% else %}*/
-/*                 <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>*/
-/*             {% endif %} */
-/*         </div>*/
-/*         <h2>Bienvenue, vous êtes à la page d'accueil.</h2>*/
+/*     {% block menu %}*/
+/*         <nav id="navbar-darkblue" class="navbar navbar-default" role="navigation">*/
+/*             <div class="navbar-header"><a class="navbar-brand" href="{{ path('school_gestion_homepage')}}"><i class="glyphicon glyphicon-home"></i> Accueil</a>*/
+/*                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>*/
+/*                 </button>*/
+/*             </div>*/
+/* */
+/*             <div class="collapse navbar-collapse navbar-menubuilder">*/
+/*                 <ul class="nav navbar-nav">*/
+/* */
+/*                     <li class="dropdown">*/
+/*                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-th-list"></i> Enseigants <b class="caret"></b></a>*/
+/*                         <ul class="dropdown-menu">*/
+/*                             <li><a href="{{ path('user') }}">Liste des enseignants</a></li>*/
+/*                         </ul>*/
+/*                     </li>*/
+/*                     <li class="dropdown">*/
+/*                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-tags"></i> Elèves <b class="caret"></b></a>*/
+/*                         <ul class="dropdown-menu">*/
+/*                             <li><a href="{{ path('school_student_list')}}">Liste de élèves</a></li>*/
+/*                             <li><a href="{{ path('inscription_new')}}">Inscription</a></li>*/
+/*                         </ul>*/
+/*                     </li>*/
+/* */
+/*                     <li class="dropdown">*/
+/*                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> Classes <b class="caret"></b></a>*/
+/*                         <ul class="dropdown-menu">*/
+/*                             <li><a href="{{ path('classe')}}"><i class="glyphicon glyphicon-user"></i> Liste des classes</a></li>*/
+/*                         </ul>*/
+/*                     </li>*/
+/*                     <li class="dropdown">*/
+/*                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-gift"></i> Matières <b class="caret"></b></a>*/
+/*                         <ul class="dropdown-menu">*/
+/*                             <li><a href="{{ path('matiere')}}"><i class="glyphicon glyphicon-user"></i> Liste des matières</a></li>*/
+/*                         </ul>*/
+/*                     </li>*/
+/*                 </ul>*/
+/*                 <div class="pull-right">*/
+/*                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}*/
+/*                         Utilisateur: <b style="color: blue">*/
+/*                             {{ app.user.username }}*/
+/*                         </b> |*/
+/*                         <a style="color: brown" href="{{ path('fos_user_security_logout') }}"><span class="glyphicon glyphicon-off"></span>*/
+/*                             <u>{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</u>*/
+/*                         </a>*/
+/*                     {% else %}*/
+/*                         <a href="{{ path('fos_user_security_login') }}"><span class="glyphicon glyphicon-log-in"></span>{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>*/
+/*                         {% endif %} */
+/*                 </div>*/
+/*             </div>*/
+/* */
+/*         </nav>*/
 /*     {% endblock %}*/
 /*     {% block content %}*/
 /*     {% endblock %}*/

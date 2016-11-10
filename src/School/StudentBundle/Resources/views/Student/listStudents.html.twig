@@ -2,8 +2,8 @@
 
 {% block body %}
 	<h2 class="page-header">List of the students</h2>
-<table class="table table-striped">
-      <thead>
+<table class="records_list table table-striped panel-primary" id="student">
+      <thead class="panel-header">
         <tr>
           <th>#</th>
           <th>Name</th>
@@ -31,4 +31,14 @@
         {% endfor %}
       </tbody>
     </table>
+     <script>
+        $('#student').DataTable({
+            "pagingType": "full_numbers",
+            "lengthMenu": [[10, 20], [10, 20]],
+            "language": {
+                "url": "{{ asset('DataTables/French.json') }}"
+            }
+
+        });
+    </script>
 {% endblock %}

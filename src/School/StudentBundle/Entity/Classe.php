@@ -3,6 +3,7 @@
 namespace School\StudentBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Classe
@@ -43,6 +44,12 @@ class Classe {
      * @ORM\ManyToOne(targetEntity="Classe")
      */
     private $classePere;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="School\StudentBundle\Entity\Cycle")
+     * @Assert\NotBlank()
+     */
+    private $cycle;
 
     /**
      * Get id
@@ -117,5 +124,28 @@ class Classe {
     public function getClassePere()
     {
         return $this->classePere;
+    }
+
+    /**
+     * Set cycle
+     *
+     * @param \School\StudentBundle\Entity\Cycle $cycle
+     * @return Classe
+     */
+    public function setCycle(\School\StudentBundle\Entity\Cycle $cycle = null)
+    {
+        $this->cycle = $cycle;
+
+        return $this;
+    }
+
+    /**
+     * Get cycle
+     *
+     * @return \School\StudentBundle\Entity\Cycle 
+     */
+    public function getCycle()
+    {
+        return $this->cycle;
     }
 }

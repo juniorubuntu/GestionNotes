@@ -19,7 +19,7 @@ class AppKernel extends Kernel {
             new School\UserBundle\SchoolUserBundle(),
             new School\GestionBundle\SchoolGestionBundle(),
             new School\StudentBundle\SchoolStudentBundle(),
-            new School\TeacherBundle\SchoolTeacherBundle(),
+            //new School\TeacherBundle\SchoolTeacherBundle(),
             new School\MatiereBundle\SchoolMatiereBundle(),
             new School\ConfigBundle\SchoolConfigBundle(),
             new School\NoteBundle\SchoolNoteBundle(),

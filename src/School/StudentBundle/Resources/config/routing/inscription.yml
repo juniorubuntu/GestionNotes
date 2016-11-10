@@ -1,0 +1,30 @@
+inscription:
+    path:     /
+    defaults: { _controller: "SchoolStudentBundle:Inscription:index" }
+
+inscription_show:
+    path:     /{id}/show
+    defaults: { _controller: "SchoolStudentBundle:Inscription:show" }
+
+inscription_new:
+    path:     /new
+    defaults: { _controller: "SchoolStudentBundle:Inscription:new" }
+
+inscription_create:
+    path:     /create
+    defaults: { _controller: "SchoolStudentBundle:Inscription:create" }
+    requirements: { _method: post }
+
+inscription_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SchoolStudentBundle:Inscription:edit" }
+
+inscription_update:
+    path:     /{id}/update
+    defaults: { _controller: "SchoolStudentBundle:Inscription:update" }
+    requirements: { _method: post|put }
+
+inscription_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SchoolStudentBundle:Inscription:delete" }
+    requirements: { _method: post|delete }

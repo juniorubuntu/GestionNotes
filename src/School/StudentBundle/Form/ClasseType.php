@@ -18,7 +18,10 @@ class ClasseType extends AbstractType
             ->add('nom')
             ->add('abreviation')
             ->add('classePere')
-        ;
+            ->add('cycle',   'entity', array(
+                'class' =>     'SchoolStudentBundle:Cycle',
+                'property' => 'nom',
+                'expanded' => false));
     }
     
     /**

@@ -573,34 +573,30 @@ class appDevDebugProjectContainer extends Container
         $e = new \Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver(array(($this->targetDirs[3].'/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/config/doctrine') => 'FOS\\UserBundle\\Entity'));
         $e->setGlobalBasename('mapping');
 
-        $f = new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($a, array(0 => ($this->targetDirs[3].'/src/School/UserBundle/Entity'), 1 => ($this->targetDirs[3].'/src/School/StudentBundle/Entity'), 2 => ($this->targetDirs[3].'/src/School/ConfigBundle/Entity')));
+        $f = new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($a, array(0 => ($this->targetDirs[3].'/src/School/UserBundle/Entity'), 1 => ($this->targetDirs[3].'/src/School/StudentBundle/Entity'), 2 => ($this->targetDirs[3].'/src/School/MatiereBundle/Entity'), 3 => ($this->targetDirs[3].'/src/School/ConfigBundle/Entity'), 4 => ($this->targetDirs[3].'/src/School/NoteBundle/Entity')));
 
-        $g = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver(array(($this->targetDirs[3].'/src/School/TeacherBundle/Resources/config/doctrine') => 'School\\TeacherBundle\\Entity', ($this->targetDirs[3].'/src/School/MatiereBundle/Resources/config/doctrine') => 'School\\MatiereBundle\\Entity', ($this->targetDirs[3].'/src/School/NoteBundle/Resources/config/doctrine') => 'School\\NoteBundle\\Entity'));
-        $g->setGlobalBasename('mapping');
+        $g = new \Doctrine\ORM\Mapping\Driver\DriverChain();
+        $g->addDriver($e, 'FOS\\UserBundle\\Entity');
+        $g->addDriver($f, 'School\\UserBundle\\Entity');
+        $g->addDriver($f, 'School\\StudentBundle\\Entity');
+        $g->addDriver($f, 'School\\MatiereBundle\\Entity');
+        $g->addDriver($f, 'School\\ConfigBundle\\Entity');
+        $g->addDriver($f, 'School\\NoteBundle\\Entity');
 
-        $h = new \Doctrine\ORM\Mapping\Driver\DriverChain();
-        $h->addDriver($e, 'FOS\\UserBundle\\Entity');
-        $h->addDriver($f, 'School\\UserBundle\\Entity');
-        $h->addDriver($f, 'School\\StudentBundle\\Entity');
-        $h->addDriver($f, 'School\\ConfigBundle\\Entity');
-        $h->addDriver($g, 'School\\TeacherBundle\\Entity');
-        $h->addDriver($g, 'School\\MatiereBundle\\Entity');
-        $h->addDriver($g, 'School\\NoteBundle\\Entity');
+        $h = new \Doctrine\ORM\Configuration();
+        $h->setEntityNamespaces(array('FOSUserBundle' => 'FOS\\UserBundle\\Entity', 'SchoolUserBundle' => 'School\\UserBundle\\Entity', 'SchoolStudentBundle' => 'School\\StudentBundle\\Entity', 'SchoolMatiereBundle' => 'School\\MatiereBundle\\Entity', 'SchoolConfigBundle' => 'School\\ConfigBundle\\Entity', 'SchoolNoteBundle' => 'School\\NoteBundle\\Entity'));
+        $h->setMetadataCacheImpl($b);
+        $h->setQueryCacheImpl($c);
+        $h->setResultCacheImpl($d);
+        $h->setMetadataDriverImpl($g);
+        $h->setProxyDir((__DIR__.'/doctrine/orm/Proxies'));
+        $h->setProxyNamespace('Proxies');
+        $h->setAutoGenerateProxyClasses(true);
+        $h->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
+        $h->setDefaultRepositoryClassName('Doctrine\\ORM\\EntityRepository');
+        $h->setNamingStrategy(new \Doctrine\ORM\Mapping\DefaultNamingStrategy());
 
-        $i = new \Doctrine\ORM\Configuration();
-        $i->setEntityNamespaces(array('FOSUserBundle' => 'FOS\\UserBundle\\Entity', 'SchoolUserBundle' => 'School\\UserBundle\\Entity', 'SchoolStudentBundle' => 'School\\StudentBundle\\Entity', 'SchoolTeacherBundle' => 'School\\TeacherBundle\\Entity', 'SchoolMatiereBundle' => 'School\\MatiereBundle\\Entity', 'SchoolConfigBundle' => 'School\\ConfigBundle\\Entity', 'SchoolNoteBundle' => 'School\\NoteBundle\\Entity'));
-        $i->setMetadataCacheImpl($b);
-        $i->setQueryCacheImpl($c);
-        $i->setResultCacheImpl($d);
-        $i->setMetadataDriverImpl($h);
-        $i->setProxyDir((__DIR__.'/doctrine/orm/Proxies'));
-        $i->setProxyNamespace('Proxies');
-        $i->setAutoGenerateProxyClasses(true);
-        $i->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
-        $i->setDefaultRepositoryClassName('Doctrine\\ORM\\EntityRepository');
-        $i->setNamingStrategy(new \Doctrine\ORM\Mapping\DefaultNamingStrategy());
-
-        $this->services['doctrine.orm.default_entity_manager'] = $instance = call_user_func(array('Doctrine\\ORM\\EntityManager', 'create'), $this->get('doctrine.dbal.default_connection'), $i);
+        $this->services['doctrine.orm.default_entity_manager'] = $instance = call_user_func(array('Doctrine\\ORM\\EntityManager', 'create'), $this->get('doctrine.dbal.default_connection'), $h);
 
         $this->get('doctrine.orm.default_manager_configurator')->configure($instance);
 
@@ -2150,7 +2146,7 @@ class appDevDebugProjectContainer extends Container
         $o = new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $g, $this->get('security.authentication.session_strategy'), $k, 'main', $n, new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($f, $k, array('login_path' => 'fos_user_security_login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'), $a), array('check_path' => 'fos_user_security_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $a, $d);
         $o->setRememberMeServices($l);
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($j, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $c), 'main', $a, $d), 2 => $m, 3 => $o, 4 => new \Symfony\Component\Security\Http\Firewall\RememberMeListener($b, $l, $g, $a, $d), 5 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '581f0946b7b78', $a), 6 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $j, $g)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $k, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $k, 'fos_user_security_login', false), NULL, NULL, $a, false));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($j, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $c), 'main', $a, $d), 2 => $m, 3 => $o, 4 => new \Symfony\Component\Security\Http\Firewall\RememberMeListener($b, $l, $g, $a, $d), 5 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '58241a51ac468', $a), 6 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $j, $g)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $k, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $k, 'fos_user_security_login', false), NULL, NULL, $a, false));
     }
 
     /**
@@ -3292,7 +3288,6 @@ class appDevDebugProjectContainer extends Container
         $instance->addResource('xlf', ($this->targetDirs[3].'/src/School/UserBundle/Resources/translations/messages.fr.xlf'), 'fr', 'messages');
         $instance->addResource('xlf', ($this->targetDirs[3].'/src/School/GestionBundle/Resources/translations/messages.fr.xlf'), 'fr', 'messages');
         $instance->addResource('xlf', ($this->targetDirs[3].'/src/School/StudentBundle/Resources/translations/messages.fr.xlf'), 'fr', 'messages');
-        $instance->addResource('xlf', ($this->targetDirs[3].'/src/School/TeacherBundle/Resources/translations/messages.fr.xlf'), 'fr', 'messages');
         $instance->addResource('xlf', ($this->targetDirs[3].'/src/School/MatiereBundle/Resources/translations/messages.fr.xlf'), 'fr', 'messages');
         $instance->addResource('xlf', ($this->targetDirs[3].'/src/School/ConfigBundle/Resources/translations/messages.fr.xlf'), 'fr', 'messages');
         $instance->addResource('xlf', ($this->targetDirs[3].'/src/School/NoteBundle/Resources/translations/messages.fr.xlf'), 'fr', 'messages');
@@ -3378,7 +3373,6 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath(($this->targetDirs[3].'/src/School/UserBundle/Resources/views'), 'SchoolUser');
         $instance->addPath(($this->targetDirs[3].'/src/School/GestionBundle/Resources/views'), 'SchoolGestion');
         $instance->addPath(($this->targetDirs[3].'/src/School/StudentBundle/Resources/views'), 'SchoolStudent');
-        $instance->addPath(($this->targetDirs[3].'/src/School/TeacherBundle/Resources/views'), 'SchoolTeacher');
         $instance->addPath(($this->targetDirs[3].'/src/School/MatiereBundle/Resources/views'), 'SchoolMatiere');
         $instance->addPath(($this->targetDirs[3].'/src/School/ConfigBundle/Resources/views'), 'SchoolConfig');
         $instance->addPath(($this->targetDirs[3].'/src/School/NoteBundle/Resources/views'), 'SchoolNote');
@@ -3653,7 +3647,7 @@ class appDevDebugProjectContainer extends Container
     {
         $a = $this->get('security.user_checker');
 
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username'), $a, 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\RememberMeAuthenticationProvider($a, 'a88535fb64110b17b725af1364ee4a3e', 'main'), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('581f0946b7b78')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username'), $a, 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\RememberMeAuthenticationProvider($a, 'a88535fb64110b17b725af1364ee4a3e', 'main'), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('58241a51ac468')), true);
 
         $instance->setEventDispatcher($this->get('event_dispatcher'));
 
@@ -3832,7 +3826,6 @@ class appDevDebugProjectContainer extends Container
                 'SchoolUserBundle' => 'School\\UserBundle\\SchoolUserBundle',
                 'SchoolGestionBundle' => 'School\\GestionBundle\\SchoolGestionBundle',
                 'SchoolStudentBundle' => 'School\\StudentBundle\\SchoolStudentBundle',
-                'SchoolTeacherBundle' => 'School\\TeacherBundle\\SchoolTeacherBundle',
                 'SchoolMatiereBundle' => 'School\\MatiereBundle\\SchoolMatiereBundle',
                 'SchoolConfigBundle' => 'School\\ConfigBundle\\SchoolConfigBundle',
                 'SchoolNoteBundle' => 'School\\NoteBundle\\SchoolNoteBundle',

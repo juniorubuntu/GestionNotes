@@ -1,0 +1,4 @@
+school_user_user:
+    resource: "@SchoolUserBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
