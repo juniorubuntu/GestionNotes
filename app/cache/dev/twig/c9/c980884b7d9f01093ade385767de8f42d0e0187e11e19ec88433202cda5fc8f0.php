@@ -54,10 +54,10 @@ class __TwigTemplate_cffa5f45dad579bbdf0552605e119a7cd7dbfab08667e0a32bd042233e8
         ";
         // line 64
         $this->displayBlock('content', $context, $blocks);
-        // line 82
+        // line 85
         echo "    </div>
     ";
-        // line 83
+        // line 86
         $this->displayBlock('pied', $context, $blocks);
     }
 
@@ -190,6 +190,12 @@ class __TwigTemplate_cffa5f45dad579bbdf0552605e119a7cd7dbfab08667e0a32bd042233e8
                             <li><a href=\"\">Exporter les notes en PDF</a></li>
                             <li><a href=\"\">Générer les statistiques</a></li>
                         </ol>
+                        <div class=\"pull-right\">
+                            Matière: <i style=\"color: forestgreen\">";
+            // line 79
+            echo twig_escape_filter($this->env, $this->getAttribute($context["dispense"], "matiere", array()), "html", null, true);
+            echo "</i>
+                        </div>
                     </div>
                 </div>
             ";
@@ -197,14 +203,14 @@ class __TwigTemplate_cffa5f45dad579bbdf0552605e119a7cd7dbfab08667e0a32bd042233e8
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['dispense'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 81
+        // line 84
         echo "        ";
     }
 
-    // line 83
+    // line 86
     public function block_pied($context, array $blocks = array())
     {
-        // line 84
+        // line 87
         echo "        <div class=\"footer\" style=\"bottom: 0; width: 100%; position: fixed\"><center>&copy; 2016 GreenSoft-Team. All rights reserved.</center></div>
     ";
     }
@@ -221,7 +227,7 @@ class __TwigTemplate_cffa5f45dad579bbdf0552605e119a7cd7dbfab08667e0a32bd042233e8
 
     public function getDebugInfo()
     {
-        return array (  208 => 84,  205 => 83,  201 => 81,  184 => 70,  179 => 67,  175 => 66,  172 => 65,  169 => 64,  164 => 60,  161 => 59,  152 => 52,  144 => 51,  138 => 48,  134 => 47,  129 => 45,  126 => 44,  124 => 43,  116 => 38,  107 => 32,  97 => 25,  93 => 24,  84 => 18,  71 => 8,  68 => 7,  65 => 6,  61 => 83,  58 => 82,  56 => 64,  52 => 62,  50 => 59,  47 => 58,  44 => 6,  41 => 5,  36 => 3,  33 => 2,  11 => 1,);
+        return array (  214 => 87,  211 => 86,  207 => 84,  196 => 79,  184 => 70,  179 => 67,  175 => 66,  172 => 65,  169 => 64,  164 => 60,  161 => 59,  152 => 52,  144 => 51,  138 => 48,  134 => 47,  129 => 45,  126 => 44,  124 => 43,  116 => 38,  107 => 32,  97 => 25,  93 => 24,  84 => 18,  71 => 8,  68 => 7,  65 => 6,  61 => 86,  58 => 85,  56 => 64,  52 => 62,  50 => 59,  47 => 58,  44 => 6,  41 => 5,  36 => 3,  33 => 2,  11 => 1,);
     }
 }
 /* {% extends "::base.html.twig" %}*/
@@ -301,6 +307,9 @@ class __TwigTemplate_cffa5f45dad579bbdf0552605e119a7cd7dbfab08667e0a32bd042233e8
 /*                             <li><a href="">Exporter les notes en PDF</a></li>*/
 /*                             <li><a href="">Générer les statistiques</a></li>*/
 /*                         </ol>*/
+/*                         <div class="pull-right">*/
+/*                             Matière: <i style="color: forestgreen">{{dispense.matiere}}</i>*/
+/*                         </div>*/
 /*                     </div>*/
 /*                 </div>*/
 /*             {% endfor %}*/

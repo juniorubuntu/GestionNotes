@@ -26,7 +26,10 @@ class DefaultController extends Controller {
             return $this->redirect($this->generateUrl('ecole_new'));
         } else if ((count($listUser) >= 1) && (count($ecole) == 1) && (count($constante) == 1)) {
             $listDispense = $this->getDoctrine()->getRepository('SchoolMatiereBundle:EstDispense')
-                    ->findBy(array('enseignant' => $userConnected));
+                    ->findBy(array(
+                'enseignant' => $userConnected,
+                'annee' => '2016/2017'
+            ));
             return $this->render('SchoolGestionBundle:Default:index.html.twig', array(
                         'listeDispense' => $listDispense));
         } else {
