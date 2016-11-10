@@ -179,7 +179,7 @@ class __TwigTemplate_cffa5f45dad579bbdf0552605e119a7cd7dbfab08667e0a32bd042233e8
             echo "                <div class=\"col-md-3 col-sm-6\">
                     <div class=\"shop-item panel-primary\">
                         <div class=\"panel btn-blue\">
-                            <b style=\"text-align: left\">";
+                            <b style=\"text-align: left\"><span style=\"color: green; font-size: 18px\" class=\"glyphicon glyphicon-folder-open\"></span> ";
             // line 70
             echo twig_escape_filter($this->env, $this->getAttribute($context["dispense"], "classe", array()), "html", null, true);
             echo "</b>
@@ -343,7 +343,7 @@ class __TwigTemplate_cffa5f45dad579bbdf0552605e119a7cd7dbfab08667e0a32bd042233e8
 /*                 <div class="col-md-3 col-sm-6">*/
 /*                     <div class="shop-item panel-primary">*/
 /*                         <div class="panel btn-blue">*/
-/*                             <b style="text-align: left">{{dispense.classe}}</b>*/
+/*                             <b style="text-align: left"><span style="color: green; font-size: 18px" class="glyphicon glyphicon-folder-open"></span> {{dispense.classe}}</b>*/
 /*                         </div>*/
 /*                         <ol class="">*/
 /*                             <li><a class="btn-link" data-toggle="modal" data-target="#sequence_{{dispense.id}}">Remplir les notes</a>*/

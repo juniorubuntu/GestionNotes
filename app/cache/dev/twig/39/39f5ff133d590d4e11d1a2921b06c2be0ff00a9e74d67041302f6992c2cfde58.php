@@ -1,6 +1,6 @@
 <?php
 
-/* WebProfilerBundle:Profiler:toolbar.html.twig */
+/* @WebProfiler/Profiler/toolbar.html.twig */
 class __TwigTemplate_80d17a959cdd4ac64653e5ddcf70f1e9b0781757c2d4cadc514a3cbff0e311ef extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -56,7 +56,7 @@ class __TwigTemplate_80d17a959cdd4ac64653e5ddcf70f1e9b0781757c2d4cadc514a3cbff0e
     <style>
         ";
             // line 22
-            $this->loadTemplate("@WebProfiler/Profiler/toolbar.css.twig", "WebProfilerBundle:Profiler:toolbar.html.twig", 22)->display(array_merge($context, array("position" => (isset($context["position"]) ? $context["position"] : $this->getContext($context, "position")), "floatable" => true)));
+            $this->loadTemplate("@WebProfiler/Profiler/toolbar.css.twig", "@WebProfiler/Profiler/toolbar.html.twig", 22)->display(array_merge($context, array("position" => (isset($context["position"]) ? $context["position"] : $this->getContext($context, "position")), "floatable" => true)));
             // line 23
             echo "    </style>
     <div id=\"sfToolbarClearer-";
@@ -116,7 +116,7 @@ $context["name"])), "method"), "html", null, true);
 
     public function getTemplateName()
     {
-        return "WebProfilerBundle:Profiler:toolbar.html.twig";
+        return "@WebProfiler/Profiler/toolbar.html.twig";
     }
 
     public function isTraitable()

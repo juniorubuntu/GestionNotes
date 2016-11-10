@@ -28,7 +28,7 @@ class __TwigTemplate_fa763f5f7f7c4b2b2d3fe6bae56961605d87ca626c188b4c59b31c3d7da
     public function block_fos_user_content($context, array $blocks = array())
     {
         // line 4
-        echo "    <div class=\"col-md-6 col-md-offset-3\">
+        echo "    <div class=\"col-md-9 col-md-offset-2\">
         <h2><marquee BEHAVIOR=\"alternate\">Authentifiez-vous avant de continuer!</marquee></h2>
                 ";
         // line 6
@@ -137,7 +137,7 @@ class __TwigTemplate_fa763f5f7f7c4b2b2d3fe6bae56961605d87ca626c188b4c59b31c3d7da
 /* {% extends "FOSUserBundle::layout.html.twig" %}*/
 /* */
 /* {% block fos_user_content %}*/
-/*     <div class="col-md-6 col-md-offset-3">*/
+/*     <div class="col-md-9 col-md-offset-2">*/
 /*         <h2><marquee BEHAVIOR="alternate">Authentifiez-vous avant de continuer!</marquee></h2>*/
 /*                 {% if error %}*/
 /*             <div style="color: red">{{ error|trans({}, 'FOSUserBundle') }}</div>*/
