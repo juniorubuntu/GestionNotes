@@ -23,7 +23,7 @@ class __TwigTemplate_b405415d52319a8da06ef8c2dbf9374ca52eccf2b5f56252554d53ca071
         echo $this->env->getExtension('routing')->getPath("fos_user_registration_register");
         echo "\" ";
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
-        echo " method=\"POST\" class=\"col-md-5\">
+        echo " method=\"POST\" class=\"col-md-8\">
 
         ";
         // line 5
@@ -150,7 +150,7 @@ class __TwigTemplate_b405415d52319a8da06ef8c2dbf9374ca52eccf2b5f56252554d53ca071
 }
 /* <div class="col-md-12">*/
 /*     <h2>Créer votre compte</h2>*/
-/*     <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="col-md-5">*/
+/*     <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="col-md-8">*/
 /* */
 /*         {{form_start(form, {'method': 'POST', 'attr':{'class': 'register'}})}}*/
 /* */
