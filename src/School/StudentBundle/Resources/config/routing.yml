@@ -1,34 +1,3 @@
-school_student_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: SchoolStudentBundle:Default:index }
-
-school_student_show:
-    path:       /student/{id}
-    defaults: { _controller: SchoolStudentBundle:Student:show}
-    requirements:
-      id: \d+
-
-school_student_add:
-    path:       /student/add
-    defaults: { _controller: SchoolStudentBundle:Student:add}
-
-school_student_list:
-    path:       /listeEleves
-    defaults: { _controller: SchoolStudentBundle:Student:list}
-
-school_student_edit:
-    path:       /student/edit/{id}
-    defaults: { _controller: SchoolStudentBundle:Student:edit}
-    requirements:
-      id: \d+
-
-school_student_delete:
-    path:       /student/{id}/delete
-    defaults: { _controller: SchoolStudentBundle:Student:delete}
-    requirements:
-      id: \d+
-      
-      
 SchoolStudentBundle_classe:
     resource: "@SchoolStudentBundle/Resources/config/routing/classe.yml"
     prefix:   /classe
@@ -36,3 +5,7 @@ SchoolStudentBundle_classe:
 SchoolStudentBundle_inscription:
         resource: "@SchoolStudentBundle/Resources/config/routing/inscription.yml"
         prefix:   /inscription
+
+SchoolStudentBundle_student:
+        resource: "@SchoolStudentBundle/Resources/config/routing/student.yml"
+        prefix:   /student

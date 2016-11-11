@@ -1,0 +1,71 @@
+{% extends 'SchoolGestionBundle:Default:index.html.twig' %}
+
+{% block content -%}
+    <h1 class="text-center">Edition des notes des élèves</h1>
+
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-3">
+                <label for="">Classe: </label> <span>{{classe.nom}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="">Séquence: </label> <span>{{sequence.nom}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="">Matière: </label> <span>{{matiere.nom}}</span>
+            </div>
+        </div>
+        <form  action="{{ path('note_editnote', { 'id': classe.id, 'idSeq':sequence.id, 'idMat':matiere.id })}}" method="POST">
+            <table class="table table-bordered table-hover panel-primary" id="notes">
+                <thead class="panel-heading">
+                    <tr>
+                        <th>Noms et prénoms</th>
+                        <th class="col-md-2">Notes</th>
+                        <th class="col-md-2">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for evaluation in evaluations %}
+                        <tr>
+                            <td>{{evaluation.student.nom}}</td>
+                            <td>
+                                <input id="{{ evaluation.id }}" type="text" value="{{ evaluation.note }}" name="{{ evaluation.student.id }}" class="form-control col-md-1" placeholder="note-{{ evaluation.student.nom }}" disabled="true"/>
+                            </td>
+                            <td>
+                                <a class="btn btn-primary" onclick="activer({{ evaluation.id }})">Modifier</a>
+
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <input class="btn btn-primary" type="submit" value="Enregistrer" />
+        </form>
+    </div>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('school_gestion_homepage') }}">
+                Back to the list
+            </a>
+        </li>
+    </ul>
+    <script>
+        $('#notes').DataTable({
+            "pagingType": "full_numbers",
+            "lengthMenu": [[10, 20], [10, 20]],
+            "language": {
+                "url": "{{ asset('DataTables/French.json') }}"
+            }
+
+        });
+    </script>
+    <script>
+        function activer(id){
+            document.getElementById(id).disabled =false;
+        }
+    </script>
+{% endblock %}

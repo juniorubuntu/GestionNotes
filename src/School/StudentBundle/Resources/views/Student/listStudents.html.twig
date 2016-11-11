@@ -1,13 +1,14 @@
-{% extends 'base.html.twig' %}
+{% extends 'SchoolGestionBundle:Default:index.html.twig' %}
 
-{% block body %}
+{% block content -%}
 	<h2 class="page-header">List of the students</h2>
 <table class="records_list table table-striped panel-primary" id="student">
-      <thead class="panel-header">
+      <thead class="panel-heading">
         <tr>
           <th>#</th>
-          <th>Name</th>
+          <th>Nom</th>
           <th>Date of birth</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -31,6 +32,13 @@
         {% endfor %}
       </tbody>
     </table>
+    <ul>
+        <li>
+            <a href="{{ path('school_student_add') }}">
+                Ajouter un eleve
+            </a>
+        </li>
+    </ul>
      <script>
         $('#student').DataTable({
             "pagingType": "full_numbers",

@@ -11,7 +11,6 @@
             </div>
             <div class="collapse navbar-collapse navbar-menubuilder">
                 <ul class="nav navbar-nav">
-
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-th-list"></i> Enseigants <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -39,21 +38,25 @@
                         </ul>
                     </li>
                 </ul>
-                <div class="pull-right">
+                <p class="navbar-text navbar-right">
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                         Utilisateur: <b style="color: blue">
-                            {{ app.user.username }}
-                        </b> |
-                        <a style="color: brown" href="{{ path('fos_user_security_logout') }}"><span class="glyphicon glyphicon-off"></span>
-                            <u>{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</u>
-                        </a>
+                        {{ app.user.username }}
+                    </b> |
+                    <a style="color: brown" href="{{ path('fos_user_security_logout') }}"><span class="glyphicon glyphicon-off"></span>
+                    <span>{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</span>
+                    </a>
                     {% else %}
                         <a href="{{ path('fos_user_security_login') }}"><span class="glyphicon glyphicon-log-in"></span>{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-                        {% endif %} 
-                </div>
+                    {% endif %}
+                </p>
             </div>
-
         </nav>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            {% for flas_message in app.session.flashbag.get('notice') %}
+                <div class="alert alert-warning">{{ flas_message }}</div>
+            {% endfor %}
+        </div>
     {% endblock %}
     <div class="col-md-3">
         {% block aside %}
@@ -93,7 +96,29 @@
                                     </div>
                                 </div>
                             </li>
-                            <li><a href="">Modifier une note</a></li>
+                            <li><a class="btn-link" data-toggle="modal" data-target="#sequenceedit_{{dispense.id}}">Modifier une note</a>
+                                <div id="sequenceedit_{{dispense.id}}" class="modal fade">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <center><b>Choisir la séquence</b></center>
+                                            </div>
+                                            <div class="col-md-12 modal-body">
+                                                {% for sequence in listSequence %}
+                                                    <center>
+                                                        <a href="{{path('note_editnote', {'id':dispense.classe.id , 'idSeq': sequence.id, 'idMat':dispense.matiere.id })}}" class="btn btn-green">
+                                                            <b>{{sequence}}</b>
+                                                        </a>
+                                                    </center>
+                                                {% endfor %}
+                                                <hr>
+                                                <button type="button" class="btn btn-red pull-right" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign"></span>Annuler</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
                             <li><a href="">Exporter les notes en PDF</a></li>
                             <li><a href="">Générer les statistiques</a></li>
                         </ol>

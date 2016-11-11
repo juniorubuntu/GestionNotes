@@ -1,7 +1,7 @@
-{% extends '::base.html.twig' %}
+{% extends 'SchoolGestionBundle:Default:index.html.twig' %}
 
-{% block body -%}
-    <h1>Inscription list</h1>
+{% block content -%}
+    <h1 class="text-center">Liste des inscriptions</h1>
 
     <table class="records_list table table-striped panel-primary" id="inscription">
         <thead class="panel-heading">
@@ -29,9 +29,12 @@
                             <li>
                                 <a href="{{ path('inscription_show', { 'id': entity.id }) }}">show</a>
                             </li>
+                            {% if entity.status == 0 %}
                             <li>
                                 <a href="{{ path('inscription_edit', { 'id': entity.id }) }}">edit</a>
                             </li>
+                            {% endif %}
+
                         </ul>
                     </td>
                 </tr>

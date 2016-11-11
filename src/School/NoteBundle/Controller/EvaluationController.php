@@ -4,9 +4,6 @@ namespace School\NoteBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use School\NoteBundle\Entity\Evaluation;
 use School\NoteBundle\Form\EvaluationType;
 
@@ -105,22 +102,33 @@ class EvaluationController extends Controller
 
             $eleves = $qb->getQuery()->getResult();
         if($request->getMethod() =='POST'){
-            $evaluation = new Evaluation();
             foreach($eleves as $elev){
-                $evaluation = new Evaluation();
-                $note = $this->get('request')->get($elev->getId());
-                $evaluation->setNote($note);
-                $evaluation->setSequence($sequence);
-                $evaluation->setStudent($elev);
-                $evaluation->setMatiere($matiere);
-                $evaluation->setAnnee('2016/2017');
-
-                $em->persist($evaluation);
-                $em->flush();
+                $qbEvaluation = $this->getDoctrine()->getManager()->createQueryBuilder();
+                $qbEvaluation->select('e')
+                    ->from('SchoolNoteBundle:Evaluation', 'e')
+                    ->where('e.sequence = :idSequence')
+                    ->andWhere('e.student = :idEleve')
+                    ->andWhere('e.matiere = :idMatiere')
+                    ->setParameters(array(
+                        'idEleve' => $elev->getId(),
+                        'idSequence' => $idSeq,
+                        'idMatiere' => $idMat
+                    ));
+                $evaluationExist = $qbEvaluation->getQuery()->getResult();
+                if($evaluationExist){
+                }else {
+                    $evaluation = new Evaluation();
+                    $note = $this->get('request')->get($elev->getId());
+                    $evaluation->setNote($note);
+                    $evaluation->setSequence($sequence);
+                    $evaluation->setStudent($elev);
+                    $evaluation->setMatiere($matiere);
+                    $evaluation->setAnnee('2016/2017');
+                    $em->persist($evaluation);
+                    $em->flush();
+                }
             }
-
-            //return $this->render('SchoolNoteBundle:Evaluation:notes.html.twig', array());
-            return $this->redirect($this->generateUrl('classe'));
+            return $this->redirect($this->generateUrl('school_gestion_homepage'));
         }
 
            return $this->render('SchoolNoteBundle:Evaluation:notes.html.twig', array(
@@ -131,6 +139,59 @@ class EvaluationController extends Controller
                'notes' => $notes,
             ));
 }
+
+    /**
+     * Creates a new Note entity.
+     */
+    public function editnoteAction(Request $request, $id, $idSeq, $idMat){
+
+        $em = $this->getDoctrine()->getManager();
+
+        $classe = $em->getRepository('SchoolStudentBundle:Classe')->find($id);
+        $sequence = $em->getRepository('SchoolNoteBundle:Sequence')->find($idSeq);
+        $matiere = $em->getRepository('SchoolMatiereBundle:Matiere')->find($idMat);
+
+        $qb1 = $this->getDoctrine()->getManager()->createQueryBuilder();
+
+        $qb1->select('e')
+            ->from('SchoolNoteBundle:Evaluation', 'e')
+            ->innerJoin('SchoolMatiereBundle:Matiere', 'm', 'WITH', 'm.id = e.matiere')
+            ->innerJoin('SchoolStudentBundle:Student', 's', 'WITH', 's.id = e.student')
+            ->innerJoin('SchoolStudentBundle:Inscription', 'i', 'WITH', 's.id = i.student')
+            ->innerJoin('SchoolStudentBundle:Classe', 'c', 'WITH', 'i.classe = c.id')
+            ->where('c.id = :identifie')
+            ->andWhere('e.matiere = :idMat')
+            ->andWhere('e.sequence = :idSeq')
+            ->setParameters(array('identifie'=>$id,'idMat'=>$idMat,'idSeq'=>$idSeq));
+        $evaluations = $qb1->getQuery()->getResult();
+
+        if($request->getMethod() =='POST') {
+            foreach ($evaluations as $eval) {
+                $note = $this->get('request')->get($eval->getStudent()->getId());
+                if($note){
+                    $eval->setNote($note);
+                    $eval->setSequence($sequence);
+                    $eval->setStudent($eval->getStudent());
+                    $eval->setMatiere($matiere);
+                    $eval->setAnnee('2016/2017');
+                    //  $em->persist($eval);
+                    $em->flush();
+                /*}else{
+                    $eval = $em->getRepository('SchoolNoteBundle:Evaluation')->find($eval->getId());
+                    if($eval->getNote()){
+                    }*/
+                }
+            }
+            return $this->redirect($this->generateUrl('school_gestion_homepage'));
+        }
+
+        return $this->render('SchoolNoteBundle:Evaluation:editnotes.html.twig', array(
+            'classe' => $classe,
+            'sequence' => $sequence,
+            'matiere' => $matiere,
+            'evaluations' => $evaluations,
+        ));
+    }
 
     /**
      * Creates a form to create a Evaluation entity.
@@ -201,8 +262,7 @@ class EvaluationController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function editAction($id)
-    {
+    public function editAction($id){
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('SchoolNoteBundle:Evaluation')->find($id);

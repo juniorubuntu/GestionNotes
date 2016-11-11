@@ -5,6 +5,7 @@ namespace School\StudentBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Doctrine\ORM\EntityRepository;
 
 class InscriptionType extends AbstractType {
 
@@ -14,7 +15,17 @@ class InscriptionType extends AbstractType {
      */
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
-                ->add('student')
+               // ->add('student')
+                ->add('student', 'entity', array(
+                'class' => 'SchoolStudentBundle:Student',
+               /* 'query_builder' => function (EntityRepository $er) {
+                    return $er->createQueryBuilder('s')
+                        ->innerJoin('SchoolStudentBundle:Inscription', 'i', 'WITH', 's.id = i.student')
+                        ->where('i.status = 0')
+                        ->andWhere('i.avance = 0')
+                        ->orWhere('s.id=');
+                },*/
+            ))
                 ->add('classe')
                 ->add('avance')
                 ->add('dateDerniereAvance', 'date', [

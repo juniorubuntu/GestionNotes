@@ -13,6 +13,12 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Evaluation {
 
+    function __construct() {
+        $this->setAnneeDebut(new \DateTime(date('Y')));
+        $this->setAnneeFin(new \DateTime(date('Y-m-d', time() + (24 * 3600 * 366))));
+        $this->setAnnee(date('Y') . '/' . date('Y', time() + (24 * 3600 * 366)));
+    }
+
     /**
      * @var integer
      *

@@ -4,11 +4,8 @@ namespace School\StudentBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use School\StudentBundle\Entity\Inscription;
 use School\StudentBundle\Form\InscriptionType;
+use School\StudentBundle\Form\InscriptionEditType;
 
 /**
  * Inscription controller.
@@ -48,16 +45,19 @@ class InscriptionController extends Controller {
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity->setAnnee(date('Y') . '/' . date('Y', time() + (24 * 3600 * 366)));
-            $entity->setDateDerniereAvance(new \DateTime(date('Y-m-d')));
+            $evaluation = $em->getRepository('SchoolStudentBundle:Inscription')->findOneBy(array('student'=>$entity->getStudent()->getId()));
+            if($evaluation){
+                $request->getSession()->getFlashBag()->add('notice', 'Elève deja inscrit.');
+            }else {
+                $entity->setAnnee(date('Y') . '/' . date('Y', time() + (24 * 3600 * 366)));
+                $entity->setDateDerniereAvance(new \DateTime(date('Y-m-d')));
 
-            $em->persist($entity);
-            $em->flush();
-
-            return $this->redirect($this->generateUrl('inscription_show', array('id' => $entity->getId())));
+                $em->persist($entity);
+                $em->flush();
+                return $this->redirect($this->generateUrl('inscription_show', array('id' => $entity->getId())));
+            }
         }
-
-        return array(
+        return  array(
             'entity' => $entity,
             'form' => $form->createView(),
         );
@@ -124,9 +124,6 @@ class InscriptionController extends Controller {
 
     /**
      * Displays a form to edit an existing Inscription entity.
-     *
-     * @Route("/{id}/edit", name="inscription_edit")
-     * @Method("GET")
      * @Template()
      */
     public function editAction($id) {
@@ -156,12 +153,13 @@ class InscriptionController extends Controller {
      * @return \Symfony\Component\Form\Form The form
      */
     private function createEditForm(Inscription $entity) {
-        $form = $this->createForm(new InscriptionType(), $entity, array(
+        $form = $this->createForm(new InscriptionEditType(), $entity, array(
             'action' => $this->generateUrl('inscription_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Update',
+                'attr' => array('class' => 'btn btn-primary col-md-offset-4 col-sm-offset-4 col-xs-offset-4 col-md-2 col-sm-5 col-xs-5')));
 
         return $form;
     }
@@ -169,8 +167,6 @@ class InscriptionController extends Controller {
     /**
      * Edits an existing Inscription entity.
      *
-     * @Route("/{id}", name="inscription_update")
-     * @Method("PUT")
      * @Template("SchoolStudentBundle:Inscription:edit.html.twig")
      */
     public function updateAction(Request $request, $id) {
@@ -187,9 +183,9 @@ class InscriptionController extends Controller {
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            $request->getSession()->getFlashBag()->add('notice', 'le formulaire est incomplet.');
             $em->flush();
-
-            return $this->redirect($this->generateUrl('inscription_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('inscription'));
         }
 
         return array(

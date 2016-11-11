@@ -1,0 +1,1525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="98b8266a-379d-446f-98e5-b858b1677e24" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Resources/config/routing/student.yml" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\aaec143f47cf5f71780854ce85f67000bfc03c69$anciennete.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\aaec143f47cf5f71780854ce85f67000bfc03c69$diplomes.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\aaec143f47cf5f71780854ce85f67000bfc03c69$grade.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\aaec143f47cf5f71780854ce85f67000bfc03c69$id.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\aaec143f47cf5f71780854ce85f67000bfc03c69$matricule.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\aaec143f47cf5f71780854ce85f67000bfc03c69$nom.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\aaec143f47cf5f71780854ce85f67000bfc03c69$telephone.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\aaec143f47cf5f71780854ce85f67000bfc03c69.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$confirmationToken.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$credentialsExpireAt.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$credentialsExpired.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$email.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$emailCanonical.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$enabled.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$expired.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$expiresAt.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$groups.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$lastLogin.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$locked.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$password.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$passwordRequestedAt.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$plainPassword.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$roles.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$salt.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$username.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\annotations\b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$usernameCanonical.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\appDevDebugProjectContainer.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\appDevDebugProjectContainer.php.meta" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\appDevDebugProjectContainer.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\appDevDebugProjectContainerCompiler.log" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\appDevUrlGenerator.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\appDevUrlGenerator.php.meta" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\appDevUrlMatcher.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\appDevUrlMatcher.php.meta" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\assetic\config\4\43a80f0e087752a2d4724591f85aa0e1.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\assetic\routing.yml" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\classes.map" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\templates.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\03\03ff0dd99fd5dc6eac44db2ec50f13f0e110bef55fe5f70ead657a1c44084faf.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\04\04af2d4bbdf776788f0fdf1e9b648df4d6690add6673b4c3aacc0b6f011c6255.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\09\090778aa52a8cf074b80f44f54ab184c26d520abcab3e2c3886da13857500ce6.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\09\09178f8936decdb33ae70f965e8bcd7a3fab1f9f9e0092121f5bf0cd590d7163.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\09\099a1539a542b6badb7be42662b14b014e36b7fab9855267d0ec9f417b3fb83b.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\09\09e2e91fdb21e6b289a910d1d8a322c02dec33c290e01268bfa95c46154682cb.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\0a\0a66aa729266bc33b12ec0a95e5f622984f585f07283d0b36af0af5528bb2a16.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\0b\0b8d56048bc387ff63e4c910254ca7eb0b9ec24a30ede7e101993a72bf064da0.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\0f\0ff625e7692501b8a531cdefd4920004ce0f26d88f1261ab9df07b32cb84b61b.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\10\10f4304f51d236e2e977989812982c4d52ee01b0cb6264df818f8f7862fd7c33.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\12\123aa4dd8514bfb639262b42ee3f9e45b5e3f1a5733f1ea4f6dbf8ae5090b755.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\15\154ef088244ceba2a9fa08d63365574b856e8b9ab0ccdb0b1dd9e9261618f208.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\17\1704c01f0b1ed9f6e149debadae1acbcb804710d42183b456a3250c461af6e07.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\17\1766a95cb8e58433c92b6d5bab9dfaf1cb62a34f3f6be2a64b69280ef0a6348b.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\18\181a98274c1d093297d747311036e17bdddf75043e387566f764fb6cd41b88b4.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\1e\1ee221f0737d14526dd233abed477e2a6dc2dccfdde4d6680b60edc67c318229.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\1f\1f8d022a2493e7c038d45ff1b50d494299794d7684bd4f5aa6a55f6a02fef65d.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\20\2024c24f77b48de75a2116d59f38fbf4d4557657ec23a930898dc793df1d0256.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\21\21add9e5cb8951c74be7ff94adaca29ca6ec9c4bd388345d3f3b976ab9a2684c.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\22\22376548537f9a541badc7fa6c9c11ea9957962cce1a96d7f681d62dd4e85bb6.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\22\226724c59375109595f08f09a06d27924cbe8e22cf0b14c996fda5fa2342777c.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\23\2383e4f925a308f51ea5e560bbea7c2b7f4119b303b2ce3a8d7f917aabb9321c.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\24\24d948d949a70c7221a1b18f214211e679a2629c8c0c28117cf1f3ffe820f1dd.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\26\26332b0753fa293b09fc433d7f14baa09812ad0c67369894d96c9e5fb7d1f5b2.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\27\279db79c4c1c5e2c6aa57604a3327d18d4b836567268fdb3813de6c1c2280d5b.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\27\27e43613d3c1ffaf7fa852bda8ecc9e51c6db1f0e7f6c7095403a356d78dc037.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\28\2854c2676affe9cbe9f7743dca0fb39880d656cfbf909bb2368d2a9cb028531d.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\28\28e9401d000e51c19e1237aeb41063858e35a2ee155f5a3fdab3b9fb5d997255.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\2a\2a64206e8b1df0c403bb1ef343efa8e645131a2e4d8cb67187848ce2f79bb58f.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\2a\2a6819405fb47f6c4f96527ef462ff4448871649ed88053c915c654f3405a60a.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\2a\2af2668eacb36ecaa18adff8d42da5d25935640e633dd375610388682897f04d.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\2b\2b4dd368c33403f3bc55c3b2f44f28fa693e3da9550c6362bc10716e96e2f5b1.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\2b\2b8505365c5462b872b726bfd81e23a41044bc05bf9f2dcbea90e1021b8279fb.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\2c\2c9bb9b05a29eb1eccd69cc076f4d0d85a10fe252880fbe4a0fb159dc18490ec.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\32\32e7a481025ad18c826fde332b45c1159a6c6b901474f66d859f79188ea929bd.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\34\345b26fb5b31aec78bc7def2fc3beb03570f3640564f8ee038b9a53b33351bf6.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\36\36076d77e1dbec0e36681ee8396e59cc9e139560dc40841b1c435d270d01695e.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\36\367b52b620e88be3bb22bd233fadeaefd208dc15926db574835f1841653812a4.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\38\3817e37c5c495e654e7d8f96f66aef6a8a4c2130c12ebd43866c9aa1c6af0620.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\38\38c8c1d4f3d6352ed04a943d053ed5eed5169824e10677156bc518e02ebd4e2c.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\39\39f5ff133d590d4e11d1a2921b06c2be0ff00a9e74d67041302f6992c2cfde58.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\3a\3a82ceeae271d543bf524a717eee50520f8a604d4fb054b83ae23d313913a01d.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\3b\3b46c7c905587f0247ef99600caab3e071f0dc8025b47231b5ab041966e804ea.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\3b\3b63f463fa1edf1cd0bd52f0a52e604a78243c9b3fdbf378cfa3465e6b754222.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\40\405d0592656c23b7f51cba81e6d51a94ea57191b0241ea3427af2d3d18c4bf82.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\40\407edba4370f68b0865ccdfcbb9abcdd0db4f3c8b5e8ff144cfa689205931717.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\46\46ff9e7fa12389d2f50341ef870d7a2dfd5330e43907ffd7ee53a6cd86ef77b1.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\48\48cb7696d9367fe992a79bc04a4a3717d1ea51518949d4a9aed8bc1e01d36426.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\4a\4a9ab84d9b99895115fb851b09a171904528da3b9900de1ae3dd8eb674de3716.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\4a\4ab0a6062ff8d18b2fc1b40cf35b8b1f77f1c1d9eaf97b21079b3fef36770b09.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\4a\4ad4e8ba6d67eeb51707ab4cea12263c463deb94ea655ffd5aa399a781e478a3.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\4c\4c3cbdbb3b95a20eb69481dfc514e5ad557babeff30abda34298105d812cbc3d.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\4d\4d3154c8dac3d3d56da42411a1cec5b9770a7e68017499dafd3fb261339229d3.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\4d\4d76be4986a1e463bc77a1666d24726b89a6247ca8b704639e937af34f6bda1a.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\52\5247f08d219241a0a11142aef122ab683951a4bf53c0d4255677b36f0c2ef7e8.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\52\52504229b0bb63b1e823a560f1d98c3ad6bd96b058a1a86ed33be8754268128a.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\5f\5fb29bf40b90a853a35f058710fe4ba6148ef70f062e00c775e2fba3c396b2c9.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\60\600fa6aee919901a9f6ad4213112aa0250f8d7f3582dcd3d8fb4c8a8d4d79c49.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\61\61472079c77a1b5a7a3ae0c7fa6c0c507a142ae05eed6a649c851687193bd135.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\61\61f7bed656e51e001b6f31611e48a9db438f12e427b21bad3abc3000cb172384.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\63\63b06c04fed826a563e2453835e7785f95cb2bd411306740afe56cb48bdadc77.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\63\63f47ca86daf4325b31b888ba35128cbc7b1ec7d5543c809e9afd690f99c03c9.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\68\6832c2e87081f4a367cdd59a7fbbe30682cce303234865804ce8ec3c93f4577b.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\6a\6af4506d4415e05db61467900cfa22b08ce6d0f43af9671ff53fcacfa0e7176e.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\6b\6b45ddd91cdbc046a318ccf1ccb67fdd51a5bec073be27faef75be762f061d69.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\6d\6dcd13ca884acf65e69704e2977ab39fe1d2e8a11e5854c6d7cdfdea2f666e44.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\6e\6e13f5b49545999d76dca49b13713833e00028c58d20f5da84989ab2c8fb61cf.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\6e\6e5c491e92f3857cb08cd3f5871dc8d6b2514c503c961f918139737eaaf9775b.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\6f\6f06273b190744c6e116b3d02a72277887f35f5d4cd655b9f07a4a4cdae4f892.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\73\73dc0bd2eeb96d33a513d29ec9dfc3f8aeb7f370ff98b1f97e0bf59acc94563f.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\75\7595e29eb79eb8ca938afa2e6b9172aadfce9fe9a29a951a8a6b43840dadc4c7.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\76\76c646019d225b48002eaaf67e9d344baf0f7742f07576ff897fd423c48a14ed.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\78\7870bacc552e8faf5bad3505284b2616eb78860e6df490828a73d397c76be127.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\7a\7a9c15d88a2f1bd1d02213ce0b419bea9102c427a17feb5798a1960a8b3dec3c.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\7b\7b94b4653d58b6cf7d81f99fb460283836f0759015be6e5e235cef9941867edc.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\7d\7d10e0ad43fdee083ac1394d9facf56845e8ee53f27fe71decc6cb938817f27a.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\7e\7e0dcb7da8e77ebd3f546871a2a25fb0d21446c8dbb442f428bed37071a21875.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\80\8056817f2b395e29cb28d8a1f28da4869e9e7855f42bd5b24f9d59e4f7641966.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\82\828f32aebc488131242e9df1b58fc48d50015680855cc157cf431ce7419d74bd.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\84\8459735758ceb9fe55e5a93caa3bee276f34219a959109adc025141b8b522b2e.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\87\87af7fc41840d0d643d6a9172589e2659baa1518093b79da3acb92d039200a67.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\8c\8ca875ad077bd2cc5451646ec194df4add8df7d7080daf5a653557754ff66578.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\8e\8e0b29fc35c836eae5cda0c983ab9d525a2bbdd46eeaf12322222c07a0f4d6a0.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\90\90d4875488621dad39fb1aec0ee46b8d8b0ac65ea8ecaa098eafb889b6e80bcc.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\91\91f9103cd62b0b3fab490f3f1ede71270958bbb868c014e1551d61c847804092.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\91\91fe29c260a9dc28a25d08a810fa819f3ca10081a725dadd3063add2737f9659.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\93\93464fb84b9dd1b90218b367c46a4d9ac6f241aa9ce5aa7452282c35e6c8dc4c.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\97\9702bfc6e0e976f09ccde5bc2a64c7f3ae3b7365b80af9e841dc4847bdc226d6.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\9d\9d8db22593d535f0a1632b136de2ad07fe622e3f7b74e631b6cbffa948374ced.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\9f\9f74eafe55d9745061f3b0fe09b63331d68a59f09795a25a372ce2920ea979ef.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\a0\a0ece793f55c7825d530a8998ee44a0abcfa597f35606c8583b486a8cf9e0325.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\a2\a25e83a9beca747a530c404a538aa916006e3ee2e1280b7299f0a5b873258f32.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\a4\a4d2c72a80ef6c22d5518e5f53538420baa1235eb0d50f5211923bb9668c9d56.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\a8\a82560ba64782695df6f79b95b2b519d79c32b5861548162df948cb4efd0df5b.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\ad\ad14dfa02039644493e242dae734d80213c1b79c8826b06149eecc8aadc50ee1.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\b2\b2a08266d1b48b2d6d5065ad0bdefef30640ac38136a4fc786c5894df8874b5a.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\b3\b30267f32012ee23ea511aef92522e8adacd491d3cf368251726fb3d6f69e484.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\b5\b50324830c0a3cb49462315366260163b39e85a255b3ab0396aaa3cc9e9ad2db.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\b8\b86567d45896ac104721c80042f0f609e7f2893cedf96677a232f264a9d8d3fb.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\b9\b9506a6d484edc425be29e1bafe76ad0cbbc4b459c2b652ddaf7014d8e73be28.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\ba\ba71848024e6c928fedd69db0ac651274277af6c675865a9bb969b7b78dcc0ba.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\bb\bb5c6fc0a387d9da5aae80a73af75060f9e2e1152a70e74406e19ea36a26999e.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\bf\bf3444ff595069702d750e925d264c9c1ad7e923547fc867c7a55abfa51fb57f.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\bf\bfbc2171f4d087e6210997c1d788a565f064c5fd8697d4d03b5bd4ff390566fc.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\c0\c03124fb0244055ee1d66596f6ac29c751a7d200bdc0417c6d6034b45ff2c086.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\c0\c0447bbc627016f5d27920411591779ec620af62a849f693125764e7d5c4d3f0.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\c0\c07630c18a88360b9e9ef31cbc61fe55cac15a0c00005b5742ad864d78ad0e36.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\c1\c1d827c55a46dbe52e6e273cf5a8e24131bf607f7b2e0205d9d8122e64672e42.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\c2\c2cd92e723dbcfcfb8ba588bc744c3931c83627df58ed3a832ed68692b8d1564.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\c2\c2f1e75ae882d3eaf7bb5e8145ea673d5cc9afbb377257bc87b0f16797fdeaeb.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\c5\c5b8da6559a260d16cfc3dd93a7a9e03b1c2eb082b36a472ef8150f106897718.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\c8\c8dc2a3eb9b8221d10fdf92e4bd5bc92465980482bfca5eeb41898d6c9cf9497.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\c9\c980884b7d9f01093ade385767de8f42d0e0187e11e19ec88433202cda5fc8f0.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\cc\cc0276d7016817471d70a90f774e6a9c26eb7ceded8ca0dc83019ca6ab7649d5.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\cd\cdac0203e51b32069a946206ce31a1e8dd5f7d6693fa0053257e94115045023a.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\ce\cef3587c76dc40636e363e0019b8d58bfa4d6c0d3666783b1cdc85b8a24ec1c5.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\d4\d45c6a29758deee4f978e72882b28cc4c99b5c00031c909bf4b30b6922fb4a5c.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\d5\d54fb43587bd234ba5c918d1a6420b8b78aa1603ed8f31246f24b3654e62f578.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\d9\d90bd50603b9ec54e68c7cf0d2d9a8146f4ca7511a55807e2554556bc83c7529.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\da\da9baf70e1c54d06261b13deacc79276ab275d2b05355998e31f1f8637448e51.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\dc\dc2307ec02b12670bd280d1c169213bf439bbf72689c9406d0ef9557120249f8.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\dc\dc6e2c96eb2f3b8c303b33c5cd6ead8483e84b9cdcb8c9420186ffeb7b4e28bb.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\dc\dcc4df7ed98c5998a8e47d7dfd52e8648b26b99dea95aae60245099a1001198f.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\dc\dcf5ffdf971aac2e30ad2b211a8d3a6007963aca84d6add06d0dc8acaca70aab.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\de\de5ff9cfc5395390a4fd2d215b77649ba8411442f3cdf7009e71b99b3fbd1eac.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\e0\e09bba4de5f221c168ec678a0cf059eab965fb1535253e53838ea7fd0856f04d.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\e2\e200187254305cdaf2e4ad03b9eea8130f939bfb1773a033dd42196e8bd9cd98.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\e2\e22d45e98a3598ffc22fa85fc1bf1fd6952b3a02dd70a84c7ad163808e3a0cae.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\e2\e2b45a19ef14c7a39a1925c2f2ff33639b797e39eb4ca05bf698e391e920b80c.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\e3\e3deb8ec8ba4eeada7e643018e6e0bd08ff70928c5161618fc9f9233a2976b91.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\e6\e65b7eb041c22a930d431000fce2a200af14b424c3a1ad4a48b70d35c0142cad.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\e8\e8099296ca88907039929f5b35937d640375e3ae770c7df6776ee148f0548a78.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\e8\e89185bbb7f44c15edef81dfe59c46a63f4afb6340085029a290063a193e1fae.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\e9\e96b3fc0e2c029a8ee5ce45c77d99c3c9ba8cf976be21666c9879f716f92990e.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\ee\ee3c9f099487c8752dbd59a3c837fd13c6fb848c586cca85f157c67d7fe3126f.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\f0\f0c7c3b5d29bd16bd7c79855abe2429acfcf53bad21b74d4676bbf7de2a69dfe.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\f3\f3933e7f003cf6795425a81be61b22f1a3dab75308f1acf7a0f2555090461cfc.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\f3\f3ed0339181dd50b7b3e8791114e3afc9e5fa0ab3f23de4be18014e8327b7ef7.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\f5\f557a77df69f8190e21197679f9ab9706ab72352b487817b8bc726e08c267fe0.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\f6\f6162be2678d501ee55703a5bd8ba2ad8afd1a6f732439ef7bfd85fa21d86dd3.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\f6\f630ae73b65a79219b4310744df16fbe9255a34704d25380587f4d40a0803b9d.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\f7\f7ea8a2392d0ee1b35d58bc217a1ea97839cd0bb6bee7157c66c4367defb6e3e.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\f8\f82997c0920daab9b10e0b168b402df4daab222529b6e4e4be027014dc42124c.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\f9\f90211f740226192e4534e289916ff8cf504bf428a7fdc26d480fcef461fe8aa.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\f9\f9f5405da4608bca661b52b52f9612380ae5449ae790b3ec0bceff877312b6b7.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\fa\fac804c29a5aa1c54da05fb30322b6fb841e3b5820a5bef88d0f1d29313df71d.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\cache\dev\twig\fb\fb931df59d4cddb5d4dab5470496780785c6108f09918c9293378c2dd6dbcd76.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\GestionNotes\app\logs\dev.log" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.phpintel/index" afterPath="$PROJECT_DIR$/.phpintel/index" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/NoteBundle/Entity/Evaluation.php" afterPath="$PROJECT_DIR$/src/School/NoteBundle/Entity/Evaluation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/NoteBundle/Controller/EvaluationController.php" afterPath="$PROJECT_DIR$/src/School/NoteBundle/Controller/EvaluationController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Controller/InscriptionController.php" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Controller/InscriptionController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Form/InscriptionType.php" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Form/InscriptionType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Classe/edit.html.twig" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Classe/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Inscription/edit.html.twig" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Inscription/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/NoteBundle/Resources/config/routing/evaluation.yml" afterPath="$PROJECT_DIR$/src/School/NoteBundle/Resources/config/routing/evaluation.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/GestionBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/School/GestionBundle/Resources/views/Default/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/EstDispense/index.html.twig" afterPath="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/EstDispense/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/Matiere/index.html.twig" afterPath="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/Matiere/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Classe/index.html.twig" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Classe/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Inscription/index.html.twig" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Inscription/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Student/listStudents.html.twig" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Student/listStudents.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/views/Security/login.html.twig" afterPath="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/views/Security/login.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Classe/new.html.twig" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Classe/new.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Inscription/new.html.twig" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Inscription/new.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Evaluation/notes.html.twig" afterPath="$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Evaluation/notes.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Resources/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Inscription/show.html.twig" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Inscription/show.html.twig" />
+    </list>
+    <ignored path="GestionNotes.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="GestionNotes" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/School/GestionBundle/Resources/views/Default/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.4727273">
+              <caret line="99" column="52" selection-start-line="99" selection-start-column="52" selection-end-line="99" selection-end-column="52" />
+              <folding>
+                <marker date="1478850222064" expanded="true" signature="3438:3597" placeholder="{% for flas_message in app.session.flashbag.get('notice') ...%}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notes.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Evaluation/notes.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.6923075">
+              <caret line="43" column="8" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editnotes.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Evaluation/editnotes.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.8846154">
+              <caret line="46" column="15" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Inscription/new.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.8846154">
+              <caret line="11" column="82" selection-start-line="11" selection-start-column="82" selection-end-line="11" selection-end-column="103" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EvaluationController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/School/NoteBundle/Controller/EvaluationController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.072727">
+              <caret line="166" column="0" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+              <folding>
+                <element signature="e#48#93#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InscriptionController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Controller/InscriptionController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.1090908">
+              <caret line="185" column="12" selection-start-line="185" selection-start-column="12" selection-end-line="185" selection-end-column="97" />
+              <folding>
+                <element signature="e#51#96#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SequenceController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/School/NoteBundle/Controller/SequenceController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="evaluation.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/School/NoteBundle/Resources/config/routing/evaluation.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-17.518518">
+              <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Inscription.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Entity/Inscription.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.153846">
+              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="21" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Evaluation.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/School/NoteBundle/Entity/Evaluation.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.9104047">
+              <caret line="16" column="55" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
+              <folding>
+                <element signature="e#44#76#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/views/Security/login.html.twig" />
+        <option value="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Classe/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/School/StudentBundle/Resources/config/routing/student.yml" />
+        <option value="$PROJECT_DIR$/app/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/School/StudentBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/Matiere/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/EstDispense/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Student/listStudents.html.twig" />
+        <option value="$PROJECT_DIR$/src/School/StudentBundle/Form/StudentType.php" />
+        <option value="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Inscription/show.html.twig" />
+        <option value="$PROJECT_DIR$/src/School/StudentBundle/Form/InscriptionEditType.php" />
+        <option value="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Inscription/edit.html.twig" />
+        <option value="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Inscription/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Classe/edit.html.twig" />
+        <option value="$PROJECT_DIR$/src/School/StudentBundle/Form/InscriptionType.php" />
+        <option value="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Classe/new.html.twig" />
+        <option value="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Inscription/new.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Evaluation/notes.html.twig" />
+        <option value="$PROJECT_DIR$/src/School/StudentBundle/Controller/InscriptionController.php" />
+        <option value="$PROJECT_DIR$/src/School/NoteBundle/Resources/config/routing/evaluation.yml" />
+        <option value="$PROJECT_DIR$/src/School/GestionBundle/Resources/views/Default/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Evaluation/editnotes.html.twig" />
+        <option value="$PROJECT_DIR$/src/School/NoteBundle/Controller/EvaluationController.php" />
+        <option value="$PROJECT_DIR$/src/School/NoteBundle/Entity/Evaluation.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="NamedScopeManager">
+    <order />
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1370" />
+    <option name="height" value="754" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="School" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="School" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StudentBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="School" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StudentBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="School" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StudentBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Inscription" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="School" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StudentBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="School" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StudentBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="School" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StudentBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="School" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StudentBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="routing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="School" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StudentBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Form" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="School" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NoteBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="School" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NoteBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="School" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NoteBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Evaluation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="School" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NoteBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="School" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NoteBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="School" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NoteBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="routing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="School" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NoteBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="School" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="School" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="School" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Default" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="School" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="evalua&#9;null&#9;null&#10;inscrip&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/StudentBundle/Entity/Inscription.php&#10;nscrip&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/StudentBundle/Controller/InscriptionController.php&#10;notes&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/NoteBundle/Resources/views/Evaluation/notes.html.twig&#10;inscr&#9;null&#9;null&#10;inscriptio&#9;null&#9;null&#10;eva&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/NoteBundle/Controller/EvaluationController.php&#10;notes.&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/NoteBundle/Resources/views/Evaluation/notes.html.twig&#10;base.html&#9;FILE&#9;file://C:/wamp/www/GestionNotes/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Tests/Functional/app/Resources/views/base.html.twig&#10;login.html&#9;FILE&#9;file://C:/wamp/www/GestionNotes/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/views/Security/login.html.twig" />
+    <property name="FullScreen" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="98b8266a-379d-446f-98e5-b858b1677e24" name="Default" comment="" />
+      <created>1478783203116</created>
+      <option name="number" value="Default" />
+      <updated>1478783203116</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1370" height="754" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20687023" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32885906" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/Matiere/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/GestionBundle/Resources/views/Default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
+          <folding>
+            <marker date="1478850222064" expanded="true" signature="3438:3597" placeholder="{% for flas_message in app.session.flashbag.get('notice') ...%}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/EstDispense/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Student/listStudents.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Entity/Student.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="114" column="7" selection-start-line="114" selection-start-column="7" selection-end-line="114" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/.TeacherBundle/Resources/config/routing/enseignant.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/assetic-bundle/Symfony/Bundle/AsseticBundle/Tests/Resources/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/Categorie/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/ConfigBundle/Resources/views/Default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Tests/Functional/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/Categorie/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/views/Security/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4093567">
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Resources/config/routing/student.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/NoteBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29929578">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/MatiereBundle/Resources/config/routing/estdispense.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Student/addStudent.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Controller/StudentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/GestionBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="23" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/NoteBundle/Form/EvaluationType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20950705">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Student/listStudents.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/EstDispense/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Entity/Student.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="114" column="7" selection-start-line="114" selection-start-column="7" selection-end-line="114" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/Matiere/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9615384">
+          <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Inscription/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09409594">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Form/StudentType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.461538">
+          <caret line="42" column="193" selection-start-line="42" selection-start-column="72" selection-end-line="42" selection-end-column="193" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Form/InscriptionEditType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="25" />
+          <folding>
+            <element signature="e#45#85#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Classe/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.062730625">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Classe/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Classe/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9615384">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Inscription/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.23077">
+          <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Controller/ClasseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="157" column="27" selection-start-line="157" selection-start-column="20" selection-end-line="157" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Inscription/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.730769">
+          <caret line="23" column="110" selection-start-line="23" selection-start-column="110" selection-end-line="23" selection-end-column="110" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Form/InscriptionType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-27.423077">
+          <caret line="60" column="1" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
+          <folding>
+            <element signature="e#45#85#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Resources/config/routing/inscription.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="68" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/NoteBundle/Resources/config/routing/evaluation.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.518518">
+          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/GestionBundle/Resources/views/Default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.4727273">
+          <caret line="99" column="52" selection-start-line="99" selection-start-column="52" selection-end-line="99" selection-end-column="52" />
+          <folding>
+            <marker date="1478850222064" expanded="true" signature="3438:3597" placeholder="{% for flas_message in app.session.flashbag.get('notice') ...%}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Inscription/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154">
+          <caret line="11" column="82" selection-start-line="11" selection-start-column="82" selection-end-line="11" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/NoteBundle/Controller/SequenceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Evaluation/notes.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.6923075">
+          <caret line="43" column="8" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Controller/InscriptionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.1090908">
+          <caret line="185" column="12" selection-start-line="185" selection-start-column="12" selection-end-line="185" selection-end-column="97" />
+          <folding>
+            <element signature="e#51#96#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Evaluation/editnotes.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154">
+          <caret line="46" column="15" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/NoteBundle/Controller/EvaluationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.072727">
+          <caret line="166" column="0" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+          <folding>
+            <element signature="e#48#93#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Entity/Inscription.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="21" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/NoteBundle/Entity/Evaluation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.9104047">
+          <caret line="16" column="55" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
+          <folding>
+            <element signature="e#44#76#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

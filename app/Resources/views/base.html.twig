@@ -48,6 +48,12 @@
             <script src="{{asset('js/jquery.bxslider.js')}}"></script>
             <script src="{{asset('js/main-menu.js')}}"></script>
             <script src="{{asset('js/template.js')}}"></script>
+            <script>
+                $(function(){
+                    $("div.alert").show("slow").delay(3000).hide("slow");
+                    return true;
+                });
+            </script>
         {% endblock %}
     </body>
 </html>

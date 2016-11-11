@@ -1,10 +1,10 @@
-{% extends '::base.html.twig' %}
+{% extends 'SchoolGestionBundle:Default:index.html.twig' %}
 
-{% block body -%}
-    <h1>Liste des matières</h1>
+{% block content -%}
+    <h1 class="text-center">Liste des matières</h1>
 
-    <table class="records_list table table-striped display row-border cell-border compact " id="matiere">
-        <thead>
+    <table class="records_list table table-striped display row-border cell-border compact panel-primary " id="matiere">
+        <thead class="panel-heading" >
             <tr>
                 <th>Id</th>
                 <th>Nom</th>

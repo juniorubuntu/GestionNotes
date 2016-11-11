@@ -33,3 +33,8 @@ note_add:
     path: /{id}/{idSeq}/{idMat}/notes/add
     defaults: { _controller: "SchoolNoteBundle:Evaluation:note"}
     #requirements: { _method: post|put }
+
+note_editnote:
+    path: /{id}/{idSeq}/{idMat}/notes/edit
+    defaults: { _controller: "SchoolNoteBundle:Evaluation:editnote"}
+    #requirements: { _method: post|put }
