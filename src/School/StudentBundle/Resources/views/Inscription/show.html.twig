@@ -1,44 +1,54 @@
-{% extends 'SchoolGestionBundle:Default:index.html.twig' %}
+{% extends '::base.html.twig' %}
 
-{% block content -%}
-    <h1 class="text-center">Inscription</h1>
+{% block body -%}
+    <h1>Inscription</h1>
 
-    <table class="record_properties">
+    <table class="record_properties table">
         <tbody>
             <tr>
                 <th>Id</th>
                 <td>{{ entity.id }}</td>
             </tr>
             <tr>
-                <th>Datedebut</th>
-                <td>{{ entity.dateDebut|date('Y-m-d H:i:s') }}</td>
+                <th>Student</th>
+                <td>{{ entity.student }}</td>
             </tr>
             <tr>
-                <th>Datefin</th>
-                <td>{{ entity.dateFin|date('Y-m-d H:i:s') }}</td>
+                <th>Classe</th>
+                <td>{{ entity.classe }}</td>
             </tr>
             <tr>
-                <th>Annee</th>
-                <td>{{ entity.annee }}</td>
+                <th>Avance</th>
+                <td>{{ entity.avance }}</td>
+            </tr>
+            <tr>
+                <th>Datederniereavance</th>
+                <td>{{ entity.dateDerniereAvance|date('Y-m-d H:i:s') }}</td>
             </tr>
             <tr>
                 <th>Status</th>
-                <td>{{ entity.status }}</td>
+                <td>Paiement 
+                    {% if entity.status == 1 %}
+                        <b style="color: green">Complet</b>
+                    {% else %}
+                        <b style="color: red">Incomplet</b>
+                    {% endif %}
+                </td>
             </tr>
         </tbody>
     </table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('inscription') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('inscription_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('inscription') }}">
+                Back to the list
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('inscription_edit', { 'id': entity.id }) }}">
+                Edit
+            </a>
+        </li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
 {% endblock %}

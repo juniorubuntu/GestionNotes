@@ -1,18 +1,19 @@
 {% extends 'SchoolGestionBundle:Default:index.html.twig' %}
 
 {% block content -%}
-    <h1 class="text-center">Liste des inscriptions</h1>
+    <h1>Inscription list</h1>
 
-    <table class="records_list table table-striped panel-primary" id="inscription">
+    <table class="records_list table panel-primary">
         <thead class="panel-heading">
             <tr>
                 <th>Id</th>
-                <th>Elève</th>
+                <th>Nom et prénom</th>
+                <th>Classe</th>
                 <th>Avance</th>
-                <th>Dernière avance</th>
+                <th>Datederniereavance</th>
                 <th>Status</th>
-                <th>Année</th>
-                <th>Actions</th>
+                <th>Détails</th>
+                <th>Modifier</th>
             </tr>
         </thead>
         <tbody>
@@ -20,22 +21,23 @@
                 <tr>
                     <td><a href="{{ path('inscription_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                     <td>{{ entity.student }}</td>
+                    <td>{{ entity.classe }}</td>
                     <td>{{ entity.avance }}</td>
-                    <td>{{ entity.dateDerniereAvance | date('D d, M, Y') }}</td>
-                    <td>{% if entity.status == 1 %}<b style="color: green">Complet</b>{% else %}<b style="color: red">Incomplet</b>{% endif %}</td>
-                    <td>{{ entity.annee }}</td>
+                    <td>{% if entity.dateDerniereAvance %}{{ entity.dateDerniereAvance|date('Y-m-d H:i:s') }}{% endif %}</td>
                     <td>
-                        <ul>
-                            <li>
-                                <a href="{{ path('inscription_show', { 'id': entity.id }) }}">show</a>
-                            </li>
-                            {% if entity.status == 0 %}
-                            <li>
-                                <a href="{{ path('inscription_edit', { 'id': entity.id }) }}">edit</a>
-                            </li>
-                            {% endif %}
+                        Paiement 
+                        {% if entity.status == 1 %}
+                            <b style="color: green">Complet</b>
+                        {% else %}
+                            <b style="color: red">Incomplet</b>
+                        {% endif %}
 
-                        </ul>
+                    </td>
+                    <td>
+                        <a href="{{ path('inscription_show', { 'id': entity.id }) }}">voir</a>
+                    </td>
+                    <td>
+                        <a href="{{ path('inscription_edit', { 'id': entity.id }) }}">Modifier</a>
                     </td>
                 </tr>
             {% endfor %}
@@ -49,15 +51,4 @@
             </a>
         </li>
     </ul>
-
-    <script>
-        $('#inscription').DataTable({
-            "pagingType": "full_numbers",
-            "lengthMenu": [[10, 20], [10, 20]],
-            "language": {
-                "url": "{{ asset('DataTables/French.json') }}"
-            }
-
-        });
-    </script>
 {% endblock %}

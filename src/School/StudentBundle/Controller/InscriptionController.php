@@ -4,63 +4,54 @@ namespace School\StudentBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use School\ConfigBundle\Entity\Ecole;
+use School\StudentBundle\Entity\Inscription;
 use School\StudentBundle\Form\InscriptionType;
-use School\StudentBundle\Form\InscriptionEditType;
 
 /**
  * Inscription controller.
  *
- * @Route("/inscription")
  */
 class InscriptionController extends Controller {
 
     /**
      * Lists all Inscription entities.
      *
-     * @Route("/", name="inscription")
-     * @Method("GET")
-     * @Template()
      */
     public function indexAction() {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('SchoolStudentBundle:Inscription')->findAll();
 
-        return array(
-            'entities' => $entities,
-        );
+        return $this->render('SchoolStudentBundle:Inscription:index.html.twig', array(
+                    'entities' => $entities,
+        ));
     }
 
     /**
      * Creates a new Inscription entity.
      *
-     * @Route("/", name="inscription_create")
-     * @Method("POST")
-     * @Template("SchoolStudentBundle:Inscription:new.html.twig")
      */
     public function createAction(Request $request) {
         $entity = new Inscription();
+        $ecole = $this->getDoctrine()->getRepository('SchoolConfigBundle:Ecole')->findAll();
+        $entity->setAnnee($ecole[0]->getAnneeEnCour());
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+            $entity->setAnnee($ecole[0]->getAnneeEnCour());
             $em = $this->getDoctrine()->getManager();
-            $evaluation = $em->getRepository('SchoolStudentBundle:Inscription')->findOneBy(array('student'=>$entity->getStudent()->getId()));
-            if($evaluation){
-                $request->getSession()->getFlashBag()->add('notice', 'Elève deja inscrit.');
-            }else {
-                $entity->setAnnee(date('Y') . '/' . date('Y', time() + (24 * 3600 * 366)));
-                $entity->setDateDerniereAvance(new \DateTime(date('Y-m-d')));
+            $em->persist($entity);
+            $em->flush();
 
-                $em->persist($entity);
-                $em->flush();
-                return $this->redirect($this->generateUrl('inscription_show', array('id' => $entity->getId())));
-            }
+            return $this->redirect($this->generateUrl('inscription_show', array('id' => $entity->getId())));
         }
-        return  array(
-            'entity' => $entity,
-            'form' => $form->createView(),
-        );
+
+        return $this->render('SchoolStudentBundle:Inscription:new.html.twig', array(
+                    'entity' => $entity,
+                    'form' => $form->createView(),
+        ));
     }
 
     /**
@@ -84,26 +75,22 @@ class InscriptionController extends Controller {
     /**
      * Displays a form to create a new Inscription entity.
      *
-     * @Route("/new", name="inscription_new")
-     * @Method("GET")
-     * @Template()
      */
     public function newAction() {
         $entity = new Inscription();
+        $ecole = $this->getDoctrine()->getRepository('SchoolConfigBundle:Ecole')->findAll();
+        $entity->setAnnee($ecole[0]->getAnneeEnCour());
         $form = $this->createCreateForm($entity);
 
-        return array(
-            'entity' => $entity,
-            'form' => $form->createView(),
-        );
+        return $this->render('SchoolStudentBundle:Inscription:new.html.twig', array(
+                    'entity' => $entity,
+                    'form' => $form->createView(),
+        ));
     }
 
     /**
      * Finds and displays a Inscription entity.
      *
-     * @Route("/{id}", name="inscription_show")
-     * @Method("GET")
-     * @Template()
      */
     public function showAction($id) {
         $em = $this->getDoctrine()->getManager();
@@ -116,15 +103,15 @@ class InscriptionController extends Controller {
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return array(
-            'entity' => $entity,
-            'delete_form' => $deleteForm->createView(),
-        );
+        return $this->render('SchoolStudentBundle:Inscription:show.html.twig', array(
+                    'entity' => $entity,
+                    'delete_form' => $deleteForm->createView(),
+        ));
     }
 
     /**
      * Displays a form to edit an existing Inscription entity.
-     * @Template()
+     *
      */
     public function editAction($id) {
         $em = $this->getDoctrine()->getManager();
@@ -138,11 +125,11 @@ class InscriptionController extends Controller {
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return array(
-            'entity' => $entity,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        );
+        return $this->render('SchoolStudentBundle:Inscription:edit.html.twig', array(
+                    'entity' => $entity,
+                    'edit_form' => $editForm->createView(),
+                    'delete_form' => $deleteForm->createView(),
+        ));
     }
 
     /**
@@ -153,13 +140,12 @@ class InscriptionController extends Controller {
      * @return \Symfony\Component\Form\Form The form
      */
     private function createEditForm(Inscription $entity) {
-        $form = $this->createForm(new InscriptionEditType(), $entity, array(
+        $form = $this->createForm(new InscriptionType(), $entity, array(
             'action' => $this->generateUrl('inscription_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update',
-                'attr' => array('class' => 'btn btn-primary col-md-offset-4 col-sm-offset-4 col-xs-offset-4 col-md-2 col-sm-5 col-xs-5')));
+        $form->add('submit', 'submit', array('label' => 'Update'));
 
         return $form;
     }
@@ -167,7 +153,6 @@ class InscriptionController extends Controller {
     /**
      * Edits an existing Inscription entity.
      *
-     * @Template("SchoolStudentBundle:Inscription:edit.html.twig")
      */
     public function updateAction(Request $request, $id) {
         $em = $this->getDoctrine()->getManager();
@@ -183,23 +168,21 @@ class InscriptionController extends Controller {
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
-            $request->getSession()->getFlashBag()->add('notice', 'le formulaire est incomplet.');
             $em->flush();
-            return $this->redirect($this->generateUrl('inscription'));
+
+            return $this->redirect($this->generateUrl('inscription_edit', array('id' => $id)));
         }
 
-        return array(
-            'entity' => $entity,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        );
+        return $this->render('SchoolStudentBundle:Inscription:edit.html.twig', array(
+                    'entity' => $entity,
+                    'edit_form' => $editForm->createView(),
+                    'delete_form' => $deleteForm->createView(),
+        ));
     }
 
     /**
      * Deletes a Inscription entity.
      *
-     * @Route("/{id}", name="inscription_delete")
-     * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id) {
         $form = $this->createDeleteForm($id);

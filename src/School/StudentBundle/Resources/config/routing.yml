@@ -3,9 +3,10 @@ SchoolStudentBundle_classe:
     prefix:   /classe
 
 SchoolStudentBundle_inscription:
-        resource: "@SchoolStudentBundle/Resources/config/routing/inscription.yml"
-        prefix:   /inscription
+    resource: "@SchoolStudentBundle/Resources/config/routing/inscription.yml"
+    prefix:   /inscription
+
 
 SchoolStudentBundle_student:
-        resource: "@SchoolStudentBundle/Resources/config/routing/student.yml"
-        prefix:   /student
+    resource: "@SchoolStudentBundle/Resources/config/routing/student.yml"
+    prefix:   /student

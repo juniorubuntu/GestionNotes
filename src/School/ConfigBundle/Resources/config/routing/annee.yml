@@ -1,0 +1,30 @@
+config_annee:
+    path:     /
+    defaults: { _controller: "SchoolConfigBundle:Annee:index" }
+
+config_annee_show:
+    path:     /{id}/show
+    defaults: { _controller: "SchoolConfigBundle:Annee:show" }
+
+config_annee_new:
+    path:     /new
+    defaults: { _controller: "SchoolConfigBundle:Annee:new" }
+
+config_annee_create:
+    path:     /create
+    defaults: { _controller: "SchoolConfigBundle:Annee:create" }
+    requirements: { _method: post }
+
+config_annee_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SchoolConfigBundle:Annee:edit" }
+
+config_annee_update:
+    path:     /{id}/update
+    defaults: { _controller: "SchoolConfigBundle:Annee:update" }
+    requirements: { _method: post|put }
+
+config_annee_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SchoolConfigBundle:Annee:delete" }
+    requirements: { _method: post|delete }

@@ -9,3 +9,7 @@ SchoolConfigBundle_constante:
 SchoolConfigBundle_config_ecole:
     resource: "@SchoolConfigBundle/Resources/config/routing/ecole.yml"
     prefix:   /config/ecole
+    
+SchoolConfigBundle_config_annee:
+    resource: "@SchoolConfigBundle/Resources/config/routing/annee.yml"
+    prefix:   /config/annee

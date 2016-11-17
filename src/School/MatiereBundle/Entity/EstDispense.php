@@ -48,8 +48,8 @@ class EstDispense {
     private $coefficient;
 
     /**
-     * @var string
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="School\ConfigBundle\Entity\Annee")
+     * @Assert\NotBlank()
      */
     private $annee;
 
@@ -174,17 +174,15 @@ class EstDispense {
         return $this->classe;
     }
 
-
     /**
      * Set enseignant
      *
      * @param \School\UserBundle\Entity\User $enseignant
      * @return EstDispense
      */
-    public function setEnseignant(\School\UserBundle\Entity\User $enseignant = null)
-    {
+    public function setEnseignant(\School\UserBundle\Entity\User $enseignant = null) {
         $this->enseignant = $enseignant;
-    
+
         return $this;
     }
 
@@ -193,8 +191,8 @@ class EstDispense {
      *
      * @return \School\UserBundle\Entity\User 
      */
-    public function getEnseignant()
-    {
+    public function getEnseignant() {
         return $this->enseignant;
     }
+
 }

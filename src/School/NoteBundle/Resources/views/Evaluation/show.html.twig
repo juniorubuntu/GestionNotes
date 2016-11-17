@@ -3,7 +3,7 @@
 {% block body -%}
     <h1>Evaluation</h1>
 
-    <table class="record_properties">
+    <table class="record_properties table">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -12,14 +12,6 @@
             <tr>
                 <th>Note</th>
                 <td>{{ entity.note }}</td>
-            </tr>
-            <tr>
-                <th>Anneedebut</th>
-                <td>{{ entity.anneeDebut|date('Y-m-d H:i:s') }}</td>
-            </tr>
-            <tr>
-                <th>Anneefin</th>
-                <td>{{ entity.anneeFin|date('Y-m-d H:i:s') }}</td>
             </tr>
             <tr>
                 <th>Annee</th>

@@ -383,6 +383,66 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
                     }
 
+                    if (0 === strpos($pathinfo, '/Gestion/config/annee')) {
+                        // config_annee
+                        if (rtrim($pathinfo, '/') === '/Gestion/config/annee') {
+                            if (substr($pathinfo, -1) !== '/') {
+                                return $this->redirect($pathinfo.'/', 'config_annee');
+                            }
+
+                            return array (  '_controller' => 'School\\ConfigBundle\\Controller\\AnneeController::indexAction',  '_route' => 'config_annee',);
+                        }
+
+                        // config_annee_show
+                        if (preg_match('#^/Gestion/config/annee/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                            return $this->mergeDefaults(array_replace($matches, array('_route' => 'config_annee_show')), array (  '_controller' => 'School\\ConfigBundle\\Controller\\AnneeController::showAction',));
+                        }
+
+                        // config_annee_new
+                        if ($pathinfo === '/Gestion/config/annee/new') {
+                            return array (  '_controller' => 'School\\ConfigBundle\\Controller\\AnneeController::newAction',  '_route' => 'config_annee_new',);
+                        }
+
+                        // config_annee_create
+                        if ($pathinfo === '/Gestion/config/annee/create') {
+                            if ($this->context->getMethod() != 'POST') {
+                                $allow[] = 'POST';
+                                goto not_config_annee_create;
+                            }
+
+                            return array (  '_controller' => 'School\\ConfigBundle\\Controller\\AnneeController::createAction',  '_route' => 'config_annee_create',);
+                        }
+                        not_config_annee_create:
+
+                        // config_annee_edit
+                        if (preg_match('#^/Gestion/config/annee/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                            return $this->mergeDefaults(array_replace($matches, array('_route' => 'config_annee_edit')), array (  '_controller' => 'School\\ConfigBundle\\Controller\\AnneeController::editAction',));
+                        }
+
+                        // config_annee_update
+                        if (preg_match('#^/Gestion/config/annee/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                            if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                                $allow = array_merge($allow, array('POST', 'PUT'));
+                                goto not_config_annee_update;
+                            }
+
+                            return $this->mergeDefaults(array_replace($matches, array('_route' => 'config_annee_update')), array (  '_controller' => 'School\\ConfigBundle\\Controller\\AnneeController::updateAction',));
+                        }
+                        not_config_annee_update:
+
+                        // config_annee_delete
+                        if (preg_match('#^/Gestion/config/annee/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                            if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                                $allow = array_merge($allow, array('POST', 'DELETE'));
+                                goto not_config_annee_delete;
+                            }
+
+                            return $this->mergeDefaults(array_replace($matches, array('_route' => 'config_annee_delete')), array (  '_controller' => 'School\\ConfigBundle\\Controller\\AnneeController::deleteAction',));
+                        }
+                        not_config_annee_delete:
+
+                    }
+
                 }
 
                 if (0 === strpos($pathinfo, '/Gestion/categorie')) {
@@ -693,17 +753,14 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'school_student_homepage')), array (  '_controller' => 'School\\StudentBundle\\Controller\\DefaultController::indexAction',));
                 }
 
-                if (0 === strpos($pathinfo, '/Gestion/student/student')) {
-                    // school_student_show
-                    if (preg_match('#^/Gestion/student/student/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'school_student_show')), array (  '_controller' => 'School\\StudentBundle\\Controller\\StudentController::showAction',));
-                    }
+                // school_student_show
+                if (preg_match('#^/Gestion/student/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'school_student_show')), array (  '_controller' => 'School\\StudentBundle\\Controller\\StudentController::showAction',));
+                }
 
-                    // school_student_add
-                    if ($pathinfo === '/Gestion/student/student/add') {
-                        return array (  '_controller' => 'School\\StudentBundle\\Controller\\StudentController::addAction',  '_route' => 'school_student_add',);
-                    }
-
+                // school_student_add
+                if ($pathinfo === '/Gestion/student/add') {
+                    return array (  '_controller' => 'School\\StudentBundle\\Controller\\StudentController::addAction',  '_route' => 'school_student_add',);
                 }
 
                 // school_student_list
@@ -711,17 +768,14 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return array (  '_controller' => 'School\\StudentBundle\\Controller\\StudentController::listAction',  '_route' => 'school_student_list',);
                 }
 
-                if (0 === strpos($pathinfo, '/Gestion/student/student')) {
-                    // school_student_edit
-                    if (0 === strpos($pathinfo, '/Gestion/student/student/edit') && preg_match('#^/Gestion/student/student/edit/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'school_student_edit')), array (  '_controller' => 'School\\StudentBundle\\Controller\\StudentController::editAction',));
-                    }
+                // school_student_edit
+                if (0 === strpos($pathinfo, '/Gestion/student/edit') && preg_match('#^/Gestion/student/edit/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'school_student_edit')), array (  '_controller' => 'School\\StudentBundle\\Controller\\StudentController::editAction',));
+                }
 
-                    // school_student_delete
-                    if (preg_match('#^/Gestion/student/student/(?P<id>\\d+)/delete$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'school_student_delete')), array (  '_controller' => 'School\\StudentBundle\\Controller\\StudentController::deleteAction',));
-                    }
-
+                // school_student_delete
+                if (preg_match('#^/Gestion/student/(?P<id>\\d+)/delete$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'school_student_delete')), array (  '_controller' => 'School\\StudentBundle\\Controller\\StudentController::deleteAction',));
                 }
 
             }

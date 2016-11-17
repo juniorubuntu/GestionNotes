@@ -3,13 +3,13 @@ school_student_homepage:
     defaults: { _controller: SchoolStudentBundle:Default:index }
 
 school_student_show:
-    path:       /student/{id}
+    path:       /{id}
     defaults: { _controller: SchoolStudentBundle:Student:show}
     requirements:
       id: \d+
 
 school_student_add:
-    path:       /student/add
+    path:       /add
     defaults: { _controller: SchoolStudentBundle:Student:add}
 
 school_student_list:
@@ -17,13 +17,13 @@ school_student_list:
     defaults: { _controller: SchoolStudentBundle:Student:list}
 
 school_student_edit:
-    path:       /student/edit/{id}
+    path:       /edit/{id}
     defaults: { _controller: SchoolStudentBundle:Student:edit}
     requirements:
       id: \d+
 
 school_student_delete:
-    path:       /student/{id}/delete
+    path:       /{id}/delete
     defaults: { _controller: SchoolStudentBundle:Student:delete}
     requirements:
       id: \d+
