@@ -1,12 +1,12 @@
 <?php
 
-namespace School\NoteBundle\Form;
+namespace School\ConfigBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class EvaluationType extends AbstractType
+class AnneeType extends AbstractType
 {
         /**
      * @param FormBuilderInterface $builder
@@ -15,11 +15,7 @@ class EvaluationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('note')
-            ->add('annee')
-            ->add('student')
-            ->add('matiere')
-            ->add('sequence')
+            ->add('anneeScolaire')
         ;
     }
     
@@ -29,7 +25,7 @@ class EvaluationType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'School\NoteBundle\Entity\Evaluation'
+            'data_class' => 'School\ConfigBundle\Entity\Annee'
         ));
     }
 
@@ -38,6 +34,6 @@ class EvaluationType extends AbstractType
      */
     public function getName()
     {
-        return 'school_notebundle_evaluation';
+        return 'school_configbundle_annee';
     }
 }

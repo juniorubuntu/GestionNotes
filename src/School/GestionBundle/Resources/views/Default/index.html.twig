@@ -43,18 +43,18 @@
                         Utilisateur: <b style="color: blue">
                         {{ app.user.username }}
                     </b> |
-                    <a style="color: brown" href="{{ path('fos_user_security_logout') }}"><span class="glyphicon glyphicon-off"></span>
-                    <span>{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</span>
-                    </a>
+                        <a style="color: brown" href="{{ path('fos_user_security_logout') }}"><span class="glyphicon glyphicon-off"></span>
+                            <span>{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</span>
+                        </a>
                     {% else %}
-                        <a href="{{ path('fos_user_security_login') }}"><span class="glyphicon glyphicon-log-in"></span>{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                        <a href="{{ path('fos_user_security_login') }}"><span class="glyphicon glyphicon-log-in"></span> {{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
                     {% endif %}
                 </p>
             </div>
         </nav>
         <div class="col-md-12 col-sm-12 col-xs-12">
             {% for flas_message in app.session.flashbag.get('notice') %}
-                <div class="alert alert-warning">{{ flas_message }}</div>
+                <div style="font-size: 1.2em;" class="alert alert-warning text-center">{{ flas_message }}</div>
             {% endfor %}
         </div>
     {% endblock %}
@@ -86,7 +86,7 @@
                                                     <center>
                                                         <a href="{{path('note_add', {'id':dispense.classe.id , 'idSeq': sequence.id, 'idMat':dispense.matiere.id })}}" class="btn btn-green">
                                                             <b>{{sequence}}</b>
-                                                        </a> 
+                                                        </a>
                                                     </center>
                                                 {% endfor %}
                                                 <hr>
@@ -120,7 +120,54 @@
                                 </div>
                             </li>
                             <li><a href="">Exporter les notes en PDF</a></li>
-                            <li><a href="">Générer les statistiques</a></li>
+                            <li>
+                                <a class="btn-link" data-toggle="modal" data-target="#statistique_{{dispense.id}}">Générer les statistiques</a>
+                                <div id="statistique_{{dispense.id}}" class="modal fade">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <center><b>Choisir la séquence</b></center>
+                                            </div>
+                                            <div class="col-md-12 modal-body">
+                                                {% for sequence in listSequence %}
+                                                    <center>
+                                                        <a href="{{path('statistiques', {'idSequence': sequence.id, 'idMatiere':dispense.matiere.id, 'idEnseignant': app.user.id })}}" class="btn btn-green">
+                                                            <b>{{sequence}}</b>
+                                                        </a>
+                                                    </center>
+                                                {% endfor %}
+                                                <hr>
+                                                <button type="button" class="btn btn-red pull-right" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign"></span>Annuler</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="btn-link" data-toggle="modal" data-target="#bulletin_{{dispense.id}}">Bulletins</a>
+                                <div id="bulletin_{{dispense.id}}" class="modal fade">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <center><b>Choisir la séquence</b></center>
+                                            </div>
+                                            <div class="col-md-12 modal-body">
+                                                {% for sequence in listSequence %}
+                                                    <center>
+                                                        <a href="{{path('bulletins', {'idSequence': sequence.id, 'idClasse':dispense.classe.id, 'idStudent':1 })}}" class="btn btn-green">
+                                                            <b>{{sequence}}</b>
+                                                        </a>
+                                                    </center>
+                                                {% endfor %}
+                                                <hr>
+                                                <button type="button" class="btn btn-red pull-right" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign"></span>Annuler</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
                         </ol>
                         <div class="pull-right">
                             Matière: <i style="color: forestgreen">{{dispense.matiere}}</i>

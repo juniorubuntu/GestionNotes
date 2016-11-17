@@ -63,6 +63,12 @@ class Ecole {
     private $boitePostal;
 
     /**
+     * @ORM\OneToOne(targetEntity="Annee")
+     * @Assert\NotBlank()
+     */
+    private $anneeEnCour;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -71,17 +77,15 @@ class Ecole {
         return $this->id;
     }
 
-
     /**
      * Set nomFrancais
      *
      * @param string $nomFrancais
      * @return Ecole
      */
-    public function setNomFrancais($nomFrancais)
-    {
+    public function setNomFrancais($nomFrancais) {
         $this->nomFrancais = $nomFrancais;
-    
+
         return $this;
     }
 
@@ -90,8 +94,7 @@ class Ecole {
      *
      * @return string 
      */
-    public function getNomFrancais()
-    {
+    public function getNomFrancais() {
         return $this->nomFrancais;
     }
 
@@ -101,10 +104,9 @@ class Ecole {
      * @param string $nomAnglais
      * @return Ecole
      */
-    public function setNomAnglais($nomAnglais)
-    {
+    public function setNomAnglais($nomAnglais) {
         $this->nomAnglais = $nomAnglais;
-    
+
         return $this;
     }
 
@@ -113,8 +115,7 @@ class Ecole {
      *
      * @return string 
      */
-    public function getNomAnglais()
-    {
+    public function getNomAnglais() {
         return $this->nomAnglais;
     }
 
@@ -124,10 +125,9 @@ class Ecole {
      * @param string $deviseFrancais
      * @return Ecole
      */
-    public function setDeviseFrancais($deviseFrancais)
-    {
+    public function setDeviseFrancais($deviseFrancais) {
         $this->deviseFrancais = $deviseFrancais;
-    
+
         return $this;
     }
 
@@ -136,8 +136,7 @@ class Ecole {
      *
      * @return string 
      */
-    public function getDeviseFrancais()
-    {
+    public function getDeviseFrancais() {
         return $this->deviseFrancais;
     }
 
@@ -147,10 +146,9 @@ class Ecole {
      * @param string $deviseAnglais
      * @return Ecole
      */
-    public function setDeviseAnglais($deviseAnglais)
-    {
+    public function setDeviseAnglais($deviseAnglais) {
         $this->deviseAnglais = $deviseAnglais;
-    
+
         return $this;
     }
 
@@ -159,8 +157,7 @@ class Ecole {
      *
      * @return string 
      */
-    public function getDeviseAnglais()
-    {
+    public function getDeviseAnglais() {
         return $this->deviseAnglais;
     }
 
@@ -170,10 +167,9 @@ class Ecole {
      * @param string $boitePostal
      * @return Ecole
      */
-    public function setBoitePostal($boitePostal)
-    {
+    public function setBoitePostal($boitePostal) {
         $this->boitePostal = $boitePostal;
-    
+
         return $this;
     }
 
@@ -182,8 +178,31 @@ class Ecole {
      *
      * @return string 
      */
-    public function getBoitePostal()
-    {
+    public function getBoitePostal() {
         return $this->boitePostal;
+    }
+
+
+    /**
+     * Set anneeEnCour
+     *
+     * @param \School\ConfigBundle\Entity\Annee $anneeEnCour
+     * @return Ecole
+     */
+    public function setAnneeEnCour(\School\ConfigBundle\Entity\Annee $anneeEnCour = null)
+    {
+        $this->anneeEnCour = $anneeEnCour;
+    
+        return $this;
+    }
+
+    /**
+     * Get anneeEnCour
+     *
+     * @return \School\ConfigBundle\Entity\Annee 
+     */
+    public function getAnneeEnCour()
+    {
+        return $this->anneeEnCour;
     }
 }

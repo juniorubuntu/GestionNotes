@@ -2,6 +2,14 @@ evaluation:
     path:     /
     defaults: { _controller: "SchoolNoteBundle:Evaluation:index" }
 
+statistiques:
+    path:     /{idSequence}/{idMatiere}/{idEnseignant}/statistiques
+    defaults: { _controller: "SchoolNoteBundle:Evaluation:statistiques" }
+
+bulletins:
+    path:     /bulletins/{idSequence}/{idClasse}/{idStudent}
+    defaults: { _controller: "SchoolNoteBundle:Evaluation:bulletins" }
+
 evaluation_show:
     path:     /{id}/show
     defaults: { _controller: "SchoolNoteBundle:Evaluation:show" }
@@ -37,4 +45,9 @@ note_add:
 note_editnote:
     path: /{id}/{idSeq}/{idMat}/notes/edit
     defaults: { _controller: "SchoolNoteBundle:Evaluation:editnote"}
+    #requirements: { _method: post|put }
+
+note_inserer:
+    path: /{idNote}/{idClasse}/notes/modifier
+    defaults: { _controller: "SchoolNoteBundle:Evaluation:insererNote"}
     #requirements: { _method: post|put }

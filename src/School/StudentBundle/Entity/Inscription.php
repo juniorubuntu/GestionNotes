@@ -15,9 +15,6 @@ class Inscription {
 
     function __construct() {
         $this->setDateDerniereAvance(new \DateTime(date('Y-m-d')));
-        $this->setDateDebut(new \DateTime(date('Y')));
-        $this->setDateFin(new \DateTime(date('Y-m-d', time() + (24 * 3600 * 366))));
-        $this->setAnnee(date('Y') . '/' . date('Y', time() + (24 * 3600 * 366)));
         $this->setAvance(0);
     }
 
@@ -57,23 +54,7 @@ class Inscription {
     private $dateDerniereAvance;
 
     /**
-     * @var \Date
-     *
-     * @ORM\Column(name="datedebut", type="date")
-     */
-    private $dateDebut;
-
-    /**
-     * @var \Date
-     *
-     * @ORM\Column(name="datefin", type="date")
-     */
-    private $dateFin;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="annee", type="string", length=10)
+     * @ORM\ManyToOne(targetEntity="School\ConfigBundle\Entity\Annee")
      */
     private $annee;
 
@@ -89,69 +70,6 @@ class Inscription {
      */
     public function getId() {
         return $this->id;
-    }
-
-    /**
-     * Set dateDebut
-     *
-     * @param \DateTime $dateDebut
-     * @return Inscription
-     */
-    public function setDateDebut($dateDebut) {
-        $this->dateDebut = $dateDebut;
-
-        return $this;
-    }
-
-    /**
-     * Get dateDebut
-     *
-     * @return \DateTime 
-     */
-    public function getDateDebut() {
-        return $this->dateDebut;
-    }
-
-    /**
-     * Set dateFin
-     *
-     * @param \DateTime $dateFin
-     * @return Inscription
-     */
-    public function setDateFin($dateFin) {
-        $this->dateFin = $dateFin;
-
-        return $this;
-    }
-
-    /**
-     * Get dateFin
-     *
-     * @return \DateTime 
-     */
-    public function getDateFin() {
-        return $this->dateFin;
-    }
-
-    /**
-     * Set annee
-     *
-     * @param string $annee
-     * @return Inscription
-     */
-    public function setAnnee($annee) {
-        $this->annee = $annee;
-
-        return $this;
-    }
-
-    /**
-     * Get annee
-     *
-     * @return string 
-     */
-    public function getAnnee() {
-        return $this->annee;
     }
 
     /**
@@ -257,6 +175,27 @@ class Inscription {
      */
     public function getDateDerniereAvance() {
         return $this->dateDerniereAvance;
+    }
+
+    /**
+     * Set annee
+     *
+     * @param \School\ConfigBundle\Entity\Annee $annee
+     * @return Inscription
+     */
+    public function setAnnee(\School\ConfigBundle\Entity\Annee $annee = null) {
+        $this->annee = $annee;
+
+        return $this;
+    }
+
+    /**
+     * Get annee
+     *
+     * @return \School\ConfigBundle\Entity\Annee 
+     */
+    public function getAnnee() {
+        return $this->annee;
     }
 
 }

@@ -14,9 +14,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Evaluation {
 
     function __construct() {
-        $this->setAnneeDebut(new \DateTime(date('Y')));
-        $this->setAnneeFin(new \DateTime(date('Y-m-d', time() + (24 * 3600 * 366))));
-        $this->setAnnee(date('Y') . '/' . date('Y', time() + (24 * 3600 * 366)));
+        
     }
 
     /**
@@ -54,23 +52,7 @@ class Evaluation {
     private $note;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="anneeDebut", type="datetime", nullable = true)
-     */
-    private $anneeDebut;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="anneeFin", type="datetime", nullable=true)
-     */
-    private $anneeFin;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="annee", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="School\ConfigBundle\Entity\Annee")
      */
     private $annee;
 
@@ -102,69 +84,6 @@ class Evaluation {
      */
     public function getNote() {
         return $this->note;
-    }
-
-    /**
-     * Set anneeDebut
-     *
-     * @param \DateTime $anneeDebut
-     * @return Evaluation
-     */
-    public function setAnneeDebut($anneeDebut) {
-        $this->anneeDebut = $anneeDebut;
-
-        return $this;
-    }
-
-    /**
-     * Get anneeDebut
-     *
-     * @return \DateTime 
-     */
-    public function getAnneeDebut() {
-        return $this->anneeDebut;
-    }
-
-    /**
-     * Set anneeFin
-     *
-     * @param \DateTime $anneeFin
-     * @return Evaluation
-     */
-    public function setAnneeFin($anneeFin) {
-        $this->anneeFin = $anneeFin;
-
-        return $this;
-    }
-
-    /**
-     * Get anneeFin
-     *
-     * @return \DateTime 
-     */
-    public function getAnneeFin() {
-        return $this->anneeFin;
-    }
-
-    /**
-     * Set annee
-     *
-     * @param string $annee
-     * @return Evaluation
-     */
-    public function setAnnee($annee) {
-        $this->annee = $annee;
-
-        return $this;
-    }
-
-    /**
-     * Get annee
-     *
-     * @return string 
-     */
-    public function getAnnee() {
-        return $this->annee;
     }
 
     /**
@@ -232,6 +151,27 @@ class Evaluation {
      */
     public function getMatiere() {
         return $this->matiere;
+    }
+
+    /**
+     * Set annee
+     *
+     * @param \School\ConfigBundle\Entity\Annee $annee
+     * @return Evaluation
+     */
+    public function setAnnee(\School\ConfigBundle\Entity\Annee $annee = null) {
+        $this->annee = $annee;
+
+        return $this;
+    }
+
+    /**
+     * Get annee
+     *
+     * @return \School\ConfigBundle\Entity\Annee 
+     */
+    public function getAnnee() {
+        return $this->annee;
     }
 
 }

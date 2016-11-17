@@ -1,33 +1,29 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Evaluation</h1>
+    <h1>Annee</h1>
 
-    <table class="record_properties table">
+    <table class="record_properties">
         <tbody>
             <tr>
                 <th>Id</th>
                 <td>{{ entity.id }}</td>
             </tr>
             <tr>
-                <th>Note</th>
-                <td>{{ entity.note }}</td>
-            </tr>
-            <tr>
-                <th>Annee</th>
-                <td>{{ entity.annee }}</td>
+                <th>Anneescolaire</th>
+                <td>{{ entity.anneeScolaire }}</td>
             </tr>
         </tbody>
     </table>
 
         <ul class="record_actions">
     <li>
-        <a href="{{ path('evaluation') }}">
+        <a href="{{ path('config_annee') }}">
             Back to the list
         </a>
     </li>
     <li>
-        <a href="{{ path('evaluation_edit', { 'id': entity.id }) }}">
+        <a href="{{ path('config_annee_edit', { 'id': entity.id }) }}">
             Edit
         </a>
     </li>

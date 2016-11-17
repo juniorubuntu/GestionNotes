@@ -32,7 +32,7 @@ class DefaultController extends Controller {
             $listDispense = $this->getDoctrine()->getRepository('SchoolMatiereBundle:EstDispense')
                     ->findBy(array(
                 'enseignant' => $userConnected,
-                'annee' => '2016/2017'
+                'annee' => $ecole[0]->getAnneeEnCour()
             ));
             return $this->render('SchoolGestionBundle:Default:index.html.twig', array(
                         'listeDispense' => $listDispense,

@@ -19,37 +19,38 @@
                 <label for="">Matière: </label> <span>{{matiere.nom}}</span>
             </div>
         </div>
-        <form  action="{{ path('note_editnote', { 'id': classe.id, 'idSeq':sequence.id, 'idMat':matiere.id })}}" method="POST">
             <table class="table table-bordered table-hover panel-primary" id="notes">
                 <thead class="panel-heading">
                     <tr>
                         <th>Noms et prénoms</th>
-                        <th class="col-md-2">Notes</th>
-                        <th class="col-md-2">Action</th>
+                        <th class="col-md-3">Notes</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for evaluation in evaluations %}
+
                         <tr>
                             <td>{{evaluation.student.nom}}</td>
                             <td>
-                                <input id="{{ evaluation.id }}" type="text" value="{{ evaluation.note }}" name="{{ evaluation.student.id }}" class="form-control col-md-1" placeholder="note-{{ evaluation.student.nom }}" disabled="true"/>
-                            </td>
-                            <td>
-                                <a class="btn btn-primary" onclick="activer({{ evaluation.id }})">Modifier</a>
-
+                            <form action="{{ path('note_inserer', { 'idNote':evaluation.id, 'idClasse':classe.id })}}" method="POST">
+                                     <input style="width: 78px;" id="{{ evaluation.id }}" type="text" value="{{ evaluation.note }}" name="note" class="form-control" placeholder="note-{{ evaluation.student.nom }}" disabled="true"/>
+                                <a class="btn btn-primary" id="{{ evaluation.id }}-edit" onclick="activer({{ evaluation.id }})">Modifier</a>
+                                <input  class="btn btn-primary hidden" id="{{ evaluation.id }}-ok" type="submit" value="OK" />
+                            </form>
                             </td>
                         </tr>
+
+
                     {% endfor %}
                 </tbody>
             </table>
-            <input class="btn btn-primary" type="submit" value="Enregistrer" />
-        </form>
+            {#<input class="btn btn-primary" type="submit" value="Enregistrer" />#}
+        {#</form>#}
     </div>
     <ul class="record_actions">
         <li>
-            <a href="{{ path('school_gestion_homepage') }}">
-                Back to the list
+            <a class="btn btn-primary" href="{{ path('school_gestion_homepage') }}">
+                Retour
             </a>
         </li>
     </ul>
@@ -66,6 +67,14 @@
     <script>
         function activer(id){
             document.getElementById(id).disabled =false;
+            $("#"+id+"-ok").removeClass('hidden');
+            $("#"+id+"-edit").addClass('hidden');
         }
+        /*function desactiver(id){
+//            document.getElementById(id).disabled =true;
+            $("#"+id+"-edit").removeClass('hidden');
+            $("#"+id+"-ok").addClass('hidden');
+        }*/
+
     </script>
 {% endblock %}
