@@ -26,6 +26,8 @@ class Categorie {
         return $this->getNom();
     }
 
+    private $listeMatieres;
+
     /**
      * @var string
      * 
@@ -62,6 +64,14 @@ class Categorie {
      */
     public function getNom() {
         return $this->nom;
+    }
+
+    function getListeMatieres() {
+        return $this->listeMatieres;
+    }
+
+    function setListeMatieres($listeMatieres) {
+        $this->listeMatieres = $listeMatieres;
     }
 
 }

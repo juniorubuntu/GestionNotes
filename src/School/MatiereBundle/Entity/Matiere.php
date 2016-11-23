@@ -45,6 +45,7 @@ class Matiere {
      * @Assert\NotBlank()
      */
     private $categorie;
+    private $evaluationSeq;
 
     /**
      * Get id
@@ -137,6 +138,14 @@ class Matiere {
      */
     public function getCategorie() {
         return $this->categorie;
+    }
+
+    function getEvaluationSeq() {
+        return $this->evaluationSeq;
+    }
+
+    function setEvaluationSeq($evaluationSeq) {
+        $this->evaluationSeq = $evaluationSeq;
     }
 
 }

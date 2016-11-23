@@ -1,0 +1,125 @@
+{% extends "SchoolGestionBundle:Default:index.html.twig" %}
+{% block title %} Bulletin Séquentiel  {% endblock %}
+
+{% block aside %}
+{% endblock %}
+{% block body %}
+    <div class="col-md-offset-2 col-md-8" style="margin-bottom: 10%; font-size: 14px;">
+        <table class="table " id="">
+            <thead class="">
+                <tr>
+                    <td colspan="3" style="text-align: left">
+                        <b>
+                            {{ pays.ministereFrancais }}<br>
+                            {{ ecole.nomFrancais }}<br>
+                            B.P. {{ ecole.boitePostal }}
+                        </b>
+                    </td>
+                    <td colspan="2" style="text-align: center">
+                        logo
+                    </td>
+                    <td colspan="3" style="text-align: right">
+                        <b>
+                            {{ pays.paysFrancais }}<br>
+                            {{ pays.deviseFrancais }}<br>
+                            {{ecole.deviseFrancais}}
+                        </b>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: left"><b>{{annee}}</b></td>
+                    <td colspan="5" style="font-size: 1em; text-align: center"><b>BULLETIN DE NOTES</b></td>
+                    <td colspan="3" style="text-align: right"><b>{{ listCategories[0].listeMatieres[0].evaluationSeq[0].sequence }}</b></td>
+                </tr>
+                <tr>
+                    <td rowspan="2" style="text-align: left"><img style="height: 80px; width: 80px;" src="{{ asset('uploads/images/' ~ student.photo.id ~'.'~ student.photo.url)}}" alt="{{student}}" title="{{student}}"></td>
+                    <td colspan="3" style="text-align: left">Nom et prénom: <b>{{ student.nom | upper}}</b></td>
+                    <td colspan="2" style="text-align: left">N&eacute;(e) le: <b>{{ student.dateNaissance|date('d-m-Y') }}</b> A <b>{{ student.lieuNaissance | upper}}</b></td>
+                    <td>Matricule:  <b>{{ student.matricule }}</b></td>
+                    <td colspan="1" style="text-align: left">Sexe: <b>{{student.sexe}}</b></td>
+                </tr>
+                <tr>
+                    <td style="text-align: left" colspan="4">Enseignant Titulaire: <b>{{titulaire}}</b></td>
+                    <td colspan="2" style="text-align: left">Classe:  <b>{{ student.classe }}</b></td>
+                    <td colspan="2" style="text-align: left">Eff.: <b>{{Allstudent | length}}</b></td>
+                </tr>
+                <tr>
+                    <th style="background: gray;" colspan="2">Disciplines</th>
+                    <th style="background: gray;">Enseignants</th>
+                    <th style="background: gray;">M. /20</th>
+                    <th style="background: gray;">Coef.</th>
+                    <th style="background: gray;">Total</th>
+                    <th style="background: gray;">Rang</th>
+                    <th style="background: gray;">Mention</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for categorie in listCategories %}
+                    <tr>
+                        {% for matiere in categorie.listeMatieres %}
+                            <td colspan="2">
+                                {{matiere | truncate(13, true, '... (' ~ matiere.abreviation ~ ')')}}
+                            </td>
+                            <td>
+                                {% if matiere.evaluationSeq is not null %}
+                                    {{matiere.evaluationSeq[0].index.enseignant}}
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if matiere.evaluationSeq is not null %}
+                                    {{matiere.evaluationSeq[0].note}}
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if matiere.evaluationSeq is not null %}
+                                    {{matiere.evaluationSeq[0].index.coefficient}}
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if matiere.evaluationSeq is not null %}
+                                    {% set total = matiere.evaluationSeq[0].index.coefficient * matiere.evaluationSeq[0].note %} {{total}}
+                                {% endif %}
+                            </td>
+                            <td>
+                                Rang
+                            </td>
+                            <td>
+                                Mention
+                            </td>
+                        <tr>
+                        {% endfor %}
+                    <tr>
+                        <td colspan="4">
+                            <b><i>{{categorie}}</i></b>
+                        </td>
+                        <td>
+                            Coef: 
+                        </td>
+                        <td>
+                            Moy: 
+                        </td>
+
+                        <td>
+                            <b>Rang</b>
+                        </td>
+                        <td>
+                            <b>Mention</b>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script>
+        $('#bulletin').DataTable({
+            "pagingType": "full_numbers",
+            "lengthMenu": [[10, 10], [10, 10]],
+            lengthChange: true,
+            buttons: ['excel', 'pdf', 'print'],
+            dom: 'Bfrtip',
+            "language": {
+                "url": "{{ asset('DataTables/French.json') }}"
+            }
+        });
+    </script>
+{% endblock %}

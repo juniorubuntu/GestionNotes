@@ -2,6 +2,7 @@ parameters:
 #    school_note.example.class: School\NoteBundle\Example
 
 services:
-#    school_note.example:
-#        class: %school_note.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+ twig.extension.text:
+     class: Twig_Extensions_Extension_Text
+     tags:
+         - { name: twig.extension }
