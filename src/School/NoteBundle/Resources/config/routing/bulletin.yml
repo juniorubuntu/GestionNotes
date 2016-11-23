@@ -1,0 +1,11 @@
+bulletin:
+    path:     /
+    defaults: { _controller: "SchoolNoteBundle:Bulletin:index" }
+        
+bulletin_seq_student:
+    path:     /classe-{idClasse}/eleve-{idEleve}/sequence-{idSeq}/annee-{idAnnee}
+    defaults: { _controller: "SchoolNoteBundle:Bulletin:bulletinStudent" }
+    requirements:
+        idEleve: \d+
+        idSeq: \d+
+        idClasse: \d+

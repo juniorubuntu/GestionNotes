@@ -61,6 +61,13 @@ class EstDispense {
     private $nombreHeuresAnnuel;
 
     /**
+     * @var boolean
+     * @ORM\Column(type="boolean")
+     * @Assert\NotBlank()
+     */
+    private $titulaire;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -193,6 +200,27 @@ class EstDispense {
      */
     public function getEnseignant() {
         return $this->enseignant;
+    }
+
+    /**
+     * Set titulaire
+     *
+     * @param boolean $titulaire
+     * @return EstDispense
+     */
+    public function setTitulaire($titulaire) {
+        $this->titulaire = $titulaire;
+
+        return $this;
+    }
+
+    /**
+     * Get titulaire
+     *
+     * @return boolean 
+     */
+    public function getTitulaire() {
+        return $this->titulaire;
     }
 
 }

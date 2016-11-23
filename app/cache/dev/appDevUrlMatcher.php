@@ -256,6 +256,23 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
+            if (0 === strpos($pathinfo, '/Gestion/bulletin')) {
+                // bulletin
+                if (rtrim($pathinfo, '/') === '/Gestion/bulletin') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'bulletin');
+                    }
+
+                    return array (  '_controller' => 'School\\NoteBundle\\Controller\\BulletinController::indexAction',  '_route' => 'bulletin',);
+                }
+
+                // bulletin_seq_student
+                if (0 === strpos($pathinfo, '/Gestion/bulletin/classe') && preg_match('#^/Gestion/bulletin/classe\\-(?P<idClasse>\\d+)/eleve\\-(?P<idEleve>\\d+)/sequence\\-(?P<idSeq>\\d+)/annee\\-(?P<idAnnee>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'bulletin_seq_student')), array (  '_controller' => 'School\\NoteBundle\\Controller\\BulletinController::bulletinStudentAction',));
+                }
+
+            }
+
             // school_config_homepage
             if (0 === strpos($pathinfo, '/Gestion/hello') && preg_match('#^/Gestion/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'school_config_homepage')), array (  '_controller' => 'School\\ConfigBundle\\Controller\\DefaultController::indexAction',));

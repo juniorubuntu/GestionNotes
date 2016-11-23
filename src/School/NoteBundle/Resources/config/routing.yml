@@ -9,3 +9,7 @@ SchoolNoteBundle_sequence:
 SchoolNoteBundle_evaluation:
     resource: "@SchoolNoteBundle/Resources/config/routing/evaluation.yml"
     prefix:   /evaluation
+    
+SchoolNoteBundle_bulletin:
+    resource: "@SchoolNoteBundle/Resources/config/routing/bulletin.yml"
+    prefix:   /bulletin

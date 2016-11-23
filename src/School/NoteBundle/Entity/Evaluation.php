@@ -55,6 +55,15 @@ class Evaluation {
      * @ORM\ManyToOne(targetEntity="School\ConfigBundle\Entity\Annee")
      */
     private $annee;
+    private $index;
+
+    function getIndex() {
+        return $this->index;
+    }
+
+    function setIndex($index) {
+        $this->index = $index;
+    }
 
     /**
      * Get id
