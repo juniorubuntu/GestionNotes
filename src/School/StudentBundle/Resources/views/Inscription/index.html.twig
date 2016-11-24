@@ -1,9 +1,9 @@
 {% extends 'SchoolGestionBundle:Default:index.html.twig' %}
 
 {% block content -%}
-    <h1>Inscription list</h1>
+    <h1 class="text-center">Liste des Inscription</h1>
 
-    <table class="records_list table panel-primary">
+    <table id="inscription" class="records_list table panel-primary">
         <thead class="panel-heading">
             <tr>
                 <th>Id</th>
@@ -12,6 +12,7 @@
                 <th>Avance</th>
                 <th>Datederniereavance</th>
                 <th>Status</th>
+                <th>Année Académique</th>
                 <th>Détails</th>
                 <th>Modifier</th>
             </tr>
@@ -23,7 +24,7 @@
                     <td>{{ entity.student }}</td>
                     <td>{{ entity.classe }}</td>
                     <td>{{ entity.avance }}</td>
-                    <td>{% if entity.dateDerniereAvance %}{{ entity.dateDerniereAvance|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>{% if entity.dateDerniereAvance %}{{ entity.dateDerniereAvance|date('d-m-Y') }}{% endif %}</td>
                     <td>
                         Paiement 
                         {% if entity.status == 1 %}
@@ -33,22 +34,37 @@
                         {% endif %}
 
                     </td>
+                    <td>{{ entity.annee }}</td>
                     <td>
                         <a href="{{ path('inscription_show', { 'id': entity.id }) }}">voir</a>
                     </td>
                     <td>
-                        <a href="{{ path('inscription_edit', { 'id': entity.id }) }}">Modifier</a>
+                        {% if entity.status == 0 %}
+                            <a href="{{ path('inscription_edit', { 'id': entity.id }) }}">Modifier</a>
+                            {% else %}
+                                <b style="color: green">Termin&eacute;e</b>
+                        {% endif %}
                     </td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
-
-    <ul>
+    <ul style="list-style: none">
         <li>
-            <a href="{{ path('inscription_new') }}">
-                Create a new entry
+            <a class="btn btn-primary" href="{{ path('inscription_notyet') }}">
+                Inscrire un nouvel el&egrave;ve
             </a>
         </li>
     </ul>
+
+    <script>
+        $('#inscription').DataTable({
+            "pagingType": "full_numbers",
+            "lengthMenu": [[10, 20], [10, 20]],
+            "language": {
+                "url": "{{ asset('DataTables/French.json') }}"
+            }
+
+        });
+    </script>
 {% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'SchoolGestionBundle:Default:index.html.twig' %}
+
+{% block content -%}
+    <h1 class="text-center">Liste des Inscription</h1>
+
+    <table class="records_list table panel-primary">
+        <thead class="panel-heading">
+        <tr>
+            <th class="text-center">Matricule</th>
+            <th class="text-center">Nom et pr&eacute;nom</th>
+            <th class="text-center">Classe</th>
+            <th class="text-center">Ann&eacute;e Acad&eacute;mique</th>
+            <th class="text-center">Avance</th>
+            <th class="text-center">Date Derni&egrave;re Avance</th>
+            <th class="text-center">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td class="text-center">{{ entity.matricule }}</td>
+                <td class="text-center">{{ entity.nom }}</td>
+                <td class="text-center">{{ entity.classe }}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text-center">
+                    <a href="{{ path('inscription_new', { 'idStudent': entity.id }) }}">Inscrire</a>
+                </td>
+            </tr>
+        {% endfor %}
+        {% for incrip in incriptionsNonCompletes  %}
+            <tr>
+                <td class="text-center">{{ incrip.student.matricule }}</td>
+                <td class="text-center">{{ incrip.student.nom }}</td>
+                <td class="text-center">{{ incrip.classe }}</td>
+                <td class="text-center">{{ incrip.annee }}</td>
+                <td class="text-center">{{ incrip.avance }}</td>
+                <td class="text-center">{% if incrip.dateDerniereAvance %}{{ incrip.dateDerniereAvance|date('d-m-Y') }}{% endif %}</td>
+                <td class="text-center">
+                    <a href="{{ path('inscription_edit', { 'id': incrip.id }) }}">Completer</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <ul>
+        <li>
+            <a href="{{ path('inscription') }}">
+                Retour
+            </a>
+        </li>
+    </ul>
+{% endblock %}

@@ -5,6 +5,11 @@
 
     <div class="col-md-12">
         <div class="row">
+            <div class="col-md-4">
+                <label for="">Ann&eacute;e Acad&eacute;mique: </label> <span>{{annee.anneeScolaire}}</span>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-3">
                 <label for="">Classe: </label> <span>{{classe.nom}}</span>
             </div>
@@ -32,7 +37,7 @@
                         <tr>
                             <td>{{evaluation.student.nom}}</td>
                             <td>
-                            <form action="{{ path('note_inserer', { 'idNote':evaluation.id, 'idClasse':classe.id })}}" method="POST">
+                            <form action="{{ path('note_inserer', { 'idNote':evaluation.id, 'idClasse':classe.id, 'idAnnee':annee.id })}}" method="POST">
                                      <input style="width: 78px;" id="{{ evaluation.id }}" type="text" value="{{ evaluation.note }}" name="note" class="form-control" placeholder="note-{{ evaluation.student.nom }}" disabled="true"/>
                                 <a class="btn btn-primary" id="{{ evaluation.id }}-edit" onclick="activer({{ evaluation.id }})">Modifier</a>
                                 <input  class="btn btn-primary hidden" id="{{ evaluation.id }}-ok" type="submit" value="OK" />
