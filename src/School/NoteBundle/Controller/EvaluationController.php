@@ -44,7 +44,7 @@ class EvaluationController extends Controller {
         if ($form->isValid()) {
 
             $entity->setAnnee($ecole[0]->getAnneeEnCour());
-
+            $entity->setClasse($entity->getStudent()->getClasse());
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
@@ -74,46 +74,45 @@ class EvaluationController extends Controller {
 
         $subQueryBuilder = $em->createQueryBuilder();
         $subQuery = $subQueryBuilder
-            ->select('(e.student)')
-            ->from('SchoolNoteBundle:Evaluation', 'e')
-            ->where('e.annee= :annee')
-            ->andWhere('e.sequence= :sequence')
-            ->andWhere('e.matiere= :matiere')
-            ->setParameters( array(
-                'annee'=> $anneeEnCour,
-                'sequence'=> $sequence,
-                'matiere'=> $matiere,
-            ))
-            ->getQuery()
-            ->getArrayResult();
-        if(!$subQuery){
+                ->select('(e.student)')
+                ->from('SchoolNoteBundle:Evaluation', 'e')
+                ->where('e.annee= :annee')
+                ->andWhere('e.sequence= :sequence')
+                ->andWhere('e.matiere= :matiere')
+                ->setParameters(array(
+                    'annee' => $anneeEnCour,
+                    'sequence' => $sequence,
+                    'matiere' => $matiere,
+                ))
+                ->getQuery()
+                ->getArrayResult();
+        if (!$subQuery) {
             $qb = $this->getDoctrine()->getManager()->createQueryBuilder();
 
             $qb->select('s')
-                ->from('SchoolStudentBundle:Student', 's')
-                ->innerJoin('SchoolStudentBundle:Inscription', 'i', 'WITH', 'i.student = s.id')
-                ->innerJoin('SchoolStudentBundle:Classe', 'c', 'WITH', 'i.classe = c.id')
-                ->where('c.id = :identifie')
-                ->setParameter('identifie', $id);
+                    ->from('SchoolStudentBundle:Student', 's')
+                    ->innerJoin('SchoolStudentBundle:Inscription', 'i', 'WITH', 'i.student = s.id')
+                    ->innerJoin('SchoolStudentBundle:Classe', 'c', 'WITH', 'i.classe = c.id')
+                    ->where('c.id = :identifie')
+                    ->setParameter('identifie', $id);
             $eleves = $qb->getQuery()->getResult();
-        }else{
+        } else {
 
             $queryBuilder = $em->createQueryBuilder();
             $query = $queryBuilder
-                ->select('s')
-                ->from('SchoolStudentBundle:Student', 's')
-                ->innerJoin('SchoolStudentBundle:Inscription', 'i', 'WITH', 'i.student = s.id')
-                ->innerJoin('SchoolStudentBundle:Classe', 'c', 'WITH', 'i.classe = c.id')
-                ->where('c.id = :idClasse')
-                ->andWhere($queryBuilder->expr()->notIn('s.id', ':subQuery'))
-                ->setParameters(array(
-                    'subQuery'=> $subQuery,
-                    'idClasse'=> $id,
-                ))
-                ->getQuery();
+                    ->select('s')
+                    ->from('SchoolStudentBundle:Student', 's')
+                    ->innerJoin('SchoolStudentBundle:Inscription', 'i', 'WITH', 'i.student = s.id')
+                    ->innerJoin('SchoolStudentBundle:Classe', 'c', 'WITH', 'i.classe = c.id')
+                    ->where('c.id = :idClasse')
+                    ->andWhere($queryBuilder->expr()->notIn('s.id', ':subQuery'))
+                    ->setParameters(array(
+                        'subQuery' => $subQuery,
+                        'idClasse' => $id,
+                    ))
+                    ->getQuery();
 
             $eleves = $query->getResult();
-
         }
 
         if ($request->getMethod() == 'POST') {
@@ -210,35 +209,32 @@ class EvaluationController extends Controller {
         ));
     }
 
-    public function  insererNoteAction(Request $request, $idNote, $idClasse, $idAnnee){
+    public function insererNoteAction(Request $request, $idNote, $idClasse, $idAnnee) {
         $em = $this->getDoctrine()->getManager();
 
         if ($request->getMethod() == 'POST') {
             $evaluation = $em->getRepository('SchoolNoteBundle:Evaluation')->find($idNote);
             $note = $request->get('note');
-            if($note < 0 || $note > 20){
+            if ($note < 0 || $note > 20) {
                 $request->getSession()->getFlashBag()->add('error', 'Valeur incorecte');
-            }else if(is_float($note + 0.0) && is_numeric($note)){
+            } else if (is_float($note + 0.0) && is_numeric($note)) {
                 $evaluation->setNote($note);
                 $em->flush();
-            }
-            else if(!(ctype_digit($note))){
+            } else if (!(ctype_digit($note))) {
                 $request->getSession()->getFlashBag()->add('error', 'Valeur incorecte');
-            }else{
-                //Dans le cas où tous les tests ne sont pas satisfaisants
+            } else {
+                //Dans le cas oï¿½ tous les tests ne sont pas satisfaisants
                 $evaluation->setNote($note);
                 $em->flush();
             }
 
             return $this->redirect($this->generateUrl('note_editnote', array(
-            'id' => $idClasse,
-            'idSeq' =>$evaluation->getSequence()->getId(),
-            'idMat' =>$evaluation->getMatiere()->getId(),
-            'idAnnee' =>$idAnnee,
-
+                                'id' => $idClasse,
+                                'idSeq' => $evaluation->getSequence()->getId(),
+                                'idMat' => $evaluation->getMatiere()->getId(),
+                                'idAnnee' => $idAnnee,
             )));
         }
-
     }
 
     /**

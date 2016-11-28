@@ -2,7 +2,10 @@
 
 {% block content -%}
     <h1 class="text-center">Liste des matières</h1>
-
+    <nav class="nav navbar-inverse alert-success col-md-12" style="margin-bottom: 3px;">
+        <a style="color: green; font-size: 18px;
+           text-shadow: -1px 0px;" href="{{path('matiere_new')}}" class="pull-left btn-link"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une matière</a>
+    </nav>
     <table class="records_list table table-striped display row-border cell-border compact panel-primary " id="matiere">
         <thead class="panel-heading" >
             <tr>
@@ -29,14 +32,6 @@
             {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('matiere_new') }}">
-                Insérer une matière
-            </a>
-        </li>
-    </ul>
     <script>
         $('#matiere').DataTable({
             "pagingType": "full_numbers",

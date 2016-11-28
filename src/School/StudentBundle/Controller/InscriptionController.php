@@ -29,46 +29,45 @@ class InscriptionController extends Controller {
         ));
     }
 
-
-    public function aInscrireAction(){
+    public function aInscrireAction() {
         $em = $this->getDoctrine()->getManager();
         $school = $em->getRepository('SchoolConfigBundle:Ecole')->findAll();
         $anneEncour = $school[0]->getAnneeEnCour();
 
         $subQueryBuilder = $em->createQueryBuilder();
         $subQuery = $subQueryBuilder
-            ->select('(i.student)')
-            ->from('SchoolStudentBundle:Inscription', 'i')
-            ->where('i.annee= :annee')
-            //->orWhere('i.status= :status')
-            ->setParameters( array(
-                'annee'=> $anneEncour,
-             //   'status'=> 0,
-            ))
-            ->getQuery()
-            ->getArrayResult();
+                ->select('IDENTITY(i.student)')
+                ->from('SchoolStudentBundle:Inscription', 'i')
+                ->where('i.annee= :annee')
+                //->orWhere('i.status= :status')
+                ->setParameters(array(
+                    'annee' => $anneEncour,
+                        //   'status'=> 0,
+                ))
+                ->getQuery()
+                ->getArrayResult();
 
         $queryBuilder = $em->createQueryBuilder();
         $query = $queryBuilder
-            ->select('s')
-            ->from('SchoolStudentBundle:Student', 's')
-            ->where($queryBuilder->expr()->notIn('s.id', ':subQuery'))
-            ->setParameter('subQuery', $subQuery)
-            ->getQuery();
+                ->select('s')
+                ->from('SchoolStudentBundle:Student', 's')
+                ->where($queryBuilder->expr()->notIn('s.id', ':subQuery'))
+                ->setParameter('subQuery', $subQuery)
+                ->getQuery();
 
         $students = $query->getResult();
 
         $incriptionsNonComplets = $this->getDoctrine()->getRepository('SchoolStudentBundle:Inscription')->findBy(
-            array(
-                'status' => 0,
-                'annee' => $anneEncour,
-            ));
+                array(
+                    'status' => 0,
+                    'annee' => $anneEncour,
+        ));
 
 
 
         return $this->render('SchoolStudentBundle:Inscription:listeElevesNonInscrits.html.twig', array(
-            'entities' => $students,
-            'incriptionsNonCompletes' => $incriptionsNonComplets,
+                    'entities' => $students,
+                    'incriptionsNonCompletes' => $incriptionsNonComplets,
         ));
     }
 
@@ -90,14 +89,13 @@ class InscriptionController extends Controller {
             $entity->setStudent($student);
             $entity->setAnnee($ecole[0]->getAnneeEnCour());
             $inscriptionExist = $this->getDoctrine()->getRepository('SchoolStudentBundle:Inscription')->findBy(
-                array(
-                    'student' => $entity->getStudent(),
-                    'annee' => $ecole[0]->getAnneeEnCour(),
-                ));
-            if($inscriptionExist){
-                $request->getSession()->getFlashBag()->add('notice', 'Incription déjà effectuée');
-            }
-            else{
+                    array(
+                        'student' => $entity->getStudent(),
+                        'annee' => $ecole[0]->getAnneeEnCour(),
+            ));
+            if ($inscriptionExist) {
+                $request->getSession()->getFlashBag()->add('notice', 'Incription dï¿½jï¿½ effectuï¿½e');
+            } else {
 
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($entity);
@@ -122,7 +120,7 @@ class InscriptionController extends Controller {
     private function createCreateForm(Inscription $entity, $idStudent) {
         $form = $this->createForm(new InscriptionType(), $entity, array(
             'action' => $this->generateUrl('inscription_create', array(
-                'idStudent' =>$idStudent,
+                'idStudent' => $idStudent,
             )),
             'method' => 'POST',
         ));

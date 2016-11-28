@@ -4,7 +4,7 @@
 {% block aside %}
 {% endblock %}
 {% block body %}
-    <div class="col-md-offset-2 col-md-8" style="margin-bottom: 10%; font-size: 14px;">
+    <div class="col-md-offset-2 col-md-8" style="margin-bottom: 8%; font-size: 12px;">
         <table class="table " id="">
             <thead class="">
                 <tr>
@@ -32,21 +32,21 @@
                     <td colspan="3" style="text-align: right"><b>{{ listCategories[0].listeMatieres[0].evaluationSeq[0].sequence }}</b></td>
                 </tr>
                 <tr>
-                    <td rowspan="2" style="text-align: left"><img style="height: 80px; width: 80px;" src="{{ asset('uploads/images/' ~ student.photo.id ~'.'~ student.photo.url)}}" alt="{{student}}" title="{{student}}"></td>
-                    <td colspan="3" style="text-align: left">Nom et prénom: <b>{{ student.nom | upper}}</b></td>
-                    <td colspan="2" style="text-align: left">N&eacute;(e) le: <b>{{ student.dateNaissance|date('d-m-Y') }}</b> A <b>{{ student.lieuNaissance | upper}}</b></td>
+                    <td rowspan="2" style="text-align: left"><img style="height: 50px; width: 50px;" src="{{ asset('uploads/images/' ~ student.photo.id ~'.'~ student.photo.url)}}" alt="{{student}}" title="{{student}}"></td>
+                    <td colspan="3" style="text-align: left">Elève: <b>{{ student.nom | upper}}</b></td>
+                    <td colspan="2" style="text-align: left"><b>{{ student.dateNaissance|date('d-m-Y') }}</b> A <b>{{ student.lieuNaissance | upper}}</b></td>
                     <td>Matricule:  <b>{{ student.matricule }}</b></td>
                     <td colspan="1" style="text-align: left">Sexe: <b>{{student.sexe}}</b></td>
                 </tr>
                 <tr>
-                    <td style="text-align: left" colspan="4">Enseignant Titulaire: <b>{{titulaire}}</b></td>
-                    <td colspan="2" style="text-align: left">Classe:  <b>{{ student.classe }}</b></td>
+                    <td style="text-align: left" colspan="4">Prof. Titulaire: <b>{{titulaire}}</b></td>
+                    <td colspan="2" style="text-align: left">Classe:  <b>{{ student.classe.abreviation }}</b></td>
                     <td colspan="2" style="text-align: left">Eff.: <b>{{Allstudent | length}}</b></td>
                 </tr>
                 <tr>
                     <th style="background: gray;" colspan="2">Disciplines</th>
                     <th style="background: gray;">Enseignants</th>
-                    <th style="background: gray;">M. /20</th>
+                    <th style="background: gray;">M./20</th>
                     <th style="background: gray;">Coef.</th>
                     <th style="background: gray;">Total</th>
                     <th style="background: gray;">Rang</th>
@@ -58,7 +58,13 @@
                     <tr>
                         {% for matiere in categorie.listeMatieres %}
                             <td colspan="2">
-                                {{matiere | truncate(13, true, '... (' ~ matiere.abreviation ~ ')')}}
+                                {% set mat = matiere.taille %}
+                                {% if mat > 13 %}
+                                    {{ matiere.abreviation }}
+                                {% else %}
+                                    {{matiere}}
+                                {% endif %}
+                                {# {{matiere | truncate(13, true, '... (' ~ matiere.abreviation ~ ')')}} #}
                             </td>
                             <td>
                                 {% if matiere.evaluationSeq is not null %}
@@ -88,7 +94,7 @@
                             </td>
                         <tr>
                         {% endfor %}
-                    <tr>
+                    <tr style="border: 2px solid black;">
                         <td colspan="4">
                             <b><i>{{categorie}}</i></b>
                         </td>
@@ -120,6 +126,13 @@
             "language": {
                 "url": "{{ asset('DataTables/French.json') }}"
             }
+        });
+
+        $('td').css({
+            'padding': '2px'
+        });
+        $('th').css({
+            'padding': '2px'
         });
     </script>
 {% endblock %}

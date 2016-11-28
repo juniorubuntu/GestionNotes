@@ -33,6 +33,15 @@ class Matiere {
      * @Assert\NotBlank()
      */
     private $nom;
+    private $taille;
+
+    function getTaille() {
+        return $this->taille;
+    }
+
+    function setTaille($taille) {
+        $this->taille = $taille;
+    }
 
     /**
      * @var string
