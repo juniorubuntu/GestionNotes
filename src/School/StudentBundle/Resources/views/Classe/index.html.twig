@@ -2,6 +2,10 @@
 
 {% block content -%}
     <h2>Liste des salles de classes</h2>
+    <nav class="nav navbar-inverse alert-success col-md-12" style="margin-bottom: 3px;">
+        <a style="color: green; font-size: 18px;
+           text-shadow: -1px 0px;" href="{{path('classe_new')}}" class="pull-left btn-link"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une classe</a>
+    </nav>
     <table class="records_list table cell-border row-border table-hover panel-primary" id="classe">
         <thead class="panel-heading">
             <tr>
@@ -30,14 +34,6 @@
             {% endfor %}
         </tbody>
     </table>
-    <ul>
-        <li>
-            <a href="{{ path('classe_new') }}">
-                Insérer une classe
-            </a>
-        </li>
-    </ul>
-
     <script>
         $('#classe').DataTable({
             "pagingType": "full_numbers",

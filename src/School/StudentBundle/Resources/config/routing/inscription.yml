@@ -7,17 +7,24 @@ inscription_show:
     defaults: { _controller: "SchoolStudentBundle:Inscription:show" }
 
 inscription_new:
-    path:     /new
+    path:     /new/eleve-{idStudent}
     defaults: { _controller: "SchoolStudentBundle:Inscription:new" }
+    requirements:
+            idStudent: \d+
+
+inscription_notyet:
+    path:     /aInscrire/
+    defaults: { _controller: "SchoolStudentBundle:Inscription:aInscrire" }
 
 inscription_create:
-    path:     /create
+    path:     /create/eleve-{idStudent}
     defaults: { _controller: "SchoolStudentBundle:Inscription:create" }
     requirements: { _method: post }
 
 inscription_edit:
     path:     /{id}/edit
     defaults: { _controller: "SchoolStudentBundle:Inscription:edit" }
+    #requirements: { _method: post|put }
 
 inscription_update:
     path:     /{id}/update

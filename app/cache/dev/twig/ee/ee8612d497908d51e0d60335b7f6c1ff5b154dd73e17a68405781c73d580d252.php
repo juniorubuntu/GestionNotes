@@ -41,7 +41,7 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
     public function block_body($context, array $blocks = array())
     {
         // line 7
-        echo "    <div class=\"col-md-offset-2 col-md-8\" style=\"margin-bottom: 10%; font-size: 14px;\">
+        echo "    <div class=\"col-md-offset-2 col-md-8\" style=\"margin-bottom: 10%; font-size: 12px;\">
         <table class=\"table \" id=\"\">
             <thead class=\"\">
                 <tr>
@@ -93,7 +93,7 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
         echo "</b></td>
                 </tr>
                 <tr>
-                    <td rowspan=\"2\" style=\"text-align: left\"><img style=\"height: 80px; width: 80px;\" src=\"";
+                    <td rowspan=\"2\" style=\"text-align: left\"><img style=\"height: 50px; width: 50px;\" src=\"";
         // line 35
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(((("uploads/images/" . $this->getAttribute($this->getAttribute((isset($context["student"]) ? $context["student"] : $this->getContext($context, "student")), "photo", array()), "id", array())) . ".") . $this->getAttribute($this->getAttribute((isset($context["student"]) ? $context["student"] : $this->getContext($context, "student")), "photo", array()), "url", array()))), "html", null, true);
         echo "\" alt=\"";
@@ -101,11 +101,11 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
         echo "\" title=\"";
         echo twig_escape_filter($this->env, (isset($context["student"]) ? $context["student"] : $this->getContext($context, "student")), "html", null, true);
         echo "\"></td>
-                    <td colspan=\"3\" style=\"text-align: left\">Nom et prénom: <b>";
+                    <td colspan=\"3\" style=\"text-align: left\">Elève: <b>";
         // line 36
         echo twig_escape_filter($this->env, twig_upper_filter($this->env, $this->getAttribute((isset($context["student"]) ? $context["student"] : $this->getContext($context, "student")), "nom", array())), "html", null, true);
         echo "</b></td>
-                    <td colspan=\"2\" style=\"text-align: left\">N&eacute;(e) le: <b>";
+                    <td colspan=\"2\" style=\"text-align: left\"><b>";
         // line 37
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["student"]) ? $context["student"] : $this->getContext($context, "student")), "dateNaissance", array()), "d-m-Y"), "html", null, true);
         echo "</b> A <b>";
@@ -121,13 +121,13 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
         echo "</b></td>
                 </tr>
                 <tr>
-                    <td style=\"text-align: left\" colspan=\"4\">Enseignant Titulaire: <b>";
+                    <td style=\"text-align: left\" colspan=\"4\">Prof. Titulaire: <b>";
         // line 42
         echo twig_escape_filter($this->env, (isset($context["titulaire"]) ? $context["titulaire"] : $this->getContext($context, "titulaire")), "html", null, true);
         echo "</b></td>
                     <td colspan=\"2\" style=\"text-align: left\">Classe:  <b>";
         // line 43
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["student"]) ? $context["student"] : $this->getContext($context, "student")), "classe", array()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["student"]) ? $context["student"] : $this->getContext($context, "student")), "classe", array()), "abreviation", array()), "html", null, true);
         echo "</b></td>
                     <td colspan=\"2\" style=\"text-align: left\">Eff.: <b>";
         // line 44
@@ -137,7 +137,7 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
                 <tr>
                     <th style=\"background: gray;\" colspan=\"2\">Disciplines</th>
                     <th style=\"background: gray;\">Enseignants</th>
-                    <th style=\"background: gray;\">M. /20</th>
+                    <th style=\"background: gray;\">M./20</th>
                     <th style=\"background: gray;\">Coef.</th>
                     <th style=\"background: gray;\">Total</th>
                     <th style=\"background: gray;\">Rang</th>
@@ -161,50 +161,67 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
                 echo "                            <td colspan=\"2\">
                                 ";
                 // line 61
-                echo twig_escape_filter($this->env, twig_truncate_filter($this->env, $context["matiere"], 13, true, (("... (" . $this->getAttribute($context["matiere"], "abreviation", array())) . ")")), "html", null, true);
-                echo "
-                            </td>
+                $context["mat"] = $this->getAttribute($context["matiere"], "taille", array());
+                // line 62
+                echo "                                ";
+                if (((isset($context["mat"]) ? $context["mat"] : $this->getContext($context, "mat")) > 13)) {
+                    // line 63
+                    echo "                                    ";
+                    echo twig_escape_filter($this->env, $this->getAttribute($context["matiere"], "abreviation", array()), "html", null, true);
+                    echo "
+                                ";
+                } else {
+                    // line 65
+                    echo "                                    ";
+                    echo twig_escape_filter($this->env, $context["matiere"], "html", null, true);
+                    echo "
+                                ";
+                }
+                // line 67
+                echo "                                ";
+                // line 68
+                echo "                            </td>
                             <td>
                                 ";
-                // line 64
+                // line 70
                 if ( !(null === $this->getAttribute($context["matiere"], "evaluationSeq", array()))) {
-                    // line 65
+                    // line 71
                     echo "                                    ";
                     echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute($this->getAttribute($context["matiere"], "evaluationSeq", array()), 0, array(), "array"), "index", array()), "enseignant", array()), "html", null, true);
                     echo "
                                 ";
                 }
-                // line 67
+                // line 73
                 echo "                            </td>
                             <td>
                                 ";
-                // line 69
+                // line 75
                 if ( !(null === $this->getAttribute($context["matiere"], "evaluationSeq", array()))) {
-                    // line 70
+                    // line 76
                     echo "                                    ";
                     echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute($context["matiere"], "evaluationSeq", array()), 0, array(), "array"), "note", array()), "html", null, true);
                     echo "
                                 ";
                 }
-                // line 72
+                // line 78
                 echo "                            </td>
                             <td>
                                 ";
-                // line 74
+                // line 80
                 if ( !(null === $this->getAttribute($context["matiere"], "evaluationSeq", array()))) {
-                    // line 75
+                    // line 81
                     echo "                                    ";
                     echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute($this->getAttribute($context["matiere"], "evaluationSeq", array()), 0, array(), "array"), "index", array()), "coefficient", array()), "html", null, true);
                     echo "
                                 ";
                 }
-                // line 77
+                // line 83
                 echo "                            </td>
                             <td>
                                 ";
-                // line 79
+                // line 85
                 if ( !(null === $this->getAttribute($context["matiere"], "evaluationSeq", array()))) {
-                    // line 80
+                    // line 86
                     echo "                                    ";
                     $context["total"] = ($this->getAttribute($this->getAttribute($this->getAttribute($this->getAttribute($context["matiere"], "evaluationSeq", array()), 0, array(), "array"), "index", array()), "coefficient", array()) * $this->getAttribute($this->getAttribute($this->getAttribute($context["matiere"], "evaluationSeq", array()), 0, array(), "array"), "note", array()));
                     echo " ";
@@ -212,7 +229,7 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
                     echo "
                                 ";
                 }
-                // line 82
+                // line 88
                 echo "                            </td>
                             <td>
                                 Rang
@@ -226,11 +243,11 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['matiere'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 91
-            echo "                    <tr>
+            // line 97
+            echo "                    <tr style=\"border: 2px solid black;\">
                         <td colspan=\"4\">
                             <b><i>";
-            // line 93
+            // line 99
             echo twig_escape_filter($this->env, $context["categorie"], "html", null, true);
             echo "</i></b>
                         </td>
@@ -253,7 +270,7 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['categorie'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 110
+        // line 116
         echo "            </tbody>
         </table>
     </div>
@@ -266,10 +283,17 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
             dom: 'Bfrtip',
             \"language\": {
                 \"url\": \"";
-        // line 121
+        // line 127
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("DataTables/French.json"), "html", null, true);
         echo "\"
             }
+        });
+
+        \$('td').css({
+            'padding': '2px'
+        });
+        \$('th').css({
+            'padding': '2px'
         });
     </script>
 ";
@@ -287,7 +311,7 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
 
     public function getDebugInfo()
     {
-        return array (  270 => 121,  257 => 110,  234 => 93,  230 => 91,  216 => 82,  208 => 80,  206 => 79,  202 => 77,  196 => 75,  194 => 74,  190 => 72,  184 => 70,  182 => 69,  178 => 67,  172 => 65,  170 => 64,  164 => 61,  161 => 60,  157 => 59,  154 => 58,  150 => 57,  134 => 44,  130 => 43,  126 => 42,  120 => 39,  116 => 38,  110 => 37,  106 => 36,  98 => 35,  92 => 32,  87 => 30,  79 => 25,  75 => 24,  71 => 23,  60 => 15,  56 => 14,  52 => 13,  44 => 7,  41 => 6,  36 => 4,  30 => 2,  11 => 1,);
+        return array (  287 => 127,  274 => 116,  251 => 99,  247 => 97,  233 => 88,  225 => 86,  223 => 85,  219 => 83,  213 => 81,  211 => 80,  207 => 78,  201 => 76,  199 => 75,  195 => 73,  189 => 71,  187 => 70,  183 => 68,  181 => 67,  175 => 65,  169 => 63,  166 => 62,  164 => 61,  161 => 60,  157 => 59,  154 => 58,  150 => 57,  134 => 44,  130 => 43,  126 => 42,  120 => 39,  116 => 38,  110 => 37,  106 => 36,  98 => 35,  92 => 32,  87 => 30,  79 => 25,  75 => 24,  71 => 23,  60 => 15,  56 => 14,  52 => 13,  44 => 7,  41 => 6,  36 => 4,  30 => 2,  11 => 1,);
     }
 }
 /* {% extends "SchoolGestionBundle:Default:index.html.twig" %}*/
@@ -296,7 +320,7 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
 /* {% block aside %}*/
 /* {% endblock %}*/
 /* {% block body %}*/
-/*     <div class="col-md-offset-2 col-md-8" style="margin-bottom: 10%; font-size: 14px;">*/
+/*     <div class="col-md-offset-2 col-md-8" style="margin-bottom: 10%; font-size: 12px;">*/
 /*         <table class="table " id="">*/
 /*             <thead class="">*/
 /*                 <tr>*/
@@ -324,21 +348,21 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
 /*                     <td colspan="3" style="text-align: right"><b>{{ listCategories[0].listeMatieres[0].evaluationSeq[0].sequence }}</b></td>*/
 /*                 </tr>*/
 /*                 <tr>*/
-/*                     <td rowspan="2" style="text-align: left"><img style="height: 80px; width: 80px;" src="{{ asset('uploads/images/' ~ student.photo.id ~'.'~ student.photo.url)}}" alt="{{student}}" title="{{student}}"></td>*/
-/*                     <td colspan="3" style="text-align: left">Nom et prénom: <b>{{ student.nom | upper}}</b></td>*/
-/*                     <td colspan="2" style="text-align: left">N&eacute;(e) le: <b>{{ student.dateNaissance|date('d-m-Y') }}</b> A <b>{{ student.lieuNaissance | upper}}</b></td>*/
+/*                     <td rowspan="2" style="text-align: left"><img style="height: 50px; width: 50px;" src="{{ asset('uploads/images/' ~ student.photo.id ~'.'~ student.photo.url)}}" alt="{{student}}" title="{{student}}"></td>*/
+/*                     <td colspan="3" style="text-align: left">Elève: <b>{{ student.nom | upper}}</b></td>*/
+/*                     <td colspan="2" style="text-align: left"><b>{{ student.dateNaissance|date('d-m-Y') }}</b> A <b>{{ student.lieuNaissance | upper}}</b></td>*/
 /*                     <td>Matricule:  <b>{{ student.matricule }}</b></td>*/
 /*                     <td colspan="1" style="text-align: left">Sexe: <b>{{student.sexe}}</b></td>*/
 /*                 </tr>*/
 /*                 <tr>*/
-/*                     <td style="text-align: left" colspan="4">Enseignant Titulaire: <b>{{titulaire}}</b></td>*/
-/*                     <td colspan="2" style="text-align: left">Classe:  <b>{{ student.classe }}</b></td>*/
+/*                     <td style="text-align: left" colspan="4">Prof. Titulaire: <b>{{titulaire}}</b></td>*/
+/*                     <td colspan="2" style="text-align: left">Classe:  <b>{{ student.classe.abreviation }}</b></td>*/
 /*                     <td colspan="2" style="text-align: left">Eff.: <b>{{Allstudent | length}}</b></td>*/
 /*                 </tr>*/
 /*                 <tr>*/
 /*                     <th style="background: gray;" colspan="2">Disciplines</th>*/
 /*                     <th style="background: gray;">Enseignants</th>*/
-/*                     <th style="background: gray;">M. /20</th>*/
+/*                     <th style="background: gray;">M./20</th>*/
 /*                     <th style="background: gray;">Coef.</th>*/
 /*                     <th style="background: gray;">Total</th>*/
 /*                     <th style="background: gray;">Rang</th>*/
@@ -350,7 +374,13 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
 /*                     <tr>*/
 /*                         {% for matiere in categorie.listeMatieres %}*/
 /*                             <td colspan="2">*/
-/*                                 {{matiere | truncate(13, true, '... (' ~ matiere.abreviation ~ ')')}}*/
+/*                                 {% set mat = matiere.taille %}*/
+/*                                 {% if mat > 13 %}*/
+/*                                     {{ matiere.abreviation }}*/
+/*                                 {% else %}*/
+/*                                     {{matiere}}*/
+/*                                 {% endif %}*/
+/*                                 {# {{matiere | truncate(13, true, '... (' ~ matiere.abreviation ~ ')')}} #}*/
 /*                             </td>*/
 /*                             <td>*/
 /*                                 {% if matiere.evaluationSeq is not null %}*/
@@ -380,7 +410,7 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
 /*                             </td>*/
 /*                         <tr>*/
 /*                         {% endfor %}*/
-/*                     <tr>*/
+/*                     <tr style="border: 2px solid black;">*/
 /*                         <td colspan="4">*/
 /*                             <b><i>{{categorie}}</i></b>*/
 /*                         </td>*/
@@ -412,6 +442,13 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
 /*             "language": {*/
 /*                 "url": "{{ asset('DataTables/French.json') }}"*/
 /*             }*/
+/*         });*/
+/* */
+/*         $('td').css({*/
+/*             'padding': '2px'*/
+/*         });*/
+/*         $('th').css({*/
+/*             'padding': '2px'*/
 /*         });*/
 /*     </script>*/
 /* {% endblock %}*/

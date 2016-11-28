@@ -8,15 +8,15 @@ class __TwigTemplate_dbd3682427745fa85a060fa6803a955ee8f376161160e817a161e6ba0e4
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("::base.html.twig", "SchoolNoteBundle:Evaluation:edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("SchoolGestionBundle:Default:index.html.twig", "SchoolNoteBundle:Evaluation:edit.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "::base.html.twig";
+        return "SchoolGestionBundle:Default:index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,7 +25,7 @@ class __TwigTemplate_dbd3682427745fa85a060fa6803a955ee8f376161160e817a161e6ba0e4
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
         echo "<h1>Evaluation edit</h1>
@@ -67,9 +67,9 @@ class __TwigTemplate_dbd3682427745fa85a060fa6803a955ee8f376161160e817a161e6ba0e4
         return array (  49 => 14,  42 => 10,  35 => 6,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
-/* {% extends '::base.html.twig' %}*/
+/* {% extends 'SchoolGestionBundle:Default:index.html.twig' %}*/
 /* */
-/* {% block body -%}*/
+/* {% block content -%}*/
 /*     <h1>Evaluation edit</h1>*/
 /* */
 /*     {{ form(edit_form) }}*/

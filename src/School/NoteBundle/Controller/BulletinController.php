@@ -58,6 +58,7 @@ class BulletinController extends Controller {
                     }
                 }
                 foreach ($listeMatieres as $matiere) {
+                    $matiere->setTaille(strlen($matiere->getNom()));
                     $evaluationSeq = $this->getDoctrine()->getRepository('SchoolNoteBundle:Evaluation')
                             ->findBy(
                             array(

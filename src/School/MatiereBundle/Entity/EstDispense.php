@@ -63,7 +63,6 @@ class EstDispense {
     /**
      * @var boolean
      * @ORM\Column(type="boolean")
-     * @Assert\NotBlank()
      */
     private $titulaire;
 
@@ -97,26 +96,6 @@ class EstDispense {
         return $this->coefficient;
     }
 
-    /**
-     * Set annee
-     *
-     * @param string $annee
-     * @return EstDispense
-     */
-    public function setAnnee($annee) {
-        $this->annee = $annee;
-
-        return $this;
-    }
-
-    /**
-     * Get annee
-     *
-     * @return string 
-     */
-    public function getAnnee() {
-        return $this->annee;
-    }
 
     /**
      * Set nombreHeuresAnnuel
@@ -223,4 +202,27 @@ class EstDispense {
         return $this->titulaire;
     }
 
+
+    /**
+     * Set annee
+     *
+     * @param \School\ConfigBundle\Entity\Annee $annee
+     * @return EstDispense
+     */
+    public function setAnnee(\School\ConfigBundle\Entity\Annee $annee = null)
+    {
+        $this->annee = $annee;
+
+        return $this;
+    }
+
+    /**
+     * Get annee
+     *
+     * @return \School\ConfigBundle\Entity\Annee 
+     */
+    public function getAnnee()
+    {
+        return $this->annee;
+    }
 }

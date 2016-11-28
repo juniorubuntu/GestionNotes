@@ -15,12 +15,13 @@ class EstDispenseType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('matiere')
+            ->add('enseignant')
             ->add('coefficient')
             ->add('annee')
             ->add('nombreHeuresAnnuel')
-            ->add('matiere')
-            ->add('enseignant')
             ->add('classe')
+            ->add('titulaire')
         ;
     }
     

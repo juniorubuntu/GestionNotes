@@ -44,7 +44,7 @@ class EvaluationController extends Controller {
         if ($form->isValid()) {
 
             $entity->setAnnee($ecole[0]->getAnneeEnCour());
-
+            $entity->setClasse($entity->getStudent()->getClasse());
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
@@ -61,34 +61,60 @@ class EvaluationController extends Controller {
     /**
      * Creates a new Note entity.
      */
-    public function noteAction(Request $request, $id, $idSeq, $idMat) {
+    public function noteAction(Request $request, $id, $idSeq, $idMat, $idAnnee) {
 
         $em = $this->getDoctrine()->getManager();
 
         $classe = $em->getRepository('SchoolStudentBundle:Classe')->find($id);
         $sequence = $em->getRepository('SchoolNoteBundle:Sequence')->find($idSeq);
         $matiere = $em->getRepository('SchoolMatiereBundle:Matiere')->find($idMat);
+        $anneeEnCour = $em->getRepository('SchoolConfigBundle:Annee')->find($idAnnee);
 
-        $qb = $this->getDoctrine()->getManager()->createQueryBuilder();
-        $qb1 = $this->getDoctrine()->getManager()->createQueryBuilder();
-        $qb->select('s')
-                ->from('SchoolStudentBundle:Student', 's')
-                ->innerJoin('SchoolStudentBundle:Inscription', 'i', 'WITH', 'i.student = s.id')
-                ->innerJoin('SchoolStudentBundle:Classe', 'c', 'WITH', 'i.classe = c.id')
-                ->where('c.id = :identifie')
-                ->setParameter('identifie', $id);
 
-        $qb1->select('e')
+
+        $subQueryBuilder = $em->createQueryBuilder();
+        $subQuery = $subQueryBuilder
+                ->select('(e.student)')
                 ->from('SchoolNoteBundle:Evaluation', 'e')
-                ->innerJoin('SchoolMatiereBundle:Matiere', 'm', 'WITH', 'm.id = e.matiere')
-                ->innerJoin('SchoolStudentBundle:Student', 's', 'WITH', 's.id = e.student')
-                ->innerJoin('SchoolStudentBundle:Inscription', 'i', 'WITH', 's.id = i.student')
-                ->innerJoin('SchoolStudentBundle:Classe', 'c', 'WITH', 'i.classe = c.id')
-                ->where('c.id = :identifie')
-                ->setParameter('identifie', $id);
-        $notes = $qb1->getQuery()->getResult();
+                ->where('e.annee= :annee')
+                ->andWhere('e.sequence= :sequence')
+                ->andWhere('e.matiere= :matiere')
+                ->setParameters(array(
+                    'annee' => $anneeEnCour,
+                    'sequence' => $sequence,
+                    'matiere' => $matiere,
+                ))
+                ->getQuery()
+                ->getArrayResult();
+        if (!$subQuery) {
+            $qb = $this->getDoctrine()->getManager()->createQueryBuilder();
 
-        $eleves = $qb->getQuery()->getResult();
+            $qb->select('s')
+                    ->from('SchoolStudentBundle:Student', 's')
+                    ->innerJoin('SchoolStudentBundle:Inscription', 'i', 'WITH', 'i.student = s.id')
+                    ->innerJoin('SchoolStudentBundle:Classe', 'c', 'WITH', 'i.classe = c.id')
+                    ->where('c.id = :identifie')
+                    ->setParameter('identifie', $id);
+            $eleves = $qb->getQuery()->getResult();
+        } else {
+
+            $queryBuilder = $em->createQueryBuilder();
+            $query = $queryBuilder
+                    ->select('s')
+                    ->from('SchoolStudentBundle:Student', 's')
+                    ->innerJoin('SchoolStudentBundle:Inscription', 'i', 'WITH', 'i.student = s.id')
+                    ->innerJoin('SchoolStudentBundle:Classe', 'c', 'WITH', 'i.classe = c.id')
+                    ->where('c.id = :idClasse')
+                    ->andWhere($queryBuilder->expr()->notIn('s.id', ':subQuery'))
+                    ->setParameters(array(
+                        'subQuery' => $subQuery,
+                        'idClasse' => $id,
+                    ))
+                    ->getQuery();
+
+            $eleves = $query->getResult();
+        }
+
         if ($request->getMethod() == 'POST') {
             foreach ($eleves as $elev) {
                 $qbEvaluation = $this->getDoctrine()->getManager()->createQueryBuilder();
@@ -112,7 +138,7 @@ class EvaluationController extends Controller {
                     $evaluation->setSequence($sequence);
                     $evaluation->setStudent($elev);
                     $evaluation->setMatiere($matiere);
-                    $evaluation->setAnnee('2016/2017');
+                    $evaluation->setAnnee($anneeEnCour);
                     $em->persist($evaluation);
                     $em->flush();
                 }
@@ -124,21 +150,25 @@ class EvaluationController extends Controller {
                     'classe' => $classe,
                     'sequence' => $sequence,
                     'matiere' => $matiere,
+                    'annee' => $anneeEnCour,
                     'eleves' => $eleves,
-                    'notes' => $notes,
         ));
     }
 
     /**
      * Creates a new Note entity.
      */
-    public function editnoteAction(Request $request, $id, $idSeq, $idMat) {
+    public function editnoteAction(Request $request, $id, $idSeq, $idMat, $idAnnee) {
 
         $em = $this->getDoctrine()->getManager();
 
         $classe = $em->getRepository('SchoolStudentBundle:Classe')->find($id);
         $sequence = $em->getRepository('SchoolNoteBundle:Sequence')->find($idSeq);
         $matiere = $em->getRepository('SchoolMatiereBundle:Matiere')->find($idMat);
+        $anneeEnCour = $em->getRepository('SchoolConfigBundle:Annee')->find($idAnnee);
+
+        $school = $this->getDoctrine()->getRepository('SchoolConfigBundle:Ecole')->findAll();
+        $ecole = $school[0];
 
         $qb1 = $this->getDoctrine()->getManager()->createQueryBuilder();
 
@@ -152,6 +182,7 @@ class EvaluationController extends Controller {
                 ->andWhere('e.matiere = :idMat')
                 ->andWhere('e.sequence = :idSeq')
                 ->setParameters(array('identifie' => $id, 'idMat' => $idMat, 'idSeq' => $idSeq));
+
         $evaluations = $qb1->getQuery()->getResult();
 
         if ($request->getMethod() == 'POST') {
@@ -162,13 +193,8 @@ class EvaluationController extends Controller {
                     $eval->setSequence($sequence);
                     $eval->setStudent($eval->getStudent());
                     $eval->setMatiere($matiere);
-                    $eval->setAnnee('2016/2017');
-                    //  $em->persist($eval);
+                    $eval->setAnnee($ecole->getAnneeEnCour());
                     $em->flush();
-                    /* }else{
-                      $eval = $em->getRepository('SchoolNoteBundle:Evaluation')->find($eval->getId());
-                      if($eval->getNote()){
-                      } */
                 }
             }
             return $this->redirect($this->generateUrl('school_gestion_homepage'));
@@ -178,8 +204,37 @@ class EvaluationController extends Controller {
                     'classe' => $classe,
                     'sequence' => $sequence,
                     'matiere' => $matiere,
+                    'annee' => $anneeEnCour,
                     'evaluations' => $evaluations,
         ));
+    }
+
+    public function insererNoteAction(Request $request, $idNote, $idClasse, $idAnnee) {
+        $em = $this->getDoctrine()->getManager();
+
+        if ($request->getMethod() == 'POST') {
+            $evaluation = $em->getRepository('SchoolNoteBundle:Evaluation')->find($idNote);
+            $note = $request->get('note');
+            if ($note < 0 || $note > 20) {
+                $request->getSession()->getFlashBag()->add('error', 'Valeur incorecte');
+            } else if (is_float($note + 0.0) && is_numeric($note)) {
+                $evaluation->setNote($note);
+                $em->flush();
+            } else if (!(ctype_digit($note))) {
+                $request->getSession()->getFlashBag()->add('error', 'Valeur incorecte');
+            } else {
+                //Dans le cas o� tous les tests ne sont pas satisfaisants
+                $evaluation->setNote($note);
+                $em->flush();
+            }
+
+            return $this->redirect($this->generateUrl('note_editnote', array(
+                                'id' => $idClasse,
+                                'idSeq' => $evaluation->getSequence()->getId(),
+                                'idMat' => $evaluation->getMatiere()->getId(),
+                                'idAnnee' => $idAnnee,
+            )));
+        }
     }
 
     /**

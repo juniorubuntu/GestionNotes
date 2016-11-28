@@ -29,6 +29,13 @@ class __TwigTemplate_1a008ac15848e70c7b58923f000944cb2cb0bf66cdb67cb5de0a9bb7aab
     {
         // line 4
         echo "<h2>Liste des salles de classes</h2>
+    <nav class=\"nav navbar-inverse alert-success col-md-12\" style=\"margin-bottom: 3px;\">
+        <a style=\"color: green; font-size: 18px;
+           text-shadow: -1px 0px;\" href=\"";
+        // line 7
+        echo $this->env->getExtension('routing')->getPath("classe_new");
+        echo "\" class=\"pull-left btn-link\"><span class=\"glyphicon glyphicon-plus-sign\"></span> Ajouter une classe</a>
+    </nav>
     <table class=\"records_list table cell-border row-border table-hover panel-primary\" id=\"classe\">
         <thead class=\"panel-heading\">
             <tr>
@@ -42,39 +49,39 @@ class __TwigTemplate_1a008ac15848e70c7b58923f000944cb2cb0bf66cdb67cb5de0a9bb7aab
         </thead>
         <tbody>
             ";
-        // line 17
+        // line 21
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 18
+            // line 22
             echo "                <tr>
                     <td><a href=\"";
-            // line 19
+            // line 23
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("classe_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "id", array()), "html", null, true);
             echo "</a></td>
                     <td>";
-            // line 20
+            // line 24
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "nom", array()), "html", null, true);
             echo "</td>
                     <td>";
-            // line 21
+            // line 25
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "classePere", array()), "html", null, true);
             echo "</td>
                     <td>";
-            // line 22
+            // line 26
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "abreviation", array()), "html", null, true);
             echo "</td>
                     <td>
                         <a href=\"";
-            // line 24
+            // line 28
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("classe_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">Voir</a>
                     </td>
                     <td>
                         <a href=\"";
-            // line 27
+            // line 31
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("classe_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">Modifier</a>
                     </td>
@@ -84,27 +91,16 @@ class __TwigTemplate_1a008ac15848e70c7b58923f000944cb2cb0bf66cdb67cb5de0a9bb7aab
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 31
+        // line 35
         echo "        </tbody>
     </table>
-    <ul>
-        <li>
-            <a href=\"";
-        // line 35
-        echo $this->env->getExtension('routing')->getPath("classe_new");
-        echo "\">
-                Insérer une classe
-            </a>
-        </li>
-    </ul>
-
     <script>
         \$('#classe').DataTable({
             \"pagingType\": \"full_numbers\",
             \"lengthMenu\": [[10, 20], [10, 20]],
             \"language\": {
                 \"url\": \"";
-        // line 46
+        // line 42
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("DataTables/French.json"), "html", null, true);
         echo "\"
             }
@@ -126,13 +122,17 @@ class __TwigTemplate_1a008ac15848e70c7b58923f000944cb2cb0bf66cdb67cb5de0a9bb7aab
 
     public function getDebugInfo()
     {
-        return array (  108 => 46,  94 => 35,  88 => 31,  78 => 27,  72 => 24,  67 => 22,  63 => 21,  59 => 20,  53 => 19,  50 => 18,  46 => 17,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  104 => 42,  95 => 35,  85 => 31,  79 => 28,  74 => 26,  70 => 25,  66 => 24,  60 => 23,  57 => 22,  53 => 21,  36 => 7,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends 'SchoolGestionBundle:Default:index.html.twig' %}*/
 /* */
 /* {% block content -%}*/
 /*     <h2>Liste des salles de classes</h2>*/
+/*     <nav class="nav navbar-inverse alert-success col-md-12" style="margin-bottom: 3px;">*/
+/*         <a style="color: green; font-size: 18px;*/
+/*            text-shadow: -1px 0px;" href="{{path('classe_new')}}" class="pull-left btn-link"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une classe</a>*/
+/*     </nav>*/
 /*     <table class="records_list table cell-border row-border table-hover panel-primary" id="classe">*/
 /*         <thead class="panel-heading">*/
 /*             <tr>*/
@@ -161,14 +161,6 @@ class __TwigTemplate_1a008ac15848e70c7b58923f000944cb2cb0bf66cdb67cb5de0a9bb7aab
 /*             {% endfor %}*/
 /*         </tbody>*/
 /*     </table>*/
-/*     <ul>*/
-/*         <li>*/
-/*             <a href="{{ path('classe_new') }}">*/
-/*                 Insérer une classe*/
-/*             </a>*/
-/*         </li>*/
-/*     </ul>*/
-/* */
 /*     <script>*/
 /*         $('#classe').DataTable({*/
 /*             "pagingType": "full_numbers",*/

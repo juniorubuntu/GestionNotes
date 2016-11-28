@@ -33,6 +33,11 @@ class Evaluation {
     private $student;
 
     /**
+     * @ORM\ManyToOne(targetEntity="School\StudentBundle\Entity\Classe")
+     */
+    private $classe;
+
+    /**
      * @ORM\ManyToOne(targetEntity="School\NoteBundle\Entity\Sequence")
      * @Assert\NotBlank()
      */
@@ -181,6 +186,27 @@ class Evaluation {
      */
     public function getAnnee() {
         return $this->annee;
+    }
+
+    /**
+     * Set classe
+     *
+     * @param \School\StudentBundle\Entity\Classe $classe
+     * @return Evaluation
+     */
+    public function setClasse(\School\StudentBundle\Entity\Classe $classe = null) {
+        $this->classe = $classe;
+
+        return $this;
+    }
+
+    /**
+     * Get classe
+     *
+     * @return \School\StudentBundle\Entity\Classe 
+     */
+    public function getClasse() {
+        return $this->classe;
     }
 
 }

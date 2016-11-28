@@ -2,6 +2,14 @@ evaluation:
     path:     /
     defaults: { _controller: "SchoolNoteBundle:Evaluation:index" }
 
+statistiques:
+    path:     /{idSequence}/{idMatiere}/{idEnseignant}/statistiques
+    defaults: { _controller: "SchoolNoteBundle:Evaluation:statistiques" }
+
+bulletins:
+    path:     /bulletins/{idSequence}/{idClasse}/{idStudent}
+    defaults: { _controller: "SchoolNoteBundle:Evaluation:bulletins" }
+
 evaluation_show:
     path:     /{id}/show
     defaults: { _controller: "SchoolNoteBundle:Evaluation:show" }
@@ -30,11 +38,20 @@ evaluation_delete:
     requirements: { _method: post|delete }
 
 note_add:
-    path: /{id}/{idSeq}/{idMat}/notes/add
+    path: /classe-{id}/sequence-{idSeq}/matiere-{idMat}/annee-{idAnnee}/notes/add
     defaults: { _controller: "SchoolNoteBundle:Evaluation:note"}
     #requirements: { _method: post|put }
 
 note_editnote:
-    path: /{id}/{idSeq}/{idMat}/notes/edit
+    path: /classe-{id}/sequence-{idSeq}/matiere-{idMat}/annee-{idAnnee}/notes/edit
     defaults: { _controller: "SchoolNoteBundle:Evaluation:editnote"}
+    requirements:
+            id: \d+
+            idSeq: \d+
+            idMat: \d+
+            idAnnee: \d+
+
+note_inserer:
+    path: /note-{idNote}/classe-{idClasse}/annee-{idAnnee}/notes/modifier
+    defaults: { _controller: "SchoolNoteBundle:Evaluation:insererNote"}
     #requirements: { _method: post|put }

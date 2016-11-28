@@ -15,10 +15,10 @@ class InscriptionEditType extends AbstractType {
      */
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
-            ->add('student')
-            ->add('classe')
+            //->add('student')
+            //->add('classe')
             ->add('avance')
-            ->add('dateDerniereAvance', 'date', [
+            /*->add('dateDerniereAvance', 'date', [
                 'widget' => 'single_text',
                 'format' => 'dd-MM-yyyy',
                 'attr' => [
@@ -27,7 +27,7 @@ class InscriptionEditType extends AbstractType {
                     'data-date-format' => 'dd-mm-yyyy'
                 ]
             ])
-            ->add('annee')
+            ->add('annee')*/
             ->add('status')
         ;
     }

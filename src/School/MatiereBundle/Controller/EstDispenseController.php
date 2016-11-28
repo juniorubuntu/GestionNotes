@@ -41,10 +41,23 @@ class EstDispenseController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($entity);
-            $em->flush();
-
-            return $this->redirect($this->generateUrl('estdispense_show', array('id' => $entity->getId())));
+            $school = $em->getRepository('SchoolConfigBundle:Ecole')->findAll();
+            $anneEncour = $school[0]->getAnneeEnCour();
+            $testEnseignementExist = $this->getDoctrine()->getRepository('SchoolMatiereBundle:EstDispense')->findBy(
+                array(
+                    'enseignant' => $entity->getEnseignant(),
+                    'matiere' => $entity->getMatiere(),
+                    'classe' => $entity->getClasse(),
+                    'annee' => $anneEncour,
+                ));
+            if($testEnseignementExist){
+                $request->getSession()->getFlashBag()->add('notice', 'cet Enseignement est déjà enregistrée.');
+            }else {
+                $entity->setAnnee($anneEncour);
+                $em->persist($entity);
+                $em->flush();
+                return $this->redirect($this->generateUrl('estdispense_show', array('id' => $entity->getId())));
+            }
         }
 
         return $this->render('SchoolMatiereBundle:EstDispense:new.html.twig', array(

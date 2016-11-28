@@ -30,11 +30,20 @@ class __TwigTemplate_5c33408d25e318f910dd841c6588d023397289c55211ac06b815ff4cb53
         // line 4
         echo "<h1 class=\"text-center\">Remplissage des notes des élèves</h1>
 
+
     <div class=\"col-md-12\">
+        <div class=\"row\">
+            <div class=\"col-md-4\">
+                <label for=\"\">Ann&eacute;e Acad&eacute;mique: </label> <span>";
+        // line 10
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["annee"]) ? $context["annee"] : $this->getContext($context, "annee")), "anneeScolaire", array()), "html", null, true);
+        echo "</span>
+            </div>
+        </div>
         <div class=\"row\">
             <div class=\"col-md-3\">
                 <label for=\"\">Classe: </label> <span>";
-        // line 9
+        // line 15
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["classe"]) ? $context["classe"] : $this->getContext($context, "classe")), "nom", array()), "html", null, true);
         echo "</span>
             </div>
@@ -42,7 +51,7 @@ class __TwigTemplate_5c33408d25e318f910dd841c6588d023397289c55211ac06b815ff4cb53
         <div class=\"row\">
             <div class=\"col-md-3\">
                 <label for=\"\">Séquence: </label> <span>";
-        // line 14
+        // line 20
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["sequence"]) ? $context["sequence"] : $this->getContext($context, "sequence")), "nom", array()), "html", null, true);
         echo "</span>
             </div>
@@ -50,14 +59,14 @@ class __TwigTemplate_5c33408d25e318f910dd841c6588d023397289c55211ac06b815ff4cb53
         <div class=\"row\">
             <div class=\"col-md-3\">
                 <label for=\"\">Matière: </label> <span>";
-        // line 19
+        // line 25
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["matiere"]) ? $context["matiere"] : $this->getContext($context, "matiere")), "nom", array()), "html", null, true);
         echo "</span>
             </div>
         </div>
         <form action=\"";
-        // line 22
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("note_add", array("id" => $this->getAttribute((isset($context["classe"]) ? $context["classe"] : $this->getContext($context, "classe")), "id", array()), "idSeq" => $this->getAttribute((isset($context["sequence"]) ? $context["sequence"] : $this->getContext($context, "sequence")), "id", array()), "idMat" => $this->getAttribute((isset($context["matiere"]) ? $context["matiere"] : $this->getContext($context, "matiere")), "id", array()))), "html", null, true);
+        // line 28
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("note_add", array("id" => $this->getAttribute((isset($context["classe"]) ? $context["classe"] : $this->getContext($context, "classe")), "id", array()), "idSeq" => $this->getAttribute((isset($context["sequence"]) ? $context["sequence"] : $this->getContext($context, "sequence")), "id", array()), "idMat" => $this->getAttribute((isset($context["matiere"]) ? $context["matiere"] : $this->getContext($context, "matiere")), "id", array()), "idAnnee" => $this->getAttribute((isset($context["annee"]) ? $context["annee"] : $this->getContext($context, "annee")), "id", array()))), "html", null, true);
         echo "\" method=\"post\">
             <table class=\"table table-bordered table-hover panel-primary\" id=\"notes\">
                 <thead class=\"panel-heading\">
@@ -68,19 +77,19 @@ class __TwigTemplate_5c33408d25e318f910dd841c6588d023397289c55211ac06b815ff4cb53
                 </thead>
                 <tbody>
                     ";
-        // line 31
+        // line 37
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["eleves"]) ? $context["eleves"] : $this->getContext($context, "eleves")));
         foreach ($context['_seq'] as $context["_key"] => $context["eleve"]) {
-            // line 32
+            // line 38
             echo "                        <tr>
                             <td>";
-            // line 33
+            // line 39
             echo twig_escape_filter($this->env, $this->getAttribute($context["eleve"], "nom", array()), "html", null, true);
             echo "</td>
                             <td>
                                 <input type=\"text\" ";
-            // line 35
+            // line 41
             echo " name=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["eleve"], "id", array()), "html", null, true);
             echo "\" class=\"form-control col-md-1\" placeholder=\"note-";
@@ -94,7 +103,7 @@ class __TwigTemplate_5c33408d25e318f910dd841c6588d023397289c55211ac06b815ff4cb53
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['eleve'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 40
+        // line 46
         echo "                </tbody>
             </table>
             <input class=\"btn btn-primary\" type=\"submit\" value=\"Enregistrer\" />
@@ -103,7 +112,7 @@ class __TwigTemplate_5c33408d25e318f910dd841c6588d023397289c55211ac06b815ff4cb53
     <ul class=\"record_actions\">
         <li>
             <a href=\"";
-        // line 47
+        // line 53
         echo $this->env->getExtension('routing')->getPath("school_gestion_homepage");
         echo "\">
                 Back to the list
@@ -116,7 +125,7 @@ class __TwigTemplate_5c33408d25e318f910dd841c6588d023397289c55211ac06b815ff4cb53
             \"lengthMenu\": [[10, 20], [10, 20]],
             \"language\": {
                 \"url\": \"";
-        // line 57
+        // line 63
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("DataTables/French.json"), "html", null, true);
         echo "\"
             }
@@ -138,7 +147,7 @@ class __TwigTemplate_5c33408d25e318f910dd841c6588d023397289c55211ac06b815ff4cb53
 
     public function getDebugInfo()
     {
-        return array (  120 => 57,  107 => 47,  98 => 40,  84 => 35,  79 => 33,  76 => 32,  72 => 31,  60 => 22,  54 => 19,  46 => 14,  38 => 9,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  129 => 63,  116 => 53,  107 => 46,  93 => 41,  88 => 39,  85 => 38,  81 => 37,  69 => 28,  63 => 25,  55 => 20,  47 => 15,  39 => 10,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends 'SchoolGestionBundle:Default:index.html.twig' %}*/
@@ -146,7 +155,13 @@ class __TwigTemplate_5c33408d25e318f910dd841c6588d023397289c55211ac06b815ff4cb53
 /* {% block content -%}*/
 /*     <h1 class="text-center">Remplissage des notes des élèves</h1>*/
 /* */
+/* */
 /*     <div class="col-md-12">*/
+/*         <div class="row">*/
+/*             <div class="col-md-4">*/
+/*                 <label for="">Ann&eacute;e Acad&eacute;mique: </label> <span>{{annee.anneeScolaire}}</span>*/
+/*             </div>*/
+/*         </div>*/
 /*         <div class="row">*/
 /*             <div class="col-md-3">*/
 /*                 <label for="">Classe: </label> <span>{{classe.nom}}</span>*/
@@ -162,7 +177,7 @@ class __TwigTemplate_5c33408d25e318f910dd841c6588d023397289c55211ac06b815ff4cb53
 /*                 <label for="">Matière: </label> <span>{{matiere.nom}}</span>*/
 /*             </div>*/
 /*         </div>*/
-/*         <form action="{{ path('note_add', { 'id': classe.id, 'idSeq':sequence.id, 'idMat':matiere.id })}}" method="post">*/
+/*         <form action="{{ path('note_add', { 'id': classe.id, 'idSeq':sequence.id, 'idMat':matiere.id, 'idAnnee':annee.id })}}" method="post">*/
 /*             <table class="table table-bordered table-hover panel-primary" id="notes">*/
 /*                 <thead class="panel-heading">*/
 /*                     <tr>*/

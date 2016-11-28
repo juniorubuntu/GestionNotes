@@ -196,6 +196,16 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return array (  '_controller' => 'School\\NoteBundle\\Controller\\EvaluationController::indexAction',  '_route' => 'evaluation',);
                 }
 
+                // statistiques
+                if (preg_match('#^/Gestion/evaluation/(?P<idSequence>[^/]++)/(?P<idMatiere>[^/]++)/(?P<idEnseignant>[^/]++)/statistiques$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'statistiques')), array (  '_controller' => 'School\\NoteBundle\\Controller\\EvaluationController::statistiquesAction',));
+                }
+
+                // bulletins
+                if (0 === strpos($pathinfo, '/Gestion/evaluation/bulletins') && preg_match('#^/Gestion/evaluation/bulletins/(?P<idSequence>[^/]++)/(?P<idClasse>[^/]++)/(?P<idStudent>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'bulletins')), array (  '_controller' => 'School\\NoteBundle\\Controller\\EvaluationController::bulletinsAction',));
+                }
+
                 // evaluation_show
                 if (preg_match('#^/Gestion/evaluation/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'evaluation_show')), array (  '_controller' => 'School\\NoteBundle\\Controller\\EvaluationController::showAction',));
@@ -244,14 +254,22 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 }
                 not_evaluation_delete:
 
-                // note_add
-                if (preg_match('#^/Gestion/evaluation/(?P<id>[^/]++)/(?P<idSeq>[^/]++)/(?P<idMat>[^/]++)/notes/add$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'note_add')), array (  '_controller' => 'School\\NoteBundle\\Controller\\EvaluationController::noteAction',));
+                if (0 === strpos($pathinfo, '/Gestion/evaluation/classe')) {
+                    // note_add
+                    if (preg_match('#^/Gestion/evaluation/classe\\-(?P<id>[^/]++)/sequence\\-(?P<idSeq>[^/]++)/matiere\\-(?P<idMat>[^/]++)/annee\\-(?P<idAnnee>[^/]++)/notes/add$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'note_add')), array (  '_controller' => 'School\\NoteBundle\\Controller\\EvaluationController::noteAction',));
+                    }
+
+                    // note_editnote
+                    if (preg_match('#^/Gestion/evaluation/classe\\-(?P<id>\\d+)/sequence\\-(?P<idSeq>\\d+)/matiere\\-(?P<idMat>\\d+)/annee\\-(?P<idAnnee>\\d+)/notes/edit$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'note_editnote')), array (  '_controller' => 'School\\NoteBundle\\Controller\\EvaluationController::editnoteAction',));
+                    }
+
                 }
 
-                // note_editnote
-                if (preg_match('#^/Gestion/evaluation/(?P<id>[^/]++)/(?P<idSeq>[^/]++)/(?P<idMat>[^/]++)/notes/edit$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'note_editnote')), array (  '_controller' => 'School\\NoteBundle\\Controller\\EvaluationController::editnoteAction',));
+                // note_inserer
+                if (0 === strpos($pathinfo, '/Gestion/evaluation/note') && preg_match('#^/Gestion/evaluation/note\\-(?P<idNote>[^/]++)/classe\\-(?P<idClasse>[^/]++)/annee\\-(?P<idAnnee>[^/]++)/notes/modifier$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'note_inserer')), array (  '_controller' => 'School\\NoteBundle\\Controller\\EvaluationController::insererNoteAction',));
                 }
 
             }
@@ -720,18 +738,27 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 }
 
                 // inscription_new
-                if ($pathinfo === '/Gestion/inscription/new') {
-                    return array (  '_controller' => 'School\\StudentBundle\\Controller\\InscriptionController::newAction',  '_route' => 'inscription_new',);
+                if (0 === strpos($pathinfo, '/Gestion/inscription/new/eleve') && preg_match('#^/Gestion/inscription/new/eleve\\-(?P<idStudent>\\d+)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'inscription_new')), array (  '_controller' => 'School\\StudentBundle\\Controller\\InscriptionController::newAction',));
+                }
+
+                // inscription_notyet
+                if (rtrim($pathinfo, '/') === '/Gestion/inscription/aInscrire') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'inscription_notyet');
+                    }
+
+                    return array (  '_controller' => 'School\\StudentBundle\\Controller\\InscriptionController::aInscrireAction',  '_route' => 'inscription_notyet',);
                 }
 
                 // inscription_create
-                if ($pathinfo === '/Gestion/inscription/create') {
+                if (0 === strpos($pathinfo, '/Gestion/inscription/create/eleve') && preg_match('#^/Gestion/inscription/create/eleve\\-(?P<idStudent>[^/]++)$#s', $pathinfo, $matches)) {
                     if ($this->context->getMethod() != 'POST') {
                         $allow[] = 'POST';
                         goto not_inscription_create;
                     }
 
-                    return array (  '_controller' => 'School\\StudentBundle\\Controller\\InscriptionController::createAction',  '_route' => 'inscription_create',);
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'inscription_create')), array (  '_controller' => 'School\\StudentBundle\\Controller\\InscriptionController::createAction',));
                 }
                 not_inscription_create:
 

@@ -8,15 +8,15 @@ class __TwigTemplate_1ed842cac73578ed6c1b1ccbc4467180122f7afe842c09a8cf78319ce80
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("::base.html.twig", "SchoolStudentBundle:Inscription:edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("SchoolGestionBundle:Default:index.html.twig", "SchoolStudentBundle:Inscription:edit.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "::base.html.twig";
+        return "SchoolGestionBundle:Default:index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,30 +25,113 @@ class __TwigTemplate_1ed842cac73578ed6c1b1ccbc4467180122f7afe842c09a8cf78319ce80
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>Inscription edit</h1>
+        echo "<h1 class=\"text-center\">Mise &agrave; jour d'une Inscription</h1>
 
     ";
         // line 6
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'form');
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'form_start');
         echo "
 
-        <ul class=\"record_actions\">
-    <li>
+    <div class=\"row\">
+        <div class=\"col-md-offset-3 col-sm-offset-1 col-xs-offset-1 col-md-7 col-sm-11 col-xs-11\">
+            <div class=\"form-group\">
+                <label> Nom de l'&eacute;l&egrave;ve</label>
+                <div>
+                    <input value=\"";
+        // line 13
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "student", array()), "nom", array()), "html", null, true);
+        echo "\" class=\"form-control\" disabled=\"disabled\" type=\"text\">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=\"row\">
+        <div class=\"col-md-offset-3 col-sm-offset-1 col-xs-offset-1 col-md-7 col-sm-11 col-xs-11\">
+            <div class=\"form-group\">
+                <label> Classe</label>
+                <div>
+                    <input value=\"";
+        // line 23
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "classe", array()), "html", null, true);
+        echo "\" class=\"form-control\" disabled=\"disabled\" type=\"text\">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=\"row\">
+        <div class=\"col-md-offset-3 col-sm-offset-1 col-xs-offset-1 col-md-7 col-sm-11 col-xs-11\">
+            <div class=\"form-group\">
+                <label> Date derni&egrave;re Avance</label>
+                <div>
+                    <input value=\"";
+        // line 33
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "dateDerniereAvance", array()), "d-m-Y"), "html", null, true);
+        echo "\" class=\"form-control\" disabled=\"disabled\" type=\"text\">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=\"row\">
+        <div class=\"col-md-offset-3 col-sm-offset-1 col-xs-offset-1 col-md-7 col-sm-11 col-xs-11\">
+            <div class=\"form-group\">
+                <label> Ann&eacute;e scolaire</label>
+                <div>
+                    <input value=\"";
+        // line 43
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "annee", array()), "html", null, true);
+        echo "\" class=\"form-control\" disabled=\"disabled\" type=\"text\">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class=\"row\">
+        <div class=\"col-md-offset-3 col-sm-offset-1 col-xs-offset-1 col-md-7 col-sm-11 col-xs-11\">
+            <div class=\"form-group\">
+                ";
+        // line 52
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "avance", array()), 'label', array("label_attr" => array("class" => "control-label"), "label" => "Avance: "));
+        echo "
+                <div>
+                    ";
+        // line 54
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "avance", array()), 'widget', array("attr" => array("class" => "form-control")));
+        echo "
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=\"row\">
+        <div class=\"col-md-offset-3 col-sm-offset-1 col-xs-offset-1 col-md-7 col-sm-11 col-xs-11\">
+            <div class=\"form-group\">
+                ";
+        // line 62
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "status", array()), 'label', array("label_attr" => array("class" => "control-label"), "label" => "Statut: "));
+        echo "
+                <div>
+                    ";
+        // line 64
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "status", array()), 'widget', array("attr" => array("class" => "form-control")));
+        echo "
+                </div>
+            </div>
+        </div>
+
+    </div>
+    ";
+        // line 70
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'form_end');
+        echo "<br><br>
+
         <a href=\"";
-        // line 10
-        echo $this->env->getExtension('routing')->getPath("inscription");
+        // line 72
+        echo $this->env->getExtension('routing')->getPath("inscription_notyet");
         echo "\">
             Back to the list
         </a>
-    </li>
-    <li>";
-        // line 14
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form');
-        echo "</li>
-</ul>
 ";
     }
 
@@ -64,23 +147,82 @@ class __TwigTemplate_1ed842cac73578ed6c1b1ccbc4467180122f7afe842c09a8cf78319ce80
 
     public function getDebugInfo()
     {
-        return array (  49 => 14,  42 => 10,  35 => 6,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  131 => 72,  126 => 70,  117 => 64,  112 => 62,  101 => 54,  96 => 52,  84 => 43,  71 => 33,  58 => 23,  45 => 13,  35 => 6,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
-/* {% extends '::base.html.twig' %}*/
+/* {% extends 'SchoolGestionBundle:Default:index.html.twig' %}*/
 /* */
-/* {% block body -%}*/
-/*     <h1>Inscription edit</h1>*/
+/* {% block content -%}*/
+/*     <h1 class="text-center">Mise &agrave; jour d'une Inscription</h1>*/
 /* */
-/*     {{ form(edit_form) }}*/
+/*     {{ form_start(edit_form)}}*/
 /* */
-/*         <ul class="record_actions">*/
-/*     <li>*/
-/*         <a href="{{ path('inscription') }}">*/
+/*     <div class="row">*/
+/*         <div class="col-md-offset-3 col-sm-offset-1 col-xs-offset-1 col-md-7 col-sm-11 col-xs-11">*/
+/*             <div class="form-group">*/
+/*                 <label> Nom de l'&eacute;l&egrave;ve</label>*/
+/*                 <div>*/
+/*                     <input value="{{ entity.student.nom }}" class="form-control" disabled="disabled" type="text">*/
+/*                 </div>*/
+/*             </div>*/
+/*         </div>*/
+/*     </div>*/
+/*     <div class="row">*/
+/*         <div class="col-md-offset-3 col-sm-offset-1 col-xs-offset-1 col-md-7 col-sm-11 col-xs-11">*/
+/*             <div class="form-group">*/
+/*                 <label> Classe</label>*/
+/*                 <div>*/
+/*                     <input value="{{ entity.classe }}" class="form-control" disabled="disabled" type="text">*/
+/*                 </div>*/
+/*             </div>*/
+/*         </div>*/
+/*     </div>*/
+/*     <div class="row">*/
+/*         <div class="col-md-offset-3 col-sm-offset-1 col-xs-offset-1 col-md-7 col-sm-11 col-xs-11">*/
+/*             <div class="form-group">*/
+/*                 <label> Date derni&egrave;re Avance</label>*/
+/*                 <div>*/
+/*                     <input value="{{ entity.dateDerniereAvance|date('d-m-Y') }}" class="form-control" disabled="disabled" type="text">*/
+/*                 </div>*/
+/*             </div>*/
+/*         </div>*/
+/*     </div>*/
+/*     <div class="row">*/
+/*         <div class="col-md-offset-3 col-sm-offset-1 col-xs-offset-1 col-md-7 col-sm-11 col-xs-11">*/
+/*             <div class="form-group">*/
+/*                 <label> Ann&eacute;e scolaire</label>*/
+/*                 <div>*/
+/*                     <input value="{{ entity.annee}}" class="form-control" disabled="disabled" type="text">*/
+/*                 </div>*/
+/*             </div>*/
+/*         </div>*/
+/*     </div>*/
+/* */
+/*     <div class="row">*/
+/*         <div class="col-md-offset-3 col-sm-offset-1 col-xs-offset-1 col-md-7 col-sm-11 col-xs-11">*/
+/*             <div class="form-group">*/
+/*                 {{ form_label(edit_form.avance, 'Avance: ', {'label_attr': {'class': 'control-label'}}) }}*/
+/*                 <div>*/
+/*                     {{ form_widget(edit_form.avance, {'attr': {'class': 'form-control'}})  }}*/
+/*                 </div>*/
+/*             </div>*/
+/*         </div>*/
+/*     </div>*/
+/*     <div class="row">*/
+/*         <div class="col-md-offset-3 col-sm-offset-1 col-xs-offset-1 col-md-7 col-sm-11 col-xs-11">*/
+/*             <div class="form-group">*/
+/*                 {{ form_label(edit_form.status, 'Statut: ', {'label_attr': {'class': 'control-label'}}) }}*/
+/*                 <div>*/
+/*                     {{ form_widget(edit_form.status, {'attr': {'class': 'form-control'}})  }}*/
+/*                 </div>*/
+/*             </div>*/
+/*         </div>*/
+/* */
+/*     </div>*/
+/*     {{ form_end(edit_form) }}<br><br>*/
+/* */
+/*         <a href="{{ path('inscription_notyet') }}">*/
 /*             Back to the list*/
 /*         </a>*/
-/*     </li>*/
-/*     <li>{{ form(delete_form) }}</li>*/
-/* </ul>*/
 /* {% endblock %}*/
 /* */

@@ -15,20 +15,11 @@ class InscriptionType extends AbstractType {
      */
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
-               // ->add('student')
-                ->add('student', 'entity', array(
-                'class' => 'SchoolStudentBundle:Student',
-               /* 'query_builder' => function (EntityRepository $er) {
-                    return $er->createQueryBuilder('s')
-                        ->innerJoin('SchoolStudentBundle:Inscription', 'i', 'WITH', 's.id = i.student')
-                        ->where('i.status = 0')
-                        ->andWhere('i.avance = 0')
-                        ->orWhere('s.id=');
-                },*/
-            ))
+              /*  ->add('student', 'entity', array(
+                'class' => 'SchoolStudentBundle:Student',))*/
                 ->add('classe')
                 ->add('avance')
-                ->add('dateDerniereAvance', 'date', [
+               /* ->add('dateDerniereAvance', 'date', [
                     'widget' => 'single_text',
                     'format' => 'dd-MM-yyyy',
                     'attr' => [
@@ -36,8 +27,8 @@ class InscriptionType extends AbstractType {
                         'data-provide' => 'datepicker',
                         'data-date-format' => 'dd-mm-yyyy'
                     ]
-                ])
-                ->add('annee')
+                ])*/
+         //       ->add('annee')
                 ->add('status')
         ;
     }

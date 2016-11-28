@@ -43,21 +43,21 @@ class __TwigTemplate_706ccf5647312e192af612d346772fbfd55407dccfe1934e080d843fdc9
         // line 6
         echo "    ";
         $this->displayBlock('menu', $context, $blocks);
-        // line 61
+        // line 64
         echo "    <div class=\"col-md-3\">
         ";
-        // line 62
-        $this->displayBlock('aside', $context, $blocks);
         // line 65
+        $this->displayBlock('aside', $context, $blocks);
+        // line 68
         echo "    </div>
     <div class=\"col-md-9\">
         ";
-        // line 67
+        // line 70
         $this->displayBlock('content', $context, $blocks);
-        // line 132
+        // line 135
         echo "    </div>
     ";
-        // line 133
+        // line 136
         $this->displayBlock('pied', $context, $blocks);
     }
 
@@ -93,8 +93,8 @@ class __TwigTemplate_706ccf5647312e192af612d346772fbfd55407dccfe1934e080d843fdc9
         echo "\">Liste de élèves</a></li>
                             <li><a href=\"";
         // line 24
-        echo $this->env->getExtension('routing')->getPath("inscription_new");
-        echo "\">Inscription</a></li>
+        echo $this->env->getExtension('routing')->getPath("inscription");
+        echo "\">Inscriptions</a></li>
                         </ul>
                     </li>
 
@@ -158,7 +158,7 @@ class __TwigTemplate_706ccf5647312e192af612d346772fbfd55407dccfe1934e080d843fdc9
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "get", array(0 => "notice"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flas_message"]) {
             // line 57
-            echo "                <div class=\"alert alert-warning\">";
+            echo "                <div class=\"alert alert-warning text-center\">";
             echo twig_escape_filter($this->env, $context["flas_message"], "html", null, true);
             echo "</div>
             ";
@@ -167,44 +167,58 @@ class __TwigTemplate_706ccf5647312e192af612d346772fbfd55407dccfe1934e080d843fdc9
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flas_message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 59
+        echo "            ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "get", array(0 => "error"), "method"));
+        foreach ($context['_seq'] as $context["_key"] => $context["flas_message"]) {
+            // line 60
+            echo "                <div class=\"alert alert-danger text-center\">";
+            echo twig_escape_filter($this->env, $context["flas_message"], "html", null, true);
+            echo "</div>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flas_message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 62
         echo "        </div>
     ";
     }
 
-    // line 62
+    // line 65
     public function block_aside($context, array $blocks = array())
     {
-        // line 63
+        // line 66
         echo "            <h2>Je suis le \"aside\"</h2>
         ";
     }
 
-    // line 67
+    // line 70
     public function block_content($context, array $blocks = array())
     {
-        // line 68
+        // line 71
         echo "            <h2>Mes salles de classe</h2>
             ";
-        // line 69
+        // line 72
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["listeDispense"]) ? $context["listeDispense"] : $this->getContext($context, "listeDispense")));
         foreach ($context['_seq'] as $context["_key"] => $context["dispense"]) {
-            // line 70
+            // line 73
             echo "                <div class=\"col-md-3 col-sm-6\">
                     <div class=\"shop-item panel-primary\">
                         <div class=\"panel btn-blue\">
                             <b style=\"text-align: left\"><span style=\"color: orange; font-size: 18px\" class=\"glyphicon glyphicon-folder-open\"></span> ";
-            // line 73
+            // line 76
             echo twig_escape_filter($this->env, $this->getAttribute($context["dispense"], "classe", array()), "html", null, true);
             echo "</b>
                         </div>
                         <ol class=\"\">
                             <li><a class=\"btn-link\" data-toggle=\"modal\" data-target=\"#sequence_";
-            // line 76
+            // line 79
             echo twig_escape_filter($this->env, $this->getAttribute($context["dispense"], "id", array()), "html", null, true);
             echo "\">Remplir les notes</a>
                                 <div id=\"sequence_";
-            // line 77
+            // line 80
             echo twig_escape_filter($this->env, $this->getAttribute($context["dispense"], "id", array()), "html", null, true);
             echo "\" class=\"modal fade\">
                                     <div class=\"modal-dialog modal-sm\">
@@ -215,18 +229,18 @@ class __TwigTemplate_706ccf5647312e192af612d346772fbfd55407dccfe1934e080d843fdc9
                                             </div>
                                             <div class=\"col-md-12 modal-body\">
                                                 ";
-            // line 85
+            // line 88
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["listSequence"]) ? $context["listSequence"] : $this->getContext($context, "listSequence")));
             foreach ($context['_seq'] as $context["_key"] => $context["sequence"]) {
-                // line 86
+                // line 89
                 echo "                                                    <center>
                                                         <a href=\"";
-                // line 87
-                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("note_add", array("id" => $this->getAttribute($this->getAttribute($context["dispense"], "classe", array()), "id", array()), "idSeq" => $this->getAttribute($context["sequence"], "id", array()), "idMat" => $this->getAttribute($this->getAttribute($context["dispense"], "matiere", array()), "id", array()))), "html", null, true);
+                // line 90
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("note_add", array("id" => $this->getAttribute($this->getAttribute($context["dispense"], "classe", array()), "id", array()), "idSeq" => $this->getAttribute($context["sequence"], "id", array()), "idMat" => $this->getAttribute($this->getAttribute($context["dispense"], "matiere", array()), "id", array()), "idAnnee" => $this->getAttribute($this->getAttribute($context["dispense"], "annee", array()), "id", array()))), "html", null, true);
                 echo "\" class=\"btn btn-green\">
                                                             <b>";
-                // line 88
+                // line 91
                 echo twig_escape_filter($this->env, $context["sequence"], "html", null, true);
                 echo "</b>
                                                         </a> 
@@ -236,7 +250,7 @@ class __TwigTemplate_706ccf5647312e192af612d346772fbfd55407dccfe1934e080d843fdc9
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['sequence'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 92
+            // line 95
             echo "                                                <hr>
                                                 <button type=\"button\" class=\"btn btn-red pull-right\" data-dismiss=\"modal\"><span class=\"glyphicon glyphicon-remove-sign\"></span>Annuler</button>
                                             </div>
@@ -245,11 +259,11 @@ class __TwigTemplate_706ccf5647312e192af612d346772fbfd55407dccfe1934e080d843fdc9
                                 </div>
                             </li>
                             <li><a class=\"btn-link\" data-toggle=\"modal\" data-target=\"#sequenceedit_";
-            // line 99
+            // line 102
             echo twig_escape_filter($this->env, $this->getAttribute($context["dispense"], "id", array()), "html", null, true);
             echo "\">Modifier une note</a>
                                 <div id=\"sequenceedit_";
-            // line 100
+            // line 103
             echo twig_escape_filter($this->env, $this->getAttribute($context["dispense"], "id", array()), "html", null, true);
             echo "\" class=\"modal fade\">
                                     <div class=\"modal-dialog modal-sm\">
@@ -260,18 +274,18 @@ class __TwigTemplate_706ccf5647312e192af612d346772fbfd55407dccfe1934e080d843fdc9
                                             </div>
                                             <div class=\"col-md-12 modal-body\">
                                                 ";
-            // line 108
+            // line 111
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["listSequence"]) ? $context["listSequence"] : $this->getContext($context, "listSequence")));
             foreach ($context['_seq'] as $context["_key"] => $context["sequence"]) {
-                // line 109
+                // line 112
                 echo "                                                    <center>
                                                         <a href=\"";
-                // line 110
-                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("note_editnote", array("id" => $this->getAttribute($this->getAttribute($context["dispense"], "classe", array()), "id", array()), "idSeq" => $this->getAttribute($context["sequence"], "id", array()), "idMat" => $this->getAttribute($this->getAttribute($context["dispense"], "matiere", array()), "id", array()))), "html", null, true);
+                // line 113
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("note_editnote", array("id" => $this->getAttribute($this->getAttribute($context["dispense"], "classe", array()), "id", array()), "idSeq" => $this->getAttribute($context["sequence"], "id", array()), "idMat" => $this->getAttribute($this->getAttribute($context["dispense"], "matiere", array()), "id", array()), "idAnnee" => $this->getAttribute($this->getAttribute($context["dispense"], "annee", array()), "id", array()))), "html", null, true);
                 echo "\" class=\"btn btn-green\">
                                                             <b>";
-                // line 111
+                // line 114
                 echo twig_escape_filter($this->env, $context["sequence"], "html", null, true);
                 echo "</b>
                                                         </a>
@@ -281,7 +295,7 @@ class __TwigTemplate_706ccf5647312e192af612d346772fbfd55407dccfe1934e080d843fdc9
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['sequence'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 115
+            // line 118
             echo "                                                <hr>
                                                 <button type=\"button\" class=\"btn btn-red pull-right\" data-dismiss=\"modal\"><span class=\"glyphicon glyphicon-remove-sign\"></span>Annuler</button>
                                             </div>
@@ -294,7 +308,7 @@ class __TwigTemplate_706ccf5647312e192af612d346772fbfd55407dccfe1934e080d843fdc9
                         </ol>
                         <div class=\"pull-right\">
                             Matière: <i style=\"color: forestgreen\">";
-            // line 126
+            // line 129
             echo twig_escape_filter($this->env, $this->getAttribute($context["dispense"], "matiere", array()), "html", null, true);
             echo "</i>
                         </div>
@@ -305,14 +319,14 @@ class __TwigTemplate_706ccf5647312e192af612d346772fbfd55407dccfe1934e080d843fdc9
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['dispense'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 131
+        // line 134
         echo "        ";
     }
 
-    // line 133
+    // line 136
     public function block_pied($context, array $blocks = array())
     {
-        // line 134
+        // line 137
         echo "        <div class=\"\" style=\"\"><center>&copy; 2016 GreenSoft-Team. All rights reserved.</center></div>
     ";
     }
@@ -329,7 +343,7 @@ class __TwigTemplate_706ccf5647312e192af612d346772fbfd55407dccfe1934e080d843fdc9
 
     public function getDebugInfo()
     {
-        return array (  316 => 134,  313 => 133,  309 => 131,  298 => 126,  285 => 115,  275 => 111,  271 => 110,  268 => 109,  264 => 108,  253 => 100,  249 => 99,  240 => 92,  230 => 88,  226 => 87,  223 => 86,  219 => 85,  208 => 77,  204 => 76,  198 => 73,  193 => 70,  189 => 69,  186 => 68,  183 => 67,  178 => 63,  175 => 62,  170 => 59,  161 => 57,  157 => 56,  151 => 52,  143 => 50,  137 => 47,  133 => 46,  128 => 44,  125 => 43,  123 => 42,  115 => 37,  106 => 31,  96 => 24,  92 => 23,  83 => 17,  71 => 8,  68 => 7,  65 => 6,  61 => 133,  58 => 132,  56 => 67,  52 => 65,  50 => 62,  47 => 61,  44 => 6,  41 => 5,  36 => 3,  33 => 2,  11 => 1,);
+        return array (  330 => 137,  327 => 136,  323 => 134,  312 => 129,  299 => 118,  289 => 114,  285 => 113,  282 => 112,  278 => 111,  267 => 103,  263 => 102,  254 => 95,  244 => 91,  240 => 90,  237 => 89,  233 => 88,  222 => 80,  218 => 79,  212 => 76,  207 => 73,  203 => 72,  200 => 71,  197 => 70,  192 => 66,  189 => 65,  184 => 62,  175 => 60,  170 => 59,  161 => 57,  157 => 56,  151 => 52,  143 => 50,  137 => 47,  133 => 46,  128 => 44,  125 => 43,  123 => 42,  115 => 37,  106 => 31,  96 => 24,  92 => 23,  83 => 17,  71 => 8,  68 => 7,  65 => 6,  61 => 136,  58 => 135,  56 => 70,  52 => 68,  50 => 65,  47 => 64,  44 => 6,  41 => 5,  36 => 3,  33 => 2,  11 => 1,);
     }
 }
 /* {% extends "::base.html.twig" %}*/
@@ -355,7 +369,7 @@ class __TwigTemplate_706ccf5647312e192af612d346772fbfd55407dccfe1934e080d843fdc9
 /*                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> Elèves <b class="caret"></b></a>*/
 /*                         <ul class="dropdown-menu">*/
 /*                             <li><a href="{{ path('school_student_list')}}">Liste de élèves</a></li>*/
-/*                             <li><a href="{{ path('inscription_new')}}">Inscription</a></li>*/
+/*                             <li><a href="{{ path('inscription')}}">Inscriptions</a></li>*/
 /*                         </ul>*/
 /*                     </li>*/
 /* */
@@ -388,7 +402,10 @@ class __TwigTemplate_706ccf5647312e192af612d346772fbfd55407dccfe1934e080d843fdc9
 /*         </nav>*/
 /*         <div class="col-md-12 col-sm-12 col-xs-12">*/
 /*             {% for flas_message in app.session.flashbag.get('notice') %}*/
-/*                 <div class="alert alert-warning">{{ flas_message }}</div>*/
+/*                 <div class="alert alert-warning text-center">{{ flas_message }}</div>*/
+/*             {% endfor %}*/
+/*             {% for flas_message in app.session.flashbag.get('error') %}*/
+/*                 <div class="alert alert-danger text-center">{{ flas_message }}</div>*/
 /*             {% endfor %}*/
 /*         </div>*/
 /*     {% endblock %}*/
@@ -418,7 +435,7 @@ class __TwigTemplate_706ccf5647312e192af612d346772fbfd55407dccfe1934e080d843fdc9
 /*                                             <div class="col-md-12 modal-body">*/
 /*                                                 {% for sequence in listSequence %}*/
 /*                                                     <center>*/
-/*                                                         <a href="{{path('note_add', {'id':dispense.classe.id , 'idSeq': sequence.id, 'idMat':dispense.matiere.id })}}" class="btn btn-green">*/
+/*                                                         <a href="{{path('note_add', {'id':dispense.classe.id , 'idSeq': sequence.id, 'idMat':dispense.matiere.id, 'idAnnee':dispense.annee.id })}}" class="btn btn-green">*/
 /*                                                             <b>{{sequence}}</b>*/
 /*                                                         </a> */
 /*                                                     </center>*/
@@ -441,7 +458,7 @@ class __TwigTemplate_706ccf5647312e192af612d346772fbfd55407dccfe1934e080d843fdc9
 /*                                             <div class="col-md-12 modal-body">*/
 /*                                                 {% for sequence in listSequence %}*/
 /*                                                     <center>*/
-/*                                                         <a href="{{path('note_editnote', {'id':dispense.classe.id , 'idSeq': sequence.id, 'idMat':dispense.matiere.id })}}" class="btn btn-green">*/
+/*                                                         <a href="{{path('note_editnote', {'id':dispense.classe.id , 'idSeq': sequence.id, 'idMat':dispense.matiere.id, 'idAnnee':dispense.annee.id })}}" class="btn btn-green">*/
 /*                                                             <b>{{sequence}}</b>*/
 /*                                                         </a>*/
 /*                                                     </center>*/

@@ -8,15 +8,15 @@ class __TwigTemplate_57fba16e034a3009b8b7c6dc8559df7bc794571580bc831b5e5d092e562
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("::base.html.twig", "SchoolMatiereBundle:EstDispense:new.html.twig", 1);
+        $this->parent = $this->loadTemplate("SchoolGestionBundle:Default:index.html.twig", "SchoolMatiereBundle:EstDispense:new.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "::base.html.twig";
+        return "SchoolGestionBundle:Default:index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,10 +25,10 @@ class __TwigTemplate_57fba16e034a3009b8b7c6dc8559df7bc794571580bc831b5e5d092e562
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>EstDispense creation</h1>
+        echo "<h1 class=\"text-center\">Nouvel Enseignement</h1>
 
     ";
         // line 6
@@ -63,10 +63,10 @@ class __TwigTemplate_57fba16e034a3009b8b7c6dc8559df7bc794571580bc831b5e5d092e562
         return array (  42 => 10,  35 => 6,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
-/* {% extends '::base.html.twig' %}*/
+/* {% extends 'SchoolGestionBundle:Default:index.html.twig' %}*/
 /* */
-/* {% block body -%}*/
-/*     <h1>EstDispense creation</h1>*/
+/* {% block content -%}*/
+/*     <h1 class="text-center">Nouvel Enseignement</h1>*/
 /* */
 /*     {{ form(form) }}*/
 /* */

@@ -3,7 +3,13 @@
 {% block content -%}
     <h1 class="text-center">Remplissage des notes des élèves</h1>
 
+
     <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-4">
+                <label for="">Ann&eacute;e Acad&eacute;mique: </label> <span>{{annee.anneeScolaire}}</span>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-3">
                 <label for="">Classe: </label> <span>{{classe.nom}}</span>
@@ -19,7 +25,7 @@
                 <label for="">Matière: </label> <span>{{matiere.nom}}</span>
             </div>
         </div>
-        <form action="{{ path('note_add', { 'id': classe.id, 'idSeq':sequence.id, 'idMat':matiere.id })}}" method="post">
+        <form action="{{ path('note_add', { 'id': classe.id, 'idSeq':sequence.id, 'idMat':matiere.id, 'idAnnee':annee.id })}}" method="post">
             <table class="table table-bordered table-hover panel-primary" id="notes">
                 <thead class="panel-heading">
                     <tr>

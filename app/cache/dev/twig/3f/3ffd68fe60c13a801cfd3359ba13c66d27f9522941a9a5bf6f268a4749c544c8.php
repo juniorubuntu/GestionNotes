@@ -28,9 +28,15 @@ class __TwigTemplate_e139b7d6203b5a901e031f9553104270c766c00c5dd86d087e1d9830738
     public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>Inscription list</h1>
-
-    <table class=\"records_list table panel-primary\">
+        echo "<h1 class=\"text-center\">Liste des Inscription</h1>
+    <nav class=\"nav navbar-inverse alert-success col-md-12\" style=\"margin-bottom: 3px;\">
+        <a style=\"color: green; font-size: 18px;
+           text-shadow: -1px 0px;\" href=\"";
+        // line 7
+        echo $this->env->getExtension('routing')->getPath("inscription_notyet");
+        echo "\" class=\"pull-left btn-link\"><span class=\"glyphicon glyphicon-plus-sign\"></span> Inscrire un nouvel el&egrave;ve</a>
+    </nav>
+    <table id=\"inscription\" class=\"records_list table panel-primary\">
         <thead class=\"panel-heading\">
             <tr>
                 <th>Id</th>
@@ -39,90 +45,108 @@ class __TwigTemplate_e139b7d6203b5a901e031f9553104270c766c00c5dd86d087e1d9830738
                 <th>Avance</th>
                 <th>Datederniereavance</th>
                 <th>Status</th>
+                <th>Année Académique</th>
                 <th>Détails</th>
                 <th>Modifier</th>
             </tr>
         </thead>
         <tbody>
             ";
-        // line 20
+        // line 24
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 21
+            // line 25
             echo "                <tr>
                     <td><a href=\"";
-            // line 22
+            // line 26
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("inscription_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "id", array()), "html", null, true);
             echo "</a></td>
                     <td>";
-            // line 23
+            // line 27
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "student", array()), "html", null, true);
             echo "</td>
                     <td>";
-            // line 24
+            // line 28
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "classe", array()), "html", null, true);
             echo "</td>
                     <td>";
-            // line 25
+            // line 29
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "avance", array()), "html", null, true);
             echo "</td>
                     <td>";
-            // line 26
+            // line 30
             if ($this->getAttribute($context["entity"], "dateDerniereAvance", array())) {
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["entity"], "dateDerniereAvance", array()), "Y-m-d H:i:s"), "html", null, true);
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["entity"], "dateDerniereAvance", array()), "d-m-Y"), "html", null, true);
             }
             echo "</td>
                     <td>
                         Paiement 
                         ";
-            // line 29
+            // line 33
             if (($this->getAttribute($context["entity"], "status", array()) == 1)) {
-                // line 30
+                // line 34
                 echo "                            <b style=\"color: green\">Complet</b>
                         ";
             } else {
-                // line 32
+                // line 36
                 echo "                            <b style=\"color: red\">Incomplet</b>
                         ";
             }
-            // line 34
+            // line 38
             echo "
                     </td>
+                    <td>";
+            // line 40
+            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "annee", array()), "html", null, true);
+            echo "</td>
                     <td>
                         <a href=\"";
-            // line 37
+            // line 42
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("inscription_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">voir</a>
                     </td>
                     <td>
-                        <a href=\"";
-            // line 40
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("inscription_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
-            echo "\">Modifier</a>
-                    </td>
+                        ";
+            // line 45
+            if (($this->getAttribute($context["entity"], "status", array()) == 0)) {
+                // line 46
+                echo "                            <a href=\"";
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("inscription_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
+                echo "\">Modifier</a>
+                        ";
+            } else {
+                // line 48
+                echo "                            <b style=\"color: green\">Termin&eacute;e</b>
+                        ";
+            }
+            // line 50
+            echo "                    </td>
                 </tr>
             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 44
+        // line 53
         echo "        </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href=\"";
-        // line 49
-        echo $this->env->getExtension('routing')->getPath("inscription_new");
-        echo "\">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+    <script>
+        \$('#inscription').DataTable({
+            \"pagingType\": \"full_numbers\",
+            \"lengthMenu\": [[10, 20], [10, 20]],
+            \"language\": {
+                \"url\": \"";
+        // line 61
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("DataTables/French.json"), "html", null, true);
+        echo "\"
+            }
+
+        });
+    </script>
 ";
     }
 
@@ -138,15 +162,18 @@ class __TwigTemplate_e139b7d6203b5a901e031f9553104270c766c00c5dd86d087e1d9830738
 
     public function getDebugInfo()
     {
-        return array (  120 => 49,  113 => 44,  103 => 40,  97 => 37,  92 => 34,  88 => 32,  84 => 30,  82 => 29,  74 => 26,  70 => 25,  66 => 24,  62 => 23,  56 => 22,  53 => 21,  49 => 20,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  144 => 61,  134 => 53,  126 => 50,  122 => 48,  116 => 46,  114 => 45,  108 => 42,  103 => 40,  99 => 38,  95 => 36,  91 => 34,  89 => 33,  81 => 30,  77 => 29,  73 => 28,  69 => 27,  63 => 26,  60 => 25,  56 => 24,  36 => 7,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends 'SchoolGestionBundle:Default:index.html.twig' %}*/
 /* */
 /* {% block content -%}*/
-/*     <h1>Inscription list</h1>*/
-/* */
-/*     <table class="records_list table panel-primary">*/
+/*     <h1 class="text-center">Liste des Inscription</h1>*/
+/*     <nav class="nav navbar-inverse alert-success col-md-12" style="margin-bottom: 3px;">*/
+/*         <a style="color: green; font-size: 18px;*/
+/*            text-shadow: -1px 0px;" href="{{path('inscription_notyet')}}" class="pull-left btn-link"><span class="glyphicon glyphicon-plus-sign"></span> Inscrire un nouvel el&egrave;ve</a>*/
+/*     </nav>*/
+/*     <table id="inscription" class="records_list table panel-primary">*/
 /*         <thead class="panel-heading">*/
 /*             <tr>*/
 /*                 <th>Id</th>*/
@@ -155,6 +182,7 @@ class __TwigTemplate_e139b7d6203b5a901e031f9553104270c766c00c5dd86d087e1d9830738
 /*                 <th>Avance</th>*/
 /*                 <th>Datederniereavance</th>*/
 /*                 <th>Status</th>*/
+/*                 <th>Année Académique</th>*/
 /*                 <th>Détails</th>*/
 /*                 <th>Modifier</th>*/
 /*             </tr>*/
@@ -166,7 +194,7 @@ class __TwigTemplate_e139b7d6203b5a901e031f9553104270c766c00c5dd86d087e1d9830738
 /*                     <td>{{ entity.student }}</td>*/
 /*                     <td>{{ entity.classe }}</td>*/
 /*                     <td>{{ entity.avance }}</td>*/
-/*                     <td>{% if entity.dateDerniereAvance %}{{ entity.dateDerniereAvance|date('Y-m-d H:i:s') }}{% endif %}</td>*/
+/*                     <td>{% if entity.dateDerniereAvance %}{{ entity.dateDerniereAvance|date('d-m-Y') }}{% endif %}</td>*/
 /*                     <td>*/
 /*                         Paiement */
 /*                         {% if entity.status == 1 %}*/
@@ -176,23 +204,31 @@ class __TwigTemplate_e139b7d6203b5a901e031f9553104270c766c00c5dd86d087e1d9830738
 /*                         {% endif %}*/
 /* */
 /*                     </td>*/
+/*                     <td>{{ entity.annee }}</td>*/
 /*                     <td>*/
 /*                         <a href="{{ path('inscription_show', { 'id': entity.id }) }}">voir</a>*/
 /*                     </td>*/
 /*                     <td>*/
-/*                         <a href="{{ path('inscription_edit', { 'id': entity.id }) }}">Modifier</a>*/
+/*                         {% if entity.status == 0 %}*/
+/*                             <a href="{{ path('inscription_edit', { 'id': entity.id }) }}">Modifier</a>*/
+/*                         {% else %}*/
+/*                             <b style="color: green">Termin&eacute;e</b>*/
+/*                         {% endif %}*/
 /*                     </td>*/
 /*                 </tr>*/
 /*             {% endfor %}*/
 /*         </tbody>*/
 /*     </table>*/
 /* */
-/*     <ul>*/
-/*         <li>*/
-/*             <a href="{{ path('inscription_new') }}">*/
-/*                 Create a new entry*/
-/*             </a>*/
-/*         </li>*/
-/*     </ul>*/
+/*     <script>*/
+/*         $('#inscription').DataTable({*/
+/*             "pagingType": "full_numbers",*/
+/*             "lengthMenu": [[10, 20], [10, 20]],*/
+/*             "language": {*/
+/*                 "url": "{{ asset('DataTables/French.json') }}"*/
+/*             }*/
+/* */
+/*         });*/
+/*     </script>*/
 /* {% endblock %}*/
 /* */

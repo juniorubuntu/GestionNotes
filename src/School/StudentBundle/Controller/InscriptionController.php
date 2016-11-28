@@ -2,6 +2,7 @@
 
 namespace School\StudentBundle\Controller;
 
+use School\StudentBundle\Form\InscriptionEditType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use School\ConfigBundle\Entity\Ecole;
@@ -28,24 +29,79 @@ class InscriptionController extends Controller {
         ));
     }
 
+    public function aInscrireAction() {
+        $em = $this->getDoctrine()->getManager();
+        $school = $em->getRepository('SchoolConfigBundle:Ecole')->findAll();
+        $anneEncour = $school[0]->getAnneeEnCour();
+
+        $subQueryBuilder = $em->createQueryBuilder();
+        $subQuery = $subQueryBuilder
+                ->select('IDENTITY(i.student)')
+                ->from('SchoolStudentBundle:Inscription', 'i')
+                ->where('i.annee= :annee')
+                //->orWhere('i.status= :status')
+                ->setParameters(array(
+                    'annee' => $anneEncour,
+                        //   'status'=> 0,
+                ))
+                ->getQuery()
+                ->getArrayResult();
+
+        $queryBuilder = $em->createQueryBuilder();
+        $query = $queryBuilder
+                ->select('s')
+                ->from('SchoolStudentBundle:Student', 's')
+                ->where($queryBuilder->expr()->notIn('s.id', ':subQuery'))
+                ->setParameter('subQuery', $subQuery)
+                ->getQuery();
+
+        $students = $query->getResult();
+
+        $incriptionsNonComplets = $this->getDoctrine()->getRepository('SchoolStudentBundle:Inscription')->findBy(
+                array(
+                    'status' => 0,
+                    'annee' => $anneEncour,
+        ));
+
+
+
+        return $this->render('SchoolStudentBundle:Inscription:listeElevesNonInscrits.html.twig', array(
+                    'entities' => $students,
+                    'incriptionsNonCompletes' => $incriptionsNonComplets,
+        ));
+    }
+
     /**
      * Creates a new Inscription entity.
      *
      */
-    public function createAction(Request $request) {
+    public function createAction(Request $request, $idStudent) {
         $entity = new Inscription();
         $ecole = $this->getDoctrine()->getRepository('SchoolConfigBundle:Ecole')->findAll();
         $entity->setAnnee($ecole[0]->getAnneeEnCour());
-        $form = $this->createCreateForm($entity);
+
+        $student = $this->getDoctrine()->getRepository('SchoolStudentBundle:Student')->find($idStudent);
+        $entity->setStudent($student);
+
+        $form = $this->createCreateForm($entity, $idStudent);
         $form->handleRequest($request);
-
         if ($form->isValid()) {
+            $entity->setStudent($student);
             $entity->setAnnee($ecole[0]->getAnneeEnCour());
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($entity);
-            $em->flush();
+            $inscriptionExist = $this->getDoctrine()->getRepository('SchoolStudentBundle:Inscription')->findBy(
+                    array(
+                        'student' => $entity->getStudent(),
+                        'annee' => $ecole[0]->getAnneeEnCour(),
+            ));
+            if ($inscriptionExist) {
+                $request->getSession()->getFlashBag()->add('notice', 'Incription d�j� effectu�e');
+            } else {
 
-            return $this->redirect($this->generateUrl('inscription_show', array('id' => $entity->getId())));
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($entity);
+                $em->flush();
+                return $this->redirect($this->generateUrl('inscription_show', array('id' => $entity->getId())));
+            }
         }
 
         return $this->render('SchoolStudentBundle:Inscription:new.html.twig', array(
@@ -61,13 +117,14 @@ class InscriptionController extends Controller {
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Inscription $entity) {
+    private function createCreateForm(Inscription $entity, $idStudent) {
         $form = $this->createForm(new InscriptionType(), $entity, array(
-            'action' => $this->generateUrl('inscription_create'),
+            'action' => $this->generateUrl('inscription_create', array(
+                'idStudent' => $idStudent,
+            )),
             'method' => 'POST',
         ));
-
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Inscrire', 'attr' => array('class' => 'btn btn-primary col-md-offset-3 col-sm-offset-3 col-xs-offset-3 col-md-1 col-sm-1 col-xs-3')));
 
         return $form;
     }
@@ -76,11 +133,15 @@ class InscriptionController extends Controller {
      * Displays a form to create a new Inscription entity.
      *
      */
-    public function newAction() {
+    public function newAction($idStudent) {
         $entity = new Inscription();
         $ecole = $this->getDoctrine()->getRepository('SchoolConfigBundle:Ecole')->findAll();
         $entity->setAnnee($ecole[0]->getAnneeEnCour());
-        $form = $this->createCreateForm($entity);
+
+        $student = $this->getDoctrine()->getRepository('SchoolStudentBundle:Student')->find($idStudent);
+        $entity->setStudent($student);
+
+        $form = $this->createCreateForm($entity, $idStudent);
 
         return $this->render('SchoolStudentBundle:Inscription:new.html.twig', array(
                     'entity' => $entity,
@@ -140,12 +201,12 @@ class InscriptionController extends Controller {
      * @return \Symfony\Component\Form\Form The form
      */
     private function createEditForm(Inscription $entity) {
-        $form = $this->createForm(new InscriptionType(), $entity, array(
+        $form = $this->createForm(new InscriptionEditType(), $entity, array(
             'action' => $this->generateUrl('inscription_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Terminer', 'attr' => array('class' => 'btn btn-primary col-md-offset-3 col-sm-offset-3 col-xs-offset-3 col-md-1 col-sm-1 col-xs-3')));
 
         return $form;
     }
@@ -168,9 +229,9 @@ class InscriptionController extends Controller {
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            $entity->setDateDerniereAvance(new \DateTime(date('Y-m-d')));
             $em->flush();
-
-            return $this->redirect($this->generateUrl('inscription_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('inscription'));
         }
 
         return $this->render('SchoolStudentBundle:Inscription:edit.html.twig', array(

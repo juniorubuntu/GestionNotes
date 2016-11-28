@@ -91,7 +91,7 @@ class __TwigTemplate_c02df41a91b78093da892ecec7f82eb1197f6da54ec5102420a7971b041
         <li>
             <a href=\"";
         // line 43
-        echo $this->env->getExtension('routing')->getPath("inscription");
+        echo $this->env->getExtension('routing')->getPath("inscription_notyet");
         echo "\">
                 Back to the list
             </a>
@@ -169,7 +169,7 @@ class __TwigTemplate_c02df41a91b78093da892ecec7f82eb1197f6da54ec5102420a7971b041
 /* */
 /*     <ul class="record_actions">*/
 /*         <li>*/
-/*             <a href="{{ path('inscription') }}">*/
+/*             <a href="{{ path('inscription_notyet') }}">*/
 /*                 Back to the list*/
 /*             </a>*/
 /*         </li>*/
