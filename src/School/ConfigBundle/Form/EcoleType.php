@@ -14,6 +14,7 @@ class EcoleType extends AbstractType {
      */
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
+                ->add('ville')
                 ->add('nomFrancais')
                 ->add('nomAnglais')
                 ->add('deviseFrancais')

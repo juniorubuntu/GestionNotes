@@ -44,7 +44,7 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
         echo "    <div class=\"col-md-offset-2 col-md-8\" style=\"margin-top: 0%; font-size: 12px; font-family: monospace\">
         <table class=\"table table-bordered\" id=\"\">
             <thead class=\"\">
-                <tr>
+                <tr style=\"font-size: 10px\">
                     <td colspan=\"3\" style=\"text-align: center\">
                         <b>
                             ";
@@ -62,7 +62,7 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
                         </b>
                     </td>
                     <td colspan=\"2\" style=\"text-align: center\">
-                        <img style=\"height: 70px; width: 90px;\" src=\"";
+                        <img style=\"height: 50px; width: 60px;\" src=\"";
         // line 19
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(((("uploads/logos/" . $this->getAttribute($this->getAttribute((isset($context["ecole"]) ? $context["ecole"] : $this->getContext($context, "ecole")), "logo", array()), "id", array())) . ".") . $this->getAttribute($this->getAttribute((isset($context["ecole"]) ? $context["ecole"] : $this->getContext($context, "ecole")), "logo", array()), "url", array()))), "html", null, true);
         echo "\" alt=\"Logo\" title=\"\" >
@@ -277,24 +277,57 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
         echo "                <tr>
                     <td colspan=\"8\">&nbsp;</td>
                 </tr>
-                <tr style=\"border: 2px solid black;\">
-                    <td colspan=\"4\" style=\"text-align: right;\">
-                        <b><i>MOYENNE SEQUENTIELLE</i></b>
+                <tr style=\"border: 2px solid black; font-size: 11px; font-family: initial\">
+                    <td colspan=\"2\">
+                        <b><u>Total des absences</u>:</b>
+                        12
                     </td>
-                    <td>
-                        Coef: 
+                    <td colspan=\"2\">
+                        <b><u>Absences non justifiés</u>:</b>
+                        5
                     </td>
-                    <td>
-                        Total:
+                    <td colspan=\"2\">
+                        <b><u>Décision du conseil</u>:</b>
+                        Dois faire attention aux abscences
                     </td>
-
-                    <td>
-                        <b>Moy/20</b>
-                    </td>
-                    <td>
-                        <b>Rang: </b>
+                    <td colspan=\"2\" >
+                        <b><u>Conduite:</u></b><br/>
+                        Conduite aceptable
                     </td>
                 </tr>
+                <tr style=\"border: 2px solid black; font-family: initial\">
+                    <td colspan=\"2\">
+                        <b><u>Moy. de la classe</u>:</b>
+                        09.45
+                    </td>
+                    <td colspan=\"2\">
+                        <b><u>Moy. de l'élève</u>:</b>
+                        13.67
+                        <br>
+                        <b><u>Appréciation</u>:</b>
+                        Assez Bien
+                    </td>
+                    <td>
+                        <b><u>RANG</u>:</b>
+                        12ème
+                    </td>
+                    <td colspan=\"3\" >
+                        <b><u>OBSERVATIONS</u></b><br/>
+                        Un éffort considérable s'impose en matières littéraires
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan=\"4\" style=\"text-align: left\">
+            <u>Le parent</u><br>
+            <center>Signature</center>
+            </td>
+            <td colspan=\"4\" style=\"text-align: right\">
+                Fait à ";
+        // line 164
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["ecole"]) ? $context["ecole"] : $this->getContext($context, "ecole")), "ville", array()), "html", null, true);
+        echo " Le 12/11/2016
+            </td>
+            </tr>
             </tbody>
         </table>
     </div>
@@ -307,7 +340,7 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
             dom: 'Bfrtip',
             \"language\": {
                 \"url\": \"";
-        // line 148
+        // line 178
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("DataTables/French.json"), "html", null, true);
         echo "\"
             }
@@ -335,7 +368,7 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
 
     public function getDebugInfo()
     {
-        return array (  311 => 148,  277 => 116,  254 => 99,  250 => 97,  236 => 88,  228 => 86,  226 => 85,  222 => 83,  216 => 81,  214 => 80,  210 => 78,  204 => 76,  202 => 75,  198 => 73,  192 => 71,  190 => 70,  186 => 68,  184 => 67,  178 => 65,  172 => 63,  169 => 62,  167 => 61,  164 => 60,  160 => 59,  157 => 58,  153 => 57,  137 => 44,  133 => 43,  129 => 42,  123 => 39,  119 => 38,  113 => 37,  109 => 36,  101 => 35,  95 => 32,  90 => 30,  82 => 25,  78 => 24,  74 => 23,  67 => 19,  60 => 15,  56 => 14,  52 => 13,  44 => 7,  41 => 6,  36 => 4,  30 => 2,  11 => 1,);
+        return array (  344 => 178,  327 => 164,  277 => 116,  254 => 99,  250 => 97,  236 => 88,  228 => 86,  226 => 85,  222 => 83,  216 => 81,  214 => 80,  210 => 78,  204 => 76,  202 => 75,  198 => 73,  192 => 71,  190 => 70,  186 => 68,  184 => 67,  178 => 65,  172 => 63,  169 => 62,  167 => 61,  164 => 60,  160 => 59,  157 => 58,  153 => 57,  137 => 44,  133 => 43,  129 => 42,  123 => 39,  119 => 38,  113 => 37,  109 => 36,  101 => 35,  95 => 32,  90 => 30,  82 => 25,  78 => 24,  74 => 23,  67 => 19,  60 => 15,  56 => 14,  52 => 13,  44 => 7,  41 => 6,  36 => 4,  30 => 2,  11 => 1,);
     }
 }
 /* {% extends "SchoolGestionBundle:Default:index.html.twig" %}*/
@@ -347,7 +380,7 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
 /*     <div class="col-md-offset-2 col-md-8" style="margin-top: 0%; font-size: 12px; font-family: monospace">*/
 /*         <table class="table table-bordered" id="">*/
 /*             <thead class="">*/
-/*                 <tr>*/
+/*                 <tr style="font-size: 10px">*/
 /*                     <td colspan="3" style="text-align: center">*/
 /*                         <b>*/
 /*                             {{ pays.ministereFrancais }}<br>*/
@@ -356,7 +389,7 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
 /*                         </b>*/
 /*                     </td>*/
 /*                     <td colspan="2" style="text-align: center">*/
-/*                         <img style="height: 70px; width: 90px;" src="{{ asset('uploads/logos/' ~ ecole.logo.id ~'.'~ ecole.logo.url)}}" alt="Logo" title="" >*/
+/*                         <img style="height: 50px; width: 60px;" src="{{ asset('uploads/logos/' ~ ecole.logo.id ~'.'~ ecole.logo.url)}}" alt="Logo" title="" >*/
 /*                     </td>*/
 /*                     <td colspan="3" style="text-align: center">*/
 /*                         <b>*/
@@ -456,24 +489,54 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
 /*                 <tr>*/
 /*                     <td colspan="8">&nbsp;</td>*/
 /*                 </tr>*/
-/*                 <tr style="border: 2px solid black;">*/
-/*                     <td colspan="4" style="text-align: right;">*/
-/*                         <b><i>MOYENNE SEQUENTIELLE</i></b>*/
+/*                 <tr style="border: 2px solid black; font-size: 11px; font-family: initial">*/
+/*                     <td colspan="2">*/
+/*                         <b><u>Total des absences</u>:</b>*/
+/*                         12*/
 /*                     </td>*/
-/*                     <td>*/
-/*                         Coef: */
+/*                     <td colspan="2">*/
+/*                         <b><u>Absences non justifiés</u>:</b>*/
+/*                         5*/
 /*                     </td>*/
-/*                     <td>*/
-/*                         Total:*/
+/*                     <td colspan="2">*/
+/*                         <b><u>Décision du conseil</u>:</b>*/
+/*                         Dois faire attention aux abscences*/
 /*                     </td>*/
-/* */
-/*                     <td>*/
-/*                         <b>Moy/20</b>*/
-/*                     </td>*/
-/*                     <td>*/
-/*                         <b>Rang: </b>*/
+/*                     <td colspan="2" >*/
+/*                         <b><u>Conduite:</u></b><br/>*/
+/*                         Conduite aceptable*/
 /*                     </td>*/
 /*                 </tr>*/
+/*                 <tr style="border: 2px solid black; font-family: initial">*/
+/*                     <td colspan="2">*/
+/*                         <b><u>Moy. de la classe</u>:</b>*/
+/*                         09.45*/
+/*                     </td>*/
+/*                     <td colspan="2">*/
+/*                         <b><u>Moy. de l'élève</u>:</b>*/
+/*                         13.67*/
+/*                         <br>*/
+/*                         <b><u>Appréciation</u>:</b>*/
+/*                         Assez Bien*/
+/*                     </td>*/
+/*                     <td>*/
+/*                         <b><u>RANG</u>:</b>*/
+/*                         12ème*/
+/*                     </td>*/
+/*                     <td colspan="3" >*/
+/*                         <b><u>OBSERVATIONS</u></b><br/>*/
+/*                         Un éffort considérable s'impose en matières littéraires*/
+/*                     </td>*/
+/*                 </tr>*/
+/*                 <tr>*/
+/*                     <td colspan="4" style="text-align: left">*/
+/*             <u>Le parent</u><br>*/
+/*             <center>Signature</center>*/
+/*             </td>*/
+/*             <td colspan="4" style="text-align: right">*/
+/*                 Fait à {{ecole.ville}} Le 12/11/2016*/
+/*             </td>*/
+/*             </tr>*/
 /*             </tbody>*/
 /*         </table>*/
 /*     </div>*/

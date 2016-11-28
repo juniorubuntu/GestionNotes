@@ -28,6 +28,14 @@ class Ecole {
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
      */
+    private $ville;
+    
+    /**
+     * @var string
+     * 
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     */
     private $nomFrancais;
 
     /**
@@ -232,5 +240,28 @@ class Ecole {
     public function getLogo()
     {
         return $this->logo;
+    }
+
+    /**
+     * Set ville
+     *
+     * @param string $ville
+     * @return Ecole
+     */
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
+    
+        return $this;
+    }
+
+    /**
+     * Get ville
+     *
+     * @return string 
+     */
+    public function getVille()
+    {
+        return $this->ville;
     }
 }

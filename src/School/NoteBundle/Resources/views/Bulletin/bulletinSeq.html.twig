@@ -7,7 +7,7 @@
     <div class="col-md-offset-2 col-md-8" style="margin-top: 0%; font-size: 12px; font-family: monospace">
         <table class="table table-bordered" id="">
             <thead class="">
-                <tr>
+                <tr style="font-size: 10px">
                     <td colspan="3" style="text-align: center">
                         <b>
                             {{ pays.ministereFrancais }}<br>
@@ -16,7 +16,7 @@
                         </b>
                     </td>
                     <td colspan="2" style="text-align: center">
-                        <img style="height: 70px; width: 90px;" src="{{ asset('uploads/logos/' ~ ecole.logo.id ~'.'~ ecole.logo.url)}}" alt="Logo" title="" >
+                        <img style="height: 50px; width: 60px;" src="{{ asset('uploads/logos/' ~ ecole.logo.id ~'.'~ ecole.logo.url)}}" alt="Logo" title="" >
                     </td>
                     <td colspan="3" style="text-align: center">
                         <b>
@@ -116,24 +116,54 @@
                 <tr>
                     <td colspan="8">&nbsp;</td>
                 </tr>
-                <tr style="border: 2px solid black;">
-                    <td colspan="4" style="text-align: right;">
-                        <b><i>MOYENNE SEQUENTIELLE</i></b>
+                <tr style="border: 2px solid black; font-size: 11px; font-family: initial">
+                    <td colspan="2">
+                        <b><u>Total des absences</u>:</b>
+                        12
                     </td>
-                    <td>
-                        Coef: 
+                    <td colspan="2">
+                        <b><u>Absences non justifiés</u>:</b>
+                        5
                     </td>
-                    <td>
-                        Total:
+                    <td colspan="2">
+                        <b><u>Décision du conseil</u>:</b>
+                        Dois faire attention aux abscences
                     </td>
-
-                    <td>
-                        <b>Moy/20</b>
-                    </td>
-                    <td>
-                        <b>Rang: </b>
+                    <td colspan="2" >
+                        <b><u>Conduite:</u></b><br/>
+                        Conduite aceptable
                     </td>
                 </tr>
+                <tr style="border: 2px solid black; font-family: initial">
+                    <td colspan="2">
+                        <b><u>Moy. de la classe</u>:</b>
+                        09.45
+                    </td>
+                    <td colspan="2">
+                        <b><u>Moy. de l'élève</u>:</b>
+                        13.67
+                        <br>
+                        <b><u>Appréciation</u>:</b>
+                        Assez Bien
+                    </td>
+                    <td>
+                        <b><u>RANG</u>:</b>
+                        12ème
+                    </td>
+                    <td colspan="3" >
+                        <b><u>OBSERVATIONS</u></b><br/>
+                        Un éffort considérable s'impose en matières littéraires
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align: left">
+            <u>Le parent</u><br>
+            <center>Signature</center>
+            </td>
+            <td colspan="4" style="text-align: right">
+                Fait à {{ecole.ville}} Le 12/11/2016
+            </td>
+            </tr>
             </tbody>
         </table>
     </div>
