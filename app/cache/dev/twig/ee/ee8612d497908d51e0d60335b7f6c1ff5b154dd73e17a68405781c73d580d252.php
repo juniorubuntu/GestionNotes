@@ -41,7 +41,7 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
     public function block_body($context, array $blocks = array())
     {
         // line 7
-        echo "    <div class=\"col-md-offset-2 col-md-8\" style=\"margin-bottom: 10%; font-size: 12px;\">
+        echo "    <div class=\"col-md-offset-2 col-md-8\" style=\"margin-bottom: 8%; font-size: 12px;\">
         <table class=\"table \" id=\"\">
             <thead class=\"\">
                 <tr>
@@ -320,7 +320,7 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
 /* {% block aside %}*/
 /* {% endblock %}*/
 /* {% block body %}*/
-/*     <div class="col-md-offset-2 col-md-8" style="margin-bottom: 10%; font-size: 12px;">*/
+/*     <div class="col-md-offset-2 col-md-8" style="margin-bottom: 8%; font-size: 12px;">*/
 /*         <table class="table " id="">*/
 /*             <thead class="">*/
 /*                 <tr>*/
