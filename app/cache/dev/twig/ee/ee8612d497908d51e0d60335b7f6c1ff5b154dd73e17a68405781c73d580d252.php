@@ -41,11 +41,11 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
     public function block_body($context, array $blocks = array())
     {
         // line 7
-        echo "    <div class=\"col-md-offset-2 col-md-8\" style=\"margin-bottom: 8%; font-size: 12px;\">
-        <table class=\"table \" id=\"\">
+        echo "    <div class=\"col-md-offset-2 col-md-8\" style=\"margin-top: 0%; font-size: 12px; font-family: monospace\">
+        <table class=\"table table-bordered\" id=\"\">
             <thead class=\"\">
                 <tr>
-                    <td colspan=\"3\" style=\"text-align: left\">
+                    <td colspan=\"3\" style=\"text-align: center\">
                         <b>
                             ";
         // line 13
@@ -62,11 +62,14 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
                         </b>
                     </td>
                     <td colspan=\"2\" style=\"text-align: center\">
-                        logo
+                        <img style=\"height: 70px; width: 90px;\" src=\"";
+        // line 19
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(((("uploads/logos/" . $this->getAttribute($this->getAttribute((isset($context["ecole"]) ? $context["ecole"] : $this->getContext($context, "ecole")), "logo", array()), "id", array())) . ".") . $this->getAttribute($this->getAttribute((isset($context["ecole"]) ? $context["ecole"] : $this->getContext($context, "ecole")), "logo", array()), "url", array()))), "html", null, true);
+        echo "\" alt=\"Logo\" title=\"\" >
                     </td>
-                    <td colspan=\"3\" style=\"text-align: right\">
+                    <td colspan=\"3\" style=\"text-align: center\">
                         <b>
-                            ";
+                            Republique du ";
         // line 23
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["pays"]) ? $context["pays"] : $this->getContext($context, "pays")), "paysFrancais", array()), "html", null, true);
         echo "<br>
@@ -82,18 +85,18 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
                     </td>
                 </tr>
                 <tr>
-                    <td style=\"text-align: left\"><b>";
+                    <td style=\"text-align: left\" colspan=\"2\"><b>";
         // line 30
         echo twig_escape_filter($this->env, (isset($context["annee"]) ? $context["annee"] : $this->getContext($context, "annee")), "html", null, true);
         echo "</b></td>
-                    <td colspan=\"5\" style=\"font-size: 1em; text-align: center\"><b>BULLETIN DE NOTES</b></td>
-                    <td colspan=\"3\" style=\"text-align: right\"><b>";
+                    <td colspan=\"4\" style=\"font-size: 1em; text-align: center\"><b>BULLETIN DE NOTES</b></td>
+                    <td colspan=\"2\" style=\"text-align: right\"><b>";
         // line 32
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["listCategories"]) ? $context["listCategories"] : $this->getContext($context, "listCategories")), 0, array(), "array"), "listeMatieres", array()), 0, array(), "array"), "evaluationSeq", array()), 0, array(), "array"), "sequence", array()), "html", null, true);
         echo "</b></td>
                 </tr>
                 <tr>
-                    <td rowspan=\"2\" style=\"text-align: left\"><img style=\"height: 50px; width: 50px;\" src=\"";
+                    <td rowspan=\"2\" style=\"text-align: left\"><img style=\"height: 70px; width: 85px;\" src=\"";
         // line 35
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(((("uploads/images/" . $this->getAttribute($this->getAttribute((isset($context["student"]) ? $context["student"] : $this->getContext($context, "student")), "photo", array()), "id", array())) . ".") . $this->getAttribute($this->getAttribute((isset($context["student"]) ? $context["student"] : $this->getContext($context, "student")), "photo", array()), "url", array()))), "html", null, true);
         echo "\" alt=\"";
@@ -121,7 +124,7 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
         echo "</b></td>
                 </tr>
                 <tr>
-                    <td style=\"text-align: left\" colspan=\"4\">Prof. Titulaire: <b>";
+                    <td style=\"text-align: left\" colspan=\"4\">Titulaire: <b>";
         // line 42
         echo twig_escape_filter($this->env, (isset($context["titulaire"]) ? $context["titulaire"] : $this->getContext($context, "titulaire")), "html", null, true);
         echo "</b></td>
@@ -271,7 +274,28 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['categorie'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 116
-        echo "            </tbody>
+        echo "                <tr>
+                    <td colspan=\"8\">&nbsp;</td>
+                </tr>
+                <tr style=\"border: 2px solid black;\">
+                    <td colspan=\"4\" style=\"text-align: right;\">
+                        <b><i>MOYENNE SEQUENTIELLE</i></b>
+                    </td>
+                    <td>
+                        Coef: 
+                    </td>
+                    <td>
+                        Total:
+                    </td>
+
+                    <td>
+                        <b>Moy/20</b>
+                    </td>
+                    <td>
+                        <b>Rang: </b>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </div>
     <script>
@@ -283,7 +307,7 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
             dom: 'Bfrtip',
             \"language\": {
                 \"url\": \"";
-        // line 127
+        // line 148
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("DataTables/French.json"), "html", null, true);
         echo "\"
             }
@@ -311,7 +335,7 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
 
     public function getDebugInfo()
     {
-        return array (  287 => 127,  274 => 116,  251 => 99,  247 => 97,  233 => 88,  225 => 86,  223 => 85,  219 => 83,  213 => 81,  211 => 80,  207 => 78,  201 => 76,  199 => 75,  195 => 73,  189 => 71,  187 => 70,  183 => 68,  181 => 67,  175 => 65,  169 => 63,  166 => 62,  164 => 61,  161 => 60,  157 => 59,  154 => 58,  150 => 57,  134 => 44,  130 => 43,  126 => 42,  120 => 39,  116 => 38,  110 => 37,  106 => 36,  98 => 35,  92 => 32,  87 => 30,  79 => 25,  75 => 24,  71 => 23,  60 => 15,  56 => 14,  52 => 13,  44 => 7,  41 => 6,  36 => 4,  30 => 2,  11 => 1,);
+        return array (  311 => 148,  277 => 116,  254 => 99,  250 => 97,  236 => 88,  228 => 86,  226 => 85,  222 => 83,  216 => 81,  214 => 80,  210 => 78,  204 => 76,  202 => 75,  198 => 73,  192 => 71,  190 => 70,  186 => 68,  184 => 67,  178 => 65,  172 => 63,  169 => 62,  167 => 61,  164 => 60,  160 => 59,  157 => 58,  153 => 57,  137 => 44,  133 => 43,  129 => 42,  123 => 39,  119 => 38,  113 => 37,  109 => 36,  101 => 35,  95 => 32,  90 => 30,  82 => 25,  78 => 24,  74 => 23,  67 => 19,  60 => 15,  56 => 14,  52 => 13,  44 => 7,  41 => 6,  36 => 4,  30 => 2,  11 => 1,);
     }
 }
 /* {% extends "SchoolGestionBundle:Default:index.html.twig" %}*/
@@ -320,11 +344,11 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
 /* {% block aside %}*/
 /* {% endblock %}*/
 /* {% block body %}*/
-/*     <div class="col-md-offset-2 col-md-8" style="margin-bottom: 8%; font-size: 12px;">*/
-/*         <table class="table " id="">*/
+/*     <div class="col-md-offset-2 col-md-8" style="margin-top: 0%; font-size: 12px; font-family: monospace">*/
+/*         <table class="table table-bordered" id="">*/
 /*             <thead class="">*/
 /*                 <tr>*/
-/*                     <td colspan="3" style="text-align: left">*/
+/*                     <td colspan="3" style="text-align: center">*/
 /*                         <b>*/
 /*                             {{ pays.ministereFrancais }}<br>*/
 /*                             {{ ecole.nomFrancais }}<br>*/
@@ -332,30 +356,30 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
 /*                         </b>*/
 /*                     </td>*/
 /*                     <td colspan="2" style="text-align: center">*/
-/*                         logo*/
+/*                         <img style="height: 70px; width: 90px;" src="{{ asset('uploads/logos/' ~ ecole.logo.id ~'.'~ ecole.logo.url)}}" alt="Logo" title="" >*/
 /*                     </td>*/
-/*                     <td colspan="3" style="text-align: right">*/
+/*                     <td colspan="3" style="text-align: center">*/
 /*                         <b>*/
-/*                             {{ pays.paysFrancais }}<br>*/
+/*                             Republique du {{ pays.paysFrancais }}<br>*/
 /*                             {{ pays.deviseFrancais }}<br>*/
 /*                             {{ecole.deviseFrancais}}*/
 /*                         </b>*/
 /*                     </td>*/
 /*                 </tr>*/
 /*                 <tr>*/
-/*                     <td style="text-align: left"><b>{{annee}}</b></td>*/
-/*                     <td colspan="5" style="font-size: 1em; text-align: center"><b>BULLETIN DE NOTES</b></td>*/
-/*                     <td colspan="3" style="text-align: right"><b>{{ listCategories[0].listeMatieres[0].evaluationSeq[0].sequence }}</b></td>*/
+/*                     <td style="text-align: left" colspan="2"><b>{{annee}}</b></td>*/
+/*                     <td colspan="4" style="font-size: 1em; text-align: center"><b>BULLETIN DE NOTES</b></td>*/
+/*                     <td colspan="2" style="text-align: right"><b>{{ listCategories[0].listeMatieres[0].evaluationSeq[0].sequence }}</b></td>*/
 /*                 </tr>*/
 /*                 <tr>*/
-/*                     <td rowspan="2" style="text-align: left"><img style="height: 50px; width: 50px;" src="{{ asset('uploads/images/' ~ student.photo.id ~'.'~ student.photo.url)}}" alt="{{student}}" title="{{student}}"></td>*/
+/*                     <td rowspan="2" style="text-align: left"><img style="height: 70px; width: 85px;" src="{{ asset('uploads/images/' ~ student.photo.id ~'.'~ student.photo.url)}}" alt="{{student}}" title="{{student}}"></td>*/
 /*                     <td colspan="3" style="text-align: left">Elève: <b>{{ student.nom | upper}}</b></td>*/
 /*                     <td colspan="2" style="text-align: left"><b>{{ student.dateNaissance|date('d-m-Y') }}</b> A <b>{{ student.lieuNaissance | upper}}</b></td>*/
 /*                     <td>Matricule:  <b>{{ student.matricule }}</b></td>*/
 /*                     <td colspan="1" style="text-align: left">Sexe: <b>{{student.sexe}}</b></td>*/
 /*                 </tr>*/
 /*                 <tr>*/
-/*                     <td style="text-align: left" colspan="4">Prof. Titulaire: <b>{{titulaire}}</b></td>*/
+/*                     <td style="text-align: left" colspan="4">Titulaire: <b>{{titulaire}}</b></td>*/
 /*                     <td colspan="2" style="text-align: left">Classe:  <b>{{ student.classe.abreviation }}</b></td>*/
 /*                     <td colspan="2" style="text-align: left">Eff.: <b>{{Allstudent | length}}</b></td>*/
 /*                 </tr>*/
@@ -429,6 +453,27 @@ class __TwigTemplate_810e92a81640e9a8d77e3ef74e44177205b49ba275261dc162b6f516297
 /*                         </td>*/
 /*                     </tr>*/
 /*                 {% endfor %}*/
+/*                 <tr>*/
+/*                     <td colspan="8">&nbsp;</td>*/
+/*                 </tr>*/
+/*                 <tr style="border: 2px solid black;">*/
+/*                     <td colspan="4" style="text-align: right;">*/
+/*                         <b><i>MOYENNE SEQUENTIELLE</i></b>*/
+/*                     </td>*/
+/*                     <td>*/
+/*                         Coef: */
+/*                     </td>*/
+/*                     <td>*/
+/*                         Total:*/
+/*                     </td>*/
+/* */
+/*                     <td>*/
+/*                         <b>Moy/20</b>*/
+/*                     </td>*/
+/*                     <td>*/
+/*                         <b>Rang: </b>*/
+/*                     </td>*/
+/*                 </tr>*/
 /*             </tbody>*/
 /*         </table>*/
 /*     </div>*/

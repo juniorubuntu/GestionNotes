@@ -63,6 +63,13 @@ class Ecole {
     private $boitePostal;
 
     /**
+     * @ORM\OneToOne(targetEntity="Logo",cascade={"persist", "remove"})
+     * @ORM\JoinColumn(name="logo_id", referencedColumnName="id", nullable=true)
+     *  @Assert\Valid()
+     */
+    private $logo;
+
+    /**
      * @ORM\OneToOne(targetEntity="Annee")
      * @Assert\NotBlank()
      */
@@ -182,17 +189,15 @@ class Ecole {
         return $this->boitePostal;
     }
 
-
     /**
      * Set anneeEnCour
      *
      * @param \School\ConfigBundle\Entity\Annee $anneeEnCour
      * @return Ecole
      */
-    public function setAnneeEnCour(\School\ConfigBundle\Entity\Annee $anneeEnCour = null)
-    {
+    public function setAnneeEnCour(\School\ConfigBundle\Entity\Annee $anneeEnCour = null) {
         $this->anneeEnCour = $anneeEnCour;
-    
+
         return $this;
     }
 
@@ -201,8 +206,31 @@ class Ecole {
      *
      * @return \School\ConfigBundle\Entity\Annee 
      */
-    public function getAnneeEnCour()
-    {
+    public function getAnneeEnCour() {
         return $this->anneeEnCour;
+    }
+
+
+    /**
+     * Set logo
+     *
+     * @param \School\ConfigBundle\Entity\Logo $logo
+     * @return Ecole
+     */
+    public function setLogo(\School\ConfigBundle\Entity\Logo $logo = null)
+    {
+        $this->logo = $logo;
+    
+        return $this;
+    }
+
+    /**
+     * Get logo
+     *
+     * @return \School\ConfigBundle\Entity\Logo 
+     */
+    public function getLogo()
+    {
+        return $this->logo;
     }
 }

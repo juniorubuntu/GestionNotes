@@ -74,7 +74,7 @@ class EvaluationController extends Controller {
 
         $subQueryBuilder = $em->createQueryBuilder();
         $subQuery = $subQueryBuilder
-                ->select('(e.student)')
+                ->select('IDENTITY(e.student)')
                 ->from('SchoolNoteBundle:Evaluation', 'e')
                 ->where('e.annee= :annee')
                 ->andWhere('e.sequence= :sequence')
