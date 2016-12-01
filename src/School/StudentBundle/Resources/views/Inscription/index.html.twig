@@ -8,48 +8,75 @@
     </nav>
     <table id="inscription" class="records_list table panel-primary">
         <thead class="panel-heading">
-            <tr>
-                <th>Id</th>
-                <th>Nom et prénom</th>
-                <th>Classe</th>
-                <th>Avance</th>
-                <th>Datederniereavance</th>
-                <th>Status</th>
-                <th>Année Académique</th>
-                <th>Détails</th>
-                <th>Modifier</th>
-            </tr>
+        <tr>
+            <th>Performance</th>
+            <th>Nom et prénom</th>
+            <th>Classe</th>
+            <th>Avance</th>
+            <th>Datederniereavance</th>
+            <th>Status</th>
+            <th>Année Académique</th>
+            <th>Détails</th>
+            <th>Profil</th>
+        </tr>
         </thead>
         <tbody>
-            {% for entity in entities %}
-                <tr>
-                    <td><a href="{{ path('inscription_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                    <td>{{ entity.student }}</td>
-                    <td>{{ entity.classe }}</td>
-                    <td>{{ entity.avance }}</td>
-                    <td>{% if entity.dateDerniereAvance %}{{ entity.dateDerniereAvance|date('d-m-Y') }}{% endif %}</td>
-                    <td>
-                        Paiement 
-                        {% if entity.status == 1 %}
-                            <b style="color: green">Complet</b>
-                        {% else %}
-                            <b style="color: red">Incomplet</b>
-                        {% endif %}
-
-                    </td>
-                    <td>{{ entity.annee }}</td>
-                    <td>
-                        <a href="{{ path('inscription_show', { 'id': entity.id }) }}">voir</a>
-                    </td>
-                    <td>
-                        {% if entity.status == 0 %}
-                            <a href="{{ path('inscription_edit', { 'id': entity.id }) }}">Modifier</a>
-                        {% else %}
-                            <b style="color: green">Termin&eacute;e</b>
-                        {% endif %}
-                    </td>
-                </tr>
-            {% endfor %}
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('student_performance', {'idEleve': entity.student.id}) }}">Perfo</a></td>
+                <td>{{ entity.student }}</td>
+                <td>{{ entity.classe }}</td>
+                <td>{{ entity.avance }}</td>
+                <td>{% if entity.dateDerniereAvance %}{{ entity.dateDerniereAvance|date('d-m-Y') }}{% endif %}</td>
+                <td>
+                    {#Paiement #}
+                    {#{% if entity.status == 1 %}#}
+                    {#<b style="color: green">Complet</b>#}
+                    {#{% else %}#}
+                    {#<b style="color: red">Incomplet</b>#}
+                    {#{% endif %}#}
+                    <ul style="list-style-type: none">
+                        <li><a class="btn-link" data-toggle="modal" data-target="#sequence-{{ entity.id }}">Profil</a>
+                            <div style=" position: center" id="sequence-{{ entity.id }}" class="modal fade">
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <span style="font-size: 1.2em;" class="text-center"><strong>Choisir une sequence</strong></span>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        </div>
+                                        <div class="col-md-12 modal-body">
+                                            {% for sequence in sequences %}
+                                                <center>
+                                                    <a href="{{path('bulletin_seq_student', {'idClasse':entity.classe.id , 'idEleve': entity.student.id, 'idSeq':sequence.id, 'idAnnee':entity.annee.id })}}" class="btn btn-green">
+                                                        <b>{{sequence}}</b>
+                                                    </a>
+                                                </center>
+                                            {% endfor %}
+                                            <hr>
+                                            <button type="button" class="btn btn-red pull-right" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign"></span>Annuler</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </td>
+                <td>{{ entity.annee }}</td>
+                <td>
+                    <a class="btn btn-info" href="{{ path('inscription_show', { 'id': entity.id }) }}">
+                        <i class="glyphicon glyphicon-eye-open "></i></a>
+                    {% if entity.status == 0 %}
+                        <a class="btn btn-success" href="{{ path('inscription_edit', { 'id': entity.id }) }}">
+                            <i class="glyphicon glyphicon-edit "></i>
+                        </a>
+                    {% else %}
+                        <b style="color: green">Termin&eacute;e</b>
+                    {% endif %}
+                </td>
+                <td>
+                </td>
+            </tr>
+        {% endfor %}
         </tbody>
     </table>
 

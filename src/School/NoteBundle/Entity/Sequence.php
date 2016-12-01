@@ -33,6 +33,8 @@ class Sequence {
      */
     private $nom;
 
+    private $listeCategories;
+
     /**
      * Get id
      *
@@ -61,6 +63,29 @@ class Sequence {
      */
     public function getNom() {
         return $this->nom;
+    }
+
+    /**
+     * Set listeCategories
+     *
+     * @param boolean $listeCategories
+     * @return Inscription
+     */
+    public function setListeCategories($listeCategories)
+    {
+        $this->listeCategories = $listeCategories;
+
+        return $this;
+    }
+
+    /**
+     * Get listeCategories
+     *
+     * @return boolean
+     */
+    public function getListeCategories()
+    {
+        return $this->listeCategories;
     }
 
 }

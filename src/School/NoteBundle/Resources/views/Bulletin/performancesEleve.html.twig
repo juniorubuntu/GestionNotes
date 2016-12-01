@@ -1,0 +1,42 @@
+<table border="1">
+    <thead>
+        <th></th>
+    {% for categorie in listCategories %}
+        <th>{{ categorie.nom }}</th>
+    {% endfor %}
+    </thead>
+    <tbody>
+    {% for inscription in inscriptions %}
+        <tr>
+            <td>{{ inscription.annee.anneeScolaire }}({{ inscription.classe.nom }})</td>
+            {% for categorie  in listeSequences[0].listeCategories %}
+            <td>
+                {% set moySeq = 0 %}
+                    {% for sequence  in listeSequences %}
+                        {{ sequence.nom }}
+                        {% set totalCat = 0 %}
+                        {% set totalCoeff = 0 %}
+                        {% for cat  in sequence.listeCategories %}
+                            {% if cat == categorie %}
+                                {% for  matiere in cat.listeMatieres %}
+                                    {% if matiere is not null %}
+                                        {% if matiere.evaluationSeq is not null %}
+                                            {% set totalCat = totalCat + (matiere.evaluationSeq[0].note * matiere.evaluationSeq[0].index.coefficient )  %}
+                                            {% set totalCoeff = totalCoeff +  matiere.evaluationSeq[0].index.coefficient  %}
+                                            {{ matiere.evaluationSeq[0].note }}
+                                        {% endif %}
+                                        {% set moySeq =  moySeq +  (totalCat / totalCoeff) %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                {% set  moyAnn = moySeq /listeSequences |length  %}
+                MoyAnn: {{ moyAnn | number_format(2) }}
+            </td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+
+</table>

@@ -63,7 +63,10 @@ class Inscription {
      */
     private $status;
 
-    private $listeSequences;
+    /**
+     * @ORM\Column(name="toto", type="boolean")
+     */
+    private $listeCategories;
 
     /**
      * Get id
@@ -200,27 +203,4 @@ class Inscription {
         return $this->annee;
     }
 
-
-    /**
-     * Set listeCategories
-     *
-     * @param boolean $listeCategories
-     * @return Inscription
-     */
-    public function setListeSequences($listeSequences)
-    {
-        $this->listeSequences = $listeSequences;
-
-        return $this;
-    }
-
-    /**
-     * Get listeCategories
-     *
-     * @return boolean 
-     */
-    public function getListeSequences()
-    {
-        return $this->listeSequences;
-    }
 }

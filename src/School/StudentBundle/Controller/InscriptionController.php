@@ -23,9 +23,10 @@ class InscriptionController extends Controller {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('SchoolStudentBundle:Inscription')->findAll();
-
+        $sequences= $em->getRepository('SchoolNoteBundle:Sequence')->findAll();
         return $this->render('SchoolStudentBundle:Inscription:index.html.twig', array(
-                    'entities' => $entities,
+            'entities' => $entities,
+            'sequences' => $sequences,
         ));
     }
 

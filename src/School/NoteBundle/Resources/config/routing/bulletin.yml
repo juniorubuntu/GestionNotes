@@ -9,3 +9,17 @@ bulletin_seq_student:
         idEleve: \d+
         idSeq: \d+
         idClasse: \d+
+
+
+student_performance:
+    path:     /performances/eleve-{idEleve}
+    defaults: { _controller: "SchoolNoteBundle:Bulletin:performances" }
+    requirements:
+        idEleve: \d+
+
+bulletin_seq_classe:
+    path:     /classe-{idClasse}/sequence-{idSeq}/annee-{idAnnee}
+    defaults: { _controller: "SchoolNoteBundle:Bulletin:bulletinClasse" }
+    requirements:
+        idSeq: \d+
+        idClasse: \d+

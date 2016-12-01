@@ -74,7 +74,7 @@ class EvaluationController extends Controller {
 
         $subQueryBuilder = $em->createQueryBuilder();
         $subQuery = $subQueryBuilder
-                ->select('(e.student)')
+                ->select('IDENTITY(e.student)')
                 ->from('SchoolNoteBundle:Evaluation', 'e')
                 ->where('e.annee= :annee')
                 ->andWhere('e.sequence= :sequence')
@@ -139,6 +139,7 @@ class EvaluationController extends Controller {
                     $evaluation->setStudent($elev);
                     $evaluation->setMatiere($matiere);
                     $evaluation->setAnnee($anneeEnCour);
+                    $evaluation->setClasse($classe);
                     $em->persist($evaluation);
                     $em->flush();
                 }
@@ -194,6 +195,7 @@ class EvaluationController extends Controller {
                     $eval->setStudent($eval->getStudent());
                     $eval->setMatiere($matiere);
                     $eval->setAnnee($ecole->getAnneeEnCour());
+                    $eval->setClasse($classe);
                     $em->flush();
                 }
             }
