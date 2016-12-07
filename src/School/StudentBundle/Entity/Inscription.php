@@ -63,7 +63,7 @@ class Inscription {
      */
     private $status;
 
-    private $listeSequences;
+    protected $listeEvaluations = array();
 
     /**
      * Get id
@@ -201,26 +201,14 @@ class Inscription {
     }
 
 
-    /**
-     * Set listeCategories
-     *
-     * @param boolean $listeCategories
-     * @return Inscription
-     */
-    public function setListeSequences($listeSequences)
-    {
-        $this->listeSequences = $listeSequences;
-
-        return $this;
+    public function setListeEvaluations($listeEvaluations){
+        $this->listeEvaluations = $listeEvaluations;
     }
 
-    /**
-     * Get listeCategories
-     *
-     * @return boolean 
-     */
-    public function getListeSequences()
-    {
-        return $this->listeSequences;
+
+    public function getListeEvaluations(){
+        return $this->listeEvaluations;
     }
+
+
 }

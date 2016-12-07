@@ -2,6 +2,7 @@
 
 namespace School\NoteBundle\Controller;
 
+use School\MatiereBundle\Entity\Categorie;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use School\NoteBundle\Entity\Evaluation;
@@ -11,6 +12,7 @@ use School\ConfigBundle\Entity\Constante;
 use School\StudentBundle\Entity\Inscription;
 use School\MatiereBundle\Entity\EstDispense;
 use School\MatiereBundle\Entity\Matiere;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Description of BulletinController
@@ -91,19 +93,38 @@ class BulletinController extends Controller {
                     )
                 )->getEnseignant();
 
-            return $this->render('SchoolNoteBundle:Bulletin:bulletinSeq.html.twig', array(
+            $html =  $this->renderView('SchoolNoteBundle:Bulletin:bulletins.html.twig', array(
                 'ecole' => $ecole,
                 'pays' => $pays,
                 'listCategories' => $listCategorie,
                 'student' => $eleve,
                 'annee' => $anneeScolaire,
                 'Allstudent' => $Allstudent,
-                'titulaire' => $titulaire
+                'titulaire' => $titulaire,
+                'classe' => $classe,
             ));
+
+            $html2pdf = new \Html2Pdf_Html2Pdf('P','A4','fr');
+            $html2pdf->pdf->SetAuthor('GreenSoft');
+            $html2pdf->pdf->SetTitle('Bulletin');
+            $html2pdf->pdf->SetSubject('Bulletin Sequentiel');
+            $html2pdf->pdf->SetKeywords('Classe, Elève, Bulletin, Notes, Séquence');
+            $html2pdf->pdf->SetDisplayMode('real');
+            $html2pdf->writeHTML($html);
+
+            $content = $html2pdf->Output('', true);
+            $response = new Response();
+            $response->setContent($content);
+            //$response->headers->set('Content-Type', 'application/force-download');
+            $response->headers->set('Content-Type', 'application/pdf');
+            $response->headers->set('Content-disposition', 'filename=BulletinsSequentiels.pdf');
+            return $response;
+
         } else {
             return $this->render('SchoolNoteBundle:Error:error.html.twig');
         }
     }
+
 
     public function bulletinClasseAction($idSeq, $idAnnee, $idClasse) {
         $school = $this->getDoctrine()->getRepository('SchoolConfigBundle:Ecole')->findAll();
@@ -113,28 +134,28 @@ class BulletinController extends Controller {
         $classe = $this->getDoctrine()->getRepository('SchoolStudentBundle:Classe')->find($idClasse);
         $sequence = $this->getDoctrine()->getRepository('SchoolNoteBundle:Sequence')->find($idSeq);
         $anneeScolaire = $this->getDoctrine()->getRepository('SchoolConfigBundle:Annee')->find($idAnnee);
-        $AllstudentsteEleve = $this->getDoctrine()->getRepository('SchoolStudentBundle:Inscription')
-            ->findBy
-            (
+        $AllstudentsteEleve = $this->getDoctrine()->getRepository('SchoolStudentBundle:Inscription')->findBy(
                 array
                 (
                     'classe' => $classe,
                     'annee' => $anneeScolaire
                 )
             );
-        $notes = [];
-        foreach ($AllstudentsteEleve as $eleve) {
-            if (($sequence != NULL) && ($anneeScolaire != NULL) && ($classe != NULL)) {
-                $listCategorie = $this->getDoctrine()->getRepository('SchoolMatiereBundle:Categorie')->findAll();
-                $dispense = $this->getDoctrine()->getRepository('SchoolMatiereBundle:EstDispense')
-                    ->findBy(
+        $nbreEleve = count($AllstudentsteEleve);
+        $listCategorie = [$nbreEleve];
+        if (($sequence != NULL) && ($anneeScolaire != NULL) && ($classe != NULL)) {
+            //$i = 0;
+            //foreach ($AllstudentsteEleve as &$eleve) {
+            $notes = [];
+            for ($i = 0; $i < count($AllstudentsteEleve); $i++) {
+                $listCategorie[$i] = $this->getDoctrine()->getRepository('SchoolMatiereBundle:Categorie')->findAll();
+                $dispense = $this->getDoctrine()->getRepository('SchoolMatiereBundle:EstDispense')->findBy(
                         array(
                             'annee' => $anneeScolaire,
                             'classe' => $classe,
-                        )
-                    );
+                        ));
                 $listeMatieres = [];
-                foreach ($listCategorie as $categorie) {
+                foreach ($listCategorie[$i] as $categorie) {
                     foreach ($dispense as $enseign) {
                         if ($categorie == $enseign->getMatiere()->getCategorie()) {
                             $listeMatieres[] = $enseign->getMatiere();
@@ -146,12 +167,12 @@ class BulletinController extends Controller {
                             ->findBy(
                                 array(
                                     'annee' => $anneeScolaire,
-                                    'student' => $eleve,
+                                    'student' => $AllstudentsteEleve[$i]->getStudent(),
                                     'sequence' => $sequence,
                                     'matiere' => $matiere
                                 )
                             );
-                        foreach ($evaluationSeq as $note) {
+                        foreach ($evaluationSeq as &$note) {
                             $note->setIndex($this->getDoctrine()->getRepository('SchoolMatiereBundle:EstDispense')
                                 ->findOneBy(array(
                                     'annee' => $anneeScolaire,
@@ -162,28 +183,47 @@ class BulletinController extends Controller {
                         }
                         $categorie->setListeMatieres($listeMatieres);
                     }
-                    $notes[] = $listCategorie;
                     $listeMatieres = [];
                 }
-                $titulaire = $this->getDoctrine()->getRepository('SchoolMatiereBundle:EstDispense')
-                    ->findOneBy(
-                        array(
-                            'annee' => $anneeScolaire,
-                            'classe' => $classe,
-                            'titulaire' => true
-                        )
-                    )->getEnseignant();
-            } else {
-                return $this->render('SchoolNoteBundle:Error:error.html.twig');
+                $notes[] =   $listCategorie[$i];
             }
-            return $this->render('SchoolNoteBundle:Bulletin:bulletinSeqClasse.html.twig', array(
+
+            $titulaire = $this->getDoctrine()->getRepository('SchoolMatiereBundle:EstDispense')->findOneBy(
+                    array(
+                        'annee' => $anneeScolaire,
+                        'classe' => $classe,
+                        'titulaire' => true
+                    )
+                )->getEnseignant();
+
+            $html = $this->renderView('SchoolNoteBundle:Bulletin:bulletinSeqClasse.html.twig', array(
                 'ecole' => $ecole,
                 'pays' => $pays,
-                'note' => $notes,
                 'annee' => $anneeScolaire,
                 'Allstudent' => $AllstudentsteEleve,
-                'titulaire' => $titulaire
+                'titulaire' => $titulaire,
+                'notes' => $notes,
+                'sequence' => $sequence
             ));
+
+
+            $html2pdf = new \Html2Pdf_Html2Pdf('P', 'A4', 'fr');
+            $html2pdf->pdf->SetAuthor('GreenSoft-Team');
+            $html2pdf->pdf->SetTitle('Bulletins' . ' ' . $sequence->getNom());
+            $html2pdf->pdf->SetSubject('Bulletin Sequentiel');
+            $html2pdf->pdf->SetKeywords('Classe, Elève, Bulletin, Notes, Séquence');
+            $html2pdf->pdf->SetDisplayMode('real');
+            $html2pdf->writeHTML($html);
+
+            $content = $html2pdf->Output('', true);
+            $response = new Response();
+            $response->setContent($content);
+            //$response->headers->set('Content-Type', 'application/force-download');
+            $response->headers->set('Content-Type', 'application/pdf');
+            $response->headers->set('Content-disposition', 'filename=Bulletins.pdf');
+            return $response;
+        }else {
+            return $this->render('SchoolNoteBundle:Error:error.html.twig');
         }
     }
 
