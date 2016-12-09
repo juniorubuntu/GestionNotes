@@ -19,7 +19,7 @@ student_performance:
 
 bulletin_seq_classe:
     path:     /classe-{idClasse}/sequence-{idSeq}/annee-{idAnnee}
-    defaults: { _controller: "SchoolNoteBundle:Bulletin:bulletinClasse" }
+    defaults: { _controller: "SchoolNoteBundle:Bulletin:bulletinTestClasse" }
     requirements:
         idSeq: \d+
         idClasse: \d+
