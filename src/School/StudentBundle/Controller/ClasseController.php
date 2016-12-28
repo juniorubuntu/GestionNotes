@@ -4,7 +4,6 @@ namespace School\StudentBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use School\StudentBundle\Entity\Classe;
 use School\StudentBundle\Form\ClasseType;
 
@@ -12,29 +11,29 @@ use School\StudentBundle\Form\ClasseType;
  * Classe controller.
  *
  */
-class ClasseController extends Controller
-{
+class ClasseController extends Controller {
 
     /**
      * Lists all Classe entities.
      *
      */
-    public function indexAction()
-    {
+    public function indexAction() {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('SchoolStudentBundle:Classe')->findAll();
+        $listSequence = $em->getRepository('SchoolNoteBundle:Sequence')->findAll();
 
         return $this->render('SchoolStudentBundle:Classe:index.html.twig', array(
-            'entities' => $entities,
+                    'entities' => $entities,
+                    'listSequence' => $listSequence
         ));
     }
+
     /**
      * Creates a new Classe entity.
      *
      */
-    public function createAction(Request $request)
-    {
+    public function createAction(Request $request) {
         $entity = new Classe();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
@@ -48,8 +47,8 @@ class ClasseController extends Controller
         }
 
         return $this->render('SchoolStudentBundle:Classe:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
+                    'entity' => $entity,
+                    'form' => $form->createView(),
         ));
     }
 
@@ -60,8 +59,7 @@ class ClasseController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Classe $entity)
-    {
+    private function createCreateForm(Classe $entity) {
         $form = $this->createForm(new ClasseType(), $entity, array(
             'action' => $this->generateUrl('classe_create'),
             'method' => 'POST',
@@ -76,14 +74,13 @@ class ClasseController extends Controller
      * Displays a form to create a new Classe entity.
      *
      */
-    public function newAction()
-    {
+    public function newAction() {
         $entity = new Classe();
-        $form   = $this->createCreateForm($entity);
+        $form = $this->createCreateForm($entity);
 
         return $this->render('SchoolStudentBundle:Classe:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
+                    'entity' => $entity,
+                    'form' => $form->createView(),
         ));
     }
 
@@ -91,8 +88,7 @@ class ClasseController extends Controller
      * Finds and displays a Classe entity.
      *
      */
-    public function showAction($id)
-    {
+    public function showAction($id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('SchoolStudentBundle:Classe')->find($id);
@@ -104,8 +100,8 @@ class ClasseController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('SchoolStudentBundle:Classe:show.html.twig', array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
+                    'entity' => $entity,
+                    'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -113,8 +109,7 @@ class ClasseController extends Controller
      * Displays a form to edit an existing Classe entity.
      *
      */
-    public function editAction($id)
-    {
+    public function editAction($id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('SchoolStudentBundle:Classe')->find($id);
@@ -127,21 +122,20 @@ class ClasseController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('SchoolStudentBundle:Classe:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+                    'entity' => $entity,
+                    'edit_form' => $editForm->createView(),
+                    'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-    * Creates a form to edit a Classe entity.
-    *
-    * @param Classe $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(Classe $entity)
-    {
+     * Creates a form to edit a Classe entity.
+     *
+     * @param Classe $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createEditForm(Classe $entity) {
         $form = $this->createForm(new ClasseType(), $entity, array(
             'action' => $this->generateUrl('classe_update', array('id' => $entity->getId())),
             'method' => 'PUT',
@@ -151,12 +145,12 @@ class ClasseController extends Controller
 
         return $form;
     }
+
     /**
      * Edits an existing Classe entity.
      *
      */
-    public function updateAction(Request $request, $id)
-    {
+    public function updateAction(Request $request, $id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('SchoolStudentBundle:Classe')->find($id);
@@ -176,17 +170,17 @@ class ClasseController extends Controller
         }
 
         return $this->render('SchoolStudentBundle:Classe:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+                    'entity' => $entity,
+                    'edit_form' => $editForm->createView(),
+                    'delete_form' => $deleteForm->createView(),
         ));
     }
+
     /**
      * Deletes a Classe entity.
      *
      */
-    public function deleteAction(Request $request, $id)
-    {
+    public function deleteAction(Request $request, $id) {
         $form = $this->createDeleteForm($id);
         $form->handleRequest($request);
 
@@ -212,13 +206,13 @@ class ClasseController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm($id)
-    {
+    private function createDeleteForm($id) {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('classe_delete', array('id' => $id)))
-            ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
-            ->getForm()
+                        ->setAction($this->generateUrl('classe_delete', array('id' => $id)))
+                        ->setMethod('DELETE')
+                        ->add('submit', 'submit', array('label' => 'Delete'))
+                        ->getForm()
         ;
     }
+
 }

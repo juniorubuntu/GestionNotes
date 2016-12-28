@@ -37,6 +37,13 @@
                             <li><a href="{{ path('matiere')}}"><i class="glyphicon glyphicon-user"></i> Liste des matières</a></li>
                         </ul>
                     </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-calendar"></i> Gestion des absences<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('absence')}}"><i class="glyphicon glyphicon-tasks"></i> Liste des absences</a></li>
+                            <li><a href="{{ path('absence_new')}}"><i class="glyphicon glyphicon-tasks"></i> Insérer les absences</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <p class="navbar-text navbar-right">
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
@@ -75,7 +82,7 @@
                         <div class="panel btn-blue">
                             <b style="text-align: left"><span style="color: orange; font-size: 18px" class="glyphicon glyphicon-folder-open"></span> {{dispense.classe}}</b>
                         </div>
-                        <ol class="">
+                        <ol class="{% if dispense.titulaire == app.user %}alert-info{% endif %}">
                             <li><a class="btn-link" data-toggle="modal" data-target="#sequence_{{dispense.id}}">Remplir les notes</a>
                                 <div id="sequence_{{dispense.id}}" class="modal fade">
                                     <div class="modal-dialog modal-sm">
@@ -124,9 +131,35 @@
                             </li>
                             <li><a href="">Exporter les notes en PDF</a></li>
                             <li><a href="">Générer les statistiques</a></li>
+                                {% if dispense.titulaire == app.user %}
+                                <li><a class="btn-link" data-toggle="modal" data-target="#bulletin_{{dispense.id}}" href="">Générer les bulletins</a></li>
+                                <div id="bulletin_{{dispense.id}}" class="modal fade">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <center><b>Choisir la séquence</b></center>
+                                            </div>
+                                            <div class="col-md-12 modal-body">
+                                                {% for sequence in listSequence %}
+                                                    <center>
+                                                        <a href="{{path('bulletin_seq_classe', {'idClasse':dispense.classe.id , 'idSeq': sequence.id, 'idAnnee':dispense.annee.id })}}" class="btn btn-green">
+                                                            <b>{{sequence}}</b>
+                                                        </a>
+                                                    </center>
+                                                {% endfor %}
+                                                <hr>
+                                                <button type="button" class="btn btn-red pull-right" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign"></span>Annuler</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% else%}
+                                ..
+                            {% endif %}
                         </ol>
                         <div class="pull-right">
-                            Matière: <i style="color: forestgreen">{{dispense.matiere}}</i>
+                            Matière: <span style="color: forestgreen">{{dispense.matiere}}</span>
                         </div>
                     </div>
                 </div>

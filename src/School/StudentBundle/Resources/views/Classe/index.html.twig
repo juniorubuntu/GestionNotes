@@ -13,6 +13,7 @@
                 <th>Nom</th>
                 <th>Classe Père</th>
                 <th>Abreviation</th>
+                <th>Marquer les élèves absents</th>
                 <th>Détails</th>
                 <th>Modifier</th>
             </tr>
@@ -24,6 +25,30 @@
                     <td>{{ entity.nom }}</td>
                     <td>{{ entity.classePere }}</td>
                     <td>{{ entity.abreviation }}</td>
+                    <td>
+                        <a class="btn-link" data-toggle="modal" data-target="#seq_{{entity.id}}" class="btn btn-blue"><span class="glyphicon glyphicon-calendar"></span> Insérer</a>
+                        <div id="seq_{{entity.id}}" class="modal fade">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <center><b>Choisir la séquence</b></center>
+                                    </div>
+                                    <div class="col-md-12 modal-body">
+                                        {% for sequence in listSequence %}
+                                            <center>
+                                                <a href="{{path('absence_classe', {'idClasse':entity.id , 'idSeq': sequence.id })}}" class="btn btn-green">
+                                                    <b>{{sequence}}</b>
+                                                </a>
+                                            </center>
+                                        {% endfor %}
+                                        <hr>
+                                        <button type="button" class="btn btn-red pull-right" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign"></span>Annuler</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td>
                         <a href="{{ path('classe_show', { 'id': entity.id }) }}">Voir</a>
                     </td>

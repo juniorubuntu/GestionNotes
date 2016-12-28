@@ -108,7 +108,7 @@ class BulletinController extends Controller {
             $html2pdf->pdf->SetAuthor('GreenSoft');
             $html2pdf->pdf->SetTitle('Bulletin');
             $html2pdf->pdf->SetSubject('Bulletin Sequentiel');
-            $html2pdf->pdf->SetKeywords('Classe, El�ve, Bulletin, Notes, S�quence');
+            $html2pdf->pdf->SetKeywords('Classe, Elï¿½ve, Bulletin, Notes, Sï¿½quence');
             $html2pdf->pdf->SetDisplayMode('real');
             $html2pdf->writeHTML($html);
 
@@ -209,7 +209,7 @@ class BulletinController extends Controller {
             $html2pdf->pdf->SetAuthor('GreenSoft-Team');
             $html2pdf->pdf->SetTitle('Bulletins' . ' ' . $sequence->getNom());
             $html2pdf->pdf->SetSubject('Bulletin Sequentiel');
-            $html2pdf->pdf->SetKeywords('Classe, El�ve, Bulletin, Notes, S�quence');
+            $html2pdf->pdf->SetKeywords('Classe, Elï¿½ve, Bulletin, Notes, Sï¿½quence');
             $html2pdf->pdf->SetDisplayMode('real');
             $html2pdf->writeHTML($html);
 
@@ -348,6 +348,7 @@ class BulletinController extends Controller {
                 $listeMatieres = [];
             }
             $bullEleve = '';
+            $tabMoy = [];
             foreach ($AllstudentsteEleve as $inscription) {
                 $eleve = $inscription->getStudent();
                 foreach ($listCategorie as $categorie) {
@@ -376,14 +377,13 @@ class BulletinController extends Controller {
                 }
 
 
-                $bullEleve .= '
-<page backtop="10mm" backleft="10mm" backright="10mm" backbottom="10mm" footer="page;">
-    <page_footer>
-        <hr />
-        <p>GreenSoft-Team</p>
-    </page_footer>
-    <table>
-        <tr>
+                $bullEleve .= '<page backtop="10mm" backleft="10mm" backright="10mm" backbottom="10mm" footer="page;">
+            <page_footer>
+                <hr />
+                <p>GreenSoft-Team</p>
+            </page_footer>
+               <table>
+                <tr>
             <td class="40p">
                 ' . $pays->getMinistereFrancais() . '<br/>
                 ' . $ecole->getNomFrancais() . '<br/>
@@ -397,148 +397,233 @@ class BulletinController extends Controller {
                 ' . $pays->getDeviseFrancais() . '<br/>
             </td>
         </tr>
-    </table>
-    <table class="info1" style="margin-top: 10px;">
-        <tr>
-            <td class="25p" style="text-align: left;"><strong>' . $anneeScolaire->getAnneeScolaire() . '</strong></td>
-            <td class="50p" style="text-align: center;font-size: 1.2em"><strong>BULLETIN DE NOTES</strong></td>
-            <td class="25p" style="text-align: right;"><strong>' . $sequence->getNom() . '</strong></td>
-        </tr>
-    </table>
-    <table class="info">
-        <tr>
-            <td rowspan="2"  style="text-align: left;border-top: none" class="10p">';
+            </table>
+            <table class="info1" style="margin-top: 10px;">
+                <tr>
+                    <td class="25p" style="text-align: left;"><strong>' . $anneeScolaire->getAnneeScolaire() . '</strong></td>
+                    <td class="50p" style="text-align: center; font-size: 1.2em"><strong>BULLETIN DE NOTES</strong></td>
+                    <td class="25p" style="text-align: right;"><strong>' . $sequence->getNom() . '</strong></td>
+                </tr>
+            </table>';
+                $bullEleve .='
+            <table class="info">
+                <tr>
+                    <td rowspan="2"  style="text-align: left; border-top: none" class="10p">';
                 if ($eleve->getPhoto() != NULL) {
                     $bullEleve.= '<img style="height: 90px;width: 80px;" src="uploads/images/' . $eleve->getPhoto()->getId() . '.' . $eleve->getPhoto()->getUrl() . '" alt="' . $eleve->getNom() . '" title="' . $eleve->getNom() . '">';
                 }
-                $bullEleve.= '
-            </td>
-            <td class = "25p" style = "text-align: left;border-top: none" > Elève: <b>' . $eleve->getNom() . '</b></td>
-            <td class = "25p" style = "text-align: left;border-top: none" >Né(e) le:<b> ' . $eleve->getDateNaissance()->format('Y-m-d') . '</b><br> A <b> ' . $eleve->getLieuNaissance() . '</b></td>
-            <td class = "15p" style = "text-align: left;border-top:none;">Matricule: <b>' . $eleve->getMatricule() . '</b></td>
-            <td class = "15p" style = "text-align: left;border-top: none">Sexe: <b>' . $eleve->getSexe() . '</b></td>
-        </tr>
-        <tr>
-            <td class = "25p" style = "text-align: left;">Titulaire: <b>' . $titulaire->getNom() . '</b></td>
-            <td class = "25p" style = "text-align: left">Classe: <b>' . $eleve->getClasse()->getAbreviation() . '</b></td>
-            <td class = "25p" style = "text-align: left">Eff: <b>' . count($AllstudentsteEleve) . '</b></td>
-            <td></td>
-        </tr>
-    </table>
-    <table class ="notes" style ="margin-top: 15px;">
-        <tr>
-            <th class = "20p" style = "background: white;" >Disciplines</th>
-            <th class = "20p" style = "background: white;">Enseignants</th>
-            <th class = "10p" style = "background: white;">M./20</th>
-            <th class = "10p" style = "background: white;">Coef.</th>
-            <th class = "10p" style = "background: white;">Total</th>
-            <th class = "15p" style = "background: white;">Rang</th>
-            <th class = "15p" style = "background: white;">Mention</th>
-        </tr>';
+                $bullEleve .='
+                    </td>
+                    <td class="20p" style="text-align: left; border-top: none">El&egrave;ve: <b>' . strtoupper($eleve->getNom()) . '</b></td>
+                    <td class="20p" style="text-align: left; border-top: none">
+                        N&eacute;(e) le:<b>' . $eleve->getDateNaissance()->format('Y-m-d') . '</b><br> A <b> ' . $eleve->getLieuNaissance() . '</b>
+                    </td>
+                    <td class="15p" style="text-align: left; border-top:none; ">Matricule:  <b>' . $eleve->getMatricule() . '</b></td>
+                    <td class="15p"  style="text-align: left; border-top: none">Sexe: <b>' . $eleve->getSexe() . '</b></td>
+                </tr>
+                <tr>
+                    <td class="25p" style="text-align: left;" >Titulaire: <b>' . $titulaire->getNom() . '</b></td>
+                    <td class="25p" colspan="2" style="text-align: left">Classe:  <b>' . $eleve->getClasse()->getAbreviation() . '</b></td>
+                    <td class="25p"  style="text-align: left">Eff: <b>' . count($AllstudentsteEleve) . '</b></td>
+                </tr>
+            </table>';
+                $bullEleve .='
+            <table class="notes" style="margin-top: 15px;" align="center">
+                <tr>
+                    <th class="20p" style="background: white;" >Disciplines</th>
+                    <th class="20p" style="background: white;">Enseignants</th>
+                    <th class="5p" style="background: white;">M./20</th>
+                    <th class="5p" style="background: white;">Coef.</th>
+                    <th class="10p" style="background: white;">Total</th>
+                    <th class="5p" style="background: white;">Rang</th>
+                    <th class="15p" style="background: white;">Mention</th>
+                </tr>';
                 $somNote = $somCoef = 0;
                 foreach ($listCategorie as $categorie) {
                     $somCoefCat = $somTotalCat = 0;
 
                     foreach ($categorie->getListeMatieres() as $matiere) {
-                        $bullEleve.='
-        <tr>
-            <td>
-            ';
+                        $bullEleve .= '
+                        <tr>
+                            <td>';
                         if ($matiere->getTaille() > 13) {
-                            $bullEleve.=$matiere->getAbreviation();
+                            $bullEleve .= $matiere->getNom();
                         } else {
-                            $bullEleve.=$matiere->getNom();
+                            $bullEleve .= $matiere->getNom();
                         }
-                        $bullEleve.= '
-            </td>
-        <td>';
+                        $bullEleve .= '
 
+                            </td>
+                            <td>';
                         if ($matiere->getEvaluationSeq() != NULL) {
-                            $bullEleve.= $matiere->getEvaluationSeq()->getIndex()->getEnseignant();
+                            $bullEleve .= $matiere->getEvaluationSeq()->getIndex()->getEnseignant();
                         }
-                        $bullEleve.='
-        </td>
-        <td>';
+                        $bullEleve .= '
+
+                            </td>
+                            <td>';
                         if ($matiere->getEvaluationSeq() != NULL) {
-                            $bullEleve.=$matiere->getEvaluationSeq()->getNote();
+                            $note = $matiere->getEvaluationSeq()->getNote();
+                            $bullEleve .= $matiere->getEvaluationSeq()->getNote();
                         }
-                        $bullEleve.='
-        </td>
-        <td>';
+                        $bullEleve .= '
+                            </td>
+                            <td>';
                         if ($matiere->getEvaluationSeq() != NULL) {
                             $somCoefCat = $somCoefCat + $matiere->getEvaluationSeq()->getIndex()->getCoefficient();
                             $somCoef = $somCoef + $matiere->getEvaluationSeq()->getIndex()->getCoefficient();
 
-                            $bullEleve.=$matiere->getEvaluationSeq()->getIndex()->getCoefficient();
+                            $bullEleve .= $matiere->getEvaluationSeq()->getIndex()->getCoefficient();
                         }
-                        $bullEleve.='
-        </td>
-        <td>';
+                        $bullEleve .= '
+                            </td>
+                            <td>';
                         if ($matiere->getEvaluationSeq() != NULL) {
                             $total = $matiere->getEvaluationSeq()->getIndex()->getCoefficient() * $matiere->getEvaluationSeq()->getNote();
 
-                            $bullEleve.= $total;
+                            $bullEleve .= $total;
                             $somTotalCat = $somTotalCat + $total;
                             $somNote = $somNote + $total;
                         }
-                        $bullEleve.='
-            </td>
-            <td>Rang</td>
-            <td>Mention</td>
-        </tr>';
-                    }
-                    $bullEleve.='
-        <tr style = "border: 2px solid black;">
-            <td style = "font-size: 10px;border-right: none"><strong><i>' . $categorie->getNom() . '</i></strong></td>
-            <td style = "border-right: none"></td>
-            <td style = "border-left: none"></td>
-            
-            <td><b>' . $somCoefCat . '</b> </td>
-            <td>M:<b>';
-                    if ($somCoefCat > 0) {
-                        $bullEleve.= number_format($somTotalCat / $somCoefCat, 2, ',', ' ');
-                    } else {
-                        $bullEleve.='/';
-                    }
-                    $bullEleve.='</b>
-            </td>
+                        $bullEleve .= '
 
-            <td><b>Rang</b></td>
-            <td><strong>Mention</strong></td>
-        </tr>';
+                            </td>
+                            <td>
+                                Rang
+                            </td>
+                            <td>';
+                        if ($matiere->getEvaluationSeq() != NULL) {
+                            $bullEleve .= $this->getMention($note);
+                        }
+                        $bullEleve.='
+                            </td>
+                        </tr>';
+                    }
+                    $bullEleve .= '
+                    <tr style="border: 2px solid black; background: wheat;">
+                        <td  style="font-size: 14px; border-right: none">
+                            <strong><i>' . $categorie->getNom() . '</i></strong>
+                        </td>
+                        <td style="border-right: none"></td>
+                        <td style="border-left: none"></td>
+                        <td>
+                            <b>' . $somCoefCat . '</b>
+                        </td>
+                        <td>
+                            M:
+                            <b>';
+                    if ($somCoefCat > 0) {
+                        $moyPart = number_format($somTotalCat / $somCoefCat, 2, ',', ' ');
+                        $bullEleve .= number_format($somTotalCat / $somCoefCat, 2, ',', ' ');
+                    } else {
+                        $bullEleve .= '/';
+                    }
+                    $bullEleve .= '
+                            </b>
+                        </td>
+                        <td>
+                            <b>Rang</b>
+                        </td>
+                        <td style="color: blue"><strong>';
+                    if ($somCoefCat != 0) {
+                        $bullEleve.= $this->getMention($moyPart);
+                    }
+                    $bullEleve.=
+                            '</strong>
+                        </td>
+                    </tr>';
+                }
+                $abs = $this->getDoctrine()->getRepository('SchoolStudentBundle:Absence')
+                        ->findOneBy(
+                        array(
+                            'student' => $inscription,
+                            'anneeScolaire' => $anneeScolaire,
+                            'sequence' => $sequence
+                        )
+                );
+                $absence = '';
+                if ($abs == NULL) {
+                    $absence = 0;
+                } else {
+                    $absence = $abs->getNbreAbsence();
                 }
                 $bullEleve.='
-    </table>
-    <table class = "conduite" style = "margin-top: 15px">
-        <tr style = "border: 2px solid black;font-size: 11px;">
-            <td class = "25p"><b><u>Total des absences</u>:</b>12</td>
-            <td class = "25p"><b><u>Absences non justifi & eacute;s</u>:</b>5</td>
-            <td class = "25p"><b><u > D & eacute;cision du conseil</u>:</b>Dois faire attention aux abscences</td>
-            <td class = "25p"><b><u>Conduite:</u></b><br/>Conduite aceptable</td>
-        </tr>
-    </table>
-    <table class = "moyenne">
-        <tr style = "border: 2px solid black;">
-            <td class = "20p"><b><u>Moy. de la classe</u>:</b>09.45</td>
-            <td class = "30p"><u>Moy. de l\' & eacute;l&egrave;ve</u>:<b>';
+            </table>
+            <table class="conduite" style="margin-top: 15px">
+                <tr style="border: 2px solid black; font-size: 11px;">
+                    <td class="25p">
+                        <b><u>Total des absences</u>:<span style="font-size: 14px">' . $absence . '</span></b>
+                    </td>
+                    <td class="25p">
+                        <b><u>Absences non justifi&eacute;s</u>:<span style="font-size: 14px">' . $absence . '</span></b>
+                    </td>
+                    <td class="25p">
+                        <u>D&eacute;cision du conseil</u>:
+                        ' . $this->decisionConseil($absence) . '
+                    </td>
+                    <td class="25p">
+                        <u>Situation de l\'élève:</u><<br/>
+                        ' . $this->situation(($inscription)) . '
+                    </td>
+                </tr>
+            </table>
+            <table class="moyenne">
+                <tr style="border: 2px solid black;">
+                    <td class="20p">
+                        <b style="color: blue;"><u>Moy. de la classe</u>: MOYENNE_GENERALE</b>
+                    </td>
+                    <td class="30p" style="color: green;">
+                        <u>Moy. de l\'&eacute;l&egrave;ve</u>:<b> ';
+                $moy = '';
                 if ($somCoef > 0) {
                     $bullEleve.= number_format($somNote / $somCoef, 2, ',', ' ');
+                    $moy = number_format($somNote / $somCoef, 2, ',', ' ');
+                    $tabMoy[] = $moy;
                 } else {
                     $bullEleve.='/';
                 }
                 $bullEleve.='
-            </b><br><b><u > Appr & eacute;ciation</u>:</b>Passable</td>
-            <td class = "10p"><b><u>RANG</u>:</b>12�me</td>
-            <td class = "40p" ><b><u>OBSERVATIONS</u></b><br/>Un éffort considérable s\'impose <br> en matière littéraires</td>
-        </tr>
-    </table>
-    <table class = "signature">
-        <tr>
-            <td class = "50p" style = "text-align: left"><u>Le parent</u><br><span style = "text-align: center;">Signature</span></td>
-            <td class = "50p" style = "text-align: right" >Fait & agrave;' . $ecole->getVille() . date('d/m/Y') . '</td>
-        </tr>
-    </table>
-</page>';
+                        </b>
+                        <br>
+                        <b><u>Appreciation: </u> ' . $this->getMention($moy) . '</b>
+                    </td>
+                    <td class="10p">
+                        <b style="color: orange"><u>RANG</u>: RANG_' . $moy . '</b>
+                </td>
+                    <td class="40p" >
+                        <b><u>OBSERVATIONS</u></b><br/>
+                        <br/><br/><br/>
+                    </td>
+                </tr>
+            </table>
+            <table class="signature">
+                <tr>
+                    <td class="50p" style="text-align: left">
+                        <u>Le parent</u><br>
+                        <span style="text-align: center;">Signature</span>
+                    </td>
+                    <td class="50p" style="text-align: right">
+                        Fait &agrave;  ' . $ecole->getVille() . ' le ' . date('d/m/Y') . '
+                    </td>
+                </tr>
+            </table>
+            </page>';
+            }
+
+            if (count($tabMoy) != 0) {
+                $moyGeneral = number_format(array_sum($tabMoy) / count($tabMoy), 2, ',', ' ');
+            } else {
+                $moyGeneral = '//';
+            }
+            $bullEleve = str_replace('MOYENNE_GENERALE', $moyGeneral, $bullEleve);
+            $taille = count($tabMoy);
+            sort($tabMoy);
+            for ($i = $taille - 1, $j = 1; $i >= 0; $i--) {
+                if ($j == 1) {
+                    $bullEleve = str_replace('RANG_' . $tabMoy[$i], ($j++) . 'er(e)', $bullEleve);
+                } else {
+                    $bullEleve = str_replace('RANG_' . $tabMoy[$i], ($j++) . 'èm(e)', $bullEleve);
+                }
             }
 
             $html = $this->renderView('SchoolNoteBundle:Bulletin:bulletinSeqClasse.html.twig', array(
@@ -554,9 +639,9 @@ class BulletinController extends Controller {
 
             $html2pdf = new \Html2Pdf_Html2Pdf('P', 'A4', 'fr');
             $html2pdf->pdf->SetAuthor('GreenSoft-Team');
-            $html2pdf->pdf->SetTitle('Bulletins' . ' ' . $sequence->getNom());
+            $html2pdf->pdf->SetTitle('Bulletins' . ' ' . $sequence->getNom() . ' ' . $classe->getNom());
             $html2pdf->pdf->SetSubject('Bulletin Sequentiel');
-            $html2pdf->pdf->SetKeywords('Classe, El�ve, Bulletin, Notes, S�quence');
+            $html2pdf->pdf->SetKeywords('Classe, Eleve, Bulletin, Notes, Sequence');
             $html2pdf->pdf->SetDisplayMode('real');
             $html2pdf->writeHTML($html);
 
@@ -570,6 +655,56 @@ class BulletinController extends Controller {
         } else {
             return $this->render('SchoolNoteBundle:Error:error.html.twig');
         }
+    }
+
+    public function getMention($note) {
+        if ($note <= 3)
+            return 'NULL';
+        if ($note < 6)
+            return 'Très Faible';
+        if ($note < 8)
+            return 'Faible';
+        if ($note < 9)
+            return 'Insuffisant';
+        if ($note < 10)
+            return 'Médiocre';
+        if ($note < 12)
+            return 'Passable';
+        if ($note < 14)
+            return 'Assez-Bien';
+        if ($note < 16)
+            return 'Bien';
+        if ($note < 18)
+            return 'Trés Bien';
+        if ($note < 20)
+            return 'Excellent';
+        if ($note == 20)
+            return 'Parfait';
+    }
+
+    public function getRang($note, $tabNote) {
+        $i;
+        $size = count($tabNote);
+        for ($i = 0; i < $size; $i++) {
+            if ($tabNote[$i] == $note)
+                return $i + 1;
+        }
+    }
+
+    public function decisionConseil($absence) {
+        $result = '<b>';
+        if ($absence < 6) {
+            $result.= 'Conduite acceptable';
+        }
+        if ($absence >= 6) {
+            $result.= 'Attention à votre conduite';
+        }
+        $result.='</b>';
+        return $result;
+    }
+
+    public function situation($eleve) {
+        return ($eleve->getStatus() == 0) ? '<b style="color: red">Insolvable</b>' : '<b style="color: gray">Solvable</b>';
     }
 
 }

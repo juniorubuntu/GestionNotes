@@ -1,0 +1,69 @@
+{% extends 'SchoolGestionBundle:Default:index.html.twig' %}
+
+{% block content %}
+    <h2>Insertion des absences de la <b>{{sequence}}</b> en classe de <b>{{classe}}</b></h2>
+    <form method="POST" action="{{path('absence_classe', {'idClasse': classe.id, 'idSeq': sequence.id})}}">
+        <table class="records_list table cell-border row-border table-hover panel-primary" id="liste">
+            <thead class="panel-heading">
+                <tr>
+                    <th>Id</th>
+                    <th>Année</th>
+                    <th>Elève </th>
+                    <th>Sexe </th>
+                    <th>Classe</th>
+                    <th>Séquence</th>
+                    <th>Valeur actuelle</th>
+                    <th>Ajouter ?</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% set compt = 1 %}
+                {% for eleve in listEleves %}
+                    <tr>
+                        <td><a href="">{{ compt }}</a></td>
+                        <td>{{ annee }}</td>
+                        <td>{{ eleve.student }}</td>
+                        <td>{{ eleve.student.sexe }}</td>
+                        <td>{{ eleve.classe.abreviation }}</td>
+                        <td>{{ sequence}}</td>
+                        <td>
+                            {% if eleve.nbreAbsence is empty %}
+                                0
+                            {% else %}
+                                {{eleve.nbreAbsence}}
+                            {%endif%}
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" value="0" min="0" name="el_{{eleve.id}}" style="width: 33%;"/>
+                        </td>
+                    </tr>
+                    {% set compt = compt + 1%}
+                {% endfor %}
+                <tr>
+                    <td>==</td>
+                    <td>==</td>
+                    <td>==</td>
+                    <td>==</td>
+                    <td>==</td>
+                    <td>==</td>
+                    <td>
+                        <button type="submit" class="btn btn-green">Enregistrer</button>
+                    </td>
+                    <td>
+                        <button type="reset" class="btn btn-blue">Annuler</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <script>
+        $('#liste').DataTable({
+            "pagingType": "full_numbers",
+            "lengthMenu": [[10, 20], [10, 20]],
+            "language": {
+                "url": "{{ asset('DataTables/French.json') }}"
+            }
+
+        });
+    </script>
+{% endblock %}

@@ -63,10 +63,7 @@ class Inscription {
      */
     private $status;
 
-    /**
-     * @ORM\Column(name="toto", type="boolean")
-     */
-    private $listeCategories;
+    protected $listeEvaluations = array();
 
     /**
      * Get id
@@ -202,5 +199,16 @@ class Inscription {
     public function getAnnee() {
         return $this->annee;
     }
+
+
+    public function setListeEvaluations($listeEvaluations){
+        $this->listeEvaluations = $listeEvaluations;
+    }
+
+
+    public function getListeEvaluations(){
+        return $this->listeEvaluations;
+    }
+
 
 }
