@@ -67,8 +67,8 @@ class MatiereController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
-
+//        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Save', 'attr'=>array('class'=>' btn btn-primary col-md-offset-4 col-sm-1')));
         return $form;
     }
 
@@ -217,7 +217,8 @@ class MatiereController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('matiere_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+//            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Supprimer', 'attr'=> array('class' =>'btn btn-danger' )))
             ->getForm()
         ;
     }

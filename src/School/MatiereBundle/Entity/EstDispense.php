@@ -66,6 +66,9 @@ class EstDispense {
      */
     private $titulaire;
 
+    private $nbreFilles;
+    private $nbreGarcons;
+
     /**
      * Get id
      *
@@ -224,5 +227,26 @@ class EstDispense {
     public function getAnnee()
     {
         return $this->annee;
+    }
+
+
+    public function setNbreFilles($nbreFilles){
+        $this->nbreFilles= $nbreFilles;
+        return $this;
+    }
+
+
+    public function getNbreFilles(){
+        return $this->nbreFilles;
+    }
+
+    public function setNbreGarcons($nbreGarcons){
+        $this->nbreGarcons= $nbreGarcons;
+        return $this;
+    }
+
+
+    public function getNbreGarcons(){
+        return $this->nbreGarcons;
     }
 }

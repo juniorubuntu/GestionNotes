@@ -40,31 +40,30 @@ class InscriptionController extends Controller {
                 ->select('IDENTITY(i.student)')
                 ->from('SchoolStudentBundle:Inscription', 'i')
                 ->where('i.annee= :annee')
-                //->orWhere('i.status= :status')
                 ->setParameters(array(
                     'annee' => $anneEncour,
-                        //   'status'=> 0,
                 ))
                 ->getQuery()
                 ->getArrayResult();
-
-        $queryBuilder = $em->createQueryBuilder();
-        $query = $queryBuilder
+        if($subQuery){
+            $queryBuilder = $em->createQueryBuilder();
+            $query = $queryBuilder
                 ->select('s')
                 ->from('SchoolStudentBundle:Student', 's')
                 ->where($queryBuilder->expr()->notIn('s.id', ':subQuery'))
                 ->setParameter('subQuery', $subQuery)
                 ->getQuery();
 
-        $students = $query->getResult();
+            $students = $query->getResult();
+        }else{
+            $students = $this->getDoctrine()->getRepository('SchoolStudentBundle:Student')->findAll();
+        }
 
         $incriptionsNonComplets = $this->getDoctrine()->getRepository('SchoolStudentBundle:Inscription')->findBy(
                 array(
                     'status' => 0,
                     'annee' => $anneEncour,
         ));
-
-
 
         return $this->render('SchoolStudentBundle:Inscription:listeElevesNonInscrits.html.twig', array(
                     'entities' => $students,

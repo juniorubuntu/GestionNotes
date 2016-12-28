@@ -1,9 +1,7 @@
-label[for="school_studentbundle_student_photo_file"]{
-	display: none;
-}
 
 body{
-    background: rgb(216, 225, 232);
+    /*background: rgb(216, 225, 232);*/
+    background: rgb(256, 255, 232);
 }
 
 
@@ -78,17 +76,21 @@ body{
         -webkit-box-shadow: inset 0px 0px 0px 0px;
     }
 }
-/*
- * Darkblue navbar style
- */
+/*########################################################
+ * Darkblue navbar style(Style pour la barre de menu horizontale)
+ * #######################################################*/
+
 #navbar-darkblue.navbar-default { /* #003399 - #0033cc */
     font-size: 14px;
     background-color: rgba(217, 237, 247, 1);
-    background: -webkit-linear-gradient(top, rgba(217, 237, 247, 1) 0%, rgba(217, 237, 247, 1) 100%);
-    background: linear-gradient(to bottom, rgba(217, 237, 247, 1) 0%, rgba(217, 237, 247, 1) 100%);
+    /*background-image: linear-gradient(to bottom, #d9edf7 0%, #2d6682 100%);*/
+    background-image: -webkit-linear-gradient(to bottom, #d9edf7 0%, #2d6682 100%);
+    /*background: -webkit-linear-gradient(top, rgba(217, 237, 247, 1) 0%, rgba(217, 237, 247, 1) 100%);*/
+    /*background: linear-gradient(to bottom, rgba(217, 237, 247, 1) 0%, rgba(217, 237, 247, 1) 100%);*/
     border: 0px;
     border-radius: 0;
 }
+
 #navbar-darkblue.navbar-default .navbar-header>a:hover,
 #navbar-darkblue.navbar-default .navbar-nav>li>a:hover,
 #navbar-darkblue.navbar-default .navbar-nav>li>a:focus,
@@ -106,6 +108,7 @@ body{
     border-radius: 10px;
     text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.55);
 }
+
 #sidebar-darkblue, #column-darkblue {
 background-color: #333399;
 }
@@ -126,3 +129,27 @@ color: #31708F;
 #navbar-darkblue.navbar-default .navbar-toggle:focus .icon-bar {
 background-color: #ffffff;
 }
+
+
+
+/*###############################################
+# Style pour le footer
+##################################################*/
+/*#navbar-piedDePage {
+    font-size: 14px;
+    height: 50px;
+    background-color: rgba(217, 237, 247, 1);
+    background: -webkit-linear-gradient(top, rgba(217, 237, 247, 1) 0%, rgba(217, 237, 247, 1) 100%);
+    background: linear-gradient(to bottom, rgba(217, 237, 247, 1) 0%, rgba(217, 237, 247, 1) 100%);
+    border: 0px;
+    border-radius: 0;
+}*/
+
+
+/*###############################
+# Style pour les boutons supprimer par défaut de Symfony
+################################*/
+
+/*.boutonSupprimer{*/
+    /*display: none;*/
+/*}*/

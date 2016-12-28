@@ -17,7 +17,10 @@ class InscriptionType extends AbstractType {
         $builder
               /*  ->add('student', 'entity', array(
                 'class' => 'SchoolStudentBundle:Student',))*/
-                ->add('classe')
+//                ->add('classe')
+                ->add('classe','entity', array('class'=>'School\StudentBundle\Entity\Classe', 'property'=>'nom',
+                'query_builder' => function (\Doctrine\ORM\EntityRepository $repository)
+                {return $repository->createQueryBuilder('c')->where('c.classePere is NOT NULL');}))
                 ->add('avance')
                /* ->add('dateDerniereAvance', 'date', [
                     'widget' => 'single_text',

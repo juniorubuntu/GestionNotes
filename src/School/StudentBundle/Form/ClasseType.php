@@ -17,7 +17,9 @@ class ClasseType extends AbstractType
         $builder
             ->add('nom')
             ->add('abreviation')
-            ->add('classePere')
+            ->add('classePere','entity', array('class'=>'School\StudentBundle\Entity\Classe', 'property'=>'nom',
+                'query_builder' => function (\Doctrine\ORM\EntityRepository $repository)
+                {return $repository->createQueryBuilder('c')->where('c.classePere is NULL');}, 'required'=>false))
             ->add('cycle',   'entity', array(
                 'class' =>     'SchoolStudentBundle:Cycle',
                 'property' => 'nom',

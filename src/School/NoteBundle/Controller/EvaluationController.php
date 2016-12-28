@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use School\NoteBundle\Entity\Evaluation;
 use School\ConfigBundle\Entity\Ecole;
 use School\NoteBundle\Form\EvaluationType;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Evaluation controller.
@@ -237,6 +238,134 @@ class EvaluationController extends Controller {
                                 'idAnnee' => $idAnnee,
             )));
         }
+    }
+
+
+
+    public  function  statistiquesSequenceAction($idSequence, $idMatiere, $idEnseignant){
+        $em = $this->getDoctrine()->getManager();
+
+
+        $school = $em->getRepository('SchoolConfigBundle:Ecole')->findAll();
+
+        $sequence = $em->getRepository('SchoolNoteBundle:Sequence')->find($idSequence);
+        $matiere = $em->getRepository('SchoolMatiereBundle:Matiere')->find($idMatiere);
+        $enseignant = $em->getRepository('SchoolUserBundle:User')->find($idEnseignant);
+
+
+        $listeEnseignements = $em->getRepository('SchoolMatiereBundle:EstDispense')->findBy(array(
+            'annee' => $school[0]->getAnneeEnCour(),
+            'enseignant' => $enseignant,
+            'matiere' => $matiere,
+
+        ));
+        foreach($listeEnseignements as $enseignement){
+            $qb2 = $em->createQueryBuilder();
+            $qb2->select('s')
+                ->from('SchoolStudentBundle:Student', 's')
+                ->innerJoin('SchoolStudentBundle:Inscription', 'i', 'WITH', 'i.student = s.id')
+                ->innerJoin('SchoolStudentBundle:Classe', 'c', 'WITH', 'i.classe = c.id')
+                ->innerJoin('SchoolMatiereBundle:EstDispense', 'e', 'WITH', 'e.classe = c.id')
+                ->innerJoin('SchoolStudentBundle:Sexe', 'se', 'WITH', 'se.id = s.sexe')
+                ->where('i.annee= :anneeEnCour')
+                ->andWhere('c.id = :idClasse')
+                ->andWhere('se.nom = :sexe')
+                ->setParameters(array(
+                    'anneeEnCour' => $enseignement->getAnnee(),
+                    'idClasse' => $enseignement->getClasse()->getId(),
+                    'sexe' => 'FEMININ',
+                ));
+            $filles = $qb2->getQuery()->getResult();
+
+            $qb1 = $em->createQueryBuilder();
+            $qb1->select('s')
+                ->from('SchoolStudentBundle:Student', 's')
+                ->innerJoin('SchoolStudentBundle:Inscription', 'i', 'WITH', 'i.student = s.id')
+                ->innerJoin('SchoolStudentBundle:Classe', 'c', 'WITH', 'i.classe = c.id')
+                ->innerJoin('SchoolMatiereBundle:EstDispense', 'e', 'WITH', 'e.classe = c.id')
+                ->innerJoin('SchoolStudentBundle:Sexe', 'se', 'WITH', 'se.id = s.sexe')
+                ->where('i.annee= :anneeEnCour')
+                ->andWhere('c.id = :idClasse')
+                ->andWhere('se.nom = :sexe')
+                ->setParameters(array(
+                    'anneeEnCour' => $enseignement->getAnnee(),
+                    'idClasse' => $enseignement->getClasse()->getId(),
+                    'sexe' => 'MASCULIN',
+                ));
+            $garcons = $qb1->getQuery()->getResult();
+
+            $enseignement->setNbreFilles(count($filles));
+            $enseignement->setNbreGarcons(count($garcons));
+        }
+
+        $html = $this->renderView('SchoolNoteBundle:Evaluation:statistiques.html.twig', array(
+            'sequence' => $sequence,
+            'matiere' => $matiere,
+            'enseignant' => $enseignant,
+            'enseignements' => $listeEnseignements,
+        ));
+
+        $html2pdf = new \Html2Pdf_Html2Pdf('L', 'A4', 'fr');
+        $html2pdf->pdf->SetAuthor('GreenSoft-Team');
+        $html2pdf->pdf->SetTitle('Statistiques '.$enseignant->getNom().' '.$sequence->getNom());
+        $html2pdf->pdf->SetSubject('Statitiques Sequentiel');
+        $html2pdf->pdf->SetKeywords('Classe, Enseignant, Matiere, Sequence');
+        $html2pdf->pdf->SetDisplayMode('real');
+        $html2pdf->writeHTML($html);
+
+        $content = $html2pdf->Output('', true);
+        $response = new Response();
+        $response->setContent($content);
+        $response->headers->set('Content-Type', 'application/pdf');
+        $response->headers->set('Content-disposition', 'filename=StatistiquesSequentiels.pdf');
+        return $response;
+    }
+
+
+
+    public function exportationNotesAction($idEnseignement, $idSequence){
+        $em = $this->getDoctrine()->getManager();
+
+        $school = $this->getDoctrine()->getRepository('SchoolConfigBundle:Ecole')->findAll();
+        $constante = $this->getDoctrine()->getRepository('SchoolConfigBundle:Constante')->findAll();
+
+        $sequence = $em->getRepository('SchoolNoteBundle:Sequence')->find($idSequence);
+
+        $enseignement = $em->getRepository('SchoolMatiereBundle:EstDispense')->find($idEnseignement);
+
+        $evaluations= $em->getRepository('SchoolNoteBundle:Evaluation')->findBy(array(
+            'sequence' => $sequence,
+            'classe' => $enseignement->getClasse(),
+            'matiere' => $enseignement->getMatiere(),
+            'annee' => $enseignement->getAnnee(),
+        ),
+            array(
+                'student' => 'DESC',
+            )
+        );
+
+        $html = $this->renderView('SchoolNoteBundle:Bulletin:notesPdf.html.twig', array(
+            'sequence' => $sequence,
+            'enseignement' => $enseignement,
+            'evaluations' => $evaluations,
+            'ecole' => $school[0],
+            'pays' => $constante[0],
+        ));
+
+        $html2pdf = new \Html2Pdf_Html2Pdf('P', 'A4', 'fr');
+        $html2pdf->pdf->SetAuthor('GreenSoft-Team');
+        $html2pdf->pdf->SetTitle('Notes '.$enseignement->getMatiere()->getNom().' '.$sequence->getNom());
+        $html2pdf->pdf->SetSubject('Notes Sequentielles');
+        $html2pdf->pdf->SetKeywords('Classe, Enseignementt, Matiere, Sequence, Annee');
+        $html2pdf->pdf->SetDisplayMode('real');
+        $html2pdf->writeHTML($html);
+
+        $content = $html2pdf->Output('', true);
+        $response = new Response();
+        $response->setContent($content);
+        $response->headers->set('Content-Type', 'application/pdf');
+        $response->headers->set('Content-disposition', 'filename=NotesSequentiels.pdf');
+        return $response;
     }
 
     /**

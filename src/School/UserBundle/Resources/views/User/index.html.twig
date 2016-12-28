@@ -1,7 +1,7 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>User list</h1>
+    <h1 class="text-center">List des utilisateurs</h1>
 
     <table class="records_list table table-striped panel-primary" id="user">
         <thead class="panel-heading">
@@ -28,23 +28,21 @@
                     <td>{{ entity.diplomes }}</td>
                     <td>{{ entity.telephone }}</td>
                     <td>
-                        <a href="{{ path('user_show', { 'id': entity.id }) }}">Voir</a>
-                    </td>
-                    <td>
-                        <a href="{{ path('user_edit', { 'id': entity.id }) }}">Modifier</a>
+                        <a class="btn btn-info" href="{{ path('user_show', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-eye-open"></i> Détails</a>
+                        <a class="btn btn-success" href="{{ path('user_edit', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-trash"></i> Modifier</a>
                     </td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('user_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+    {#<ul>#}
+        {#<li>#}
+            {#<a href="{{ path('user_new') }}">#}
+                {#Create a new entry#}
+            {#</a>#}
+        {#</li>#}
+    {#</ul>#}
     <script>
         $('#user').DataTable({
             "pagingType": "full_numbers",

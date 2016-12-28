@@ -18,30 +18,43 @@
                         </ul>
                     </li>
                     <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-th-list"></i> Enseignements <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('estdispense') }}">Liste des enseignements</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> Elèves <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ path('school_student_list')}}">Liste de élèves</a></li>
+                            <li><a href="{{ path('school_student_list')}}">Liste des élèves</a></li>
                             <li><a href="{{ path('inscription')}}">Inscriptions</a></li>
                         </ul>
                     </li>
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-folder-open"></i> Classes <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-folder-open"></i>  Cat&eacute;gories <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ path('classe')}}"><i class="glyphicon glyphicon-user"></i> Liste des classes</a></li>
+                            <li><a href="{{ path('categorie')}}"><i class="glyphicon glyphicon-folder-open"></i> Cat&eacute;gories</a></li>
+                            <li><a href="{{ path('matiere')}}"><i class="glyphicon glyphicon-folder-open"></i> Mati&egrave;res</a></li>
+                        </ul>
+                    </li>
+                    {#<li class="dropdown">#}
+                        {#<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-hdd"></i> Matières <b class="caret"></b></a>#}
+                        {#<ul class="dropdown-menu">#}
+                            {#<li><a href="{{ path('matiere')}}"><i class="glyphicon glyphicon-user"></i> Liste des matières</a></li>#}
+                        {#</ul>#}
+                    {#</li>#}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-list"></i> Séquences <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('sequence')}}"><i class="glyphicon glyphicon-list"></i> Liste des séquences</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-hdd"></i> Matières <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-list"></i> Cycles <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ path('matiere')}}"><i class="glyphicon glyphicon-user"></i> Liste des matières</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-calendar"></i> Gestion des absences<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{ path('absence')}}"><i class="glyphicon glyphicon-tasks"></i> Liste des absences</a></li>
-                            <li><a href="{{ path('absence_new')}}"><i class="glyphicon glyphicon-tasks"></i> Insérer les absences</a></li>
+                            <li><a href="{{ path('cycle')}}"><i class="glyphicon glyphicon-list"></i> Liste des cycles</a></li>
+                            <li><a href="{{ path('classe')}}"><i class="glyphicon glyphicon-folder-open"></i> Liste des classes</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -54,7 +67,7 @@
                             <span>{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</span>
                         </a>
                     {% else %}
-                        <a href="{{ path('fos_user_security_login') }}"><span class="glyphicon glyphicon-log-in"></span>{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                        <a href="{{ path('fos_user_security_login') }}"><span class="glyphicon glyphicon-log-in"></span> {{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
                         {% endif %}
                 </p>
             </div>
@@ -75,14 +88,14 @@
     </div>
     <div class="col-md-9">
         {% block content %}
-            <h2>Mes salles de classe</h2>
+            <h2 class="text-center">Mes salles de classe</h2>
             {% for dispense in listeDispense %}
                 <div class="col-md-3 col-sm-6">
                     <div class="shop-item panel-primary">
                         <div class="panel btn-blue">
                             <b style="text-align: left"><span style="color: orange; font-size: 18px" class="glyphicon glyphicon-folder-open"></span> {{dispense.classe}}</b>
                         </div>
-                        <ol class="{% if dispense.titulaire == app.user %}alert-info{% endif %}">
+                        <ol class="">
                             <li><a class="btn-link" data-toggle="modal" data-target="#sequence_{{dispense.id}}">Remplir les notes</a>
                                 <div id="sequence_{{dispense.id}}" class="modal fade">
                                     <div class="modal-dialog modal-sm">
@@ -129,9 +142,54 @@
                                     </div>
                                 </div>
                             </li>
-                            <li><a href="">Exporter les notes en PDF</a></li>
-                            <li><a href="">Générer les statistiques</a></li>
-                                {% if dispense.titulaire == app.user %}
+                            <li><a class="btn-link" data-toggle="modal" data-target="#notespdf_{{dispense.id}}">Exporter les notes en PDF</a>
+                                <div id="notespdf_{{dispense.id}}" class="modal fade">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <center><b>Choisir la séquence</b></center>
+                                            </div>
+                                            <div class="col-md-12 modal-body">
+                                                {% for sequence in listSequence %}
+                                                    <center>
+                                                        <a href="{{path('notespdf', {'idEnseignement':dispense.id, 'idSequence':sequence.id })}}" class="btn btn-green">
+                                                            <b>{{sequence}}</b>
+                                                        </a>
+                                                    </center>
+                                                {% endfor %}
+                                                <hr>
+                                                <button type="button" class="btn btn-red pull-right" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign"></span>Annuler</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a class="btn-link" data-toggle="modal" data-target="#stat_{{dispense.id}}">Générer les statistiques</a>
+                                <div id="stat_{{dispense.id}}" class="modal fade">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <center><b>Choisir la séquence</b></center>
+                                            </div>
+                                            <div class="col-md-12 modal-body">
+                                                {% for sequence in listSequence %}
+                                                    <center>
+                                                        <a href="{{path('statistiques', {'idSequence':sequence.id, 'idMatiere':dispense.matiere.id, 'idEnseignant':dispense.enseignant.id })}}" class="btn btn-green">
+                                                            <b>{{sequence}}</b>
+                                                        </a>
+                                                    </center>
+                                                {% endfor %}
+                                                <hr>
+                                                <button type="button" class="btn btn-red pull-right" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign"></span>Annuler</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </li>
+                            {% if dispense.titulaire == app.user %}
                                 <li><a class="btn-link" data-toggle="modal" data-target="#bulletin_{{dispense.id}}" href="">Générer les bulletins</a></li>
                                 <div id="bulletin_{{dispense.id}}" class="modal fade">
                                     <div class="modal-dialog modal-sm">
@@ -159,7 +217,7 @@
                             {% endif %}
                         </ol>
                         <div class="pull-right">
-                            Matière: <span style="color: forestgreen">{{dispense.matiere}}</span>
+                            Matière: <i style="color: forestgreen">{{dispense.matiere}}</i>
                         </div>
                     </div>
                 </div>
@@ -167,6 +225,15 @@
         {% endblock %}
     </div>
     {% block pied %}
-        <div class="" style=""><center>&copy; 2016 GreenSoft-Team. All rights reserved.</center></div>
+        {#<div class="" style=""><center>&copy; 2016 GreenSoft-Team. All rights reserved.</center></div>#}
+
+
+        {#<div id="navbar-piedDePage" class="navbar navbar-default navbar-fixed-bottom" role="navigation">#}
+            {#<div class="container">#}
+                {#<div class="navbar-text col-lg-12 col-md-12 col-sm-12 col-xs-12 ">#}
+                    {#<p class="text-center"> &copy; 2016 GreenSoft-Team. All rights reserved.</p>#}
+                {#</div>#}
+            {#</div>#}
+        {#</div>#}
     {% endblock %}
 {% endblock %}

@@ -67,8 +67,8 @@ class AnneeController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
-
+//        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Enregistrer', 'attr'=>array('class'=>' btn btn-primary col-sm-1 col-sm-offset-4')));
         return $form;
     }
 
@@ -217,7 +217,7 @@ class AnneeController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('config_annee_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Supprimer', 'attr'=>array('class'=>' btn btn-danger boutonSupprimer')))
             ->getForm()
         ;
     }

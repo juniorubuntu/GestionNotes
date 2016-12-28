@@ -1,17 +1,48 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Régionalisation de l'application</h1>
+    {#{{ form(form) }}#}
+    {{ form_start(form)}}
+    <div class="row">
+        <div class="col-md-12">
+                <h1 class="text-center">Régionalisation de l'application</h1>
+            <div>
+                <div class="col-sm-6">
+                    <div class="col-md-12">
+                        <legend>En Français</legend>
+                        <div class="form-group">
+                            <label>Nom du pays :  </label>
+                            {{ form_widget(form.paysFrancais, {'attr': {'class': 'form-control','placeholder':'ex: Republique du Cameroun'}})  }}
+                        </div>
+                        <div class="form-group">
+                            <label>Nom du ministere : </label>
+                            {{ form_widget(form.ministereFrancais, {'attr': {'class': 'form-control','placeholder':' ex: MINESEC'}})  }}
+                        </div>
+                        <div class="form-group">
+                            <label>Devise : </label>
+                            {{ form_widget(form.deviseFrancais, {'attr': {'class': 'form-control','placeholder':' ex: Paix-Travail-Patrie'}})  }}
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-md-6">
+                    <div class="col-md-12">
+                        <legend>In English</legend>
 
-    {{ form(form) }}
-
-    {#
-      <ul class="record_actions">
-         <li>
-             <a href="{{ path('constante') }}">
-                 Retourner à la liste
-             </a>
-         </li>
-     </ul>
-    #}
+                        <div class="form-group">
+                            <label>Country 's name : </label>
+                            {{ form_widget(form.paysAnglais, {'attr': {'class': 'form-control','placeholder':'ex: Republic  of Cameroon'}})  }}
+                        </div>
+                        <div class="form-group">
+                            <label>Ministry 's name :</label>
+                            {{ form_widget(form.ministereAnglais, {'attr': {'class': 'form-control','placeholder':'ex: MINESEC'}})  }}
+                        </div>
+                        <div class="form-group">
+                            <label>Country 's motto  :</label>
+                            {{ form_widget(form.deviseAnglais, {'attr': {'class': 'form-control','placeholder':'ex: Peace-Work-Fatherland'}})  }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{ form_end(form)}}
 {% endblock %}

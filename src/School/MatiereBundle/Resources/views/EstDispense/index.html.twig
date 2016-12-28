@@ -2,7 +2,10 @@
 
 {% block content -%}
     <h1 class="text-center">Liste des enseignements</h1>
-
+    <nav class="nav navbar-inverse alert-success col-md-12" style="margin-bottom: 3px;">
+        <a style="color: green; font-size: 18px;
+           text-shadow: -1px 0px;" href="{{path('estdispense_new')}}" class="pull-left btn-link"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter un enseignement</a>
+    </nav>
     <table class="records_list table table-striped panel-primary" id="estDispense">
         <thead class="panel-heading">
             <tr>
@@ -12,9 +15,8 @@
                 <th>Classe</th>
                 <th>Coefficient</th>
                 <th>Annee</th>
-                <th>Nombre d'heures annuel</th>
-                <th>Détails</th>
-                <th>Modifier</th>
+                <th>Heures annuelles</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -23,28 +25,18 @@
                     <td><a href="{{ path('estdispense_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                     <td>{{ entity.enseignant }}</td>
                     <td>{{ entity.matiere }}</td>
-                    <td>{{ entity.classe }}</td>
+                    <td>{{ entity.classe.abreviation }}</td>
                     <td>{{ entity.coefficient }}</td>
                     <td>{{ entity.annee }}</td>
                     <td>{{ entity.nombreHeuresAnnuel }}</td>
                     <td>
-                        <a href="{{ path('estdispense_show', { 'id': entity.id }) }}">Voir</a>
-                    </td>
-                    <td>
-                        <a href="{{ path('estdispense_edit', { 'id': entity.id }) }}">Modifier</a>
+                        <a class="btn btn-info" href="{{ path('estdispense_show', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-eye-open"></i></a>
+                        <a class="btn btn-success" href="{{ path('estdispense_edit', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-edit"></i></a>
                     </td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('estdispense_new') }}">
-                Insérer une entrée
-            </a>
-        </li>
-    </ul>
     <script>
         $('#estDispense').DataTable({
             "pagingType": "full_numbers",
@@ -52,7 +44,6 @@
             "language": {
                 "url": "{{ asset('DataTables/French.json') }}"
             }
-
         });
     </script>
 {% endblock %}

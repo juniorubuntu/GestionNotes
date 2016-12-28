@@ -3,7 +3,7 @@
 {% block body -%}
     <h1>Annee</h1>
 
-    <table class="record_properties">
+    <table class="table table-bordered">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -13,20 +13,32 @@
                 <th>Anneescolaire</th>
                 <td>{{ entity.anneeScolaire }}</td>
             </tr>
+            <tr>
+                {#<th></th>#}
+                <td colspan="2"><a class="btn btn-default" href="{{ path('config_annee') }}">
+                        Retour &agrave; la liste
+                    </a>
+                    <a class="btn btn-success" href="{{ path('config_annee_edit', { 'id': entity.id }) }}">
+                        Modifier
+                    </a>
+                    {{ form(delete_form) }}
+                </td>
+            </tr>
         </tbody>
     </table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('config_annee') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('config_annee_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+        {#<ul class="record_actions">#}
+    {#<li>#}
+        {#<a href="{{ path('config_annee') }}">#}
+            {#Retour &agrave; la liste#}
+        {#</a>#}
+    {#</li>#}
+    {#<li>#}
+        {#<a href="{{ path('config_annee_edit', { 'id': entity.id }) }}">#}
+            {#Modifier#}
+        {#</a>#}
+    {#</li>#}
+    {#<li>{{ form(delete_form) }}</li>#}
+{#</ul>#}
+    <a href="{{ path('constante_new')}}" class="btn green">Suivant</a>
 {% endblock %}

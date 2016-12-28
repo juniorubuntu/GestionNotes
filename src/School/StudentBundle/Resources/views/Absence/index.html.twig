@@ -20,10 +20,10 @@
             {% for entity in entities %}
                 <tr>
                     <td><a href="{{ path('absence_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                    <td><a >{{ entity.student.student }}</a></td>
-                    <td><a href="">{{ entity.student.student.classe }}</a></td>
-                    <td><a href="">{{ entity.sequence }}</a></td>
-                    <td><a href="">{{ entity.anneeScolaire }}</a></td>
+                    <td>{{ entity.student.student }}</td>
+                    <td>{{ entity.student.student.classe }}</td>
+                    <td>{{ entity.sequence }}</td>
+                    <td>{{ entity.anneeScolaire }}</td>
                     <td>{{ entity.nbreAbsence }}</td>
                     <td>
                         <a href="{{ path('absence_show', { 'id': entity.id }) }}">show</a>
@@ -36,13 +36,13 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('absence_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+    {#<ul>#}
+        {#<li>#}
+            {#<a href="{{ path('absence_new') }}">#}
+                {#Create a new entry#}
+            {#</a>#}
+        {#</li>#}
+    {#</ul>#}
 
     <script>
         $('#absence').DataTable({

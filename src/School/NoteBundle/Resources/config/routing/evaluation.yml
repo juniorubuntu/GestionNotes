@@ -4,7 +4,11 @@ evaluation:
 
 statistiques:
     path:     /{idSequence}/{idMatiere}/{idEnseignant}/statistiques
-    defaults: { _controller: "SchoolNoteBundle:Evaluation:statistiques" }
+    defaults: { _controller: "SchoolNoteBundle:Evaluation:statistiquesSequence" }
+
+notespdf:
+    path:     /enseignement-{idEnseignement}/sequence-{idSequence}/exportationnotes
+    defaults: { _controller: "SchoolNoteBundle:Evaluation:exportationNotes" }
 
 bulletins:
     path:     /bulletins/{idSequence}/{idClasse}/{idStudent}

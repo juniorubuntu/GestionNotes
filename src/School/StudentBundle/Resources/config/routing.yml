@@ -10,6 +10,10 @@ SchoolStudentBundle_inscription:
 SchoolStudentBundle_student:
     resource: "@SchoolStudentBundle/Resources/config/routing/student.yml"
     prefix:   /student
+
+SchoolStudentBundle_cycle:
+    resource: "@SchoolStudentBundle/Resources/config/routing/cycle.yml"
+    prefix:   /cycle
     
     
 SchoolStudentBundle_absence:

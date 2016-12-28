@@ -67,7 +67,8 @@ class ConstanteController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        //$form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Enregistrer', 'attr'=>array('class'=>' btn btn-primary col-md-offset-8 col-md-1')));
 
         return $form;
     }
@@ -217,7 +218,7 @@ class ConstanteController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('constante_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Delete', 'attr'=>array('class'=>'btn btn-danger')))
             ->getForm()
         ;
     }

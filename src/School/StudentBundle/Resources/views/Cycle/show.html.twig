@@ -1,0 +1,30 @@
+{% extends 'SchoolGestionBundle:Default:index.html.twig' %}
+
+{% block content -%}
+    <h1>D&eacute;tails sur un Cycle</h1>
+
+    <table class="record_properties table table-striped">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ entity.nom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        <a href="{{ path('cycle')}}" class="btn btn-primary">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour &agrave; la liste
+        </a>
+        <a href="{{ path('cycle_edit',{'id': entity.id}) }}" class="btn btn-success">
+            <i class="glyphicon glyphicon-edit"> </i>
+            Modifier
+        </a>
+        {{ form(delete_form) }}
+    </p>
+{% endblock %}

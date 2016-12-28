@@ -1,15 +1,23 @@
-{% extends '::base.html.twig' %}
+{% extends 'SchoolGestionBundle:Default:index.html.twig' %}
 
-{% block body -%}
-    <h1>Insertion d'une nouvelle catégorie</h1>
+{% block content -%}
+    <h1>Nouvelle cat&eacute;gorie</h1>
 
-    {{ form(form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('categorie') }}">
-            Retourner à la liste
-        </a>
-    </li>
-</ul>
+    {{ form_start(form)}}
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Nom de la cat&eacute;gorie</label>
+                {{ form_widget(form.nom, {'attr': {'class': 'form-control', 'placeholder':'ex: Matières Littéraires'}})  }}
+            </div>
+        </div>
+    </div>
+    {{ form_end(form)}}
+    <ul class="record_actions">
+        <li>
+            &nbsp;<a class="btn btn-default" href="{{ path('categorie') }}">
+                Annuler
+            </a>
+        </li>
+    </ul>
 {% endblock %}

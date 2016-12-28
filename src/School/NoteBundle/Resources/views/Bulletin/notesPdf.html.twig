@@ -1,0 +1,121 @@
+<style type="text/css">
+    table {
+        width: 100%;
+        color: #717375;
+        font-family: helvetica;
+        line-height: 5mm;
+        border-collapse: collapse;
+    }
+
+    .10p { width: 10%; } .47p { width: 47%; }
+    .25p { width: 25%; } .50p { width: 50%; }
+    .60p { width: 60%; } .75p { width: 75%; }
+    .30p {width: 30%;} .20p{width: 20%;}
+    .40p{width: 40%} .100p{width: 100%;}
+                         .6p{width: 6%}
+
+    .info td, .info1 td{
+        height: 20px;
+        border: none;
+    }
+    .evaluations, .statistiques{
+        margin-top: 10px;;
+    }
+    .evaluations td,.evaluations th {
+        border: 1px solid darkgray;
+        height: 25px;
+    }
+    .statistiques td{
+        font-weight: bold;
+    }
+</style>
+
+
+<page backtop="10mm" backleft="10mm" backright="10mm" backbottom="10mm" footer="page;">
+    <page_footer>
+        <hr />
+        <p>GreenSoft-Team</p>
+    </page_footer>
+    <table>
+        <tr>
+            <td class="40p">
+                {{ pays.ministereFrancais }}<br/>
+                {{ ecole.nomFrancais }}<br/>
+                {{ ecole.boitePostal }}
+            </td>
+            <td class="20p" style="text-align: center">
+                <img style="height: 80px; width: 60px;" src="uploads/logos/{{ ecole.logo.id ~'.'~ ecole.logo.url}}" alt="Logo" title="" >
+            </td>
+            <td style="text-align: right" class="40p">
+                {{ pays.paysFrancais }}<br/>
+                {{ pays.deviseFrancais }}<br/>
+                {{ ecole.deviseFrancais }}<br/>
+            </td>
+        </tr>
+    </table>
+    <table class="info1" style="margin-top: 10px;">
+        <tr>
+            <td class="100p" style="text-align: center;"><strong><h3>NOTES SEQUENTIELLES</h3></strong></td>
+        </tr>
+    </table>
+    <table class="info">
+        <tr>
+            <td class="50p" style="text-align: left; border: none">Ann&eacute;e Acad&eacute;mique: <b>{{ enseignement.annee}}</b></td>
+            <td class="50p" style="text-align: right; border:none; ">S&eacute;quence:  <b>{{ sequence }}</b></td>
+        </tr>
+        <tr>
+            <td class="50p" style="text-align: left">Classe:  <b>{{ enseignement.classe}}</b></td>
+            <td class="50p" style="text-align: right">Mati&egrave;re: <strong>{{ enseignement.matiere }}</strong></td>
+        </tr>
+        <tr>
+            <td class="50p" style="text-align: left;" >Enseignant: <b>{{enseignement.enseignant}}</b></td>
+        </tr>
+    </table>
+    <table class="evaluations">
+        <tr>
+            <th class="6p" style="text-align: center">N&deg;</th>
+            <th class="47p">Nom de l'&eacute;l&egrave;ve</th>
+            <th class="47p">Note /20</th>
+        </tr>
+        {% set compt15et20 = 0 %}
+        {% set compt15et10 = 0 %}
+        {% set compt10 = 0 %}
+        {% for key, evaluation in evaluations %}
+            <tr>
+                <td style="text-align: center">{{ key + 1 }}</td>
+                <td>{{ evaluation.student | upper }}</td>
+                <td> {{ evaluation.note }}
+                    {% if(evaluation.note >= 15 and evaluation.note <= 20)  %}
+                        {% set compt15et20 = compt15et20 + 1 %}
+                    {% elseif (evaluation.note >= 10 and evaluation.note <= 14.99)  %}
+                        {% set compt15et10 = compt15et10 + 1 %}
+                    {% else %}
+                        {% set compt10 = compt10 + 1%}
+                    {% endif %}
+                    </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% set totalNotes = evaluations|length %}
+    <table class="statistiques">
+        <tr>
+            <td style="text-align: left" class="30p">Note comprise entre 15 et 20 </td>
+            <td style="text-align: center" class="20p">{{ compt15et20 }}</td>
+            <td style="text-align: center" class="20p">{% set pourcentage1 = (compt15et20 * 100)/totalNotes  %}
+                {{ pourcentage1 | number_format(2, '.', ',')  }}%</td>
+        </tr>
+        <tr>
+            <td style="text-align: left" class="30p">Note comprise entre 14.99 et 10 </td>
+            <td style="text-align: center" class="20p">{{ compt15et10 }}</td>
+            <td style="text-align: center" class="20p">{% set pourcentage2 = (compt15et10 * 100)/totalNotes  %}
+            {{ pourcentage2 | number_format(2, '.', ',') }}%
+            </td>
+        </tr>
+        <tr>
+            <td class="30p" style="text-align: left">Note inf&eacute;rieure &agrave; 10 </td>
+            <td class="20p" style="text-align: center">{{ compt10 }}</td>
+            <td class="20p" style="text-align: center">{% set pourcentage3 = (compt10 * 100)/totalNotes  %}
+                {{ pourcentage3 | number_format(2, '.', ',')  }}%</td>
+        </tr>
+    </table>
+    </page>

@@ -1,9 +1,10 @@
 /*--------------------------------------------------------------------------
 	General Style
 --------------------------------------------------------------------------*/
-body {
-  background: url(../img/page-background.png);
-}
+/*body {*/
+  /*background: url(../img/page-background.png);*/
+/*}*/
+
 .section {
   padding: 30px 0;
   -webkit-transform: translateZ(0);

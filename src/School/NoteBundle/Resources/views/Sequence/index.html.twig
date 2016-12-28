@@ -1,8 +1,11 @@
-{% extends '::base.html.twig' %}
+{% extends 'SchoolGestionBundle:Default:index.html.twig' %}
 
-{% block body %}
-    <h1>Sequence list</h1>
-
+{% block content -%}
+    <h1 class="text-center">List des S&eacute;quences</h1>
+    <nav class="nav navbar-inverse alert-success col-md-12" style="margin-bottom: 3px;">
+        <a style="color: green; font-size: 18px;
+           text-shadow: -1px 0px;" href="{{path('sequence_new')}}" class="pull-left btn-link"><span class="glyphicon glyphicon-plus-sign"></span> Nouvelle S&eacute;quence</a>
+    </nav>
     <table class="records_list table table-striped panel-primary" id="seq">
         <thead class="panel-heading" >
             <tr>
@@ -27,14 +30,6 @@
             {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('sequence_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
     <script>
         $('#seq').DataTable({
             "pagingType": "full_numbers",

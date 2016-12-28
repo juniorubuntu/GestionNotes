@@ -1,17 +1,54 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Enregistrement des paramètres de l'établissement</h1>
 
-    {{ form(form) }}
+{{ form_start(form)}}
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="text-center">Enregistrement des paramètres de l'établissement</h1>
+        <div>
+            <div class="col-sm-6">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Ann&eacute;e en cours :  </label>
+                        {{ form_widget(form.anneeEnCour, {'attr': {'class': 'form-control'}})  }}
+                    </div>
+                    <div class="form-group">
+                        <label>Ville : </label>
+                        {{ form_widget(form.ville, {'attr': {'class': 'form-control'}})  }}
+                    </div>
+                    <div class="form-group">
+                        <label>Nom de l'établissement : </label>
+                        {{ form_widget(form.nomFrancais, {'attr': {'class': 'form-control'}})  }}
+                    </div>
+                    <div class="form-group">
+                        <label>Devise de l'établissement : </label>
+                        {{ form_widget(form.deviseFrancais, {'attr': {'class': 'form-control'}})  }}
+                    </div>
+                </div>
+            </div>
+            <div class=" col-md-6">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>School name : </label>
+                        {{ form_widget(form.nomAnglais, {'attr': {'class': 'form-control','placeholder':'ex:G.H.S Douala'}})  }}
+                    </div>
+                    <div class="form-group">
+                        <label>School Motto :</label>
+                        {{ form_widget(form.deviseAnglais, {'attr': {'class': 'form-control','placeholder':'ex: School Moto'}})  }}
+                    </div>
+                    <div class="form-group">
+                        <label>Boite postal  :</label>
+                        {{ form_widget(form.boitePostal, {'attr': {'class': 'form-control','placeholder':'ex: BP 52 Douala'}})  }}
+                    </div>
+                    <div class="form-group">
+                        <label>Logo de l'établissement  :</label>
+                        {{ form_widget(form.logo) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ form_end(form)}}
 
-    {#
-        <ul class="record_actions">
-        <li>
-            <a href="{{ path('config_ecole') }}">
-                Retourner à la liste
-            </a>
-        </li>
-        </ul>
-    #}
 {% endblock %}

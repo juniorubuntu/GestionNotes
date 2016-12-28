@@ -51,12 +51,23 @@ class EstDispenseController extends Controller
                     'annee' => $anneEncour,
                 ));
             if($testEnseignementExist){
-                $request->getSession()->getFlashBag()->add('notice', 'cet Enseignement est déjà enregistrée.');
-            }else {
+                $request->getSession()->getFlashBag()->add('notice', 'Cet Enseignement est déjà enregistrée.');
+            }else if($entity->getTitulaire()){
+                $enseignantTitulaire = $this->getDoctrine()->getRepository('SchoolMatiereBundle:EstDispense')->findBy(
+                    array(
+                        'classe' => $entity->getClasse(),
+                        'annee' => $anneEncour,
+                        'titulaire' => true,
+                    ));
+                if($enseignantTitulaire)
+                    $request->getSession()->getFlashBag()->add('notice', 'la classe a deja  titulaire.');
+            }
+            else {
                 $entity->setAnnee($anneEncour);
                 $em->persist($entity);
                 $em->flush();
-                return $this->redirect($this->generateUrl('estdispense_show', array('id' => $entity->getId())));
+//                return $this->redirect($this->generateUrl('estdispense_show', array('id' => $entity->getId())));
+                return $this->redirect($this->generateUrl('estdispense'));
             }
         }
 
@@ -80,7 +91,8 @@ class EstDispenseController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+//        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Save', 'attr'=>array('class'=>' btn btn-primary col-md-offset-4 col-sm-1')));
 
         return $form;
     }
@@ -230,7 +242,7 @@ class EstDispenseController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('estdispense_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Delete', 'attr'=>array('class'=>'btn btn-danger')))
             ->getForm()
         ;
     }

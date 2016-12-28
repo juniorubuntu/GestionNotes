@@ -1,14 +1,23 @@
-{% extends '::base.html.twig' %}
+{% extends 'SchoolGestionBundle:Default:index.html.twig' %}
 
-{% block body -%}
-    <h1>Sequence creation</h1>
+{% block content -%}
+    <h1 class="text-center">Nouvelle S&eacute;quence</h1>
 
-    {{ form(form) }}
-
+    {#{{ form(form) }}#}
+    {{ form_start(form)}}
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-6">
+                <label>Nom de la s&eacute;quence</label>
+                {{ form_widget(form.nom, {'attr': {'class': 'form-control'}})  }}
+            </div>
+        </div>
+    </div>
+    {{ form_end(form)}}
         <ul class="record_actions">
     <li>
-        <a href="{{ path('sequence') }}">
-            Back to the list
+        &nbsp;<a class="btn btn-default" href="{{ path('sequence') }}">
+            Annuler
         </a>
     </li>
 </ul>

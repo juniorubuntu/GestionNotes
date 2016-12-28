@@ -63,8 +63,8 @@ class UserController extends Controller {
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
-
+//        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Enregister', 'attr'=>array('class'=>' btn btn-primary col-md-offset-4 col-sm-1')));
         return $form;
     }
 
@@ -139,7 +139,8 @@ class UserController extends Controller {
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+//        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Update', 'attr'=>array('class'=>' btn btn-primary col-md-offset-4 col-sm-1')));
 
         return $form;
     }

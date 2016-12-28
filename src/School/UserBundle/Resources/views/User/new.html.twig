@@ -1,15 +1,65 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>User creation</h1>
+    <h1 class="text-center">Nouveau Utilisateur</h1>
 
-    {{ form(form) }}
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('user') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+    {{ form_start(form)}}
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-offset-4 col-sm-3">
+                <label>Votre Nom</label>
+                {{ form_widget(form.nom, {'attr': {'class': 'form-control'}})  }}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-offset-4 col-sm-3">
+                <label>Anci&eacute;net&eacute;</label>
+                {{ form_widget(form.anciennete, {'attr': {'class': 'form-control'}})  }}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-offset-4 col-sm-3">
+                <label>Matricule</label>
+                {{ form_widget(form.matricule, {'attr': {'class': 'form-control'}})  }}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-offset-4 col-sm-3">
+                <label>Grade</label>
+                {{ form_widget(form.grade, {'attr': {'class': 'form-control'}})  }}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-offset-4 col-sm-3">
+                <label>Diplome</label>
+                {{ form_widget(form.diplomes, {'attr': {'class': 'form-control'}})  }}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-offset-4 col-sm-3">
+                <label>Num&eacute;ro de t&eacute;l&eacute;phone</label>
+                {{ form_widget(form.telephone, {'attr': {'class': 'form-control'}})  }}
+            </div>
+        </div>
+    </div>
+    {{ form_end(form)}}
+
+    <ul class="record_actions">
+        <li>
+            &nbsp;<a class="btn btn-default" href="{{ path('user') }}">
+                Annuler
+            </a>
+        </li>
+    </ul>
 {% endblock %}

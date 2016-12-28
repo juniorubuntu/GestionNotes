@@ -1,9 +1,9 @@
-{% extends '::base.html.twig' %}
+{% extends 'SchoolGestionBundle:Default:index.html.twig' %}
 
-{% block body -%}
-    <h1>Classe</h1>
+{% block content -%}
+    <h1 class="text-center">D&eacute;tails sur une Classe</h1>
 
-    <table class="record_properties">
+    <table class="record_properties table table-striped">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -14,27 +14,24 @@
                 <td>{{ entity.nom }}</td>
             </tr>
             <tr>
-                <th>Classe père</th>
+                <th>Classe M&egrave;re</th>
                 <td>{{ entity.classePere }}</td>
             </tr>
             <tr>
-                <th>Abreviation</th>
+                <th>Abr&eacute;viation</th>
                 <td>{{ entity.abreviation }}</td>
             </tr>
         </tbody>
     </table>
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('classe') }}">
-            Retourner à la liste
+    <p>
+        <a href="{{ path('classe')}}" class="btn btn-primary">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour &agrave; la liste
         </a>
-    </li>
-    <li>
-        <a href="{{ path('classe_edit', { 'id': entity.id }) }}">
+        <a href="{{ path('classe_edit',{'id': entity.id}) }}" class="btn btn-success">
+            <i class="glyphicon glyphicon-edit"> </i>
             Modifier
         </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+        {{ form(delete_form) }}
+    </p>
 {% endblock %}

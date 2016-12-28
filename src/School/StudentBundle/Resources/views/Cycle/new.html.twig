@@ -1,0 +1,22 @@
+{% extends 'SchoolGestionBundle:Default:index.html.twig' %}
+
+{% block content -%}
+    <h1>Nouveau Cycle</h1>
+
+    {{ form_start(form)}}
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-6">
+                {{ form_widget(form.nom, {'attr': {'class': 'form-control','placeholder':'ex:1er'}})  }}
+            </div>
+        </div>
+    </div>
+    {{ form_end(form)}}
+    <ul class="record_actions">
+        <li>
+            &nbsp;<a class="btn btn-default" href="{{ path('cycle') }}">
+                Annuler
+            </a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,7 +1,7 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>User</h1>
+    <h1 class="text-center">Détail sur un Utilisateur</h1>
 
     <table class="record_properties table">
         <tbody>
@@ -35,18 +35,17 @@
             </tr>
         </tbody>
     </table>
+    <p>
+        <a href="{{ path('school_gestion_homepage')}}" class="btn btn-primary">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retourner à la page d'accueil
+        </a>
+        <a href="{{ path('user_edit',{'id': entity.id}) }}" class="btn btn-success">
+            <i class="glyphicon glyphicon-edit"> </i>
+            Modifier
+        </a>
+        {#desativé pour l'instant pour une question de securité#}
+        {#{{ form(delete_form) }}#}
 
-    <ul class="record_actions">
-        <li>
-            <a href="{{ path('school_gestion_homepage') }}">
-                Retourner à la page d'accueil
-            </a>
-        </li>
-        <li>
-            <a href="{{ path('user_edit', { 'id': entity.id }) }}">
-                Modifier
-            </a>
-        </li>
-        <li>{{ form(delete_form) }}</li>
-    </ul>
+    </p>
 {% endblock %}

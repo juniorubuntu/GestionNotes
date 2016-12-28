@@ -1,15 +1,18 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Annee creation</h1>
+    <h1 class="text-center">Ann&eacute;e Acad&eacute;mique en cours</h1>
 
-    {{ form(form) }}
+    {{ form_start(form)}}
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('config_annee') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+    <div class="row">
+        <div class="col-md-offset-4 col-sm-offset-3 col-xs-offset-4 col-md-4 col-sm-3 col-xs-6">
+            <div class="form-group">
+                <div>
+                    {{ form_widget(form.anneeScolaire, {'attr': {'class': 'form-control', 'placeholder':'ex: 2016/2017'}})  }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ form_end(form)}}
 {% endblock %}

@@ -1,15 +1,47 @@
 {% extends 'SchoolGestionBundle:Default:index.html.twig' %}
 
 {% block content -%}
-    <h1 class="text-center">Classe creation</h1>
+    <h1 class="text-center">Nouvelle Classe</h1>
 
-    {{ form(form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('classe') }}">
-            Retourner à la liste
-        </a>
-    </li>
-</ul>
+    {{ form_start(form)}}
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-offset-4 col-sm-3">
+                <label>Nom de la classe</label>
+                {{ form_widget(form.nom, {'attr': {'class': 'form-control','placeholder':'ex:Terminale C'}})  }}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-offset-4 col-sm-3">
+                <label>abr&eacute;viation</label>
+                {{ form_widget(form.abreviation, {'attr': {'class': 'form-control','placeholder':'ex:Tle C'}})  }}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-offset-4 col-sm-3">
+                <label>Classe M&egrave;re</label>
+                {{ form_widget(form.classePere, {'attr': {'class': 'form-control'}})  }}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-offset-4 col-sm-3">
+                <label>Cycle</label>
+                {{ form_widget(form.cycle, {'attr': {'class': 'form-control'}})  }}
+            </div>
+        </div>
+    </div>
+    {{ form_end(form)}}
+    <ul class="record_actions">
+        <li>
+            &nbsp;<a class="btn btn-default" href="{{ path('classe') }}">
+                Annuler
+            </a>
+        </li>
+    </ul>
 {% endblock %}

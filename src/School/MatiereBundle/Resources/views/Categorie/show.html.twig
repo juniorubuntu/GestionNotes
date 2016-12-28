@@ -1,6 +1,6 @@
-{% extends '::base.html.twig' %}
+{% extends 'SchoolGestionBundle:Default:index.html.twig' %}
 
-{% block body -%}
+{% block content -%}
     <h1>Détail d'une catégorie</h1>
 
     <table class="record_properties table table-striped">
@@ -15,18 +15,16 @@
             </tr>
         </tbody>
     </table>
+    <p>
+        <a href="{{ path('categorie')}}" class="btn btn-primary">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour &agrave; la liste
+        </a>
+        <a href="{{ path('categorie_edit',{'id': entity.id}) }}" class="btn btn-success">
+            <i class="glyphicon glyphicon-edit"> </i>
+            Modifier
+        </a>
+        {{ form(delete_form) }}
+    </p>
 
-    <ul class="record_actions">
-        <li>
-            <a href="{{ path('categorie') }}">
-                Retourner à la liste
-            </a>
-        </li>
-        <li>
-            <a href="{{ path('categorie_edit', { 'id': entity.id }) }}">
-                Modifier
-            </a>
-        </li>
-        <li>{{ form(delete_form) }}</li>
-    </ul>
 {% endblock %}

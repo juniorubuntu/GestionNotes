@@ -66,6 +66,9 @@ class EstDispense {
      */
     private $titulaire;
 
+    private $nbreFilles;
+    private $nbreGarcons;
+
     /**
      * Get id
      *
