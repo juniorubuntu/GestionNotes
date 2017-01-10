@@ -51,7 +51,7 @@ class EstDispenseController extends Controller
                     'annee' => $anneEncour,
                 ));
             if($testEnseignementExist){
-                $request->getSession()->getFlashBag()->add('notice', 'Cet Enseignement est déjà enregistrée.');
+                $request->getSession()->getFlashBag()->add('notice', 'Cet Enseignement est dï¿½jï¿½ enregistrï¿½e.');
             }else if($entity->getTitulaire()){
                 $enseignantTitulaire = $this->getDoctrine()->getRepository('SchoolMatiereBundle:EstDispense')->findBy(
                     array(
@@ -172,7 +172,7 @@ class EstDispenseController extends Controller
         ));
 
        // $form->add('submit', 'submit', array('label' => 'Update'));
-        $form->add('submit', 'submit', array('label' => 'Terminer', 'attr' => array('class' => 'btn btn-primary col-md-offset-3 col-sm-offset-3 col-xs-offset-3 col-md-1 col-sm-1 col-xs-3')));
+        $form->add('submit', 'submit', array('label' => 'Terminer', 'attr' => array('class' => 'btn btn-primary')));
 
         return $form;
     }

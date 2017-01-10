@@ -23,15 +23,25 @@
             </tr>
         </tbody>
     </table>
-    <p>
-        <a href="{{ path('classe')}}" class="btn btn-primary">
-            <i class="glyphicon glyphicon-chevron-left"></i>
-            Retour &agrave; la liste
-        </a>
-        <a href="{{ path('classe_edit',{'id': entity.id}) }}" class="btn btn-success">
-            <i class="glyphicon glyphicon-edit"> </i>
-            Modifier
-        </a>
-        {{ form(delete_form) }}
-    </p>
+    <table>
+        <tr>
+            <td>
+                <a href="{{ path('classe')}}" class="btn btn-primary">
+                    <i class="glyphicon glyphicon-chevron-left"></i>
+                    Retour &agrave; la liste
+                </a>
+            </td>
+            <td>&nbsp;&nbsp;</td>
+            <td>
+                <a href="{{ path('classe_edit',{'id': entity.id}) }}" class="btn btn-success">
+                    <i class="glyphicon glyphicon-edit"> </i>
+                    Modifier
+                </a>
+            </td>
+            <td><td>&nbsp;&nbsp;</td></td>
+            <td>
+                {{ form(delete_form) }}
+            </td>
+        </tr>
+    </table>
 {% endblock %}

@@ -23,10 +23,10 @@ class InscriptionController extends Controller {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('SchoolStudentBundle:Inscription')->findAll();
-        $sequences= $em->getRepository('SchoolNoteBundle:Sequence')->findAll();
+        $sequences = $em->getRepository('SchoolNoteBundle:Sequence')->findAll();
         return $this->render('SchoolStudentBundle:Inscription:index.html.twig', array(
-            'entities' => $entities,
-            'sequences' => $sequences,
+                    'entities' => $entities,
+                    'sequences' => $sequences,
         ));
     }
 
@@ -45,17 +45,17 @@ class InscriptionController extends Controller {
                 ))
                 ->getQuery()
                 ->getArrayResult();
-        if($subQuery){
+        if ($subQuery) {
             $queryBuilder = $em->createQueryBuilder();
             $query = $queryBuilder
-                ->select('s')
-                ->from('SchoolStudentBundle:Student', 's')
-                ->where($queryBuilder->expr()->notIn('s.id', ':subQuery'))
-                ->setParameter('subQuery', $subQuery)
-                ->getQuery();
+                    ->select('s')
+                    ->from('SchoolStudentBundle:Student', 's')
+                    ->where($queryBuilder->expr()->notIn('s.id', ':subQuery'))
+                    ->setParameter('subQuery', $subQuery)
+                    ->getQuery();
 
             $students = $query->getResult();
-        }else{
+        } else {
             $students = $this->getDoctrine()->getRepository('SchoolStudentBundle:Student')->findAll();
         }
 
@@ -275,7 +275,12 @@ class InscriptionController extends Controller {
         return $this->createFormBuilder()
                         ->setAction($this->generateUrl('inscription_delete', array('id' => $id)))
                         ->setMethod('DELETE')
-                        ->add('submit', 'submit', array('label' => 'Delete'))
+                        ->add('submit', 'submit', array(
+                            'label' => 'Supprimer',
+                            'attr' => array(
+                                'class' => 'btn'
+                            )
+                        ))
                         ->getForm()
         ;
     }

@@ -22,7 +22,7 @@
                 <td>{{ entity.nom }}</td>
                 <td>
                         <a class="btn btn-info" href="{{ path('cycle_show', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-eye-open"></i> D&eacute;tails</a>
-                        <a class="btn btn-success" href="{{ path('cycle_edit', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-trash"></i> Modifier</a>
+                        <a class="btn btn-success" href="{{ path('cycle_edit', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-edit"></i> Modifier</a>
                 </td>
             </tr>
         {% endfor %}

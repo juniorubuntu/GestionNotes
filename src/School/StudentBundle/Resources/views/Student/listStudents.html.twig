@@ -1,46 +1,46 @@
 {% extends 'SchoolGestionBundle:Default:index.html.twig' %}
 
 {% block content -%}
-	<h2 class="page-header">Liste des &eacute;l&egrave;ves</h2>
+    <h2 class="page-header">Liste des &eacute;l&egrave;ves</h2>
     <nav class="nav navbar-inverse alert-success col-md-12" style="margin-bottom: 3px;">
         <a style="color: green; font-size: 18px;
            text-shadow: -1px 0px;" href="{{path('school_student_add')}}" class="pull-left btn-link">
             <span class="glyphicon glyphicon-plus-sign"></span> Ajouter un &eacute;l&egrave;ve</a>
     </nav>
-<table class="records_list table table-striped panel-primary" id="student">
-      <thead class="panel-heading">
-        <tr>
-          <th>#</th>
-          <th>Nom</th>
-          <th>Date de Naissance</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-      	{% for student in students %}
-        <tr>
-          <th scope="row">{{ student.id}}</th>
-          <td>{{ student.nom }}</td>
-          <td>{{ student.dateNaissance|date('d/m/Y')}}</td>
-          <td>
-          	<a href="{{ path('school_student_show', {'id':student.id})}}" class="btn btn-default"><i class="glyphicon glyphicon-eye-open"></i>
-    </a>
-			<a href="{{ path('school_student_edit' , {'id':student.id})}}" class="btn btn-default"><i class="glyphicon glyphicon-edit"></i>
-    </a>
-			{#<a href="{{ path('school_student_delete' , {'id':student.id})}}" class="btn btn-danger">#}
-      {#Delete#}
-    {#</a>#}
-          </td>
-        </tr>
-        {% endfor %}
-      </tbody>
+    <table class="records_list table table-striped panel-primary" id="student">
+        <thead class="panel-heading">
+            <tr>
+                <th>#</th>
+                <th>Nom</th>
+                <th>Date de Naissance</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+                <tr>
+                    <th scope="row">{{ student.id}}</th>
+                    <td>{{ student.nom }}</td>
+                    <td>{{ student.dateNaissance|date('d/m/Y')}}</td>
+                    <td>
+                        <a href="{{ path('school_student_show', {'id':student.id})}}" class="btn btn-default"><i class="glyphicon glyphicon-eye-open"></i>
+                        </a>
+                        <a href="{{ path('school_student_edit' , {'id':student.id})}}" class="btn btn-default"><i class="glyphicon glyphicon-edit"></i>
+                        </a>
+                        {#<a href="{{ path('school_student_delete' , {'id':student.id})}}" class="btn btn-danger">#}
+                        {#Delete#}
+                        {#</a>#}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
     </table>
-     <script>
+    <script>
         $('#student').DataTable({
             "pagingType": "full_numbers",
             "lengthMenu": [[10, 20], [10, 20]],
             "language": {
-                "url": "{{ asset('DataTables/French.json') }}"
+                 "url": "{{ asset('DataTables/French.json') }}"
             }
 
         });

@@ -67,7 +67,7 @@ class CategorieController extends Controller{
         ));
 
 //        $form->add('submit', 'submit', array('label' => 'Create'));
-        $form->add('submit', 'submit', array('label' => 'Save', 'attr'=>array('class'=>' btn btn-primary col-sm-1')));
+        $form->add('submit', 'submit', array('label' => 'Valider', 'attr'=>array('class'=>' btn btn-primary col-sm-1')));
         return $form;
     }
 

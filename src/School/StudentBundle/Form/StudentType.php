@@ -39,11 +39,12 @@ class StudentType extends AbstractType {
                 ->add('personneAcontacter', 'text', array('required' => false))
                 ->add('dernierEtablissementFreq', 'text', array('required' => false))
 //                ->add('classe')
-                ->add('classe','entity', array('class'=>'School\StudentBundle\Entity\Classe', 'property'=>'nom',
-                'query_builder' => function (\Doctrine\ORM\EntityRepository $repository)
-                {return $repository->createQueryBuilder('c')->where('c.classePere is NOT NULL');}, 'required'=>true))
+                ->add('classe', 'entity', array('class' => 'School\StudentBundle\Entity\Classe', 'property' => 'nom',
+                    'query_builder' => function (\Doctrine\ORM\EntityRepository $repository) {
+                        return $repository->createQueryBuilder('c')->where('c.classePere is NOT NULL');
+                    }, 'required' => true))
                 ->add('photo', new ImageType(), array('required' => false))
-                ->add('save', 'submit');
+                ->add('valider', new \Symfony\Component\Form\Extension\Core\Type\SubmitType());
 
 
         $builder->addEventListener(FormEvents::PRE_SET_DATA, function(FormEvent $event) {

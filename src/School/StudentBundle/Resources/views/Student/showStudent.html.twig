@@ -1,94 +1,94 @@
 {% extends 'SchoolGestionBundle:Default:index.html.twig' %}
 
 {% block content -%}
-	<style type="text/css">
-		.contain{
-			position: relative;
-			width: 100px;
-		}
+    <style type="text/css">
+        .contain{
+            position: relative;
+            width: 100px;
+        }
 
-		.mask{
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 150px;
-			height: 150px;
-			background: radial-gradient(circle, transparent 75px, white  75px)
-		}
-	</style>
-	<h1 class="text-center">D&eacute;tails sur un &eacute;l&egrave;ve</h1>
+        .mask{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, transparent 75px, white  75px)
+        }
+    </style>
+    <h2 class="text-center">D&eacute;tails sur un &eacute;l&egrave;ve</h2>
 
-	<div class="contain">
-		{% if student.photo is not null %}
-			<img src="{{ asset( student.photo.webPath) }}" alt="{{ student.photo.alt }}" width="150" height="150"/>
-		{% endif %}
-		<div class="mask"></div>
-	</div>
-	<table class="record_properties table">
-		<tbody>
-		<tr>
-			<th>Id</th>
-			<td>{{ student.id }}</td>
-		</tr>
-		<tr>
-			<th>Matricule</th>
-			<td>{{ student.matricule }}</td>
-		</tr>
-		<tr>
-			<th>Nom</th>
-			<td>{{ student.nom }}</td>
-		</tr>
-		<tr>
-			<th>Sexe</th>
-			<td>{{ student.sexe }}</td>
-		</tr>
-		<tr>
-			<th>Date de Naissance</th>
-			<td>{{ student.dateNaissance|date('d/m/Y') }}</td>
-		</tr>
-		<tr>
-			<th>Lieu de Naissance</th>
-			<td>{{ student.lieuNaissance}}</td>
-		</tr>
-		<tr>
-			<th>Nom du p&egrave;re</th>
-			<td>{{ student.nomPere }}</td>
-		</tr>
-		<tr>
-			<th>Nom de la m&egrave;re</th>
-			<td>{{ student.nomMere }}</td>
-		</tr>
-		<tr>
-			<th>Adresse du p&egrave;re</th>
-			<td>{{ student.adressePere }}</td>
-		</tr>
-		<tr>
-			<th>Adresse de la m&egrave;re</th>
-			<td>{{ student.adresseMere }}</td>
-		</tr>
-		<tr>
-			<th>Personnne &agrave; contactater en cas d'urgence</th>
-			<td>{{ student.personneAcontacter }}</td>
-		</tr>
-		<tr>
-			<th>Dernier &eacute;tablissement fr&eacute;quent&eacute;</th>
-			<td>{{ student.dernierEtablissementFreq }}</td>
-		</tr>
-		<tr>
-			<th>Classe Provisoire</th>
-			<td>{{ student.classe }}</td>
-		</tr>
-		</tbody>
-	</table>
-	<p>
-		<a href="{{ path('school_student_list')}}" class="btn btn-primary">
-			<i class="glyphicon glyphicon-chevron-left"></i>
-			Retour &agrave; la liste
-		</a>
-		<a href="{{ path('school_student_edit',{'id': student.id}) }}" class="btn btn-success">
-			<i class="glyphicon glyphicon-edit"> </i>
-			Modifier
-		</a>
-		{#{{ form(delete_form) }}#}
-	</p>
+    <div class="contain">
+        {% if student.photo is not null %}
+            <img src="{{ asset( student.photo.webPath) }}" alt="{{ student.photo.alt }}" width="150" height="150"/>
+        {% endif %}
+        <div class="mask"></div>
+    </div>
+    <table class="record_properties table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ student.id }}</td>
+            </tr>
+            <tr>
+                <th>Matricule</th>
+                <td>{{ student.matricule }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ student.nom }}</td>
+            </tr>
+            <tr>
+                <th>Sexe</th>
+                <td>{{ student.sexe }}</td>
+            </tr>
+            <tr>
+                <th>Date de Naissance</th>
+                <td>{{ student.dateNaissance|date('d/m/Y') }}</td>
+            </tr>
+            <tr>
+                <th>Lieu de Naissance</th>
+                <td>{{ student.lieuNaissance}}</td>
+            </tr>
+            <tr>
+                <th>Nom du p&egrave;re</th>
+                <td>{{ student.nomPere }}</td>
+            </tr>
+            <tr>
+                <th>Nom de la m&egrave;re</th>
+                <td>{{ student.nomMere }}</td>
+            </tr>
+            <tr>
+                <th>Adresse du p&egrave;re</th>
+                <td>{{ student.adressePere }}</td>
+            </tr>
+            <tr>
+                <th>Adresse de la m&egrave;re</th>
+                <td>{{ student.adresseMere }}</td>
+            </tr>
+            <tr>
+                <th>Personnne &agrave; contactater en cas d'urgence</th>
+                <td>{{ student.personneAcontacter }}</td>
+            </tr>
+            <tr>
+                <th>Dernier &eacute;tablissement fr&eacute;quent&eacute;</th>
+                <td>{{ student.dernierEtablissementFreq }}</td>
+            </tr>
+            <tr>
+                <th>Classe Provisoire</th>
+                <td>{{ student.classe }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        <a href="{{ path('school_student_list')}}" class="btn btn-primary">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour &agrave; la liste
+        </a>
+        <a href="{{ path('school_student_edit',{'id': student.id}) }}" class="btn btn-success">
+            <i class="glyphicon glyphicon-edit"> </i>
+            Modifier
+        </a>
+        {#{{ form(delete_form) }}#}
+    </p>
 {% endblock %}

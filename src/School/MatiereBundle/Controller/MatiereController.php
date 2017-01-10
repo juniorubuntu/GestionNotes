@@ -68,7 +68,7 @@ class MatiereController extends Controller
         ));
 
 //        $form->add('submit', 'submit', array('label' => 'Create'));
-        $form->add('submit', 'submit', array('label' => 'Save', 'attr'=>array('class'=>' btn btn-primary col-md-offset-4 col-sm-1')));
+        $form->add('submit', 'submit', array('label' => 'Valider', 'attr'=>array('class'=>' btn btn-primary col-md-offset-4 col-sm-1')));
         return $form;
     }
 
