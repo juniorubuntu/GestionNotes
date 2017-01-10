@@ -1,23 +1,19 @@
-{% extends 'SchoolGestionBundle:Default:index.html.twig' %}
+{{ form_start(form)}}
 
-{% block content -%}
-    <h2>Nouvelle cat&eacute;gorie</h2>
-
-    {{ form_start(form)}}
-    <div class="form-group">
-        <div class="row">
-            <div class="col-sm-3">
-                <label>Nom de la cat&eacute;gorie</label>
-                {{ form_widget(form.nom, {'attr': {'class': 'form-control', 'placeholder':'ex: Matières Littéraires'}})  }}
-            </div>
+<div class="form-group">
+    <div class="row">
+        <div class="col-sm-8">
+            <label>Nom de la cat&eacute;gorie</label>
+            {{ form_widget(form.nom, {'attr': {'class': 'form-control', 'placeholder':'ex: Matières Littéraires'}})  }}
         </div>
     </div>
-    {{ form_end(form)}}
-    <ul class="record_actions">
-        <li>
-            &nbsp;<a class="btn btn-default" href="{{ path('categorie') }}">
-                Annuler
-            </a>
-        </li>
-    </ul>
-{% endblock %}
+</div>
+
+{{ form_end(form)}}
+<ul class="record_actions">
+    <li>
+        &nbsp;<a class="btn btn-default" href="{{ path('categorie') }}">
+            Annuler
+        </a>
+    </li>
+</ul>

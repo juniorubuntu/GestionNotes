@@ -43,7 +43,7 @@ class CategorieController extends Controller{
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('categorie_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('categorie'));
         }
 
         return $this->render('SchoolMatiereBundle:Categorie:new.html.twig', array(
@@ -67,7 +67,7 @@ class CategorieController extends Controller{
         ));
 
 //        $form->add('submit', 'submit', array('label' => 'Create'));
-        $form->add('submit', 'submit', array('label' => 'Valider', 'attr'=>array('class'=>' btn btn-primary col-sm-1')));
+        $form->add('submit', 'submit', array('label' => 'Valider', 'attr'=>array('class'=>' btn btn-primary col-sm-2')));
         return $form;
     }
 

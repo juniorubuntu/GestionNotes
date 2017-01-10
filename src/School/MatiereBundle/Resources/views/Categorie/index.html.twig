@@ -4,8 +4,23 @@
     <h2 class="text-center">Liste des catégories</h2>
 
     <nav class="nav navbar-inverse alert-success col-md-12" style="margin-bottom: 3px;">
-        <a style="color: green; font-size: 18px;
-           text-shadow: -1px 0px;" href="{{path('categorie_new')}}" class="pull-left btn-link"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une cat&eacute;gorie</a>
+        <a style="color: green; font-size: 18px; 
+           text-shadow: -1px 0px;" href="" onclick="newCate();" data-backdrop="static" data-toggle="modal" data-target="#newCate" class="pull-left btn-link">
+            <span class="glyphicon glyphicon-plus-sign"></span> Ajouter une cat&eacute;gorie</a>
+        <div id="newCate" class="modal fade ">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h3>Insertion d'une nouvelle catégorie</h3>
+                    </div>
+                    <div class="col-md-12 modal-body insertCate alert-success">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </nav>
     <table class="records_list table table-striped display row-border cell-border compact panel-primary " id="matiere">
         <thead class="panel-heading" >
@@ -38,5 +53,10 @@
             }
 
         });
+
+        function newCate() {
+            lien = "{{path('categorie_new')}}";
+            $('.insertCate').load(lien);
+        }
     </script>
 {% endblock %}
