@@ -165,14 +165,14 @@ class EstDispenseController extends Controller
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(EstDispense $entity)
-    {
+    private function createEditForm(EstDispense $entity){
         $form = $this->createForm(new EstDispenseType(), $entity, array(
             'action' => $this->generateUrl('estdispense_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+       // $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Terminer', 'attr' => array('class' => 'btn btn-primary col-md-offset-3 col-sm-offset-3 col-xs-offset-3 col-md-1 col-sm-1 col-xs-3')));
 
         return $form;
     }
@@ -180,8 +180,7 @@ class EstDispenseController extends Controller
      * Edits an existing EstDispense entity.
      *
      */
-    public function updateAction(Request $request, $id)
-    {
+    public function updateAction(Request $request, $id){
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('SchoolMatiereBundle:EstDispense')->find($id);
@@ -196,8 +195,7 @@ class EstDispenseController extends Controller
 
         if ($editForm->isValid()) {
             $em->flush();
-
-            return $this->redirect($this->generateUrl('estdispense_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('estdispense'));
         }
 
         return $this->render('SchoolMatiereBundle:EstDispense:edit.html.twig', array(
@@ -242,7 +240,7 @@ class EstDispenseController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('estdispense_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete', 'attr'=>array('class'=>'btn btn-danger')))
+            ->add('submit', 'submit', array('label' => 'Supprimer', 'attr'=>array('class'=>'btn btn-danger')))
             ->getForm()
         ;
     }

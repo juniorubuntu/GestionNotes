@@ -63,7 +63,8 @@ class AbsenceController extends Controller {
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+       // $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Enregistrer', 'attr'=>array('class'=>' btn btn-primary text-center col-md-offset-4 col-sm-2')));
 
         return $form;
     }
@@ -139,7 +140,8 @@ class AbsenceController extends Controller {
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        //$form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Enregistrer', 'attr'=>array('class'=>' btn btn-primary text-center col-md-offset-4 col-sm-2')));
 
         return $form;
     }

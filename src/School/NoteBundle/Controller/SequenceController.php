@@ -77,7 +77,7 @@ class SequenceController extends Controller
         ));
 
 //        $form->add('submit', 'submit', array('label' => 'Create'));
-        $form->add('submit', 'submit', array('label' => 'Save', 'attr'=>array('class'=>' btn btn-primary col-sm-1')));
+        $form->add('submit', 'submit', array('label' => 'Enregistrer', 'attr'=>array('class'=>' btn btn-primary col-sm-1')));
         return $form;
     }
 
@@ -165,7 +165,8 @@ class SequenceController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        //$form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Enregistrer', 'attr'=>array('class'=>' btn btn-primary col-sm-1')));
 
         return $form;
     }
@@ -240,7 +241,7 @@ class SequenceController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('sequence_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Supprimer', 'attr'=> array('class' => 'btn btn-danger')))
             ->getForm()
         ;
     }

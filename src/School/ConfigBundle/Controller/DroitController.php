@@ -63,7 +63,8 @@ class DroitController extends Controller {
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        //$form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Save', 'attr'=>array('class'=>' btn btn-primary text-center col-sm-1')));
 
         return $form;
     }

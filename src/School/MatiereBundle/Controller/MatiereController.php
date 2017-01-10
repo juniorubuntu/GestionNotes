@@ -147,7 +147,8 @@ class MatiereController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        //$form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Enregistrer', 'attr'=>array('class'=>' btn btn-primary col-md-offset-4 col-sm-1')));
 
         return $form;
     }

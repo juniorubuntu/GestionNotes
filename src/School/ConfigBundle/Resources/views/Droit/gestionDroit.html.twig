@@ -21,6 +21,7 @@
                     <td class="alert-success">
                         <span class="level_{{user.id}}"><b>{{user.level}}</b></span>
                         <select class="form-control hide list_{{user.id}}" onchange="detailRight(value, {{user.id}});">
+                            <option value="0">Chosissez le droit</option>
                             {% for droit in droits %}
                                 <option {% if user.level == droit.nom %} selected="selected" {% endif %} value="{{droit.id}}">{{droit}}</option>
                             {% endfor %}
@@ -80,7 +81,11 @@
                 lien = lien.replace('RIGHT', val);
                 lien = lien.replace('USER', id);
                 var test = document.getElementById('lien_' + id);
-                test.setAttribute('href', lien);
+                if(val !=0){
+                    test.setAttribute('href', lien);
+                }else{
+                    test.setAttribute('href', '');
+                }
                 url = "{{path('detail_droit', {'id': "ID"})}}";
                 url = url.replace('ID', val);
                 $('.detail').load(url);

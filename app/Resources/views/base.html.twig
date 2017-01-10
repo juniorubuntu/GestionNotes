@@ -12,6 +12,7 @@
         </title>
         {% block stylesheets %}
             <script src="{{asset('js/jquery.min.js')}}"></script>
+            {#<script src="{{asset('js/jquery-ui.js')}}"></script>#}
             <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
             <link rel="stylesheet" href="{{asset('css/icomoon-social.css')}}">
             <link rel="stylesheet" href="{{asset('css/leaflet.css')}}" />
@@ -19,6 +20,10 @@
             {#<link rel="stylesheet" href="{{asset('css/main.css')}}">#}
             <link rel="stylesheet" href="{{asset('css/styleProjet.css')}}">
             <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker.min.css')}}">
+
+            <!-- daterange picker -->
+            <link rel="stylesheet" href="{{ asset('daterangepicker/daterangepicker.css') }}">
+
             <link rel="stylesheet" href="{{asset('css/main.css')}}">
             <link rel="stylesheet" href="{{asset('css/styleLogo.css')}}">
             <script src="{{asset('js/modernizr-2.6.2-respond-1.1.0.min.js')}}"></script>
@@ -41,7 +46,7 @@
 
         {% endblock %}
         {% block javascripts %}
-            <script>window.jQuery || document.write('<script src="{{asset('js/jquery-1.9.1.min.js')}}"><\/script>')</script>
+            {#<script>window.jQuery || document.write('<script src="{{asset('js/jquery-1.9.1.min.js')}}"><\/script>')</script>#}
             <script src="{{asset('js/bootstrap.min.js')}}"></script>
             <script src="{{asset('js/bootstrap-datepicker.min.js')}}"></script>
             <script src="{{asset('js/jquery.fitvids.js')}}"></script>
@@ -49,6 +54,10 @@
             <script src="{{asset('js/jquery.bxslider.js')}}"></script>
             <script src="{{asset('js/main-menu.js')}}"></script>
             <script src="{{asset('js/template.js')}}"></script>
+
+            <!-- date-range-picker -->
+            <script src="{{asset('daterangepicker/moment.min.js')}}"></script>
+            <script src="{{asset('daterangepicker/daterangepicker.js')}}"></script>
             <script>
                 $(function(){
                     $("div.alert").show("slow").delay(3000).hide("slow");

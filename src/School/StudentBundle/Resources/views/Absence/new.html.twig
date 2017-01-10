@@ -1,14 +1,49 @@
-{% extends '::base.html.twig' %}
+{% extends 'SchoolGestionBundle:Default:index.html.twig' %}
 
-{% block body -%}
-    <h1>Absence creation</h1>
+{% block content -%}
+    <h1>Nouvelle Absence</h1>
 
-    {{ form(form) }}
+    {#{{ form(form) }}#}
+
+    {{ form_start(form)}}
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-offset-4 col-sm-3">
+                <label>Nombre d'absences</label>
+                {{ form_widget(form.nbreAbsence, {'attr': {'class': 'form-control'}})  }}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-offset-4 col-sm-3">
+                <label>&eacute;l&egrave;ve</label>
+                {{ form_widget(form.student, {'attr': {'class': 'form-control'}})  }}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-offset-4 col-sm-3">
+                <label>S&eacute;quence</label>
+                {{ form_widget(form.sequence, {'attr': {'class': 'form-control'}})  }}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-offset-4 col-sm-3">
+                <label>Ann&eacute;e Acad&eacute;mique</label>
+                {{ form_widget(form.anneeScolaire, {'attr': {'class': 'form-control'}})  }}
+            </div>
+        </div>
+    </div>
+    {{ form_end(form)}}
 
         <ul class="record_actions">
-    <li>
-        <a href="{{ path('absence') }}">
-            Back to the list
+    <li>&nbsp;&nbsp;
+        <a class="btn btn-default" href="{{ path('absence') }}">
+            Annuler
         </a>
     </li>
 </ul>

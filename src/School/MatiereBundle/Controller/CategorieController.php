@@ -12,8 +12,7 @@ use School\MatiereBundle\Form\CategorieType;
  * Categorie controller.
  *
  */
-class CategorieController extends Controller
-{
+class CategorieController extends Controller{
 
     /**
      * Lists all Categorie entities.
@@ -147,7 +146,8 @@ class CategorieController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        //$form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Terminer', 'attr' => array('class' => 'btn btn-primary col-md-1 col-sm-1 col-xs-3')));
 
         return $form;
     }

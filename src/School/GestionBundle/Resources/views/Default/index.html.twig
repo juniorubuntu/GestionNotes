@@ -183,7 +183,7 @@
                                             <div class="col-md-12 modal-body">
                                                 {% for sequence in listSequence %}
                                                     <center>
-                                                        <a href="{{path('statistiques', {'idSequence':sequence.id, 'idMatiere':dispense.matiere.id, 'idEnseignant':dispense.enseignant.id })}}" class="btn btn-green">
+                                                        <a href="{{path('statistiques_info', {'idSequence':sequence.id, 'idMatiere':dispense.matiere.id, 'idEnseignant':dispense.enseignant.id })}}" class="btn btn-green">
                                                             <b>{{sequence}}</b>
                                                         </a>
                                                     </center>
@@ -220,7 +220,7 @@
                                     </div>
                                 </div>
                             {% else%}
-                                ..
+                                ...
                             {% endif %}
                         </ol>
                         <div class="pull-right">

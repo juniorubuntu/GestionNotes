@@ -77,7 +77,7 @@ class CycleController extends Controller
         ));
 
 //        $form->add('submit', 'submit', array('label' => 'Create'));
-        $form->add('submit', 'submit', array('label' => 'Save', 'attr'=>array('class'=>' btn btn-primary col-sm-1')));
+        $form->add('submit', 'submit', array('label' => 'Enregistrer', 'attr'=>array('class'=>' btn btn-primary text-center col-sm-1')));
         return $form;
     }
 
@@ -165,7 +165,8 @@ class CycleController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        //$form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Enregistrer', 'attr'=>array('class'=>' btn btn-primary col-sm-1')));
 
         return $form;
     }

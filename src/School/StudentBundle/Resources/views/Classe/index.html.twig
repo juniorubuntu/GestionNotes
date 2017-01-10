@@ -11,11 +11,10 @@
         <tr>
             <th>Id</th>
             <th>Nom</th>
-            <th>Classe Père</th>
+            <th>Classe M&egrave;re</th>
             <th>Abreviation</th>
             <th>Marquer les élèves absents</th>
-            <th>Détails</th>
-            <th>Modifier</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -50,10 +49,8 @@
                     </div>
                 </td>
                 <td>
-                    <a href="{{ path('classe_show', { 'id': entity.id }) }}">Voir</a>
-                </td>
-                <td>
-                    <a href="{{ path('classe_edit', { 'id': entity.id }) }}">Modifier</a>
+                    <a class="btn btn-info" href="{{ path('classe_show', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-eye-open"></i></a>
+                    <a class="btn btn-success" href="{{ path('classe_edit', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-edit"></i></a>
                 </td>
             </tr>
         {% endfor %}

@@ -61,6 +61,12 @@ class EstDispense {
     private $nombreHeuresAnnuel;
 
     /**
+     * @var integer
+     * @ORM\Column(type="integer")
+     */
+    private $nombreLeconsAnnuel;
+
+    /**
      * @var boolean
      * @ORM\Column(type="boolean")
      */
@@ -68,6 +74,18 @@ class EstDispense {
 
     private $nbreFilles;
     private $nbreGarcons;
+
+    private $nbreHeures;
+    private $nbreLecons;
+
+    private $compteurGarcons;
+    private $compteurFilles;
+
+    private $nbreEvaluations;
+
+    private $moyenneGenerale;
+
+    private $listeNotes;
 
     /**
      * Get id
@@ -249,4 +267,113 @@ class EstDispense {
     public function getNbreGarcons(){
         return $this->nbreGarcons;
     }
+
+    public function setNbreHeures($nbreHeures){
+        $this->nbreHeures= $nbreHeures;
+        return $this;
+    }
+    public function getNbreHeures(){
+        return $this->nbreHeures;
+    }
+
+
+    public function setNbreLecons($nbreLecons){
+        $this->nbreLecons= $nbreLecons;
+        return $this;
+    }
+
+    public function getNbreLecons(){
+        return $this->nbreLecons;
+    }
+
+    public function setCompteurGarcons($compteurGarcons){
+        $this->compteurGarcons= $compteurGarcons;
+        return $this;
+    }
+
+    public function getCompteurGarcons(){
+        return $this->compteurGarcons;
+    }
+    public function setCompteurFilles($compteurFilles){
+        $this->compteurFilles= $compteurFilles;
+        return $this;
+    }
+
+    public function getCompteurFilles(){
+        return $this->compteurFilles;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNbreEvaluations()
+    {
+        return $this->nbreEvaluations;
+    }
+
+    /**
+     * @param mixed $nbreEvaluations
+     */
+    public function setNbreEvaluations($nbreEvaluations)
+    {
+        $this->nbreEvaluations = $nbreEvaluations;
+    }
+
+
+
+    /**
+     * Set nombreLeconsAnnuel
+     *
+     * @param integer $nombreLeconsAnnuel
+     * @return EstDispense
+     */
+    public function setNombreLeconsAnnuel($nombreLeconsAnnuel)
+    {
+        $this->nombreLeconsAnnuel = $nombreLeconsAnnuel;
+
+        return $this;
+    }
+
+    /**
+     * Get nombreLeconsAnnuel
+     *
+     * @return integer 
+     */
+    public function getNombreLeconsAnnuel()
+    {
+        return $this->nombreLeconsAnnuel;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMoyenneGenerale()
+    {
+        return $this->moyenneGenerale;
+    }
+
+    /**
+     * @param mixed $moyenneGenerale
+     */
+    public function setMoyenneGenerale($moyenneGenerale)
+    {
+        $this->moyenneGenerale = $moyenneGenerale;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getListeNotes()
+    {
+        return $this->listeNotes;
+    }
+
+    /**
+     * @param mixed $listeNotes
+     */
+    public function setListeNotes($listeNotes)
+    {
+        $this->listeNotes = $listeNotes;
+    }
+
 }

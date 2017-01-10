@@ -11,8 +11,7 @@
             <tr>
                 <th>Id</th>
                 <th>Nom</th>
-                <th>Details</th>
-                <th>Editer</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -21,10 +20,8 @@
                     <td><a href="{{ path('sequence_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                     <td>{{ entity.nom }}</td>
                     <td>
-                        <a href="{{ path('sequence_show', { 'id': entity.id }) }}">show</a>
-                    </td>
-                    <td>
-                        <a href="{{ path('sequence_edit', { 'id': entity.id }) }}">edit</a>
+                        <a class="btn btn-info" href="{{ path('sequence_show', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-eye-open"></i></a>
+                        <a class="btn btn-success" href="{{ path('sequence_edit', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-edit"></i></a>
                     </td>
                 </tr>
             {% endfor %}

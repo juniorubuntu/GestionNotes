@@ -21,7 +21,7 @@
         <tr>
           <th scope="row">{{ student.id}}</th>
           <td>{{ student.nom }}</td>
-          <td>{{ student.dateNaissance|date('F j, Y, g:i a')}}</td>
+          <td>{{ student.dateNaissance|date('d/m/Y')}}</td>
           <td>
           	<a href="{{ path('school_student_show', {'id':student.id})}}" class="btn btn-default"><i class="glyphicon glyphicon-eye-open"></i>
     </a>

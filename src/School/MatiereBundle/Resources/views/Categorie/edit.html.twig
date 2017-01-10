@@ -2,15 +2,22 @@
 
 {% block content -%}
     <h1>Modification d'une categorie</h1>
-
-    {{ form(edit_form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('categorie') }}">
-            Retourner à la liste
+    {#{{ form(edit_form) }}#}
+    {{ form_start(edit_form)}}
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Nom de la cat&eacute;gorie</label>
+                {{ form_widget(edit_form.nom, {'attr': {'class': 'form-control'}})  }}
+            </div>
+        </div>
+    </div>
+    {{ form_end(edit_form)}}
+    <p>&nbsp;
+        <a href="{{ path('categorie')}}" class="btn btn-primary">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour &agrave; la liste
         </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+        {#{{ form(delete_form) }}#}
+    </p>
 {% endblock %}

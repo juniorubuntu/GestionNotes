@@ -20,6 +20,7 @@ class EstDispenseType extends AbstractType
             ->add('coefficient')
             ->add('annee')
             ->add('nombreHeuresAnnuel')
+            ->add('nombreLeconsAnnuel')
 //            ->add('classe')
             ->add('classe','entity', array('class'=>'School\StudentBundle\Entity\Classe', 'property'=>'nom',
                 'query_builder' => function (\Doctrine\ORM\EntityRepository $repository)

@@ -1,16 +1,34 @@
-{% extends '::base.html.twig' %}
+{% extends 'SchoolGestionBundle:Default:index.html.twig' %}
 
-{% block body -%}
-    <h1>Sequence edit</h1>
+{% block content -%}
+    <h1 class="text-center">Edition d'une S&eacute;quence</h1>
 
-    {{ form(edit_form) }}
+    {#{{ form(edit_form) }}#}
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('sequence') }}">
-            Back to the list
+    {{ form_start(edit_form)}}
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-6">
+                <label>Nom de la s&eacute;quence</label>
+                {{ form_widget(edit_form.nom, {'attr': {'class': 'form-control'}})  }}
+            </div>
+        </div>
+    </div>
+    {{ form_end(edit_form)}}
+    <p>&nbsp;
+        <a href="{{ path('sequence')}}" class="btn btn-primary">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour &agrave; la liste
         </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+        {#{{ form(delete_form) }}#}
+    </p>
+
+        {#<ul class="record_actions">#}
+    {#<li>#}
+        {#<a href="{{ path('sequence') }}">#}
+            {#Back to the list#}
+        {#</a>#}
+    {#</li>#}
+    {#<li>{{ form(delete_form) }}</li>#}
+{#</ul>#}
 {% endblock %}

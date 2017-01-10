@@ -59,6 +59,32 @@ class EvaluationController extends Controller {
         ));
     }
 
+
+    public function infoStatistiquesAction($idSequence, $idMatiere, $idEnseignant){
+        $em = $this->getDoctrine()->getManager();
+
+        $school = $em->getRepository('SchoolConfigBundle:Ecole')->findAll();
+
+        $sequence = $em->getRepository('SchoolNoteBundle:Sequence')->find($idSequence);
+        $matiere = $em->getRepository('SchoolMatiereBundle:Matiere')->find($idMatiere);
+        $enseignant = $em->getRepository('SchoolUserBundle:User')->find($idEnseignant);
+
+
+        $listeEnseignements = $em->getRepository('SchoolMatiereBundle:EstDispense')->findBy(array(
+            'annee' => $school[0]->getAnneeEnCour(),
+            'enseignant' => $enseignant,
+            'matiere' => $matiere,
+
+        ));
+
+        return $this->render('SchoolNoteBundle:Evaluation:formulaireStatistique.html.twig', array(
+            'sequence' => $sequence,
+            'matiere' => $matiere,
+            'enseignant' => $enseignant,
+            'enseignements' => $listeEnseignements,
+        ));
+    }
+
     /**
      * Creates a new Note entity.
      */
@@ -242,9 +268,13 @@ class EvaluationController extends Controller {
 
 
 
-    public  function  statistiquesSequenceAction($idSequence, $idMatiere, $idEnseignant){
+    public  function  statistiquesSequenceAction(Request $request, $idSequence, $idMatiere, $idEnseignant){
+
         $em = $this->getDoctrine()->getManager();
 
+        //$school = $this->getDoctrine()->getRepository('SchoolConfigBundle:Ecole')->findAll();
+        $constante = $em->getRepository('SchoolConfigBundle:Constante')->findAll();
+        //$ecole = $school[0];
 
         $school = $em->getRepository('SchoolConfigBundle:Ecole')->findAll();
 
@@ -259,50 +289,124 @@ class EvaluationController extends Controller {
             'matiere' => $matiere,
 
         ));
-        foreach($listeEnseignements as $enseignement){
-            $qb2 = $em->createQueryBuilder();
-            $qb2->select('s')
-                ->from('SchoolStudentBundle:Student', 's')
-                ->innerJoin('SchoolStudentBundle:Inscription', 'i', 'WITH', 'i.student = s.id')
-                ->innerJoin('SchoolStudentBundle:Classe', 'c', 'WITH', 'i.classe = c.id')
-                ->innerJoin('SchoolMatiereBundle:EstDispense', 'e', 'WITH', 'e.classe = c.id')
-                ->innerJoin('SchoolStudentBundle:Sexe', 'se', 'WITH', 'se.id = s.sexe')
-                ->where('i.annee= :anneeEnCour')
-                ->andWhere('c.id = :idClasse')
-                ->andWhere('se.nom = :sexe')
-                ->setParameters(array(
-                    'anneeEnCour' => $enseignement->getAnnee(),
-                    'idClasse' => $enseignement->getClasse()->getId(),
-                    'sexe' => 'FEMININ',
-                ));
-            $filles = $qb2->getQuery()->getResult();
+        if($request->getMethod() == "POST"){
+            $date = [];
+            $date[] = $request->get('dateDebut');
+            $date[] = $request->get('dateFin');
+            $compteurTotalMoyenne = 0;
+            $compteurTotalEvaluations = 0;
+            foreach ($listeEnseignements as $enseignement) {
+                $qb2 = $em->createQueryBuilder();
+                $qb2->select('s')
+                    ->from('SchoolStudentBundle:Student', 's')
+                    ->innerJoin('SchoolStudentBundle:Inscription', 'i', 'WITH', 'i.student = s.id')
+                    ->innerJoin('SchoolStudentBundle:Classe', 'c', 'WITH', 'i.classe = c.id')
+                    ->innerJoin('SchoolMatiereBundle:EstDispense', 'e', 'WITH', 'e.classe = c.id')
+                    ->innerJoin('SchoolStudentBundle:Sexe', 'se', 'WITH', 'se.id = s.sexe')
+                    ->where('i.annee= :anneeEnCour')
+                    ->andWhere('c.id = :idClasse')
+                    ->andWhere('se.nom = :sexe')
+                    ->setParameters(array(
+                        'anneeEnCour' => $enseignement->getAnnee(),
+                        'idClasse' => $enseignement->getClasse()->getId(),
+                        'sexe' => 'FEMININ',
+                    ));
+                $filles = $qb2->getQuery()->getResult();
 
-            $qb1 = $em->createQueryBuilder();
-            $qb1->select('s')
-                ->from('SchoolStudentBundle:Student', 's')
-                ->innerJoin('SchoolStudentBundle:Inscription', 'i', 'WITH', 'i.student = s.id')
-                ->innerJoin('SchoolStudentBundle:Classe', 'c', 'WITH', 'i.classe = c.id')
-                ->innerJoin('SchoolMatiereBundle:EstDispense', 'e', 'WITH', 'e.classe = c.id')
-                ->innerJoin('SchoolStudentBundle:Sexe', 'se', 'WITH', 'se.id = s.sexe')
-                ->where('i.annee= :anneeEnCour')
-                ->andWhere('c.id = :idClasse')
-                ->andWhere('se.nom = :sexe')
-                ->setParameters(array(
-                    'anneeEnCour' => $enseignement->getAnnee(),
-                    'idClasse' => $enseignement->getClasse()->getId(),
-                    'sexe' => 'MASCULIN',
-                ));
-            $garcons = $qb1->getQuery()->getResult();
+                $qb1 = $em->createQueryBuilder();
+                $qb1->select('s')
+                    ->from('SchoolStudentBundle:Student', 's')
+                    ->innerJoin('SchoolStudentBundle:Inscription', 'i', 'WITH', 'i.student = s.id')
+                    ->innerJoin('SchoolStudentBundle:Classe', 'c', 'WITH', 'i.classe = c.id')
+                    ->innerJoin('SchoolMatiereBundle:EstDispense', 'e', 'WITH', 'e.classe = c.id')
+                    ->innerJoin('SchoolStudentBundle:Sexe', 'se', 'WITH', 'se.id = s.sexe')
+                    ->where('i.annee= :anneeEnCour')
+                    ->andWhere('c.id = :idClasse')
+                    ->andWhere('se.nom = :sexe')
+                    ->setParameters(array(
+                        'anneeEnCour' => $enseignement->getAnnee(),
+                        'idClasse' => $enseignement->getClasse()->getId(),
+                        'sexe' => 'MASCULIN',
+                    ));
+                $garcons = $qb1->getQuery()->getResult();
 
-            $enseignement->setNbreFilles(count($filles));
-            $enseignement->setNbreGarcons(count($garcons));
+                $enseignement->setNbreFilles(count($filles));
+                $enseignement->setNbreGarcons(count($garcons));
+
+                $enseignement->setNbreHeures($request->get($enseignement->getId() . "-heures"));
+                $enseignement->setNbreLecons($request->get($enseignement->getId() . "-lecons"));
+                $evaluations = [];
+                $evaluations = $em->getRepository('SchoolNoteBundle:Evaluation')->findBy(array(
+                    'sequence' => $sequence,
+                    'matiere' => $matiere,
+                    'annee' => $school[0]->getAnneeEnCour(),
+                    'classe' => $enseignement->getClasse(),
+                ));
+                $compt = 0;
+                $comptGarcons = 0;
+                $comptFilles = 0;
+                $moyenneGenerale = 0;
+
+                $compteur0_999 = 0;
+                $compteur10_1199 = 0;
+                $compteur12_1399 = 0;
+                $compteur14_1599 = 0;
+                $compteur16_20 = 0;
+                $listeNotes = [];
+                foreach ($evaluations as $moy) {
+                    if ($moy->getNote() >= 10) {
+                        $compt += 1;
+                        if ($moy->getStudent()->getSexe() == "MASCULIN") {
+                            $comptGarcons += 1;
+                        } else {
+                            $comptFilles += 1;
+                        }
+                    }
+                    $moyenneGenerale = $moyenneGenerale + $moy->getNote();
+                    //Gestion des intervalles de notes
+                    if ($moy->getNote() >= 16) {
+                        $compteur16_20 += 1;
+                    } else if ($moy->getNote() < 16 && $moy->getNote() >= 14) {
+                        $compteur14_1599 += 1;
+                    } else if ($moy->getNote() < 14 && $moy->getNote() >= 12) {
+                        $compteur12_1399 += 1;
+                    } else if ($moy->getNote() < 12 && $moy->getNote() >= 10) {
+                        $compteur10_1199 += 1;
+                    } else if ($moy->getNote() < 10 && $moy->getNote() >= 0) {
+                        $compteur0_999 += 1;
+                    }
+                }
+                $compteurTotalMoyenne += $compt;
+                $compteurTotalEvaluations += count($evaluations);
+
+                $enseignement->setCompteurFilles($comptFilles);
+                $enseignement->setCompteurGarcons($comptGarcons);
+                $enseignement->setNbreEvaluations(count($evaluations));
+                if (count($evaluations) != 0) {
+                    $enseignement->setMoyenneGenerale($moyenneGenerale / count($evaluations));
+                }
+                $listeNotes[] = $compteur16_20;
+                $listeNotes[] = $compteur14_1599;
+                $listeNotes[] = $compteur12_1399;
+                $listeNotes[] = $compteur10_1199;
+                $listeNotes[] = $compteur0_999;
+
+                $enseignement->setListeNotes($listeNotes);
+                $listeNotes = [];
+            }
         }
 
         $html = $this->renderView('SchoolNoteBundle:Evaluation:statistiques.html.twig', array(
             'sequence' => $sequence,
+            'date' => $date,
             'matiere' => $matiere,
+            'ecole' => $school[0],
+            'pays' => $constante[0],
             'enseignant' => $enseignant,
             'enseignements' => $listeEnseignements,
+            'nbreMoyennes' => $compteurTotalMoyenne,
+            'nbreEvaluations' => $compteurTotalEvaluations,
+
         ));
 
         $html2pdf = new \Html2Pdf_Html2Pdf('L', 'A4', 'fr');

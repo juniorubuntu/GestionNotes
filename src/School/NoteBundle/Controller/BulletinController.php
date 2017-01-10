@@ -398,6 +398,16 @@ class BulletinController extends Controller {
         $classe = $this->getDoctrine()->getRepository('SchoolStudentBundle:Classe')->find($idClasse);
         $sequence = $this->getDoctrine()->getRepository('SchoolNoteBundle:Sequence')->find($idSeq);
         $anneeScolaire = $this->getDoctrine()->getRepository('SchoolConfigBundle:Annee')->find($idAnnee);
+        $matieresTotalClasse = $this->getDoctrine()->getRepository('SchoolMatiereBundle:EstDispense')->findBy(
+            array(
+                'annee' => $anneeScolaire,
+                'classe' => $classe,
+            )
+        );
+        $coefTotal = 0;
+       foreach($matieresTotalClasse as $matiere){
+           $coefTotal += $matiere->getCoefficient();
+       }
         $AllstudentsteEleve = $this->getDoctrine()->getRepository('SchoolStudentBundle:Inscription')->findBy(
             array
             (
@@ -653,7 +663,9 @@ class BulletinController extends Controller {
                 if ($somCoef > 0) {
                     $bullEleve.= number_format($somNote / $somCoef, 2, ',', ' ');
                     $moy = number_format($somNote / $somCoef, 2, ',', ' ');
-                    $tabMoy[] = $moy;
+                    if($somCoef >= ($coefTotal/2)){
+                        $tabMoy[] = $moy;
+                    }
                 } else {
                     $bullEleve.='/';
                 }
@@ -663,7 +675,13 @@ class BulletinController extends Controller {
                         <b><u>Appreciation: </u> ' . $this->getMention($moy) . '</b>
                     </td>
                     <td class="10p">
-                        <b style="color: orange"><u>RANG</u>: RANG_' . $moy . '</b>
+                        <b style="color: orange"><u>RANG</u>:';
+                if($somCoef >= ($coefTotal/2)){
+                    $bullEleve .= 'RANG_'.$moy.'';
+                }else{
+                    $bullEleve .= '<span style="color: red;">NON CLASSE</span>';
+                }
+                $bullEleve.='</b>
                 </td>
                     <td class="40p" >
                         <b><u>OBSERVATIONS</u></b><br/>

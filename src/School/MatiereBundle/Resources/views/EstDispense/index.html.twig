@@ -10,12 +10,13 @@
         <thead class="panel-heading">
             <tr>
                 <th>Id</th>
-                <th>Enseignant</th>
                 <th>Matière</th>
+                <th>Enseignant</th>
                 <th>Classe</th>
-                <th>Coefficient</th>
+                <th>Coef</th>
                 <th>Annee</th>
-                <th>Heures annuelles</th>
+                <th>Heures par an</th>
+                <th>Le&ccedil;ons par an</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -23,12 +24,18 @@
             {% for entity in entities %}
                 <tr>
                     <td><a href="{{ path('estdispense_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>{% if entity.matiere.nom | length >= 10 %}
+                            {{ entity.matiere.abreviation }}
+                        {% else %}
+                            {{ entity.matiere.nom }}
+                        {% endif %}
+                    </td>
                     <td>{{ entity.enseignant }}</td>
-                    <td>{{ entity.matiere }}</td>
                     <td>{{ entity.classe.abreviation }}</td>
                     <td>{{ entity.coefficient }}</td>
                     <td>{{ entity.annee }}</td>
-                    <td>{{ entity.nombreHeuresAnnuel }}</td>
+                    <td class="text-center">{{ entity.nombreHeuresAnnuel }}</td>
+                    <td class="text-center">{{ entity.nombreLeconsAnnuel }}</td>
                     <td>
                         <a class="btn btn-info" href="{{ path('estdispense_show', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-eye-open"></i></a>
                         <a class="btn btn-success" href="{{ path('estdispense_edit', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-edit"></i></a>

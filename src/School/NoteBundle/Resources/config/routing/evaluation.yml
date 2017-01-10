@@ -59,3 +59,7 @@ note_inserer:
     path: /note-{idNote}/classe-{idClasse}/annee-{idAnnee}/notes/modifier
     defaults: { _controller: "SchoolNoteBundle:Evaluation:insererNote"}
     #requirements: { _method: post|put }
+
+statistiques_info:
+    path:     /{idSequence}/{idMatiere}/{idEnseignant}/statistiques/info
+    defaults: { _controller: "SchoolNoteBundle:Evaluation:infoStatistiques"}

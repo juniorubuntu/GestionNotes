@@ -1,6 +1,7 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
+    <div class="container">
     <h1 class="text-center">List des utilisateurs</h1>
 
     <table class="records_list table table-striped panel-primary" id="user">
@@ -12,9 +13,8 @@
                 <th>Matricule</th>
                 <th>Grade</th>
                 <th>Diplomes</th>
-                <th>Telephone</th>
-                <th>Détails</th>
-                <th>Modifier</th>
+                <th>Contact</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -28,13 +28,14 @@
                     <td>{{ entity.diplomes }}</td>
                     <td>{{ entity.telephone }}</td>
                     <td>
-                        <a class="btn btn-info" href="{{ path('user_show', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-eye-open"></i> Détails</a>
-                        <a class="btn btn-success" href="{{ path('user_edit', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-trash"></i> Modifier</a>
+                        <a class="btn btn-info" href="{{ path('user_show', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-eye-open"></i></a>
+                        <a class="btn btn-success" href="{{ path('user_edit', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-edit"></i></a>
                     </td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
+    </div>
 
     {#<ul>#}
         {#<li>#}

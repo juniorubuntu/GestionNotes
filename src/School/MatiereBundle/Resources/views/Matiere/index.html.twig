@@ -24,8 +24,8 @@
                     <td>{{ entity.abreviation }}</td>
                     <td>{{ entity.categorie}}</td>
                     <td>
-                        <a class="btn btn-info" href="{{ path('matiere_show', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-eye-open"></i> Détails</a>
-                        <a class="btn btn-success" href="{{ path('matiere_edit', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-trash"></i> Modifier</a>
+                        <a class="btn btn-info" href="{{ path('matiere_show', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-eye-open"></i></a>
+                        <a class="btn btn-success" href="{{ path('matiere_edit', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-edit"></i></a>
                     </td>
                 </tr>
             {% endfor %}
