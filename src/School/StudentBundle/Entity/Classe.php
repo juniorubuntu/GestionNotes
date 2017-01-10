@@ -44,6 +44,11 @@ class Classe {
      * @ORM\ManyToOne(targetEntity="Classe")
      */
     private $classePere;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Classe")
+     */
+    private $classeNext;
 
     /**
      * @ORM\ManyToOne(targetEntity="School\StudentBundle\Entity\Cycle")
@@ -147,5 +152,28 @@ class Classe {
     public function getCycle()
     {
         return $this->cycle;
+    }
+
+    /**
+     * Set classeNext
+     *
+     * @param \School\StudentBundle\Entity\Classe $classeNext
+     * @return Classe
+     */
+    public function setClasseNext(\School\StudentBundle\Entity\Classe $classeNext = null)
+    {
+        $this->classeNext = $classeNext;
+    
+        return $this;
+    }
+
+    /**
+     * Get classeNext
+     *
+     * @return \School\StudentBundle\Entity\Classe 
+     */
+    public function getClasseNext()
+    {
+        return $this->classeNext;
     }
 }

@@ -20,6 +20,9 @@ class ClasseType extends AbstractType
             ->add('classePere','entity', array('class'=>'School\StudentBundle\Entity\Classe', 'property'=>'nom',
                 'query_builder' => function (\Doctrine\ORM\EntityRepository $repository)
                 {return $repository->createQueryBuilder('c')->where('c.classePere is NULL');}, 'required'=>false))
+            ->add('classeNext','entity', array('class'=>'School\StudentBundle\Entity\Classe', 'property'=>'nom',
+                'query_builder' => function (\Doctrine\ORM\EntityRepository $repository)
+                {return $repository->createQueryBuilder('c')->where('c.classePere is NULL');}, 'required'=>true))
             ->add('cycle',   'entity', array(
                 'class' =>     'SchoolStudentBundle:Cycle',
                 'property' => 'nom',

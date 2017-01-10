@@ -83,6 +83,10 @@ class EstDispense {
 
     private $nbreEvaluations;
 
+    private $moyenneGenerale;
+
+    private $listeNotes;
+
     /**
      * Get id
      *
@@ -315,5 +319,61 @@ class EstDispense {
         $this->nbreEvaluations = $nbreEvaluations;
     }
 
+
+
+    /**
+     * Set nombreLeconsAnnuel
+     *
+     * @param integer $nombreLeconsAnnuel
+     * @return EstDispense
+     */
+    public function setNombreLeconsAnnuel($nombreLeconsAnnuel)
+    {
+        $this->nombreLeconsAnnuel = $nombreLeconsAnnuel;
+
+        return $this;
+    }
+
+    /**
+     * Get nombreLeconsAnnuel
+     *
+     * @return integer 
+     */
+    public function getNombreLeconsAnnuel()
+    {
+        return $this->nombreLeconsAnnuel;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMoyenneGenerale()
+    {
+        return $this->moyenneGenerale;
+    }
+
+    /**
+     * @param mixed $moyenneGenerale
+     */
+    public function setMoyenneGenerale($moyenneGenerale)
+    {
+        $this->moyenneGenerale = $moyenneGenerale;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getListeNotes()
+    {
+        return $this->listeNotes;
+    }
+
+    /**
+     * @param mixed $listeNotes
+     */
+    public function setListeNotes($listeNotes)
+    {
+        $this->listeNotes = $listeNotes;
+    }
 
 }

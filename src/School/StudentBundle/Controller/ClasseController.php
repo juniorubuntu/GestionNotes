@@ -23,7 +23,7 @@ class ClasseController extends Controller
         $em = $this->getDoctrine()->getManager();
         $qb = $em->createQueryBuilder();
 
-        //on recupère uniquement les classe ui ont la classe mère non null
+        //on recupï¿½re uniquement les classe ui ont la classe mï¿½re non null
         $entities = $qb->select('cla')
             ->from('SchoolStudentBundle:Classe', 'cla')
             ->where('cla.classePere is NOT NULL')
@@ -158,7 +158,7 @@ class ClasseController extends Controller
         ));
 
         //$form->add('submit', 'submit', array('label' => 'Update'));
-        $form->add('submit', 'submit', array('label' => 'Enregistrer', 'attr'=>array('class'=>' btn btn-primary text-center col-sm-2')));
+        $form->add('submit', 'submit', array('label' => 'Enregistrer', 'attr'=>array('class'=>' btn btn-primary text-center')));
 
         return $form;
     }

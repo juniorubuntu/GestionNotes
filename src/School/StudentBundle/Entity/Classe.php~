@@ -44,6 +44,11 @@ class Classe {
      * @ORM\ManyToOne(targetEntity="Classe")
      */
     private $classePere;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Classe")
+     */
+    private $classeNext;
 
     /**
      * @ORM\ManyToOne(targetEntity="School\StudentBundle\Entity\Cycle")

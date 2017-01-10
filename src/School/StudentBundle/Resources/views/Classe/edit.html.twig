@@ -1,7 +1,7 @@
 {% extends 'SchoolGestionBundle:Default:index.html.twig' %}
 
 {% block content -%}
-    <h1>Classe edit</h1>
+    <h2>Modification d'une classe</h2>
 
     {#{{ form(edit_form) }}#}
 
@@ -9,43 +9,56 @@
     <div class="form-group">
         <div class="row">
             <div class="col-md-offset-4 col-sm-3">
-                <label>Nombre d'absences</label>
-                {{ form_widget(edit_form.nbreAbsence, {'attr': {'class': 'form-control'}})  }}
+                <label>Nom de la classe</label>
+                {{ form_widget(edit_form.nom, {'attr': {'class': 'form-control','placeholder':'ex:Terminale C'}})  }}
             </div>
         </div>
     </div>
     <div class="form-group">
         <div class="row">
             <div class="col-md-offset-4 col-sm-3">
-                <label>&eacute;l&egrave;ve</label>
-                {{ form_widget(edit_form.student, {'attr': {'class': 'form-control'}})  }}
+                <label>abr&eacute;viation</label>
+                {{ form_widget(edit_form.abreviation, {'attr': {'class': 'form-control','placeholder':'ex:Tle C'}})  }}
             </div>
         </div>
     </div>
     <div class="form-group">
         <div class="row">
             <div class="col-md-offset-4 col-sm-3">
-                <label>S&eacute;quence</label>
-                {{ form_widget(edit_form.sequence, {'attr': {'class': 'form-control'}})  }}
+                <label>Classe M&egrave;re</label>
+                {{ form_widget(edit_form.classePere, {'attr': {'class': 'form-control'}})  }}
             </div>
         </div>
     </div>
     <div class="form-group">
         <div class="row">
             <div class="col-md-offset-4 col-sm-3">
-                <label>Ann&eacute;e Acad&eacute;mique</label>
-                {{ form_widget(edit_form.anneeScolaire, {'attr': {'class': 'form-control'}})  }}
+                <label>Classe Suivante</label>
+                {{ form_widget(edit_form.classeNext, {'attr': {'class': 'form-control'}})  }}
             </div>
         </div>
     </div>
-    {{ form_end(form)}}
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-offset-4 col-sm-3">
+                <label>Cycle</label>
+                {{ form_widget(edit_form.cycle, {'attr': {'class': 'form-control'}})  }}
+            </div>
+        </div>
+    </div>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('classe') }}">
-            Retourner à la liste
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    <table class="col-md-offset-4">
+        <tr>
+            <td >{{ form_end(edit_form)}}</td>
+            <td >{{ form(delete_form) }}</td>
+        </tr>
+    </table>
+
+    <div class="">
+        <div class="">
+            <a href="{{ path('classe') }}">
+                Retourner à la liste
+            </a>
+        </div>
+    </div>
 {% endblock %}
