@@ -85,7 +85,11 @@
                         <strong>Nombre de moyenne >= 10/20: </strong>{{ nbreMoyennes }}
                     </td>
                     <td style="border: none">
-                        <strong>Poucentage de r&eacute;ussite: </strong> {{ ((nbreMoyennes * 100)/nbreEvaluations) | number_format(2, '.', ',') }}%
+                        {% if nbreEvaluations > 0 %}
+                            <strong>Poucentage de r&eacute;ussite: </strong> {{ ((nbreMoyennes * 100)/nbreEvaluations) | number_format(2, '.', ',') }}%
+                        {% else %}
+                            /
+                        {% endif %}
                     </td>
                 </tr>
             </table>
@@ -152,7 +156,7 @@
                     <td>{{ enseignement.nombreHeuresAnnuel }}</td>
                     <td>{{ enseignement.nbreHeures}}</td>
                         <td>
-                            {% if (enseignement.nbreHeures * 100) /enseignement.nombreHeuresAnnuel <= 100 %}
+                            {% if ( enseignement.nombreHeuresAnnuel > 0  and  ((enseignement.nbreHeures * 100) /enseignement.nombreHeuresAnnuel <= 100)) %}
                                 {{ ((enseignement.nbreHeures * 100) /enseignement.nombreHeuresAnnuel) | number_format(2, '.', ',') }}%
                             {% else %}
                                 Erreur
@@ -161,8 +165,8 @@
                     <td>{{ enseignement.nombreLeconsAnnuel }}</td>
                     <td>{{ enseignement.nbreLecons }}</td>
                     <td>
-                        {% if ((enseignement.nbreLecons * 100)/enseignement.nombreLeconsAnnuel)<= 100 %}
-                            {{ ((enseignement.nbreLecons * 100)/enseignement.nombreLeconsAnnuel) | number_format(2, '.', ',') }}
+                        {% if (enseignement.nombreLeconsAnnuel > 0 and (((enseignement.nbreLecons * 100)/enseignement.nombreLeconsAnnuel)<= 100)) %}
+                            {{ ((enseignement.nbreLecons * 100)/enseignement.nombreLeconsAnnuel) | number_format(2, '.', ',') }}%
                         {% else %}
                             Erreur
                         {% endif %}</td>
@@ -172,9 +176,24 @@
                             Erreur
                         {% endif %}
                     </td>
-                    <td>{{ ((enseignement.compteurGarcons * 100)/enseignement.nbreEvaluations) | number_format(2, '.', ',') }}%</td>
-                    <td>{{ ((enseignement.compteurFilles * 100)/enseignement.nbreEvaluations) | number_format(2, '.', ',') }}%</td>
-                    <td>{{ (((enseignement.compteurGarcons + enseignement.compteurFilles)*100)/enseignement.nbreEvaluations) | number_format(2, '.', ',')}}%</td>
+                    <td>{% if enseignement.nbreEvaluations > 0 %}
+                            {{ ((enseignement.compteurGarcons * 100)/enseignement.nbreEvaluations) | number_format(2, '.', ',') }}%
+                        {% else %}
+                            /
+                        {% endif %}
+                    </td>
+                    <td>{% if enseignement.nbreEvaluations > 0 %}
+                            {{ ((enseignement.compteurFilles * 100)/enseignement.nbreEvaluations) | number_format(2, '.', ',') }}%
+                        {% else %}
+                            /
+                        {% endif %}
+                    </td>
+                    <td>{% if enseignement.nbreEvaluations > 0 %}
+                            {{ (((enseignement.compteurGarcons + enseignement.compteurFilles)*100)/enseignement.nbreEvaluations) | number_format(2, '.', ',')}}%
+                        {% else %}
+                            /
+                        {% endif %}
+                    </td>
                     <td>{{ enseignement.listeNotes[0] }}</td>
                     <td>{{ enseignement.listeNotes[1] }}</td>
                     <td>{{ enseignement.listeNotes[2] }}</td>

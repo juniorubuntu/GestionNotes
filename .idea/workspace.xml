@@ -2,50 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98b8266a-379d-446f-98e5-b858b1677e24" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Evaluation/formulaireStatistique.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Controller/AbsenceController.php" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Controller/AbsenceController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/NoteBundle/Controller/BulletinController.php" afterPath="$PROJECT_DIR$/src/School/NoteBundle/Controller/BulletinController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/MatiereBundle/Controller/CategorieController.php" afterPath="$PROJECT_DIR$/src/School/MatiereBundle/Controller/CategorieController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Controller/ClasseController.php" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Controller/ClasseController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Controller/CycleController.php" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Controller/CycleController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/ConfigBundle/Controller/DroitController.php" afterPath="$PROJECT_DIR$/src/School/ConfigBundle/Controller/DroitController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/MatiereBundle/Entity/EstDispense.php" afterPath="$PROJECT_DIR$/src/School/MatiereBundle/Entity/EstDispense.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/MatiereBundle/Controller/EstDispenseController.php" afterPath="$PROJECT_DIR$/src/School/MatiereBundle/Controller/EstDispenseController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/MatiereBundle/Form/EstDispenseType.php" afterPath="$PROJECT_DIR$/src/School/MatiereBundle/Form/EstDispenseType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/NoteBundle/Controller/EvaluationController.php" afterPath="$PROJECT_DIR$/src/School/NoteBundle/Controller/EvaluationController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/MatiereBundle/Controller/MatiereController.php" afterPath="$PROJECT_DIR$/src/School/MatiereBundle/Controller/MatiereController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/NoteBundle/Controller/SequenceController.php" afterPath="$PROJECT_DIR$/src/School/NoteBundle/Controller/SequenceController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Absence/absenceClasse.html.twig" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Absence/absenceClasse.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Student/addStudent.html.twig" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Student/addStudent.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/Categorie/edit.html.twig" afterPath="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/Categorie/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/EstDispense/edit.html.twig" afterPath="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/EstDispense/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/Matiere/edit.html.twig" afterPath="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/Matiere/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Sequence/edit.html.twig" afterPath="$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Sequence/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Absence/edit.html.twig" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Absence/edit.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Classe/edit.html.twig" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Classe/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Cycle/edit.html.twig" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Cycle/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/NoteBundle/Resources/config/routing/evaluation.yml" afterPath="$PROJECT_DIR$/src/School/NoteBundle/Resources/config/routing/evaluation.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/ConfigBundle/Resources/views/Droit/gestionDroit.html.twig" afterPath="$PROJECT_DIR$/src/School/ConfigBundle/Resources/views/Droit/gestionDroit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/GestionBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/School/GestionBundle/Resources/views/Default/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/Categorie/index.html.twig" afterPath="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/Categorie/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/EstDispense/index.html.twig" afterPath="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/EstDispense/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/Matiere/index.html.twig" afterPath="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/Matiere/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Sequence/index.html.twig" afterPath="$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Sequence/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Absence/index.html.twig" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Absence/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Classe/index.html.twig" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Classe/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/UserBundle/Resources/views/User/index.html.twig" afterPath="$PROJECT_DIR$/src/School/UserBundle/Resources/views/User/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Student/listStudents.html.twig" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Student/listStudents.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/ConfigBundle/Resources/views/Droit/new.html.twig" afterPath="$PROJECT_DIR$/src/School/ConfigBundle/Resources/views/Droit/new.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/EstDispense/new.html.twig" afterPath="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/EstDispense/new.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Absence/new.html.twig" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Absence/new.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/ConfigBundle/Resources/views/Droit/show.html.twig" afterPath="$PROJECT_DIR$/src/School/ConfigBundle/Resources/views/Droit/show.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/Matiere/show.html.twig" afterPath="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/Matiere/show.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Sequence/show.html.twig" afterPath="$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Sequence/show.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Absence/show.html.twig" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Absence/show.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Student/showStudent.html.twig" afterPath="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Student/showStudent.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Evaluation/statistiques.html.twig" afterPath="$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Evaluation/statistiques.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/styleProjet.css" afterPath="$PROJECT_DIR$/web/css/styleProjet.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GestionNotes.iws" />
@@ -68,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/School/ConfigBundle/Resources/views/Droit/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4043716">
-              <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
+            <state vertical-scroll-proportion="-10.153846">
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -91,9 +49,10 @@
       <file leaf-file-name="BulletinController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/School/NoteBundle/Controller/BulletinController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.3846154">
-              <caret line="672" column="28" selection-start-line="672" selection-start-column="28" selection-end-line="672" selection-end-column="28" />
+            <state vertical-scroll-proportion="-4.5">
+              <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
               <folding>
+                <element signature="e#48#90#0#PHP" expanded="true" />
                 <marker date="1484045850164" expanded="true" signature="11897:13114" placeholder="..." />
                 <marker date="1484045850164" expanded="true" signature="11923:12011" placeholder="..." />
                 <marker date="1484045850164" expanded="true" signature="12034:12725" placeholder="..." />
@@ -212,6 +171,36 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="EvaluationController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/School/NoteBundle/Controller/EvaluationController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.230769">
+              <caret line="373" column="46" selection-start-line="373" selection-start-column="46" selection-end-line="373" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="statistiques.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Evaluation/statistiques.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-113.76923">
+              <caret line="174" column="34" selection-start-line="174" selection-start-column="34" selection-end-line="174" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Classe/edit.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.72677594">
+              <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="EstDispense.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/School/MatiereBundle/Entity/EstDispense.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -258,7 +247,6 @@
         <option value="$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Evaluation/formulaireStatistique.html.twig" />
         <option value="$PROJECT_DIR$/src/School/MatiereBundle/Entity/EstDispense.php" />
         <option value="$PROJECT_DIR$/src/School/NoteBundle/Controller/EvaluationController.php" />
-        <option value="$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Evaluation/statistiques.html.twig" />
         <option value="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/Matiere/show.html.twig" />
         <option value="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/EstDispense/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/School/UserBundle/Resources/views/User/index.html.twig" />
@@ -291,7 +279,6 @@
         <option value="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Absence/show.html.twig" />
         <option value="$PROJECT_DIR$/src/School/StudentBundle/Controller/AbsenceController.php" />
         <option value="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Absence/new.html.twig" />
-        <option value="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Classe/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/School/MatiereBundle/Resources/views/EstDispense/index.html.twig" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/School/ConfigBundle/Controller/DroitController.php" />
@@ -299,6 +286,8 @@
         <option value="$PROJECT_DIR$/src/School/ConfigBundle/Resources/views/Droit/show.html.twig" />
         <option value="$PROJECT_DIR$/src/School/ConfigBundle/Resources/views/Droit/gestionDroit.html.twig" />
         <option value="$PROJECT_DIR$/src/School/NoteBundle/Controller/BulletinController.php" />
+        <option value="$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Evaluation/statistiques.html.twig" />
+        <option value="$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Classe/edit.html.twig" />
       </list>
     </option>
   </component>
@@ -375,6 +364,72 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="School" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="School" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StudentBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="School" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StudentBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -382,7 +437,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="estDis&#9;null&#9;null&#10;bulleti&#9;null&#9;null&#10;cycle&#9;null&#9;null&#10;droitCo&#9;null&#9;null&#10;droitTy&#9;null&#9;null&#10;new.html&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/NoteBundle/Resources/views/Sequence/new.html.twig&#10;index.html.twig&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/GestionBundle/Resources/views/Default/index.html.twig&#10;absenceContr&#9;null&#9;null&#10;class&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/StudentBundle/Controller/ClasseController.php&#10;absen&#9;null&#9;null&#10;CYCLE&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/StudentBundle/Controller/CycleController.php&#10;cla&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/StudentBundle/Controller/ClasseController.php&#10;sequenceCon&#9;null&#9;null&#10;matier&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/MatiereBundle/Controller/MatiereController.php&#10;estdis&#9;null&#9;null&#10;STUDENTCONTR&#9;null&#9;null&#10;classeContr&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/StudentBundle/Controller/ClasseController.php&#10;cate&#9;null&#9;null&#10;estd&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/MatiereBundle/Controller/EstDispenseController.php&#10;inscri&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/StudentBundle/Controller/InscriptionController.php&#10;bulle&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/NoteBundle/Resources/views/Evaluation/bulletins.html.twig&#10;evaluation&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/NoteBundle/Controller/EvaluationController.php&#10;estDi&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/MatiereBundle/Controller/EstDispenseController.php&#10;matiere&#9;null&#9;null&#10;estDispens&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/MatiereBundle/Form/EstDispenseType.php&#10;evalu&#9;null&#9;null&#10;sta&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/NoteBundle/Resources/views/Evaluation/statistiques.html.twig&#10;form&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/NoteBundle/Resources/views/Evaluation/formulaireStatistique.html.twig&#10;stati&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/NoteBundle/Resources/views/Evaluation/statistiques.html.twig&#10;base&#9;FILE&#9;file://C:/wamp/www/GestionNotes/app/Resources/views/base.html.twig&#10;index&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/GestionBundle/Resources/views/Default/index.html.twig&#10;absence&#9;null&#9;null&#10;classeTy&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/StudentBundle/Form/ClasseType.php&#10;evalua&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/NoteBundle/Controller/EvaluationController.php&#10;routing.yml&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/.TeacherBundle/Resources/config/routing.yml&#10;studentTy&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/StudentBundle/Form/StudentType.php&#10;inscr&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/StudentBundle/Controller/InscriptionController.php&#10;bas&#9;FILE&#9;file://C:/wamp/www/GestionNotes/app/Resources/views/base.html.twig&#10;ecol&#9;null&#9;null&#10;evaluationC&#9;null&#9;null&#10;statisti&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/NoteBundle/Resources/views/Evaluation/statistiques.html.twig&#10;bulletinCon&#9;null&#9;null&#10;classeT&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/StudentBundle/Form/ClasseType.php&#10;inscriptio&#9;null&#9;null&#10;style&#9;FILE&#9;file://C:/wamp/www/GestionNotes/web/css/styleProjet.css&#10;main&#9;FILE&#9;file://C:/wamp/www/GestionNotes/web/css/main.css&#10;user&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/UserBundle/Controller/UserController.php&#10;userT&#9;null&#9;null&#10;new&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/MatiereBundle/Resources/views/Matiere/new.html.twig&#10;inde&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/GestionBundle/Resources/views/Default/index.html.twig" />
+    <property name="SearchEverywhereHistoryKey" value="evaluat&#9;null&#9;null&#10;bulle&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/NoteBundle/Controller/BulletinController.php&#10;estDis&#9;null&#9;null&#10;bulleti&#9;null&#9;null&#10;cycle&#9;null&#9;null&#10;droitCo&#9;null&#9;null&#10;droitTy&#9;null&#9;null&#10;new.html&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/NoteBundle/Resources/views/Sequence/new.html.twig&#10;index.html.twig&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/GestionBundle/Resources/views/Default/index.html.twig&#10;absenceContr&#9;null&#9;null&#10;class&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/StudentBundle/Controller/ClasseController.php&#10;absen&#9;null&#9;null&#10;CYCLE&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/StudentBundle/Controller/CycleController.php&#10;cla&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/StudentBundle/Controller/ClasseController.php&#10;sequenceCon&#9;null&#9;null&#10;matier&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/MatiereBundle/Controller/MatiereController.php&#10;estdis&#9;null&#9;null&#10;STUDENTCONTR&#9;null&#9;null&#10;classeContr&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/StudentBundle/Controller/ClasseController.php&#10;cate&#9;null&#9;null&#10;estd&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/MatiereBundle/Controller/EstDispenseController.php&#10;inscri&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/StudentBundle/Controller/InscriptionController.php&#10;evaluation&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/NoteBundle/Controller/EvaluationController.php&#10;estDi&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/MatiereBundle/Controller/EstDispenseController.php&#10;matiere&#9;null&#9;null&#10;estDispens&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/MatiereBundle/Form/EstDispenseType.php&#10;evalu&#9;null&#9;null&#10;sta&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/NoteBundle/Resources/views/Evaluation/statistiques.html.twig&#10;form&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/NoteBundle/Resources/views/Evaluation/formulaireStatistique.html.twig&#10;stati&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/NoteBundle/Resources/views/Evaluation/statistiques.html.twig&#10;base&#9;FILE&#9;file://C:/wamp/www/GestionNotes/app/Resources/views/base.html.twig&#10;index&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/GestionBundle/Resources/views/Default/index.html.twig&#10;absence&#9;null&#9;null&#10;classeTy&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/StudentBundle/Form/ClasseType.php&#10;evalua&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/NoteBundle/Controller/EvaluationController.php&#10;routing.yml&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/.TeacherBundle/Resources/config/routing.yml&#10;studentTy&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/StudentBundle/Form/StudentType.php&#10;inscr&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/StudentBundle/Controller/InscriptionController.php&#10;bas&#9;FILE&#9;file://C:/wamp/www/GestionNotes/app/Resources/views/base.html.twig&#10;ecol&#9;null&#9;null&#10;evaluationC&#9;null&#9;null&#10;statisti&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/NoteBundle/Resources/views/Evaluation/statistiques.html.twig&#10;bulletinCon&#9;null&#9;null&#10;classeT&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/StudentBundle/Form/ClasseType.php&#10;inscriptio&#9;null&#9;null&#10;style&#9;FILE&#9;file://C:/wamp/www/GestionNotes/web/css/styleProjet.css&#10;main&#9;FILE&#9;file://C:/wamp/www/GestionNotes/web/css/main.css&#10;user&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/UserBundle/Controller/UserController.php&#10;userT&#9;null&#9;null&#10;new&#9;FILE&#9;file://C:/wamp/www/GestionNotes/src/School/MatiereBundle/Resources/views/Matiere/new.html.twig" />
     <property name="FullScreen" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
@@ -409,30 +464,21 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/config/security.yml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/ConfigBundle/Resources/config/routing.yml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/GestionBundle/Resources/config/routing.yml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/GestionBundle/Resources/views/Default/index.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/MatiereBundle/Entity/EstDispense.php</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/MatiereBundle/Entity/EstDispense.php~</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Bulletin/notesPdf.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/StudentBundle/Controller/CycleController.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/StudentBundle/Entity/Absence.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/StudentBundle/Entity/Inscription.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/StudentBundle/Entity/Inscription.php~</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/StudentBundle/Form/CycleType.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/StudentBundle/Resources/config/routing/cycle.yml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Cycle/edit.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Cycle/index.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Cycle/new.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Cycle/show.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/StudentBundle/Tests/Controller/CycleControllerTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/UserBundle/Entity/User.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/css/styleLogo.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/uploads/images/2.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/uploads/images/4.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/uploads/images/6.jpeg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/uploads/logos/1.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Evaluation/formulaireStatistique.html.twig</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/StudentBundle/Controller/ClasseController.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/StudentBundle/Entity/Classe.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/StudentBundle/Entity/Classe.php~</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/StudentBundle/Form/ClasseType.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Classe/edit.html.twig</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Classe/new.html.twig</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/daterangepicker/daterangepicker.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/daterangepicker/daterangepicker.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/daterangepicker/moment.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/daterangepicker/moment.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/js/jquery-ui.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/uploads/images/7.jpeg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/uploads/images/8.jpeg</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -440,18 +486,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/ConfigBundle/Controller/DroitController.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/ConfigBundle/Entity/Droit.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/ConfigBundle/Form/DroitType.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/ConfigBundle/Resources/config/routing/droit.yml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/ConfigBundle/Resources/views/Droit/detailDroit.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/ConfigBundle/Resources/views/Droit/edit.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/ConfigBundle/Resources/views/Droit/gestionDroit.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/ConfigBundle/Resources/views/Droit/index.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/ConfigBundle/Resources/views/Droit/new.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/ConfigBundle/Resources/views/Droit/show.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/School/ConfigBundle/Tests/Controller/DroitControllerTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/animate/loader.gif</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -459,314 +493,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/04c4bcccece5078347c6fc90aea0aff9dc42c114#editnoteAction.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/04c4bcccece5078347c6fc90aea0aff9dc42c114#insererNoteAction.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/04c4bcccece5078347c6fc90aea0aff9dc42c114#noteAction.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/04c4bcccece5078347c6fc90aea0aff9dc42c114#statistiquesSequenceAction.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/04c4bcccece5078347c6fc90aea0aff9dc42c114.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/115436ae3d4a5ea21ebefed4d5657a870ff0d017.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/134508a63503a2cd657b758ccd6f45a2684fdb1e#getAlt.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/134508a63503a2cd657b758ccd6f45a2684fdb1e#getFile.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/134508a63503a2cd657b758ccd6f45a2684fdb1e#getId.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/134508a63503a2cd657b758ccd6f45a2684fdb1e#getUploadDir.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/134508a63503a2cd657b758ccd6f45a2684fdb1e#getUrl.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/134508a63503a2cd657b758ccd6f45a2684fdb1e#getWebPath.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/134508a63503a2cd657b758ccd6f45a2684fdb1e#preRemoveUpload.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/134508a63503a2cd657b758ccd6f45a2684fdb1e#preUpload.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/134508a63503a2cd657b758ccd6f45a2684fdb1e#removeUpload.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/134508a63503a2cd657b758ccd6f45a2684fdb1e#setAlt.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/134508a63503a2cd657b758ccd6f45a2684fdb1e#setFile.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/134508a63503a2cd657b758ccd6f45a2684fdb1e#setUrl.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/134508a63503a2cd657b758ccd6f45a2684fdb1e#upload.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/134508a63503a2cd657b758ccd6f45a2684fdb1e$alt.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/134508a63503a2cd657b758ccd6f45a2684fdb1e$file.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/134508a63503a2cd657b758ccd6f45a2684fdb1e$id.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/134508a63503a2cd657b758ccd6f45a2684fdb1e$tempFileName.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/134508a63503a2cd657b758ccd6f45a2684fdb1e$url.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/134508a63503a2cd657b758ccd6f45a2684fdb1e.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/22f8d524e3c1ced3ff61beb693384a1a63b5de1c$abreviation.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/22f8d524e3c1ced3ff61beb693384a1a63b5de1c$categorie.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/22f8d524e3c1ced3ff61beb693384a1a63b5de1c$evaluationSeq.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/22f8d524e3c1ced3ff61beb693384a1a63b5de1c$id.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/22f8d524e3c1ced3ff61beb693384a1a63b5de1c$nom.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/22f8d524e3c1ced3ff61beb693384a1a63b5de1c$taille.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/22f8d524e3c1ced3ff61beb693384a1a63b5de1c.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/23a37bc98b79100e11b13cfe8b315d5addba4369$annee.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/23a37bc98b79100e11b13cfe8b315d5addba4369$classe.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/23a37bc98b79100e11b13cfe8b315d5addba4369$id.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/23a37bc98b79100e11b13cfe8b315d5addba4369$index.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/23a37bc98b79100e11b13cfe8b315d5addba4369$matiere.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/23a37bc98b79100e11b13cfe8b315d5addba4369$note.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/23a37bc98b79100e11b13cfe8b315d5addba4369$sequence.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/23a37bc98b79100e11b13cfe8b315d5addba4369$student.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/23a37bc98b79100e11b13cfe8b315d5addba4369.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/252ad18f148aba41e50958ecd1fc3dcac7c79189$anneeEnCour.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/252ad18f148aba41e50958ecd1fc3dcac7c79189$boitePostal.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/252ad18f148aba41e50958ecd1fc3dcac7c79189$deviseAnglais.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/252ad18f148aba41e50958ecd1fc3dcac7c79189$deviseFrancais.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/252ad18f148aba41e50958ecd1fc3dcac7c79189$id.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/252ad18f148aba41e50958ecd1fc3dcac7c79189$logo.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/252ad18f148aba41e50958ecd1fc3dcac7c79189$nomAnglais.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/252ad18f148aba41e50958ecd1fc3dcac7c79189$nomFrancais.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/252ad18f148aba41e50958ecd1fc3dcac7c79189$ville.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/252ad18f148aba41e50958ecd1fc3dcac7c79189.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/336d77b1ef697809f262361ca7475e5fa21ed8f0$deviseAnglais.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/336d77b1ef697809f262361ca7475e5fa21ed8f0$deviseFrancais.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/336d77b1ef697809f262361ca7475e5fa21ed8f0$id.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/336d77b1ef697809f262361ca7475e5fa21ed8f0$ministereAnglais.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/336d77b1ef697809f262361ca7475e5fa21ed8f0$ministereFrancais.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/336d77b1ef697809f262361ca7475e5fa21ed8f0$paysAnglais.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/336d77b1ef697809f262361ca7475e5fa21ed8f0$paysFrancais.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/336d77b1ef697809f262361ca7475e5fa21ed8f0.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/35697d2961bd59b0d54d0feb50c1c7cf1409098e#absenceClasseAction.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/35697d2961bd59b0d54d0feb50c1c7cf1409098e#indexAction.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/35697d2961bd59b0d54d0feb50c1c7cf1409098e#newAction.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/35697d2961bd59b0d54d0feb50c1c7cf1409098e.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/54dd6987c4dc48f9784fc0e226954af7ee7182a7$annee.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/54dd6987c4dc48f9784fc0e226954af7ee7182a7$classe.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/54dd6987c4dc48f9784fc0e226954af7ee7182a7$coefficient.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/54dd6987c4dc48f9784fc0e226954af7ee7182a7$enseignant.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/54dd6987c4dc48f9784fc0e226954af7ee7182a7$id.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/54dd6987c4dc48f9784fc0e226954af7ee7182a7$matiere.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/54dd6987c4dc48f9784fc0e226954af7ee7182a7$nbreFilles.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/54dd6987c4dc48f9784fc0e226954af7ee7182a7$nbreGarcons.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/54dd6987c4dc48f9784fc0e226954af7ee7182a7$nombreHeuresAnnuel.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/54dd6987c4dc48f9784fc0e226954af7ee7182a7$titulaire.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/54dd6987c4dc48f9784fc0e226954af7ee7182a7.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/597877fc1359850fa8786ead82dcc8f6f491d628#showAction.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/597877fc1359850fa8786ead82dcc8f6f491d628.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/60810fd88cbe044e204468374e5ee4d4214982ba#bulletinTestClasseAction.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/60810fd88cbe044e204468374e5ee4d4214982ba.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/674e31f630d514d5ae9fd0b8310fcddecb73da7a$id.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/674e31f630d514d5ae9fd0b8310fcddecb73da7a$nom.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/674e31f630d514d5ae9fd0b8310fcddecb73da7a.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/6dcb4d16b7148191a7dcdbc71e6c6d77f98feaeb$id.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/6dcb4d16b7148191a7dcdbc71e6c6d77f98feaeb$nom.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/6dcb4d16b7148191a7dcdbc71e6c6d77f98feaeb.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/715dc5543d25c79a821b95b32e18c394f33a1367#getAlt.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/715dc5543d25c79a821b95b32e18c394f33a1367#getFile.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/715dc5543d25c79a821b95b32e18c394f33a1367#getId.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/715dc5543d25c79a821b95b32e18c394f33a1367#getUploadDir.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/715dc5543d25c79a821b95b32e18c394f33a1367#getUrl.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/715dc5543d25c79a821b95b32e18c394f33a1367#getWebPath.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/715dc5543d25c79a821b95b32e18c394f33a1367#preRemoveUpload.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/715dc5543d25c79a821b95b32e18c394f33a1367#preUpload.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/715dc5543d25c79a821b95b32e18c394f33a1367#removeUpload.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/715dc5543d25c79a821b95b32e18c394f33a1367#setAlt.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/715dc5543d25c79a821b95b32e18c394f33a1367#setFile.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/715dc5543d25c79a821b95b32e18c394f33a1367#setUrl.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/715dc5543d25c79a821b95b32e18c394f33a1367#upload.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/715dc5543d25c79a821b95b32e18c394f33a1367$alt.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/715dc5543d25c79a821b95b32e18c394f33a1367$file.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/715dc5543d25c79a821b95b32e18c394f33a1367$id.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/715dc5543d25c79a821b95b32e18c394f33a1367$tempFileName.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/715dc5543d25c79a821b95b32e18c394f33a1367$url.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/715dc5543d25c79a821b95b32e18c394f33a1367.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/83e13005735878212a885a8bfceef8c4267e4d69.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/891ed1c2b2e4853770f870ef6994c94a03adb275$id.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/891ed1c2b2e4853770f870ef6994c94a03adb275$listeMatieres.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/891ed1c2b2e4853770f870ef6994c94a03adb275$nom.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/891ed1c2b2e4853770f870ef6994c94a03adb275.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/8c1be466b5d76e940fe4cd1f33ed103d647fc827$id.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/8c1be466b5d76e940fe4cd1f33ed103d647fc827$listeCategories.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/8c1be466b5d76e940fe4cd1f33ed103d647fc827$nom.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/8c1be466b5d76e940fe4cd1f33ed103d647fc827.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/93427632741f603078ee5b763c6893233e2a9476#indexAction.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/93427632741f603078ee5b763c6893233e2a9476.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/95f243d94a3cf24c6f1f4bfb153f09f59f3da9e9$adresseMere.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/95f243d94a3cf24c6f1f4bfb153f09f59f3da9e9$adressePere.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/95f243d94a3cf24c6f1f4bfb153f09f59f3da9e9$classe.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/95f243d94a3cf24c6f1f4bfb153f09f59f3da9e9$dateNaissance.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/95f243d94a3cf24c6f1f4bfb153f09f59f3da9e9$dernierEtablissementFreq.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/95f243d94a3cf24c6f1f4bfb153f09f59f3da9e9$id.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/95f243d94a3cf24c6f1f4bfb153f09f59f3da9e9$lieuNaissance.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/95f243d94a3cf24c6f1f4bfb153f09f59f3da9e9$matricule.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/95f243d94a3cf24c6f1f4bfb153f09f59f3da9e9$nom.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/95f243d94a3cf24c6f1f4bfb153f09f59f3da9e9$nomMere.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/95f243d94a3cf24c6f1f4bfb153f09f59f3da9e9$nomPere.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/95f243d94a3cf24c6f1f4bfb153f09f59f3da9e9$personneAcontacter.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/95f243d94a3cf24c6f1f4bfb153f09f59f3da9e9$photo.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/95f243d94a3cf24c6f1f4bfb153f09f59f3da9e9$sexe.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/95f243d94a3cf24c6f1f4bfb153f09f59f3da9e9.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/aa3b17a06c54069051111edd177f4b93a6b0ac40#toolbarAction.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/aa3b17a06c54069051111edd177f4b93a6b0ac40.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/aaec143f47cf5f71780854ce85f67000bfc03c69$anciennete.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/aaec143f47cf5f71780854ce85f67000bfc03c69$diplomes.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/aaec143f47cf5f71780854ce85f67000bfc03c69$grade.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/aaec143f47cf5f71780854ce85f67000bfc03c69$id.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/aaec143f47cf5f71780854ce85f67000bfc03c69$matricule.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/aaec143f47cf5f71780854ce85f67000bfc03c69$nom.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/aaec143f47cf5f71780854ce85f67000bfc03c69$telephone.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/aaec143f47cf5f71780854ce85f67000bfc03c69.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/b25e581529baa3c4a8181260fbe5fd8fcd971213#indexAction.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/b25e581529baa3c4a8181260fbe5fd8fcd971213.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$confirmationToken.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$credentialsExpireAt.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$credentialsExpired.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$email.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$emailCanonical.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$enabled.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$expired.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$expiresAt.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$groups.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$lastLogin.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$locked.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$password.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$passwordRequestedAt.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$plainPassword.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$roles.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$salt.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$username.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/b52ea85948a1c5b9bb1efeee788d43a2ecdba75f$usernameCanonical.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/ba639150f67a176e1fe8e24f2326ade93e5d74e1$anneeScolaire.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/ba639150f67a176e1fe8e24f2326ade93e5d74e1$id.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/ba639150f67a176e1fe8e24f2326ade93e5d74e1.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/ba739f47a8f881ebc818952be818d07ea8f54bc2#__construct.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/ba739f47a8f881ebc818952be818d07ea8f54bc2#getAnneeScolaire.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/ba739f47a8f881ebc818952be818d07ea8f54bc2#getId.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/ba739f47a8f881ebc818952be818d07ea8f54bc2#getNbreAbsence.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/ba739f47a8f881ebc818952be818d07ea8f54bc2#getSequence.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/ba739f47a8f881ebc818952be818d07ea8f54bc2#getStudent.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/ba739f47a8f881ebc818952be818d07ea8f54bc2#setAnneeScolaire.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/ba739f47a8f881ebc818952be818d07ea8f54bc2#setNbreAbsence.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/ba739f47a8f881ebc818952be818d07ea8f54bc2#setSequence.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/ba739f47a8f881ebc818952be818d07ea8f54bc2#setStudent.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/ba739f47a8f881ebc818952be818d07ea8f54bc2#setUpNbreAbsence.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/ba739f47a8f881ebc818952be818d07ea8f54bc2$anneeScolaire.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/ba739f47a8f881ebc818952be818d07ea8f54bc2$id.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/ba739f47a8f881ebc818952be818d07ea8f54bc2$nbreAbsence.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/ba739f47a8f881ebc818952be818d07ea8f54bc2$sequence.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/ba739f47a8f881ebc818952be818d07ea8f54bc2$student.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/ba739f47a8f881ebc818952be818d07ea8f54bc2.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/be3e437e4d95e9c8cd53cc2b85185c399915e516$abreviation.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/be3e437e4d95e9c8cd53cc2b85185c399915e516$classePere.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/be3e437e4d95e9c8cd53cc2b85185c399915e516$cycle.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/be3e437e4d95e9c8cd53cc2b85185c399915e516$id.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/be3e437e4d95e9c8cd53cc2b85185c399915e516$nom.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/be3e437e4d95e9c8cd53cc2b85185c399915e516.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/d2e083bdedbbce106cc0e22d2403123bbc4b457c#loginAction.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/d2e083bdedbbce106cc0e22d2403123bbc4b457c.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/d9b89cf5dd89bbeda41c5ebef90a7c388611fc2d#indexAction.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/d9b89cf5dd89bbeda41c5ebef90a7c388611fc2d.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/fc3623493bc820310914c275729734e24a63e86a$annee.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/fc3623493bc820310914c275729734e24a63e86a$avance.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/fc3623493bc820310914c275729734e24a63e86a$classe.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/fc3623493bc820310914c275729734e24a63e86a$dateDerniereAvance.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/fc3623493bc820310914c275729734e24a63e86a$id.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/fc3623493bc820310914c275729734e24a63e86a$listeEvaluations.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/fc3623493bc820310914c275729734e24a63e86a$nbreAbsence.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/fc3623493bc820310914c275729734e24a63e86a$status.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/fc3623493bc820310914c275729734e24a63e86a$student.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/annotations/fc3623493bc820310914c275729734e24a63e86a.cache.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php.meta</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainerCompiler.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php.meta</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php.meta</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/assetic/config/4/43a80f0e087752a2d4724591f85aa0e1.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/assetic/routing.yml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/classes.map</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/classes.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/classes.php.meta</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/doctrine/orm/Proxies/__CG__SchoolConfigBundleEntityAnnee.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/doctrine/orm/Proxies/__CG__SchoolConfigBundleEntityLogo.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/doctrine/orm/Proxies/__CG__SchoolMatiereBundleEntityCategorie.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/doctrine/orm/Proxies/__CG__SchoolMatiereBundleEntityMatiere.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/doctrine/orm/Proxies/__CG__SchoolNoteBundleEntitySequence.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/doctrine/orm/Proxies/__CG__SchoolStudentBundleEntityClasse.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/doctrine/orm/Proxies/__CG__SchoolStudentBundleEntityCycle.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/doctrine/orm/Proxies/__CG__SchoolStudentBundleEntityImage.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/doctrine/orm/Proxies/__CG__SchoolStudentBundleEntityInscription.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/doctrine/orm/Proxies/__CG__SchoolStudentBundleEntitySexe.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/doctrine/orm/Proxies/__CG__SchoolStudentBundleEntityStudent.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/doctrine/orm/Proxies/__CG__SchoolUserBundleEntityUser.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/01/ea/a2ea01</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/07/be/17be07</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/0e/33/7f330e</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/0e/7c/d47c0e</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/16/96/2d9616</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/25/11/b81125</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/2c/35/68352c</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/2e/87/08872e</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/35/d4/09d435</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/3a/6b/f96b3a</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/3f/33/5f333f</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/47/c1/07c147</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/51/9a/b29a51</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/5a/75/e3755a</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/62/22/3d2262</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/6d/0e/de0e6d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/6d/31/aa316d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/70/26/c52670</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/71/2e/022e71</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/73/58/015873</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/7a/2f/f52f7a</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/7b/a6/04a67b</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/81/5b/265b81</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/84/d3/8ad384</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/85/64/b56485</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/8c/47/95478c</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/9d/a2/e4a29d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/a6/aa/3daaa6</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/a8/e6/e3e6a8</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/a9/10/a210a9</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/c1/be/61bec1</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/d3/cb/8bcbd3</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/dd/ed/46eddd</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/df/8c/698cdf</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/e5/d1/3cd1e5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/f2/05/0005f2</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/f2/30/ac30f2</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/profiler/index.csv</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/sessions/sess_720po9sjr933suorrba943kri0</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/translations/catalogue.fr.74ad548a14679603165a68a05f1f6a84f1ab7740.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/translations/catalogue.fr.74ad548a14679603165a68a05f1f6a84f1ab7740.php.meta</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/08/086c1a55bdd92f1af70a77e71412f83b5870c2a1f6a08c84f691844eec3937a6.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/16/16a1e153c845da80c49d7316f3207b4981bc36f146ff9ff16b8604f99c9b96cd.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/2d/2d37351938d48d9ec3249a1c8f55724f286e49649905ffcd24a8463c2092abf0.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/32/323a8b8a67a5d48326268b5437b82db2829170b9b251acfd923c265cbf6c0194.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/32/32580020819fa39a57a50023e7bcb6457267520d30d9424db392723698a13b9e.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/34/34a3d61305ac6a05acd423bada8e003b69980947b4b6e46b00b2e0a3f6c426c6.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/35/350b08b0bdbaae30028fcfa9685290c8f2be730c5052c0c22a94fda1cfba9956.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/37/375041d3e653fe43563fec4994240444e6f548946fafe488c188e03ccc7fe32d.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/3a/3ad70c148d1e4853d9603a772e57cee8222ac14c21ca7b2f78f93137534d1aa7.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/3c/3ce6f0de1c4b4f4973c920969cb85cdcf0c0b5adc29850ceea156d3abca6d333.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/44/44bb14bd74f3c5f90175f8c1cf75679a7a784040ef22f44c91158998d0ba4ed0.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/5d/5d1d73721836c96db56cf5a6e69f1b3a8086b0fcecbd0c3200f3342877089834.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/5f/5fc5b6fbe91343260707897fe548076ae1d4444f0cae52c376720158259f975d.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/70/7052290561ee16087c3a6cfbee31e66263c9a40aa1f793070c66b772cdca0800.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/7b/7b4016a33773fc47775d5a0212ec05619e77f893de63360dc4b196dc968ae1b5.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/7d/7da30af6ce7b4c77377687056b330dd69bcf3b077d8c30b8874ef322f5ba4fd1.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/7f/7fec7b1b90de0f20ffb15edcd438b417ecc53b3016a2ca95dd25033a54755a81.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/8d/8d9b70b9a480f455c1269904a031f000f2119455563f93efee2475a11c76e669.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/98/98d2a5eeab6326891b924ddd757acb9c3aef8c6f255b88b99c4cc8100dc3e001.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/99/99bb2d3c1e813114e0f94b480a33030c101b51735f31632e0aac7789ceb34edd.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/9d/9d346bf327ab85a5ae20dbfa7cd65ef75f7bf02f0927c827dd5e615bfda7f9a3.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/9e/9e4bedeeae20922cf9fe13a4efd61375600c9693ad51e927cc0e4049e144ad31.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/ac/ac277c8cba4f6fffd1f03e9fe93d6b3fd88cdc4d0c9562aa268d48b317c98cd1.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/ad/ad4d3076114213e4914d81581ef83b1def33081cafd9c9424af555fb22158faf.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/b6/b64900d071ba9db4fb6db36376d03b3d76375efc4acfe52cef8326945eb2dcfa.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/ba/baf33e622911279331c8561e8b147fa95d7f152c54d4817fe406c12b46d5b49c.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/bb/bba95a156d232012585fbd0775fd9049b2baf0404cfd7de8250c9776c2130edf.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/bc/bc72385e89453647ba27e41cb5c21ea54d42374309dfc224b2b1d05585271f81.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/bf/bfa29fdbde8b9485ec470879c98ca1c971318c29d55c9e80765b3d9341f2e560.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/c3/c35e8c49d78e286f8f597dd9b7b14876fd10dace77fd3d49ebac400483f56b35.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/c4/c43baa2f8901b86e2df0570755a5c38d206e4e2f9d78d55d1c2706a2417f1fef.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/c9/c9fdd684f8d51440e06c36c0be84402f72be199e9916ddbc35006b3f8703a521.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/cd/cd33e3e4b1a807e98755635b98062f86688d29356278a62a7f6fb86c89214bb4.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/ce/ceda5908252880c14a1cce636857fb009d77e12f2916016bcbeb6ef15351086f.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/d5/d58e2632e9131e3ed7ecfc8d2d8cee4c15d40dd19fe995490571133109e36b27.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/dd/dd5c85814a33888dd9c4265a83a5334290bd702d15ff1ffc0f4468a8aa0ae0c7.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/e7/e78d8de47d7a6376b851f0fc0f1166530e49c24c252e66dc20a5ea93283f795c.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/ea/eaf9e0950b81e2e8d618ef2ec30514847a47c17ac7400e0a53c19699a417e3be.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/ed/ed5554a8672989596d5072b234b321ce5d00789f460e8c7b1e8579b061f2c0ed.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/f5/f5716a751bc734d638ecd59350bb7730d795d0f22ad62345ac7aa37f09b0c57e.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/f6/f61cbbb84e8af982074b1164dd26cabf08c29a3ca73b43e1faf86fcd452ea3e9.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/cache/dev/twig/fb/fb0eac15ccea118e33185b58330fcfa8f3f85a4ca0cb852f447930b732264b7b.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/logs/dev.log</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -891,16 +617,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18887262" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23938507" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32546374" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32512316" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31034482" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31034482" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -929,20 +655,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/css/styleLogo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17555939">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/styleProjet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="154" column="5" selection-start-line="154" selection-start-column="5" selection-end-line="154" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Student/showStudent.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.5094337">
@@ -1177,14 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Classe/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18378378">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Absence/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21441442">
@@ -1305,11 +1009,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/ConfigBundle/Resources/views/Droit/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.576923">
+          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/ConfigBundle/Resources/views/Droit/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.153846">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/School/NoteBundle/Controller/BulletinController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.3846154">
-          <caret line="672" column="28" selection-start-line="672" selection-start-column="28" selection-end-line="672" selection-end-column="28" />
+        <state vertical-scroll-proportion="-4.5">
+          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
           <folding>
+            <element signature="e#48#90#0#PHP" expanded="true" />
             <marker date="1484045850164" expanded="true" signature="11897:13114" placeholder="..." />
             <marker date="1484045850164" expanded="true" signature="11923:12011" placeholder="..." />
             <marker date="1484045850164" expanded="true" signature="12034:12725" placeholder="..." />
@@ -1427,18 +1148,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/School/ConfigBundle/Resources/views/Droit/new.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/School/NoteBundle/Controller/EvaluationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.576923">
-          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+        <state vertical-scroll-proportion="-5.230769">
+          <caret line="373" column="46" selection-start-line="373" selection-start-column="46" selection-end-line="373" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/School/ConfigBundle/Resources/views/Droit/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/School/NoteBundle/Resources/views/Evaluation/statistiques.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4043716">
-          <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
+        <state vertical-scroll-proportion="-113.76923">
+          <caret line="174" column="34" selection-start-line="174" selection-start-column="34" selection-end-line="174" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/School/StudentBundle/Resources/views/Classe/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.72677594">
+          <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
           <folding />
         </state>
       </provider>
