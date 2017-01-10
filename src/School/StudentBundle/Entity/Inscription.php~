@@ -18,6 +18,10 @@ class Inscription {
         $this->setAvance(0);
     }
 
+    function __toString() {
+        return $this->getStudent()->getNom();
+    }
+
     /**
      * @var integer
      *
@@ -62,8 +66,16 @@ class Inscription {
      * @ORM\Column(name="status", type="boolean")
      */
     private $status;
-
     protected $listeEvaluations = array();
+    private $nbreAbsence;
+
+    function getNbreAbsence() {
+        return $this->nbreAbsence;
+    }
+
+    function setNbreAbsence($nbreAbsence) {
+        $this->nbreAbsence = $nbreAbsence;
+    }
 
     /**
      * Get id
@@ -200,15 +212,12 @@ class Inscription {
         return $this->annee;
     }
 
-
-    public function setListeEvaluations($listeEvaluations){
+    public function setListeEvaluations($listeEvaluations) {
         $this->listeEvaluations = $listeEvaluations;
     }
 
-
-    public function getListeEvaluations(){
+    public function getListeEvaluations() {
         return $this->listeEvaluations;
     }
-
 
 }

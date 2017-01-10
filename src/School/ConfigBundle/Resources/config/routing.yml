@@ -13,3 +13,7 @@ SchoolConfigBundle_config_ecole:
 SchoolConfigBundle_config_annee:
     resource: "@SchoolConfigBundle/Resources/config/routing/annee.yml"
     prefix:   /config/annee
+
+SchoolConfigBundle_proviseur_droit:
+    resource: "@SchoolConfigBundle/Resources/config/routing/droit.yml"
+    prefix:   /config/droit

@@ -39,15 +39,15 @@
                         </ul>
                     </li>
                     {#<li class="dropdown">#}
-                        {#<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-hdd"></i> Matières <b class="caret"></b></a>#}
-                        {#<ul class="dropdown-menu">#}
-                            {#<li><a href="{{ path('matiere')}}"><i class="glyphicon glyphicon-user"></i> Liste des matières</a></li>#}
-                        {#</ul>#}
+                    {#<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-hdd"></i> Matières <b class="caret"></b></a>#}
+                    {#<ul class="dropdown-menu">#}
+                    {#<li><a href="{{ path('matiere')}}"><i class="glyphicon glyphicon-user"></i> Liste des matières</a></li>#}
+                    {#</ul>#}
                     {#</li>#}
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-list"></i> Séquences <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-filter"></i> Séquences <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ path('sequence')}}"><i class="glyphicon glyphicon-list"></i> Liste des séquences</a></li>
+                            <li><a href="{{ path('sequence')}}"><i class="glyphicon glyphicon-dashboard"></i> Liste des séquences</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -55,6 +55,13 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{ path('cycle')}}"><i class="glyphicon glyphicon-list"></i> Liste des cycles</a></li>
                             <li><a href="{{ path('classe')}}"><i class="glyphicon glyphicon-folder-open"></i> Liste des classes</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-cog"></i> Administration <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('attribution_droit')}}"><i class="glyphicon glyphicon-user"></i> Gestion des droits utilisateurs</a></li>
+                            <li><a href="{{ path('proviseur_droit')}}"><i class="glyphicon glyphicon-sort-by-attributes"></i> Liste des droits d'accès</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -68,7 +75,7 @@
                         </a>
                     {% else %}
                         <a href="{{ path('fos_user_security_login') }}"><span class="glyphicon glyphicon-log-in"></span> {{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-                        {% endif %}
+                    {% endif %}
                 </p>
             </div>
         </nav>
@@ -95,7 +102,7 @@
                         <div class="panel btn-blue">
                             <b style="text-align: left"><span style="color: orange; font-size: 18px" class="glyphicon glyphicon-folder-open"></span> {{dispense.classe}}</b>
                         </div>
-                        <ol class="">
+                        <ol class="{% if dispense.titulaire == app.user %}alert-info{% endif %}">
                             <li><a class="btn-link" data-toggle="modal" data-target="#sequence_{{dispense.id}}">Remplir les notes</a>
                                 <div id="sequence_{{dispense.id}}" class="modal fade">
                                     <div class="modal-dialog modal-sm">
@@ -229,11 +236,11 @@
 
 
         {#<div id="navbar-piedDePage" class="navbar navbar-default navbar-fixed-bottom" role="navigation">#}
-            {#<div class="container">#}
-                {#<div class="navbar-text col-lg-12 col-md-12 col-sm-12 col-xs-12 ">#}
-                    {#<p class="text-center"> &copy; 2016 GreenSoft-Team. All rights reserved.</p>#}
-                {#</div>#}
-            {#</div>#}
+        {#<div class="container">#}
+        {#<div class="navbar-text col-lg-12 col-md-12 col-sm-12 col-xs-12 ">#}
+        {#<p class="text-center"> &copy; 2016 GreenSoft-Team. All rights reserved.</p>#}
+        {#</div>#}
+        {#</div>#}
         {#</div>#}
     {% endblock %}
 {% endblock %}

@@ -1,10 +1,10 @@
 <?php
 
-namespace School\StudentBundle\Tests\Controller;
+namespace School\ConfigBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class CycleControllerTest extends WebTestCase
+class DroitControllerTest extends WebTestCase
 {
     /*
     public function testCompleteScenario()
@@ -13,13 +13,13 @@ class CycleControllerTest extends WebTestCase
         $client = static::createClient();
 
         // Create a new entry in the database
-        $crawler = $client->request('GET', '/cycle/');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /cycle/");
+        $crawler = $client->request('GET', '/proviseur/droit/');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /proviseur/droit/");
         $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Create')->form(array(
-            'school_studentbundle_cycle[field_name]'  => 'Test',
+            'school_configbundle_droit[field_name]'  => 'Test',
             // ... other fields to fill
         ));
 
@@ -33,7 +33,7 @@ class CycleControllerTest extends WebTestCase
         $crawler = $client->click($crawler->selectLink('Edit')->link());
 
         $form = $crawler->selectButton('Update')->form(array(
-            'school_studentbundle_cycle[field_name]'  => 'Foo',
+            'school_configbundle_droit[field_name]'  => 'Foo',
             // ... other fields to fill
         ));
 

@@ -3,9 +3,12 @@ security:
         FOS\UserBundle\Model\UserInterface: sha512
     
     role_hierarchy:
-        ROLE_TEACHER:       ROLE_USER
-        ROLE_ADMIN:        [ROLE_CLIENT, ROLE_SALLER]
-        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH] 
+        ROLE_TEACHER:        ROLE_USER
+        ROLE_GENERAL:        [ROLE_GENERAL, ROLE_TEACHER]
+        ROLE_CO:             [ROLE_GENERAL, ROLE_CO]   
+        ROLE_CENSEUR:        [ROLE_CO, ROLE_CENSEUR]
+        ROLE_PROVISEUR:      [ROLE_CENSEUR, ROLE_PROVISEUR]
+        ROLE_SUPER_ADMIN:    [ROLE_PROVISEUR, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH] 
 
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
@@ -28,7 +31,7 @@ security:
                 login_path: fos_user_security_login
                 check_path: fos_user_security_check
                 always_use_default_target_path : true
-                default_target_path: /Gestion/
+                default_target_path: /Gestion/accueil
                 use_referer : true
             logout:
                 path:       fos_user_security_logout
@@ -37,7 +40,10 @@ security:
                 key:     %secret%
     
     access_control:
-        #-{ path: ^/gestion, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/Gestion, roles: ROLE_USER}
-        - { path: ^/Gestion/admin, roles: ROLE_SUPER_ADMIN }
-        #- { path: ^/register, role: ROLE_ADMIN }
+        - { path: ^/Gestion/accueil, roles: ROLE_TEACHER }
+        - { path: ^/Gestion/SG, roles: ROLE_GENERAL }
+        - { path: ^/Gestion/CO, roles: ROLE_CO }
+        - { path: ^/Gestion/CENSEUR, roles: ROLE_CENSEUR }
+        - { path: ^/Gestion/config, role: ROLE_PROVISEUR }
+        - { path: ^/Gestion/admin, role: ROLE_SUPER_ADMIN }
+               

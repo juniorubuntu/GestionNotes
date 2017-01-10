@@ -1,0 +1,46 @@
+proviseur_droit:
+    path:     /
+    defaults: { _controller: "SchoolConfigBundle:Droit:index" }
+
+proviseur_droit_show:
+    path:     /{id}/show
+    defaults: { _controller: "SchoolConfigBundle:Droit:show" }
+
+proviseur_droit_new:
+    path:     /new
+    defaults: { _controller: "SchoolConfigBundle:Droit:new" }
+
+proviseur_droit_create:
+    path:     /create
+    defaults: { _controller: "SchoolConfigBundle:Droit:create" }
+    requirements: { _method: post }
+
+proviseur_droit_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SchoolConfigBundle:Droit:edit" }
+
+proviseur_droit_update:
+    path:     /{id}/update
+    defaults: { _controller: "SchoolConfigBundle:Droit:update" }
+    requirements: { _method: post|put }
+
+proviseur_droit_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SchoolConfigBundle:Droit:delete" }
+    requirements: { _method: post|delete }
+    
+    
+
+attribution_droit:
+    path: /Edit-privileges
+    defaults: { _controller: "SchoolConfigBundle:Droit:attribuerDroit" }
+    
+detail_droit:
+    path: /Detail-privileges-{id}
+    defaults: { _controller: "SchoolConfigBundle:Droit:detailDroit" }
+    
+change_droit:
+    path: /modificatio-droit/user-{idUser}/right-{idRight}
+    defaults: { _controller: "SchoolConfigBundle:Droit:changeDroit" }
+    
+    

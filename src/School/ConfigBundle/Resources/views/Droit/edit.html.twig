@@ -1,13 +1,13 @@
-{% extends 'SchoolGestionBundle:Default:index.html.twig' %}
+{% extends '::base.html.twig' %}
 
-{% block content -%}
-    <h1 class="text-center">Mise &agrave; jour d'un Cycle</h1>
+{% block body -%}
+    <h1>Droit edit</h1>
 
     {{ form(edit_form) }}
 
         <ul class="record_actions">
     <li>
-        <a href="{{ path('cycle') }}">
+        <a href="{{ path('proviseur_droit') }}">
             Back to the list
         </a>
     </li>

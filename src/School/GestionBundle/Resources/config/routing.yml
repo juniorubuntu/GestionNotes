@@ -1,3 +1,3 @@
 school_gestion_homepage:
-    path:     /
+    path:     /accueil
     defaults: { _controller: SchoolGestionBundle:Default:index }

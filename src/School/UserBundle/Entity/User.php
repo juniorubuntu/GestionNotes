@@ -64,6 +64,12 @@ class User extends BaseUser {
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $telephone;
+    
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $level;
 
     /**
      * Get id
@@ -200,4 +206,27 @@ class User extends BaseUser {
         return $this->telephone;
     }
 
+
+    /**
+     * Set level
+     *
+     * @param string $level
+     * @return User
+     */
+    public function setLevel($level)
+    {
+        $this->level = $level;
+    
+        return $this;
+    }
+
+    /**
+     * Get level
+     *
+     * @return string 
+     */
+    public function getLevel()
+    {
+        return $this->level;
+    }
 }

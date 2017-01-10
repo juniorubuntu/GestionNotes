@@ -228,4 +228,25 @@ class EstDispense {
     {
         return $this->annee;
     }
+
+
+    public function setNbreFilles($nbreFilles){
+        $this->nbreFilles= $nbreFilles;
+        return $this;
+    }
+
+
+    public function getNbreFilles(){
+        return $this->nbreFilles;
+    }
+
+    public function setNbreGarcons($nbreGarcons){
+        $this->nbreGarcons= $nbreGarcons;
+        return $this;
+    }
+
+
+    public function getNbreGarcons(){
+        return $this->nbreGarcons;
+    }
 }
